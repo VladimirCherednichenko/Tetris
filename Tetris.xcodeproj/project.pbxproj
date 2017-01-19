@@ -9,9 +9,7 @@
 /* Begin PBXBuildFile section */
 		84CB00211E2FB81D001DF6E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */; };
 		84CB00231E2FB81D001DF6E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00221E2FB81D001DF6E4 /* ViewController.swift */; };
-		84CB00261E2FB81D001DF6E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CB00241E2FB81D001DF6E4 /* Main.storyboard */; };
 		84CB00281E2FB81D001DF6E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CB00271E2FB81D001DF6E4 /* Assets.xcassets */; };
-		84CB002B1E2FB81D001DF6E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CB00291E2FB81D001DF6E4 /* LaunchScreen.storyboard */; };
 		84CB00361E2FB81D001DF6E4 /* TetrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00351E2FB81D001DF6E4 /* TetrisTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +27,7 @@
 		84CB001D1E2FB81D001DF6E4 /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CB00221E2FB81D001DF6E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		84CB00251E2FB81D001DF6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84CB00271E2FB81D001DF6E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		84CB002A1E2FB81D001DF6E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84CB002C1E2FB81D001DF6E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CB00311E2FB81D001DF6E4 /* TetrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CB00351E2FB81D001DF6E4 /* TetrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisTests.swift; sourceTree = "<group>"; };
@@ -79,9 +75,7 @@
 			children = (
 				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
 				84CB00221E2FB81D001DF6E4 /* ViewController.swift */,
-				84CB00241E2FB81D001DF6E4 /* Main.storyboard */,
 				84CB00271E2FB81D001DF6E4 /* Assets.xcassets */,
-				84CB00291E2FB81D001DF6E4 /* LaunchScreen.storyboard */,
 				84CB002C1E2FB81D001DF6E4 /* Info.plist */,
 			);
 			path = Tetris;
@@ -179,9 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84CB002B1E2FB81D001DF6E4 /* LaunchScreen.storyboard in Resources */,
 				84CB00281E2FB81D001DF6E4 /* Assets.xcassets in Resources */,
-				84CB00261E2FB81D001DF6E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,25 +213,6 @@
 			targetProxy = 84CB00321E2FB81D001DF6E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		84CB00241E2FB81D001DF6E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84CB00251E2FB81D001DF6E4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		84CB00291E2FB81D001DF6E4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84CB002A1E2FB81D001DF6E4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		84CB00381E2FB81D001DF6E4 /* Debug */ = {
