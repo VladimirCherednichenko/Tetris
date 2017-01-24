@@ -12,13 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var game: Game?
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let windowFrame = UIScreen.main.bounds
+        
         self.window = UIWindow(frame: windowFrame)
         
         let viewController = ViewController()
+        self.game = Game(viewController: viewController)
+        game?.fillCollor()
         window?.rootViewController = viewController
         
         window?.makeKeyAndVisible()
