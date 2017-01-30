@@ -32,8 +32,7 @@ class Movement:MovementProtocol{
             currentElementWithMove.append(elementIllAdd)}
             maxIndexOfCurrentElement=searchMaxNummberInArray(Array: currentElementWithMove)
         
-        gameObject.clearView()
-        if !stopY {gameObject.fillCollor(currentElementWithMove+savedElementsIndex)}
+        
         
         
         
@@ -41,11 +40,14 @@ class Movement:MovementProtocol{
             for indexOfCurrent in currentElementWithMove{
             if (indexOfCurrent+10)==indexOfSaved {savedElementsIndex=savedElementsIndex+currentElementWithMove
                 y=0
-                if indexOfCurrent < 20 {savedElementsIndex=[]
+                if indexOfCurrent < 20 {savedElementsIndex=[]; currentElementWithMove=[]
                 //stopY=true
                 }
                 element.changeElement()}
         }}
+        
+        gameObject.clearView()
+        gameObject.fillCollor(currentElementWithMove+savedElementsIndex)
         
             if maxIndexOfCurrentElement>=170 {
             savedElementsIndex=savedElementsIndex+currentElementWithMove
@@ -139,7 +141,7 @@ class Movement:MovementProtocol{
             for indexOfSaved in savedElementsIndex{
                 if (indexOfCurrent+10)==indexOfSaved {savedElementsIndex=savedElementsIndex+currentElementWithMove
                     y=0; stopTap=true
-                    if indexOfCurrent < 20 {savedElementsIndex=[]
+                    if indexOfCurrent < 20 {savedElementsIndex=[]; currentElementWithMove=[]
                         
                     }
                     element.changeElement()}

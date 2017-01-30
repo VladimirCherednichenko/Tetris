@@ -10,27 +10,31 @@ import UIKit
 
 
 class ViewController: UIViewController, GameDrow {
-    //internal var view: UIView
-
-    //var stackArray=[UIStackView]()
+   
     var timer:Int=0
-    var pixelArray=[UIView]()
+    
+    var pixelArray=[UIImageView]()
     
     func createPixelArray(){
         for indexOfPixel in 0...179{
             
-            let pixel=UIView()
+            let pixel=UIImageView(image: #imageLiteral(resourceName: "pixelDark"))
             pixel.translatesAutoresizingMaskIntoConstraints = false
-            pixel.backgroundColor=UIColor(patternImage:#imageLiteral(resourceName: "pixelDark"))
+            /*pixel.backgroundColor=UIColor(patternImage:#imageLiteral(resourceName: "pixelRed"))*/
+            pixel.contentMode = .scaleAspectFit
                         pixelArray.append(pixel)}}
     
     
     override func viewDidLoad() {
-       
+        
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
          createPixelArray()
-        view.backgroundColor = UIColor.red
+      
+        /*var backImage = UIImage(
+        
+        var resizablebackImage = backImage?.resizableImageWithCapInsets(UIEdgeInsets(top:10,left:0,bottom:10,right:0))*/
+        
         
         //Here I creaate vertical Stack, that hold all components
         let verticalStack = UIStackView()
@@ -96,7 +100,7 @@ class ViewController: UIViewController, GameDrow {
     
         
         
-        pixelArray[gameIndex].backgroundColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
+        pixelArray[gameIndex].image=#imageLiteral(resourceName: "pixelRed")
     }
     
     func clearThePixel(gameIndex:Int){
@@ -108,7 +112,7 @@ class ViewController: UIViewController, GameDrow {
     
     func clearView(){
         for element in pixelArray{
-        element.backgroundColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))}
+        element.image=#imageLiteral(resourceName: "pixelDark")}
     }
         
         
