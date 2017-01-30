@@ -6,42 +6,42 @@
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
-import Foundation
-protocol GameDrow {
-    func fillThePixel(gameIndex:Int)
-    func clearThePixel(gameIndex:Int)
-}
+import UIKit
 
-class Game {
+class Game:GameProtocol {
     
-    private var viewController:GameDrow
+    func clearView() {
+        self.viewController.clearView()
+    }
+
     
-    init(viewController:GameDrow)
-    {
+    var viewController:GameDrow
+    
+    var pixelIllFill:[Int]
+    
+    
+    
+    
+    init(viewController:GameDrow){
         self.viewController=viewController
-        fillCollor()
+        self.pixelIllFill=[4,3,5,6]
     }
     
     
     
     
-    func fillCollor(/*There I pass index of pixels Ill fill*/) {
+    func fillCollor(_ fillArray:[Int]) {
         
-        self.viewController.fillThePixel(gameIndex: 4)
-        self.viewController.fillThePixel(gameIndex: 3)
-        self.viewController.fillThePixel(gameIndex: 5)
-        self.viewController.fillThePixel(gameIndex: 6)
-clearThePixelCollor()
-    }
+        for element in fillArray{
+        self.viewController.fillThePixel(gameIndex: element)
+               }}
     
-    func clearThePixelCollor(/*There I pass index of pixels Ill clear*/) {
+    func clearThePixelCollor(_ cleanArray:[Int]) {
         
-        self.viewController.clearThePixel(gameIndex: 4)
-        self.viewController.clearThePixel(gameIndex: 3)
-        self.viewController.clearThePixel(gameIndex: 5)
-        self.viewController.clearThePixel(gameIndex: 6)
-        
+        for element in cleanArray{
+            self.viewController.clearThePixel(gameIndex: element)
+        }}
     }
 
 
-}
+

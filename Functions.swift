@@ -1,0 +1,79 @@
+//
+//  Functions.swift
+//  Tetris
+//
+//  Created by Admin on 30.01.17.
+//  Copyright © 2017 Apple. All rights reserved.
+//
+
+import Foundation
+func minInTens(_ Array:[Int])->Int{
+    var min:Int=2000
+    for element in Array{ if element % 10<min {min=element % 10}}
+    return min
+}
+
+func maxInTens(_ Array:[Int])->Int{
+    var max:Int=0
+    for element in Array{ if element % 10>max {max=element % 10}}
+    return max
+}
+
+func searchMaxNummberInArray(Array:[Int])->Int{
+    var max=0
+    for element in Array {
+        if element>max {max=element}
+    }
+    return max
+}
+
+func removeDuplicate(_ Array:[Int])->[Int]{
+    var newArray:[Int]=[]
+    var sortedArray:[Int]=[]
+    var count:Int=0
+    sortedArray=Array.sorted(by: >)
+    count=sortedArray.count
+    
+    for i in 0...(count-1)
+    {if i==(count-1) {newArray.append(sortedArray[i])}
+    else {
+        if sortedArray[i]==sortedArray[i+1] {}
+        else
+        {newArray.append(sortedArray[i])}}}
+    return newArray
+}
+
+func removeLine(_ Array:[Int])->[Int]{
+    var newArray:[Int]=Array
+    var count:Int=0
+    var countNumberTwo:Int=0
+    var arrDelete:[Int]=[]
+    var bufer:[Int]=[]
+    var currentElement:Int
+    var nextElement:Int
+    count=Array.count
+    for i in 0...(count-2)
+        
+    {
+        currentElement=Array[i]/10
+        nextElement=Array[i+1]/10
+        
+        if currentElement==nextElement {
+            countNumberTwo=countNumberTwo+1
+            if countNumberTwo==9 {
+                for j in i-8...i+1{
+                    arrDelete.append(Array[j])}
+                if count != i+2 {
+                    for i1 in i+2...count-1{arrDelete.append(Array[i1]); bufer.append(Array[i1]+10)}}
+            }
+            
+            
+        }
+        else {countNumberTwo=0}
+        
+    }
+    for element in arrDelete{
+        newArray=newArray.filter{$0 - element != 0}
+    }
+    return newArray+bufer
+}

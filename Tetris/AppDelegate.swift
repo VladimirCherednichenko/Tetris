@@ -17,12 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let windowFrame = UIScreen.main.bounds
-        
+       // let ticker=Ticker()
         self.window = UIWindow(frame: windowFrame)
         
         let viewController = ViewController()
+        
         self.game = Game(viewController: viewController)
-        game?.fillCollor()
+        let anObjectOfMovement=Movement(gameObject: game!)
+        var startTimer=ticker(gameObjectForMovement: game!,moveObject: anObjectOfMovement)
+        
+        var startTouch=Touch(gameObject:game!, viewObject:viewController, moveObject:anObjectOfMovement)
         window?.rootViewController = viewController
         
         window?.makeKeyAndVisible()

@@ -12,6 +12,12 @@
 		84CB00231E2FB81D001DF6E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00221E2FB81D001DF6E4 /* ViewController.swift */; };
 		84CB00281E2FB81D001DF6E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CB00271E2FB81D001DF6E4 /* Assets.xcassets */; };
 		84CB00361E2FB81D001DF6E4 /* TetrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00351E2FB81D001DF6E4 /* TetrisTests.swift */; };
+		84E6CF9B1E39283200003059 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CF9A1E39283200003059 /* Timer.swift */; };
+		84E6CF9F1E3A44E700003059 /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CF9E1E3A44E700003059 /* Touch.swift */; };
+		84E6CFA11E3AADD600003059 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CFA01E3AADD600003059 /* Protocols.swift */; };
+		84E6CFA31E3AC1A100003059 /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CFA21E3AC1A100003059 /* Movement.swift */; };
+		84E6CFA51E3B99A300003059 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CFA41E3B99A300003059 /* Elements.swift */; };
+		84ED60ED1E3E90E500770960 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED60EC1E3E90E500770960 /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,12 @@
 		84CB00311E2FB81D001DF6E4 /* TetrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CB00351E2FB81D001DF6E4 /* TetrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisTests.swift; sourceTree = "<group>"; };
 		84CB00371E2FB81D001DF6E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E6CF9A1E39283200003059 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = ../Timer.swift; sourceTree = "<group>"; };
+		84E6CF9E1E3A44E700003059 /* Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Touch.swift; path = ../Touch.swift; sourceTree = "<group>"; };
+		84E6CFA01E3AADD600003059 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = ../Protocols.swift; sourceTree = "<group>"; };
+		84E6CFA21E3AC1A100003059 /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movement.swift; path = ../Movement.swift; sourceTree = "<group>"; };
+		84E6CFA41E3B99A300003059 /* Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Elements.swift; path = ../Elements.swift; sourceTree = "<group>"; };
+		84ED60EC1E3E90E500770960 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = ../Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +87,15 @@
 		84CB001F1E2FB81D001DF6E4 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
+				84ED60EC1E3E90E500770960 /* Functions.swift */,
+				84E6CFA41E3B99A300003059 /* Elements.swift */,
+				84E6CFA21E3AC1A100003059 /* Movement.swift */,
+				84E6CFA01E3AADD600003059 /* Protocols.swift */,
 				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
 				848B433F1E3628C700029892 /* Game.swift */,
 				84CB00221E2FB81D001DF6E4 /* ViewController.swift */,
+				84E6CF9A1E39283200003059 /* Timer.swift */,
+				84E6CF9E1E3A44E700003059 /* Touch.swift */,
 				84CB00271E2FB81D001DF6E4 /* Assets.xcassets */,
 				84CB002C1E2FB81D001DF6E4 /* Info.plist */,
 			);
@@ -143,6 +161,7 @@
 				TargetAttributes = {
 					84CB001C1E2FB81D001DF6E4 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = UMPRH5R5SA;
 						ProvisioningStyle = Automatic;
 					};
 					84CB00301E2FB81D001DF6E4 = {
@@ -196,7 +215,13 @@
 			files = (
 				84CB00231E2FB81D001DF6E4 /* ViewController.swift in Sources */,
 				848B43401E3628C700029892 /* Game.swift in Sources */,
+				84ED60ED1E3E90E500770960 /* Functions.swift in Sources */,
 				84CB00211E2FB81D001DF6E4 /* AppDelegate.swift in Sources */,
+				84E6CFA31E3AC1A100003059 /* Movement.swift in Sources */,
+				84E6CFA11E3AADD600003059 /* Protocols.swift in Sources */,
+				84E6CF9F1E3A44E700003059 /* Touch.swift in Sources */,
+				84E6CFA51E3B99A300003059 /* Elements.swift in Sources */,
+				84E6CF9B1E39283200003059 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,9 +341,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UMPRH5R5SA;
 				INFOPLIST_FILE = Tetris/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = TEST.Tetris;
+				PRODUCT_BUNDLE_IDENTIFIER = VladimirChednichenco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -328,9 +354,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UMPRH5R5SA;
 				INFOPLIST_FILE = Tetris/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = TEST.Tetris;
+				PRODUCT_BUNDLE_IDENTIFIER = VladimirChednichenco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -10,8 +10,10 @@ import UIKit
 
 
 class ViewController: UIViewController, GameDrow {
+    //internal var view: UIView
+
     //var stackArray=[UIStackView]()
-    
+    var timer:Int=0
     var pixelArray=[UIView]()
     
     func createPixelArray(){
@@ -20,9 +22,7 @@ class ViewController: UIViewController, GameDrow {
             let pixel=UIView()
             pixel.translatesAutoresizingMaskIntoConstraints = false
             pixel.backgroundColor=UIColor(patternImage:#imageLiteral(resourceName: "pixelDark"))
-            /*if indexOfPixel==11 {pixel.backgroundColor=UIColor(patternImage:#imageLiteral(resourceName: "pixelRed"))}
-            if indexOfPixel==21 {pixel.backgroundColor=UIColor(patternImage:#imageLiteral(resourceName: "pixelRed"))}*/
-            pixelArray.append(pixel)}}
+                        pixelArray.append(pixel)}}
     
     
     override func viewDidLoad() {
@@ -58,7 +58,7 @@ class ViewController: UIViewController, GameDrow {
             verticalStack.addArrangedSubview(stackArray[j])
             
             
-            //var pixelArray=[UIView]()
+            
             
             for i in 0...9
             {  let index:Int=(i+j*10)
@@ -70,32 +70,48 @@ class ViewController: UIViewController, GameDrow {
             }
             
         }
+        
+        ///
+        /*let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(clearView))
+        
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respond))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(respond))
+        swipeUp.direction = .up
+        view.addGestureRecognizer(swipeUp)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(respond))
+        swipeDown.direction = .down
+        view.addGestureRecognizer(swipeDown)*/
+        
+        
     }
+    
     func fillThePixel(gameIndex:Int){
     
         
-        createPixelArray()
+        
         pixelArray[gameIndex].backgroundColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
     }
     
     func clearThePixel(gameIndex:Int){
         
         
-        createPixelArray()
+        
         pixelArray[gameIndex].backgroundColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
     }
     
-    
-    //stackArray[17].arrangedSubviews[2].backgroundColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func clearView(){
+        for element in pixelArray{
+        element.backgroundColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))}
+    }
+        
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
