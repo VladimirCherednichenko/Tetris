@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var game: Game?
+    
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -22,11 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let viewController = ViewController()
         
-        self.game = Game(viewController: viewController)
-        let anObjectOfMovement=Movement(gameObject: game!)
-        var startTimer=ticker(gameObjectForMovement: game!,moveObject: anObjectOfMovement)
         
-        var startTouch=Touch(gameObject:game!, viewObject:viewController, moveObject:anObjectOfMovement)
+        
+        let anObjectOfGame=Game(viewController: viewController)
+        
+        _=ticker(gameObject: anObjectOfGame)
+        
+        _=Touch(viewObject:viewController, gameObject:anObjectOfGame)
         window?.rootViewController = viewController
         
         window?.makeKeyAndVisible()

@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Tetris
-//
-//  Created by Admin on 18.01.17.
-//  Copyright © 2017 Apple. All rights reserved.
-//
-
 import UIKit
 
 
@@ -16,7 +8,7 @@ class ViewController: UIViewController, GameDrow {
     var pixelArray=[UIImageView]()
     
     func createPixelArray(){
-        for indexOfPixel in 0...179{
+        for _ in 0...179{
             
             let pixel=UIImageView(image: #imageLiteral(resourceName: "pixelDark"))
             pixel.translatesAutoresizingMaskIntoConstraints = false
@@ -75,24 +67,7 @@ class ViewController: UIViewController, GameDrow {
             
         }
         
-        ///
-        /*let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(clearView))
-        
-        swipeRight.direction = .right
-        view.addGestureRecognizer(swipeRight)
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respond))
-        swipeLeft.direction = .left
-        view.addGestureRecognizer(swipeLeft)
-        
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(respond))
-        swipeUp.direction = .up
-        view.addGestureRecognizer(swipeUp)
-        
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(respond))
-        swipeDown.direction = .down
-        view.addGestureRecognizer(swipeDown)*/
-        
+                
         
     }
     

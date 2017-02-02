@@ -20,15 +20,15 @@ protocol TimerTick{
     //func update()
 }
 
-protocol GameProtocol {
+/*protocol GameProtocol {
     var pixelIllFill:[Int]{get set}
     func fillCollor(_ fillArray: [Int])
     func clearThePixelCollor(_ cleanArray:[Int])
     func clearView()
     
-}
+}*/
 
-protocol MovementProtocol {
+protocol GameProtocol {
 func moveElementDown()
 func moveElementRight()
 func moveElementLeft()

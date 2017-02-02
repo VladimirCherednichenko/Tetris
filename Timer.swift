@@ -12,13 +12,13 @@ import UIKit
 
 class ticker:TimerTick {
     var timer:Int=0
-    var gameObjectForMovement:GameProtocol
-    var moveObject:MovementProtocol
-    init(gameObjectForMovement:GameProtocol,moveObject:MovementProtocol){
+    
+    var gameObject:GameProtocol
+    init(gameObject:GameProtocol){
         
         
-        self.gameObjectForMovement=gameObjectForMovement
-        self.moveObject=moveObject
+        
+        self.gameObject=gameObject
         Tick()}
     
  
@@ -27,6 +27,6 @@ class ticker:TimerTick {
 
     func Tick() {
         
-       _=Timer.scheduledTimer(timeInterval: 0.5, target: moveObject, selector: #selector(Movement.moveElementDown), userInfo: nil, repeats: true)
+       _=Timer.scheduledTimer(timeInterval: 0.5, target: gameObject, selector: #selector(Game.moveElementDown), userInfo: nil, repeats: true)
 }
     }

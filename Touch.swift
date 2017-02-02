@@ -9,28 +9,28 @@
 import Foundation
 import UIKit
 class Touch {
-    var gameObject:GameProtocol
+    
     var viewObject:GameDrow
-    var moveObject:MovementProtocol
-    init(gameObject:GameProtocol, viewObject:GameDrow, moveObject:MovementProtocol ){
-    self.gameObject=gameObject
+    var gameObject:GameProtocol
+    init(viewObject:GameDrow, gameObject:GameProtocol ){
+    
     self.viewObject=viewObject
-    self.moveObject=moveObject
+    self.gameObject=gameObject
         swipe()
     }
     
     func swipe(){
-        let swipeRight = UISwipeGestureRecognizer(target: moveObject, action: #selector(Movement.moveElementRight))
+        let swipeRight = UISwipeGestureRecognizer(target: gameObject, action: #selector(Game.moveElementRight))
         swipeRight.direction = .right
         viewObject.view.addGestureRecognizer(swipeRight)
-        let swipeLeft = UISwipeGestureRecognizer(target: moveObject, action: #selector(Movement.moveElementLeft))
+        let swipeLeft = UISwipeGestureRecognizer(target: gameObject, action: #selector(Game.moveElementLeft))
         swipeLeft.direction = .left
         viewObject.view.addGestureRecognizer(swipeLeft)
-       let swipeDown = UISwipeGestureRecognizer(target: moveObject, action: #selector(Movement.moveElementDownTouch))
+       let swipeDown = UISwipeGestureRecognizer(target: gameObject, action: #selector(Game.moveElementDownTouch))
         swipeDown.direction = .down
         viewObject.view.addGestureRecognizer(swipeDown)
     
-        let tap = UITapGestureRecognizer(target: moveObject, action: #selector(Movement.rotateElement))
+        let tap = UITapGestureRecognizer(target: gameObject, action: #selector(Game.rotateElement))
         
         viewObject.view.addGestureRecognizer(tap)
     }
