@@ -172,13 +172,32 @@ class Game:GameProtocol{
     
     
     @objc func rotateElement(){
-        figure.rotate()
-        
-        
         var indexesOfCurrentFigureOnView:[Int]=[]
         indexesOfCurrentFigureOnView=figure.getIndexForView()
         self.clearView()
         self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
+        
+        
+        
+        var figureChanged=false
+        if  figure.getIndexOfMaxY()<=16 {
+            for element in indexesOfCurrentFigureOnView{
+                for index in indexesOfSavedElements{
+                    if element+10==index {indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
+                        figure = provider.getNextFigure()
+                        figureChanged=true
+                    }
+                }}
+            if !figureChanged{
+                figure.rotate()}}
+        else {
+            figure = provider.getNextFigure()
+            indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView}
+        
+        if indexesOfSavedElements != [] {
+            indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
+            indexesOfSavedElements=removeLine(indexesOfSavedElements)
+        }
         /*var currentElementWithMove:[Int]=[]
          var maxIndexOfCurrentElement:Int=0
          var stopTap=false
