@@ -57,51 +57,11 @@ class Game:GameProtocol{
         if indexesOfSavedElements != [] {
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
             indexesOfSavedElements=removeLine(indexesOfSavedElements)
-        }
         
-        /*
-         var currentElementWithMove:[Int]=[]
-         var maxIndexOfCurrentElement:Int=0
-         currentElementIndex=element.indexOfCurrent
-         
-         for element in currentElementIndex{
-         let elementIllAdd:Int
-         elementIllAdd=element+y
-         currentElementWithMove.append(elementIllAdd)}
-         maxIndexOfCurrentElement=searchMaxNummberInArray(Array: currentElementWithMove)
-         
-         
-         
-         
-         
-         for indexOfSaved in savedElementsIndex{
-         for indexOfCurrent in currentElementWithMove{
-         if (indexOfCurrent+10)==indexOfSaved {savedElementsIndex=savedElementsIndex+currentElementWithMove
-         y=0
-         if indexOfCurrent < 20 {savedElementsIndex=[]; currentElementWithMove=[]
-         //stopY=true
-         }
-         element.changeElement()}
-         }}
-         
-         self.clearView()
-         self.fillCollor(currentElementWithMove+savedElementsIndex)
-         
-         if maxIndexOfCurrentElement>=170 {
-         savedElementsIndex=savedElementsIndex+currentElementWithMove
-         y=0
-         element.changeElement()
-         }
-         if savedElementsIndex==[] {} else {
-         savedElementsIndex=removeDuplicate(savedElementsIndex)
-         savedElementsIndex=removeLine(savedElementsIndex)
-         }
-         
-         
-         
-         if !stopY {y=y+10}
-         */
         
+       indexesOfSavedElements=indexesOfSavedElements.sorted(by: <)
+        if 10>indexesOfSavedElements[0]{indexesOfSavedElements=[]}
+            print(indexesOfSavedElements)}
     }
     
     
@@ -116,20 +76,7 @@ class Game:GameProtocol{
         self.clearView()
         self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         
-        /*var currentElementWithMove:[Int]=[]
-         var bufer:Int
-         currentElementIndex=element.indexOfCurrent
-         bufer=(maxInTens(currentElementIndex)+y) % 10
-         
-         if bufer<9 {y=y+1}
-         for element in currentElementIndex{
-         let elementIllAdd:Int
-         elementIllAdd=element+y
-         currentElementWithMove.append(elementIllAdd)}
-         
-         
-         self.clearView()
-         if !stopY {self.fillCollor(currentElementWithMove+savedElementsIndex)}*/
+        
         
         }
     }
@@ -142,22 +89,7 @@ class Game:GameProtocol{
         self.clearView()
         self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         
-        /*var currentElementWithMove:[Int]=[]
-         var bufer:Int
-         
-         currentElementIndex=element.indexOfCurrent
-         bufer=(minInTens(currentElementIndex)+y)%10
-         
-         
-         if bufer>=1 {y=y-1}
-         for element in currentElementIndex{
-         let elementIllAdd:Int
-         elementIllAdd=element+y
-         currentElementWithMove.append(elementIllAdd)}
-         
-         
-         self.clearView()
-         if !stopY {self.fillCollor(currentElementWithMove+savedElementsIndex)}*/
+       
         
         }
     }
@@ -198,47 +130,7 @@ class Game:GameProtocol{
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
             indexesOfSavedElements=removeLine(indexesOfSavedElements)
         }
-        /*var currentElementWithMove:[Int]=[]
-         var maxIndexOfCurrentElement:Int=0
-         var stopTap=false
-         
-         currentElementIndex=element.indexOfCurrent
-         
-         for element in currentElementIndex{
-         let elementIllAdd:Int
-         elementIllAdd=element+y
-         currentElementWithMove.append(elementIllAdd)}
-         maxIndexOfCurrentElement=searchMaxNummberInArray(Array: currentElementWithMove)
-         
-         
-         
-         
-         
-         for indexOfCurrent in currentElementWithMove{
-         if indexOfCurrent>149{stopTap=true}
-         for indexOfSaved in savedElementsIndex{
-         if (indexOfCurrent+10)==indexOfSaved {savedElementsIndex=savedElementsIndex+currentElementWithMove
-         y=0; stopTap=true
-         if indexOfCurrent < 20 {savedElementsIndex=[]; currentElementWithMove=[]
-         
-         }
-         element.changeElement()}
-         }}
-         
-         if !stopTap {element.rotate()}
-         self.clearView()
-         self.fillCollor(currentElementWithMove+savedElementsIndex)
-         
-         if maxIndexOfCurrentElement>=170 {
-         savedElementsIndex=savedElementsIndex+currentElementWithMove
-         y=0
-         element.changeElement()
-         }
-         if savedElementsIndex==[] {} else {
-         savedElementsIndex=removeDuplicate(savedElementsIndex)
-         savedElementsIndex=removeLine(savedElementsIndex)
-         }
-         */
+        
         
         
         
