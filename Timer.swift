@@ -27,6 +27,6 @@ class ticker:TimerTick {
 
     func Tick() {
         
-       _=Timer.scheduledTimer(timeInterval: 0.5, target: gameObject, selector: #selector(Game.moveElementDown), userInfo: nil, repeats: true)
+       _=Timer.scheduledTimer(timeInterval: 2, target: gameObject, selector: #selector(Game.moveElementDown), userInfo: nil, repeats: true)
 }
     }

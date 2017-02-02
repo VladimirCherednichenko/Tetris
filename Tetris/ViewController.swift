@@ -73,7 +73,7 @@ class ViewController: UIViewController, GameDrow {
     
     func fillThePixel(gameIndex:Int){
     
-        
+        print("index=\(gameIndex)")
         
         pixelArray[gameIndex].image=#imageLiteral(resourceName: "pixelRed")
     }

@@ -29,32 +29,15 @@ class Game:GameProtocol{
     func clearThePixelCollor(_ cleanArray:[Int]) {for element in cleanArray{self.viewController.clearThePixel(gameIndex: element)}}
     
     
+    
     @objc func moveElementDown() {
         
         var indexesOfCurrentFigureOnView:[Int]=[]
         indexesOfCurrentFigureOnView=figure.getIndexForView()
-        
-        
-        /*for element in figure.offsetOfPoiIts{
-         
-         let ellementIllappend = element.x + element.y*10
-         
-         currentElementIndex.append(ellementIllappend)
-         
-         }
-         _=figure.offsetOfPoiIts.map{
-         let ellementIllappend=$0.x + $0.y*10+figure.startPoint.y*10+figure.startPoint.x
-         figureWithMovement.append(ellementIllappend)
-         
-         }*/
-        
-        
         self.clearView()
-        
         self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
-        print(figure.startPoint.y)
-        print(indexesOfCurrentFigureOnView)
-        print(figure.getIndexOfMaxY())
+        
+       
         
         var figureChanged=false
         if  figure.getIndexOfMaxY()<=16 {
@@ -124,8 +107,14 @@ class Game:GameProtocol{
     
     
     @objc func moveElementRight(){
+        print(figure.getMaxX())
+        if figure.getMaxX()+figure.startPoint.x<9{
+        figure.moveFigureRight()
         
-        
+        var indexesOfCurrentFigureOnView:[Int]=[]
+        indexesOfCurrentFigureOnView=figure.getIndexForView()
+        self.clearView()
+        self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         
         /*var currentElementWithMove:[Int]=[]
          var bufer:Int
@@ -142,9 +131,16 @@ class Game:GameProtocol{
          self.clearView()
          if !stopY {self.fillCollor(currentElementWithMove+savedElementsIndex)}*/
         
-        
+        }
     }
     @objc func moveElementLeft(){
+        if figure.getMinX()+figure.startPoint.x>0{
+        figure.moveFigureLeft()
+        
+        var indexesOfCurrentFigureOnView:[Int]=[]
+        indexesOfCurrentFigureOnView=figure.getIndexForView()
+        self.clearView()
+        self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         
         /*var currentElementWithMove:[Int]=[]
          var bufer:Int
@@ -163,7 +159,7 @@ class Game:GameProtocol{
          self.clearView()
          if !stopY {self.fillCollor(currentElementWithMove+savedElementsIndex)}*/
         
-        
+        }
     }
     @objc func moveElementDownTouch(){
         
@@ -176,7 +172,13 @@ class Game:GameProtocol{
     
     
     @objc func rotateElement(){
+        figure.rotate()
         
+        
+        var indexesOfCurrentFigureOnView:[Int]=[]
+        indexesOfCurrentFigureOnView=figure.getIndexForView()
+        self.clearView()
+        self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         /*var currentElementWithMove:[Int]=[]
          var maxIndexOfCurrentElement:Int=0
          var stopTap=false

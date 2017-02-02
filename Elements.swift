@@ -171,7 +171,7 @@ class Figure {
             
          
          }
-        return figureWithMovement.sorted(by: >)
+        return figureWithMovement.sorted(by: >).filter({return $0>=0})
     }
     func getIndexOfMaxY()->Int{
         var max:Int=0
@@ -191,21 +191,21 @@ class Figure {
     
     
     
-    func getIndexOfMaxX()->Int{
+    func getMaxX()->Int{
         var max:Int=0
         for element in offsetOfPoiIts{
             if element.x>max{max=element.x}
         }
-        return max+startPoint.x}
+        return max}
     
     
     
-    func getIndexOfMinX()->Int{
+    func getMinX()->Int{
         var min:Int=50
         for element in offsetOfPoiIts{
             if element.x<min{min=element.x}
         }
-        return min+startPoint.x}
+        return min}
     
 }
 
@@ -228,29 +228,29 @@ class Factory
     static func element1()
         -> Figure
     {
-        return Figure(offsetPoints: [Point(x:0,y:0),Point(x:1, y:0),Point(x:2, y:0),Point(x:3, y:0)])
-    }
-    
-    static func element2()
-        -> Figure
-    {
-        return Figure(offsetPoints: [Point(x:0,y:0),Point(x:1, y:0),Point(x:2, y:0),Point(x:1, y:1)])
+        return Figure(offsetPoints: [Point(x:-1,y:0),Point(x:0, y:0),Point(x:1, y:0),Point(x:2, y:0)])
     }
     
     static func element3()
         -> Figure
     {
-        return Figure(offsetPoints: [Point(x:0,y:0),Point(x:1, y:0),Point(x:1, y:1),Point(x:1, y:2)])
+        return Figure(offsetPoints: [Point(x:-1,y:0),Point(x:0, y:0),Point(x:1, y:0),Point(x:0, y:1)])
     }
+    
     static func element4()
         -> Figure
     {
-        return Figure(offsetPoints: [Point(x:0,y:0),Point(x:1, y:0),Point(x:0, y:1),Point(x:1, y:1)])
+        return Figure(offsetPoints: [Point(x:-1,y:-1),Point(x:0, y:-1),Point(x:0, y:0),Point(x:0, y:1)])
     }
     static func element5()
         -> Figure
     {
-        return Figure(offsetPoints: [Point(x:0,y:1),Point(x:1, y:1),Point(x:1, y:0),Point(x:2, y:0)])
+        return Figure(offsetPoints: [Point(x:0,y:0),Point(x:1, y:0),Point(x:0, y:1),Point(x:1, y:1)])
+    }
+    static func element2()
+        -> Figure
+    {
+        return Figure(offsetPoints: [Point(x:-1,y:0),Point(x:0, y:0),Point(x:0, y:-1),Point(x:1, y:-1)])
     }
     
 }
