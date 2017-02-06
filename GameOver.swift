@@ -26,27 +26,26 @@ class GameOver: UIViewController {
 
         let label=UILabel()
         label.text="Game Over"
-        label.textColor=UIColor.red
+        label.textColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
         label.textAlignment = .center
-        label.font=UIFont(name: "ITF Devanagari", size: 1)
-        label.font = label.font.withSize(50)
+        //label.font=UIFont(name: "ITF Devanagari", size: 1)
+        //label.font = label.font.withSize(50)
+        label.font = UIFont.boldSystemFont(ofSize: 70.0)
         
         
+        //label.font.fontName = 1
         label.translatesAutoresizingMaskIntoConstraints=false
+        let label1=UILabel()
+        label1.text="Test"
+        label1.textColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
+        label1.textAlignment = .right
+        label1.font=UIFont(name: "ITF Devanagari", size: 1)
+        label1.font = label.font.withSize(30.0)
+        
         
         verticalStack.addArrangedSubview(label)
-        label.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
-        label.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
-        label.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
-        label.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
+        verticalStack.addArrangedSubview(label1)
         
-        let button=UIButton()
-        
-        verticalStack.addArrangedSubview(button)
-        button.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
-        button.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
-        button.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
-        button.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
         
             }
 }

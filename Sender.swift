@@ -20,6 +20,7 @@ class Sender:protocolGameOver{
     var timer=ticker(gameObject: anObjectOfGame)
     _=Touch(viewObject:viewController, gameObject:anObjectOfGame)
         navigationViewController.pushViewController(viewController, animated: true)
+        //sendGameOverScrean()
         
     }
     func sendGameOverScrean() {
