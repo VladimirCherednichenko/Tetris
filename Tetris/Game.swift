@@ -15,11 +15,14 @@ class Game:GameProtocol{
     var indexesOfSavedElements:[Int]=[]
     var provider=Provider()
     var figure:Figure
-    
-    init(viewController:GameDrow){
-        
+    var senderObject:protocolGameOver
+    init(viewController:GameDrow,senderObject:protocolGameOver){
+        self.senderObject=senderObject
         self.viewController=viewController
         figure=provider.getNextFigure()
+    }
+    deinit {
+        
     }
     
     func clearView() {self.viewController.clearView()}
@@ -58,16 +61,20 @@ class Game:GameProtocol{
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
             indexesOfSavedElements=removeLine(indexesOfSavedElements)
         
-        
+        //there begins Game Over
        indexesOfSavedElements=indexesOfSavedElements.sorted(by: <)
-        if 10>indexesOfSavedElements[0]{indexesOfSavedElements=[]}
-            print(indexesOfSavedElements)}
+            if 10>indexesOfSavedElements[0]{
+                indexesOfSavedElements=[]
+                senderObject.sendGameOverScrean()
+                
+            }
+            }
     }
     
     
     
     @objc func moveElementRight(){
-        print(figure.getMaxX())
+        
         if figure.getMaxX()+figure.startPoint.x<9{
         figure.moveFigureRight()
         

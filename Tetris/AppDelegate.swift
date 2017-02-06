@@ -9,28 +9,26 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate {
 
     var window: UIWindow?
     
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
         let windowFrame = UIScreen.main.bounds
-       // let ticker=Ticker()
+       
         self.window = UIWindow(frame: windowFrame)
+        let navigationViewController = UINavigationController()
+        _=Sender(navigationViewController: navigationViewController)
         
-        let viewController = ViewController()
         
         
         
-        let anObjectOfGame=Game(viewController: viewController)
-        
-        _=ticker(gameObject: anObjectOfGame)
-        
-        _=Touch(viewObject:viewController, gameObject:anObjectOfGame)
-        window?.rootViewController = viewController
-        
+        navigationViewController.navigationBar.isHidden=true
+        window?.rootViewController = navigationViewController
         window?.makeKeyAndVisible()
         
         return true

@@ -82,7 +82,7 @@ class Element{
                 break
             }
             if rotateCount<3 {rotateCount=rotateCount+1} else {rotateCount=0}
-            //print(rotateCount)
+            
             
         case 3:
             element4()
@@ -103,7 +103,7 @@ class Element{
                 break
             }
             if rotateCount<3 {rotateCount=rotateCount+1} else {rotateCount=0}
-            //print(rotateCount)
+           
             
             
         default:

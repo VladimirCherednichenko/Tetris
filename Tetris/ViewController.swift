@@ -73,7 +73,7 @@ class ViewController: UIViewController, GameDrow {
     
     func fillThePixel(gameIndex:Int){
     
-        print("index=\(gameIndex)")
+        
         
         pixelArray[gameIndex].image=#imageLiteral(resourceName: "pixelRed")
     }
@@ -96,6 +96,9 @@ class ViewController: UIViewController, GameDrow {
         // Dispose of any resources that can be recreated.
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     
 }
 

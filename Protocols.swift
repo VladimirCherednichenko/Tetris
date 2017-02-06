@@ -15,18 +15,16 @@ protocol GameDrow {
     var view: UIView! {get}
 }
 protocol TimerTick{
-    //var time:Int{get}
-    //func Tick()
-    //func update()
+    
+    func Tick()
+    func stopTick()
 }
 
-/*protocol GameProtocol {
-    var pixelIllFill:[Int]{get set}
-    func fillCollor(_ fillArray: [Int])
-    func clearThePixelCollor(_ cleanArray:[Int])
-    func clearView()
+protocol protocolGameOver {
     
-}*/
+    func sendGameOverScrean()
+    
+}
 
 protocol GameProtocol {
 func moveElementDown()

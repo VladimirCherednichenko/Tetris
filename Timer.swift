@@ -11,12 +11,10 @@ import UIKit
 
 
 class ticker:TimerTick {
-    var timer:Int=0
+    var timer=Timer()
     
     var gameObject:GameProtocol
     init(gameObject:GameProtocol){
-        
-        
         
         self.gameObject=gameObject
         Tick()}
@@ -27,6 +25,9 @@ class ticker:TimerTick {
 
     func Tick() {
         
-       _=Timer.scheduledTimer(timeInterval: 0.5, target: gameObject, selector: #selector(Game.moveElementDown), userInfo: nil, repeats: true)
+        timer=Timer.scheduledTimer(timeInterval: 0.1, target: gameObject, selector: #selector(Game.moveElementDown), userInfo: nil, repeats: true)
 }
+    func stopTick() {
+        timer.invalidate()
+    }
     }
