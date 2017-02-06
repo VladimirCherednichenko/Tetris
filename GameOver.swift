@@ -14,7 +14,7 @@ class GameOver: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor=UIColor.gray
+        view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
         let verticalStack=UIStackView()
         verticalStack.translatesAutoresizingMaskIntoConstraints=false
         verticalStack.axis = .vertical
@@ -28,12 +28,25 @@ class GameOver: UIViewController {
         label.text="Game Over"
         label.textColor=UIColor.red
         label.textAlignment = .center
+        label.font=UIFont(name: "ITF Devanagari", size: 1)
+        label.font = label.font.withSize(50)
+        
+        
         label.translatesAutoresizingMaskIntoConstraints=false
         
-        verticalStack.addSubview(label)
+        verticalStack.addArrangedSubview(label)
         label.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
         label.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
         label.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
         label.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
+        
+        let button=UIButton()
+        
+        verticalStack.addArrangedSubview(button)
+        button.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
+        button.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
+        button.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
+        button.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
+        
             }
 }
