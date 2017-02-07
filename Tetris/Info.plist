@@ -8,6 +8,7 @@
 	<array>
 		<string>XPED Shadow.ttf</string>
 		<string>Xacto Blade.ttf</string>
+		<string>Xposed.ttf</string>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>

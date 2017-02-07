@@ -22,6 +22,7 @@ class Sender:protocolGameOver{
         //
     self.navigationViewController=navigationViewController
     newGame()
+     sendGameOverScrean()
         }
     //init
     @objc func newGame() {

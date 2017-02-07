@@ -27,41 +27,46 @@ class GameOver: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
         let verticalStack=UIStackView()
+        
         verticalStack.translatesAutoresizingMaskIntoConstraints=false
         verticalStack.axis = .vertical
-        view.addSubview(verticalStack)
-        verticalStack.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
+        //view.addSubview(verticalStack)
+        /*verticalStack.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
         verticalStack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
         verticalStack.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
-        verticalStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
-        
+        //verticalStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
+        */
         let gameOverLabel=UILabel()
         gameOverLabel.text="Game Over"
         gameOverLabel.textColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
         gameOverLabel.textAlignment = .center
-        gameOverLabel.font=UIFont(name: "XPED Shadow", size: 55.0)
+        gameOverLabel.font=UIFont(name: "XPED Shadow", size: 60.0   )
         
         
         
         gameOverLabel.translatesAutoresizingMaskIntoConstraints=false
-        let testLabel=UILabel()
-        testLabel.text="Test"
-        testLabel.textColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
-        testLabel.textAlignment = .right
-        testLabel.font=UIFont(name: "XPED Shadow", size: 20.0)
         
-        let restartButton=UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        
+        let restartButton=UIButton()
         restartButton.translatesAutoresizingMaskIntoConstraints=false
         
         
-        verticalStack.addArrangedSubview(gameOverLabel)
         
         
-        verticalStack.addArrangedSubview(restartButton)
-        verticalStack.addArrangedSubview(testLabel)
+        view.addSubview(gameOverLabel)
+        gameOverLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive=true
+        gameOverLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive=true
+        view.addSubview(restartButton)
+        restartButton.topAnchor.constraint(equalTo: gameOverLabel.bottomAnchor).isActive=true
+        restartButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive=true
         restartButton.setTitle("Restart", for: .normal)
+       
+        restartButton.titleLabel?.font=UIFont(name: "XPED Shadow", size: 45.0)
         restartButton.addTarget(senderObject, action: #selector(senderObject.newGame), for: .touchUpInside)
         
         
+    }
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 }
