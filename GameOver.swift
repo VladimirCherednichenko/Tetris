@@ -11,6 +11,17 @@ import Foundation
 import UIKit
 
 class GameOver: UIViewController {
+    var senderObject:protocolGameOver
+    
+    init(senderObject:protocolGameOver){
+        self.senderObject=senderObject
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,29 +34,34 @@ class GameOver: UIViewController {
         verticalStack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
         verticalStack.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
         verticalStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
-
-        let label=UILabel()
-        label.text="Game Over"
-        label.textColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
-        label.textAlignment = .center
-        //label.font=UIFont(name: "ITF Devanagari", size: 1)
-        //label.font = label.font.withSize(50)
-        label.font = UIFont.boldSystemFont(ofSize: 70.0)
+        
+        let gameOverLabel=UILabel()
+        gameOverLabel.text="Game Over"
+        gameOverLabel.textColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
+        gameOverLabel.textAlignment = .center
+        gameOverLabel.font=UIFont(name: "XPED Shadow", size: 55.0)
         
         
-        //label.font.fontName = 1
-        label.translatesAutoresizingMaskIntoConstraints=false
-        let label1=UILabel()
-        label1.text="Test"
-        label1.textColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
-        label1.textAlignment = .right
-        label1.font=UIFont(name: "ITF Devanagari", size: 1)
-        label1.font = label.font.withSize(30.0)
+        
+        gameOverLabel.translatesAutoresizingMaskIntoConstraints=false
+        let testLabel=UILabel()
+        testLabel.text="Test"
+        testLabel.textColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
+        testLabel.textAlignment = .right
+        testLabel.font=UIFont(name: "XPED Shadow", size: 20.0)
+        
+        let restartButton=UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        restartButton.translatesAutoresizingMaskIntoConstraints=false
         
         
-        verticalStack.addArrangedSubview(label)
-        verticalStack.addArrangedSubview(label1)
+        verticalStack.addArrangedSubview(gameOverLabel)
         
         
-            }
+        verticalStack.addArrangedSubview(restartButton)
+        verticalStack.addArrangedSubview(testLabel)
+        restartButton.setTitle("Restart", for: .normal)
+        restartButton.addTarget(senderObject, action: #selector(senderObject.newGame), for: .touchUpInside)
+        
+        
+    }
 }

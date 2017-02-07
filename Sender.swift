@@ -9,23 +9,54 @@
 import Foundation
 import UIKit
 class Sender:protocolGameOver{
-    let gameOverScrean=GameOver()
+    var gameOverScrean:GameOver!
     let navigationViewController:UINavigationController
-    let viewController = ViewController()
+    var viewController = ViewController()
+    var game: Game!
+    var timer:ticker!
+    var touch:Touch!
+    //init
+    
     
     init(navigationViewController:UINavigationController){
+        //
     self.navigationViewController=navigationViewController
-    
-    let anObjectOfGame=Game(viewController: viewController, senderObject: self)
-    var timer=ticker(gameObject: anObjectOfGame)
-    _=Touch(viewObject:viewController, gameObject:anObjectOfGame)
-        navigationViewController.pushViewController(viewController, animated: true)
-        //sendGameOverScrean()
+    newGame()
+        }
+    //init
+    @objc func newGame() {
+    self.viewController = ViewController()
+    game=nil
+    timer=nil
+    touch=nil
         
+        self.game=Game(viewController: viewController, senderObject: self)
+        timer=ticker(gameObject: game)
+        touch=Touch(viewObject:viewController, gameObject:game)
+        navigationViewController.pushViewController(viewController, animated: false)
+
     }
+    
     func sendGameOverScrean() {
     //timerObject.stopTick
+    gameOverScrean=nil
+    self.gameOverScrean=GameOver(senderObject: self)
     navigationViewController.popViewController(animated: false)
     navigationViewController.pushViewController(gameOverScrean, animated: false)
+        
     }
+}
+
+class NewGame{
+     var navigationControllerObject:UINavigationController
+    
+    init(navigationViewController:UINavigationController){
+        self.navigationControllerObject=navigationViewController
+        
+        }
+    
+   func createNewGame(){
+    
+    let senderObject=Sender(navigationViewController: navigationControllerObject)}
+
 }

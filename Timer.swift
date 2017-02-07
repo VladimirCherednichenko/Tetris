@@ -25,7 +25,7 @@ class ticker:TimerTick {
 
     func Tick() {
         
-        timer=Timer.scheduledTimer(timeInterval: 0.1, target: gameObject, selector: #selector(Game.moveElementDown), userInfo: nil, repeats: true)
+        timer=Timer.scheduledTimer(timeInterval: 0.5, target: gameObject, selector: #selector(Game.moveElementDown), userInfo: nil, repeats: true)
 }
     func stopTick() {
         timer.invalidate()

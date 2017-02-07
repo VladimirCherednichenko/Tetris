@@ -21,6 +21,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let windowFrame = UIScreen.main.bounds
        
         self.window = UIWindow(frame: windowFrame)
+        
         let navigationViewController = UINavigationController()
         _=Sender(navigationViewController: navigationViewController)
         

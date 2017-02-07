@@ -20,9 +20,11 @@ protocol TimerTick{
     func stopTick()
 }
 
-protocol protocolGameOver {
+
+@objc protocol protocolGameOver {
     
     func sendGameOverScrean()
+    @objc func newGame()
     
 }
 

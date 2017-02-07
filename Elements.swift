@@ -231,23 +231,23 @@ class Factory
         return Figure(offsetPoints: [Point(x:-1,y:0),Point(x:0, y:0),Point(x:1, y:0),Point(x:2, y:0)])
     }
     
-    static func element3()
+    static func element2()
         -> Figure
     {
         return Figure(offsetPoints: [Point(x:-1,y:0),Point(x:0, y:0),Point(x:1, y:0),Point(x:0, y:1)])
     }
     
-    static func element4()
+    static func element3()
         -> Figure
     {
         return Figure(offsetPoints: [Point(x:-1,y:-1),Point(x:0, y:-1),Point(x:0, y:0),Point(x:0, y:1)])
     }
-    static func element5()
+    static func element4()
         -> Figure
     {
         return Figure(offsetPoints: [Point(x:0,y:0),Point(x:1, y:0),Point(x:0, y:1),Point(x:1, y:1)])
     }
-    static func element2()
+    static func element5()
         -> Figure
     {
         return Figure(offsetPoints: [Point(x:-1,y:0),Point(x:0, y:0),Point(x:0, y:-1),Point(x:1, y:-1)])
