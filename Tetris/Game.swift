@@ -43,10 +43,12 @@ class Game:GameProtocol{
        
         
         var figureChanged=false
+        print(figure.getIndexOfMaxY())
         if  figure.getIndexOfMaxY()<=16 {
             for element in indexesOfCurrentFigureOnView{
                 for index in indexesOfSavedElements{
-                    if element+10==index {indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
+                    if element+10==index {
+                        indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
                         figure = provider.getNextFigure()
                         figureChanged=true
                         }
@@ -56,14 +58,15 @@ class Game:GameProtocol{
         else {
             figure = provider.getNextFigure()
             indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView}
-        
+       
         if indexesOfSavedElements != [] {
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
             indexesOfSavedElements=removeLine(indexesOfSavedElements)
-        
+            print(indexesOfSavedElements)
         //there begins Game Over
        indexesOfSavedElements=indexesOfSavedElements.sorted(by: <)
             if 10>indexesOfSavedElements[0]{
+             
                 indexesOfSavedElements=[]
                 senderObject.sendGameOverScrean()
                 

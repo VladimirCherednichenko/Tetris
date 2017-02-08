@@ -22,14 +22,12 @@ class Sender:protocolGameOver{
         //
     self.navigationViewController=navigationViewController
     newGame()
-     sendGameOverScrean()
+     //sendGameOverScrean()
         }
     //init
     @objc func newGame() {
     self.viewController = ViewController()
-    game=nil
-    timer=nil
-    touch=nil
+    
         
         self.game=Game(viewController: viewController, senderObject: self)
         timer=ticker(gameObject: game)
@@ -40,7 +38,11 @@ class Sender:protocolGameOver{
     
     func sendGameOverScrean() {
     //timerObject.stopTick
-    gameOverScrean=nil
+    self.gameOverScrean=nil
+        self.game=nil
+        timer.stopTick()
+        self.timer=nil
+        self.touch=nil
     self.gameOverScrean=GameOver(senderObject: self)
     navigationViewController.popViewController(animated: false)
     navigationViewController.pushViewController(gameOverScrean, animated: false)

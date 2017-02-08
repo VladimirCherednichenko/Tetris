@@ -44,27 +44,29 @@ func removeDuplicate(_ Array:[Int])->[Int]{
 }
 
 func removeLine(_ Array:[Int])->[Int]{
-    var newArray:[Int]=Array
+    
+    var inputArray=Array.sorted(by: >)
+    var newArray:[Int]=inputArray
     var count:Int=0
     var countNumberTwo:Int=0
     var arrDelete:[Int]=[]
     var bufer:[Int]=[]
     var currentElement:Int
     var nextElement:Int
-    count=Array.count
+    count=inputArray.count
     for i in 0...(count-2)
         
     {
-        currentElement=Array[i]/10
-        nextElement=Array[i+1]/10
+        currentElement=inputArray[i]/10
+        nextElement=inputArray[i+1]/10
         
         if currentElement==nextElement {
             countNumberTwo=countNumberTwo+1
             if countNumberTwo==9 {
                 for j in i-8...i+1{
-                    arrDelete.append(Array[j])}
+                    arrDelete.append(inputArray[j])}
                 if count != i+2 {
-                    for i1 in i+2...count-1{arrDelete.append(Array[i1]); bufer.append(Array[i1]+10)}}
+                    for i1 in i+2...count-1{arrDelete.append(inputArray[i1]); bufer.append(inputArray[i1]+10)}}
             }
             
             
