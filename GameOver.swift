@@ -30,12 +30,7 @@ class GameOver: UIViewController {
         
         verticalStack.translatesAutoresizingMaskIntoConstraints=false
         verticalStack.axis = .vertical
-        //view.addSubview(verticalStack)
-        /*verticalStack.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
-        verticalStack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
-        verticalStack.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
-        //verticalStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
-        */
+       
         let gameOverLabel=UILabel()
         gameOverLabel.text="Game Over"
         gameOverLabel.textColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelRed"))
@@ -63,7 +58,7 @@ class GameOver: UIViewController {
        
         restartButton.titleLabel?.font=UIFont(name: "XPED Shadow", size: 45.0)
         restartButton.addTarget(senderObject, action: #selector(senderObject.newGame), for: .touchUpInside)
-        
+        //restartButton.addTarget(self, action: , for: <#T##UIControlEvents#>)
         
     }
     override var prefersStatusBarHidden: Bool {

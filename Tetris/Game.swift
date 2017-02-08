@@ -40,7 +40,7 @@ class Game:GameProtocol{
         self.clearView()
         self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         
-       
+        
         
         var figureChanged=false
         print(figure.getIndexOfMaxY())
@@ -51,27 +51,27 @@ class Game:GameProtocol{
                         indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
                         figure = provider.getNextFigure()
                         figureChanged=true
-                        }
+                    }
                 }}
             if !figureChanged{
-                figure.moveFigureDown()}}
-        else {
+                figure.moveFigureDown()}
+        } else {
             figure = provider.getNextFigure()
             indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView}
-       
+        
         if indexesOfSavedElements != [] {
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
             indexesOfSavedElements=removeLine(indexesOfSavedElements)
             print(indexesOfSavedElements)
-        //there begins Game Over
-       indexesOfSavedElements=indexesOfSavedElements.sorted(by: <)
+            //there begins Game Over
+            indexesOfSavedElements=indexesOfSavedElements.sorted(by: <)
             if 10>indexesOfSavedElements[0]{
-             
+                
                 indexesOfSavedElements=[]
                 senderObject.sendGameOverScrean()
                 
             }
-            }
+        }
     }
     
     
@@ -79,28 +79,28 @@ class Game:GameProtocol{
     @objc func moveElementRight(){
         
         if figure.getMaxX()+figure.startPoint.x<9{
-        figure.moveFigureRight()
-        
-        var indexesOfCurrentFigureOnView:[Int]=[]
-        indexesOfCurrentFigureOnView=figure.getIndexForView()
-        self.clearView()
-        self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
-        
-        
-        
+            figure.moveFigureRight()
+            
+            var indexesOfCurrentFigureOnView:[Int]=[]
+            indexesOfCurrentFigureOnView=figure.getIndexForView()
+            self.clearView()
+            self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
+            
+            
+            
         }
     }
     @objc func moveElementLeft(){
         if figure.getMinX()+figure.startPoint.x>0{
-        figure.moveFigureLeft()
-        
-        var indexesOfCurrentFigureOnView:[Int]=[]
-        indexesOfCurrentFigureOnView=figure.getIndexForView()
-        self.clearView()
-        self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
-        
-       
-        
+            figure.moveFigureLeft()
+            
+            var indexesOfCurrentFigureOnView:[Int]=[]
+            indexesOfCurrentFigureOnView=figure.getIndexForView()
+            self.clearView()
+            self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
+            
+            
+            
         }
     }
     @objc func moveElementDownTouch(){
@@ -131,8 +131,8 @@ class Game:GameProtocol{
                     }
                 }}
             if !figureChanged{
-                figure.rotate()}}
-        else {
+                figure.rotate()}
+        } else {
             figure = provider.getNextFigure()
             indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView}
         
