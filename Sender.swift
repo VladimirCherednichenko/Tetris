@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 class Sender:protocolGameOver{
-    var gameOverScrean:GameOver!
+    var gameOverScrean:GameOverViewController!
     let navigationViewController:UINavigationController
     var gameViewController = GameViewController()
     var game: Game!
@@ -43,7 +43,7 @@ class Sender:protocolGameOver{
         timer.stopTick()
         self.timer=nil
         self.touch=nil
-    self.gameOverScrean=GameOver(senderObject: self)
+    self.gameOverScrean=GameOverViewController(senderObject: self)
     navigationViewController.popViewController(animated: false)
     navigationViewController.pushViewController(gameOverScrean, animated: false)
         

@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 
-class GameOver: UIViewController {
+class GameOverViewController: UIViewController {
     var senderObject:protocolGameOver
     
     init(senderObject:protocolGameOver){
