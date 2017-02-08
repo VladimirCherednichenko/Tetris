@@ -10,26 +10,26 @@ class Game:GameProtocol{
     var cleanTime:Int=0
     var element=Element()
     var currentElementIndex:[Int] = []
-    var viewController:GameDrow
+    var gameViewController:GameDrow
     
     var indexesOfSavedElements:[Int]=[]
     var provider=Provider()
     var figure:Figure
     var senderObject:protocolGameOver
-    init(viewController:GameDrow,senderObject:protocolGameOver){
+    init(gameViewController:GameDrow,senderObject:protocolGameOver){
         self.senderObject=senderObject
-        self.viewController=viewController
+        self.gameViewController=gameViewController
         figure=provider.getNextFigure()
     }
     deinit {
         
     }
     
-    func clearView() {self.viewController.clearView()}
+    func clearView() {self.gameViewController.clearView()}
     
-    func fillCollor(_ fillArray:[Int]) {for element in fillArray{self.viewController.fillThePixel(gameIndex: element)}}
+    func fillCollor(_ fillArray:[Int]) {for element in fillArray{self.gameViewController.fillThePixel(gameIndex: element)}}
     
-    func clearThePixelCollor(_ cleanArray:[Int]) {for element in cleanArray{self.viewController.clearThePixel(gameIndex: element)}}
+    func clearThePixelCollor(_ cleanArray:[Int]) {for element in cleanArray{self.gameViewController.clearThePixel(gameIndex: element)}}
     
     
     

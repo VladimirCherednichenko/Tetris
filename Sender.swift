@@ -11,7 +11,7 @@ import UIKit
 class Sender:protocolGameOver{
     var gameOverScrean:GameOver!
     let navigationViewController:UINavigationController
-    var viewController = ViewController()
+    var gameViewController = GameViewController()
     var game: Game!
     var timer:ticker!
     var touch:Touch!
@@ -26,13 +26,13 @@ class Sender:protocolGameOver{
         }
     //init
     @objc func newGame() {
-    self.viewController = ViewController()
+    self.gameViewController = GameViewController()
     
         
-        self.game=Game(viewController: viewController, senderObject: self)
+        self.game=Game(gameViewController: gameViewController, senderObject: self)
         timer=ticker(gameObject: game)
-        touch=Touch(viewObject:viewController, gameObject:game)
-        navigationViewController.pushViewController(viewController, animated: false)
+        touch=Touch(viewObject:gameViewController, gameObject:game)
+        navigationViewController.pushViewController(gameViewController, animated: false)
 
     }
     

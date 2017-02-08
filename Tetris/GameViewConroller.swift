@@ -1,7 +1,7 @@
 import UIKit
 
 
-class ViewController: UIViewController, GameDrow {
+class GameViewController: UIViewController, GameDrow {
    
     var timer:Int=0
     
