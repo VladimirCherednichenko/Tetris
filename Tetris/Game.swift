@@ -15,9 +15,9 @@ class Game:GameProtocol{
     var indexesOfSavedElements:[Int]=[]
     var provider=Provider()
     var figure:Figure
-    var senderObject:protocolGameOver
-    init(gameViewController:GameDrow,senderObject:protocolGameOver){
-        self.senderObject=senderObject
+    var applicationControllerObject:protocolGameOver
+    init(gameViewController:GameDrow,applicationControllerObject:protocolGameOver){
+        self.applicationControllerObject=applicationControllerObject
         self.gameViewController=gameViewController
         figure=provider.getNextFigure()
     }
@@ -68,7 +68,7 @@ class Game:GameProtocol{
             if 10>indexesOfSavedElements[0]{
                 
                 indexesOfSavedElements=[]
-                senderObject.sendGameOverScrean()
+                applicationControllerObject.sendGameOverScrean()
                 
             }
         }

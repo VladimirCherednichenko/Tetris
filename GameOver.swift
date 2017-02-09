@@ -11,10 +11,10 @@ import Foundation
 import UIKit
 
 class GameOverViewController: UIViewController {
-    var senderObject:protocolGameOver
+    var applicationControllerObject:protocolGameOver
     
-    init(senderObject:protocolGameOver){
-        self.senderObject=senderObject
+    init(applicationControllerObject:protocolGameOver){
+        self.applicationControllerObject=applicationControllerObject
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -51,7 +51,7 @@ class GameOverViewController: UIViewController {
         restartButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive=true
         restartButton.setTitle("Restart", for: .normal)
         restartButton.titleLabel?.font=UIFont(name: "XPED Shadow", size: 45.0)
-        restartButton.addTarget(senderObject, action: #selector(senderObject.newGame), for: .touchUpInside)
+        restartButton.addTarget(applicationControllerObject, action: #selector(applicationControllerObject.newGame), for: .touchUpInside)
         
         
     }

@@ -23,7 +23,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         self.window = UIWindow(frame: windowFrame)
         
         let navigationViewController = UINavigationController()
-        _=Sender(navigationViewController: navigationViewController)
+        _=ApplicationController(navigationViewController: navigationViewController)
         
         
         
