@@ -50,16 +50,3 @@ class ApplicationController:protocolGameOver{
     }
 }
 
-class NewGame{
-     var navigationControllerObject:UINavigationController
-    
-    init(navigationViewController:UINavigationController){
-        self.navigationControllerObject=navigationViewController
-        
-        }
-    
-   func createNewGame(){
-    
-    let applicationControllerObject=ApplicationController(navigationViewController: navigationControllerObject)}
-
-}
