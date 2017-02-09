@@ -26,7 +26,7 @@ class GameOverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
-       
+        
         let gameOverLabel=UILabel()
         gameOverLabel.text="Game Over"
         gameOverLabel.textColor=UIColor.white

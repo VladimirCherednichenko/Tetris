@@ -16,7 +16,7 @@
 		84E6CF9F1E3A44E700003059 /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CF9E1E3A44E700003059 /* Touch.swift */; };
 		84E6CFA11E3AADD600003059 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CFA01E3AADD600003059 /* Protocols.swift */; };
 		84E6CFA51E3B99A300003059 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CFA41E3B99A300003059 /* Elements.swift */; };
-		84E944E71E47DFC400EF40D6 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E944E61E47DFC400EF40D6 /* Sender.swift */; };
+		84E944E71E47DFC400EF40D6 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E944E61E47DFC400EF40D6 /* ApplicationController.swift */; };
 		84E944E91E489C9200EF40D6 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E944E81E489C9200EF40D6 /* GameOver.swift */; };
 		84E944ED1E49F57800EF40D6 /* XPED Shadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E944EC1E49F57800EF40D6 /* XPED Shadow.ttf */; };
 		84E944EF1E49F6FF00EF40D6 /* Xacto Blade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E944EE1E49F6FF00EF40D6 /* Xacto Blade.ttf */; };
@@ -48,7 +48,7 @@
 		84E6CF9E1E3A44E700003059 /* Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Touch.swift; path = ../Touch.swift; sourceTree = "<group>"; };
 		84E6CFA01E3AADD600003059 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = ../Protocols.swift; sourceTree = "<group>"; };
 		84E6CFA41E3B99A300003059 /* Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Elements.swift; path = ../Elements.swift; sourceTree = "<group>"; };
-		84E944E61E47DFC400EF40D6 /* Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sender.swift; path = ../Sender.swift; sourceTree = "<group>"; };
+		84E944E61E47DFC400EF40D6 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationController.swift; path = ../ApplicationController.swift; sourceTree = "<group>"; };
 		84E944E81E489C9200EF40D6 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOver.swift; path = ../GameOver.swift; sourceTree = "<group>"; };
 		84E944EC1E49F57800EF40D6 /* XPED Shadow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "XPED Shadow.ttf"; sourceTree = "<group>"; };
 		84E944EE1E49F6FF00EF40D6 /* Xacto Blade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Xacto Blade.ttf"; sourceTree = "<group>"; };
@@ -96,15 +96,15 @@
 			isa = PBXGroup;
 			children = (
 				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
-				84E944E61E47DFC400EF40D6 /* Sender.swift */,
+				84E944E61E47DFC400EF40D6 /* ApplicationController.swift */,
 				84E944E81E489C9200EF40D6 /* GameOver.swift */,
-				84ED60EC1E3E90E500770960 /* Functions.swift */,
-				84E6CFA41E3B99A300003059 /* Elements.swift */,
-				84E6CFA01E3AADD600003059 /* Protocols.swift */,
 				848B433F1E3628C700029892 /* Game.swift */,
-				84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */,
 				84E6CF9A1E39283200003059 /* Timer.swift */,
 				84E6CF9E1E3A44E700003059 /* Touch.swift */,
+				84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */,
+				84E6CFA41E3B99A300003059 /* Elements.swift */,
+				84E6CFA01E3AADD600003059 /* Protocols.swift */,
+				84ED60EC1E3E90E500770960 /* Functions.swift */,
 				84CB00271E2FB81D001DF6E4 /* Assets.xcassets */,
 				84CB002C1E2FB81D001DF6E4 /* Info.plist */,
 				84E944EC1E49F57800EF40D6 /* XPED Shadow.ttf */,
@@ -232,7 +232,7 @@
 				848B43401E3628C700029892 /* Game.swift in Sources */,
 				84ED60ED1E3E90E500770960 /* Functions.swift in Sources */,
 				84CB00211E2FB81D001DF6E4 /* AppDelegate.swift in Sources */,
-				84E944E71E47DFC400EF40D6 /* Sender.swift in Sources */,
+				84E944E71E47DFC400EF40D6 /* ApplicationController.swift in Sources */,
 				84E6CFA11E3AADD600003059 /* Protocols.swift in Sources */,
 				84E6CF9F1E3A44E700003059 /* Touch.swift in Sources */,
 				84E944E91E489C9200EF40D6 /* GameOver.swift in Sources */,

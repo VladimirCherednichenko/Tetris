@@ -7,111 +7,7 @@
 //
 
 import Foundation
-class Element{
-    var indexOfCurrent:[Int]=[]
-    var numberOfNextElement:Int=0
-    var numberOfElement:Int=0
-    var rotateCount:Int=0
-    init(){changeElement()}
-    func element1() {indexOfCurrent=[3,4,5,6]}
-    func element1Rotate() {indexOfCurrent=[14,24,4,34]}
-    func element2() {indexOfCurrent=[14,15,5,6]}
-    func element2Rotate() {indexOfCurrent=[4,14,15,25]}
-    func element3() {indexOfCurrent=[14,15,16,5]}
-    func element3Rotate1() {indexOfCurrent=[5,15,16,25]}
-    func element3Rotate2() {indexOfCurrent=[4,5,6,15]}
-    func element3Rotate3() {indexOfCurrent=[5,14,15,25]}
-    
-    func element4() {indexOfCurrent=[4,5,14,15]}
-    
-    
-    func element5() {indexOfCurrent=[4,5,15,25]}
-    func element5Rotate1() {indexOfCurrent=[14,15,16,6]}
-    func element5Rotate2() {indexOfCurrent=[5,15,25,26]}
-    func element5Rotate3() {indexOfCurrent=[16,14,15,24]}
-    func element6() {indexOfCurrent=[5,6]}
-    func changeElement () {
-        
-        rotateCount=0
-        
-        switch numberOfNextElement {
-        case 0:
-            element1()
-        case 1:
-            element2()
-        case 2:
-            element3()
-        case 3:
-            element4()
-        case 4:
-            element5()
-        
-            
-        default:
-            break
-        }
-        if numberOfNextElement<4 { numberOfNextElement=numberOfNextElement+1; numberOfElement=numberOfNextElement-1 } else {numberOfNextElement=0; numberOfElement=4}
-    }
-    func rotate() {
-        
-        switch numberOfElement {
-        case 0:
-            if rotateCount==0 {
-                element1Rotate()
-                rotateCount=1}
-            else {rotateCount=0; element1()}
-        case 1:
-            if rotateCount==0 {
-                element2Rotate()
-                rotateCount=1}
-            else {rotateCount=0; element2()}
-        case 2:
-            switch rotateCount {
-            case 0:
-                element3Rotate1()
-            case 1:
-                element3Rotate2()
-            case 2:
-                element3Rotate3()
-            case 3:
-                element3()
-            
-                
-                
-            default:
-                break
-            }
-            if rotateCount<3 {rotateCount=rotateCount+1} else {rotateCount=0}
-            
-            
-        case 3:
-            element4()
-        case 4:
-            switch rotateCount {
-            case 0:
-                element5Rotate1()
-            case 1:
-                element5Rotate2()
-            case 2:
-                element5Rotate3()
-            case 3:
-                element5()
-                
-                
-                
-            default:
-                break
-            }
-            if rotateCount<3 {rotateCount=rotateCount+1} else {rotateCount=0}
-           
-            
-            
-        default:
-            break
-        }
-    }
-    
-}
+
 class Provider{
     
     private var currentElementIndex = 0
@@ -127,11 +23,17 @@ class Provider{
     {
         self.currentElementIndex = self.currentElementIndex + 1
         if self.figures.count <= self.currentElementIndex {
-           self.currentElementIndex = 0
+            self.currentElementIndex = 0
             
         }
         
         return self.figures[self.currentElementIndex]()
+    }
+    
+    func getFigure()
+        ->Figure
+    {
+     return self.figures[self.currentElementIndex]()
     }
     
 }
@@ -147,14 +49,14 @@ class Figure {
     }
     func rotate(){
         self.offsetOfPoiIts = offsetOfPoiIts.map {
-            return Point(x: $0.y, y: -$0.x)
+            return Point(x: -$0.y, y: $0.x)
         }}
     
     func moveFigureDown(){
         self.startPoint.y = self.startPoint.y + 1 }
     
     func moveFigureRight(){
-    self.startPoint.x=self.startPoint.x+1}
+        self.startPoint.x=self.startPoint.x+1}
     
     func moveFigureLeft(){
         self.startPoint.x=self.startPoint.x-1}
@@ -164,13 +66,13 @@ class Figure {
         
         
         for element in self.offsetOfPoiIts{
-         
-         let ellementIllappend = element.x + element.y*10+startPoint.x+startPoint.y*10
-         
-         figureWithMovement.append(ellementIllappend)
             
-         
-         }
+            let ellementIllappend = element.x + element.y*10+startPoint.x+startPoint.y*10
+            
+            figureWithMovement.append(ellementIllappend)
+            
+            
+        }
         return figureWithMovement.sorted(by: >).filter({return $0>=0})
     }
     func getIndexOfMaxY()->Int{
@@ -214,8 +116,8 @@ struct Point{
     var x:Int
     var y:Int
     init(x:Int,y:Int){
-    self.x=x
-    self.y=y
+        self.x=x
+        self.y=y
     }
 }
 

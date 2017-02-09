@@ -2,7 +2,7 @@ import UIKit
 
 
 class GameViewController: UIViewController, GameDrow {
-   
+    
     var timer:Int=0
     
     var pixelArray=[UIImageView]()
@@ -14,18 +14,18 @@ class GameViewController: UIViewController, GameDrow {
             pixel.translatesAutoresizingMaskIntoConstraints = false
             /*pixel.backgroundColor=UIColor(patternImage:#imageLiteral(resourceName: "pixelRed"))*/
             pixel.contentMode = .scaleAspectFit
-                        pixelArray.append(pixel)}}
+            pixelArray.append(pixel)}}
     
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
-         createPixelArray()
-      
-        /*var backImage = UIImage(
+        createPixelArray()
         
-        var resizablebackImage = backImage?.resizableImageWithCapInsets(UIEdgeInsets(top:10,left:0,bottom:10,right:0))*/
+        /*var backImage = UIImage(
+         
+         var resizablebackImage = backImage?.resizableImageWithCapInsets(UIEdgeInsets(top:10,left:0,bottom:10,right:0))*/
         
         
         //Here I creaate vertical Stack, that hold all components
@@ -67,12 +67,12 @@ class GameViewController: UIViewController, GameDrow {
             
         }
         
-                
+        
         
     }
     
     func fillThePixel(gameIndex:Int){
-    
+        
         
         
         pixelArray[gameIndex].image=#imageLiteral(resourceName: "pixelRed")
@@ -87,10 +87,10 @@ class GameViewController: UIViewController, GameDrow {
     
     func clearView(){
         for element in pixelArray{
-        element.image=#imageLiteral(resourceName: "pixelDark")}
+            element.image=#imageLiteral(resourceName: "pixelDark")}
     }
-        
-        
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

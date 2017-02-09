@@ -6,12 +6,9 @@ import UIKit
 class Game:GameProtocol{
     
     var y:Int=10
-    var stopY:Bool=false
     var cleanTime:Int=0
-    var element=Element()
     var currentElementIndex:[Int] = []
     var gameViewController:GameDrow
-    
     var indexesOfSavedElements:[Int]=[]
     var provider=Provider()
     var figure:Figure
@@ -19,10 +16,7 @@ class Game:GameProtocol{
     init(gameViewController:GameDrow,applicationControllerObject:protocolGameOver){
         self.applicationControllerObject=applicationControllerObject
         self.gameViewController=gameViewController
-        figure=provider.getNextFigure()
-    }
-    deinit {
-        
+        figure=provider.getFigure()
     }
     
     func clearView() {self.gameViewController.clearView()}
@@ -43,14 +37,16 @@ class Game:GameProtocol{
         
         
         var figureChanged=false
-        print(figure.getIndexOfMaxY())
+       
         if  figure.getIndexOfMaxY()<=16 {
             for element in indexesOfCurrentFigureOnView{
                 for index in indexesOfSavedElements{
                     if element+10==index {
+                        if !figureChanged {
                         indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
                         figure = provider.getNextFigure()
-                        figureChanged=true
+                        
+                            figureChanged=true}
                     }
                 }}
             if !figureChanged{
@@ -60,15 +56,16 @@ class Game:GameProtocol{
             indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView}
         
         if indexesOfSavedElements != [] {
+            
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
             indexesOfSavedElements=removeLine(indexesOfSavedElements)
-            print(indexesOfSavedElements)
+           
             //there begins Game Over
             indexesOfSavedElements=indexesOfSavedElements.sorted(by: <)
             if 10>indexesOfSavedElements[0]{
-                
-                indexesOfSavedElements=[]
-                applicationControllerObject.sendGameOverScrean()
+                self.fillCollor(indexesOfSavedElements+(indexesOfCurrentFigureOnView.map{$0+10}))
+                                indexesOfSavedElements=[]
+                applicationControllerObject.sendGameOverScreen()
                 
             }
         }
@@ -126,14 +123,14 @@ class Game:GameProtocol{
             for element in indexesOfCurrentFigureOnView{
                 for index in indexesOfSavedElements{
                     if element+10==index {indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
-                        figure = provider.getNextFigure()
+                        figure = provider.getNextFigure();
                         figureChanged=true
                     }
                 }}
             if !figureChanged{
                 figure.rotate()}
         } else {
-            figure = provider.getNextFigure()
+            figure = provider.getNextFigure();
             indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView}
         
         if indexesOfSavedElements != [] {

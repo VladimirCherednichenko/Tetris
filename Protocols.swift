@@ -23,14 +23,14 @@ protocol TimerTick{
 
 @objc protocol protocolGameOver {
     
-    func sendGameOverScrean()
+    func sendGameOverScreen()
     @objc func newGame()
     
 }
 
 protocol GameProtocol {
-func moveElementDown()
-func moveElementRight()
-func moveElementLeft()
-
+    func moveElementDown()
+    func moveElementRight()
+    func moveElementLeft()
+    
 }

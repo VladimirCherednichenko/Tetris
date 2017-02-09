@@ -19,15 +19,15 @@ class ticker:TimerTick {
         self.gameObject=gameObject
         Tick()}
     
- 
-
     
-
+    
+    
+    
     func Tick() {
         
         timer=Timer.scheduledTimer(timeInterval: 0.4, target: gameObject, selector: #selector(Game.moveElementDown), userInfo: nil, repeats: true)
-}
+    }
     func stopTick() {
         timer.invalidate()
     }
-    }
+}
