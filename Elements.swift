@@ -14,7 +14,7 @@ class Provider{
     private var figures: [()->Figure]
     init()
     {
-        self.figures = [Factory.element1,Factory.element2,Factory.element3,Factory.element4,Factory.element5]
+        self.figures = [{ let figure=Figure1(); return figure}, { let figure=Figure2(); return figure}, { let figure=Figure3(); return figure},{ let figure=Figure4(); return figure},{ let figure=Figure5(); return figure}]
     }
     
     
@@ -33,7 +33,7 @@ class Provider{
     func getFigure()
         ->Figure
     {
-     return self.figures[self.currentElementIndex]()
+        return self.figures[self.currentElementIndex]()
     }
     
 }
@@ -41,12 +41,12 @@ class Provider{
 class Figure {
     
     private(set) var startPoint=Point(x:4,y:0)
-    private(set) var offsetOfPoiIts:[Point] = []
+    var offsetOfPoiIts:[Point] = []
     
-    init(offsetPoints: [Point])
-    {
-        self.offsetOfPoiIts = offsetPoints
-    }
+    /* init(offsetPoints: [Point])
+     {
+     self.offsetOfPoiIts = offsetPoints
+     }*/
     func rotate(){
         self.offsetOfPoiIts = offsetOfPoiIts.map {
             return Point(x: -$0.y, y: $0.x)
@@ -125,44 +125,77 @@ struct Point{
 
 
 
-class Factory
-{
-    static func element1()
-        -> Figure
-    {
-        return Figure(offsetPoints: [Point(x:-1,y:0),Point(x:0, y:0),Point(x:1, y:0),Point(x:2, y:0)])
+
+
+
+//new code
+
+
+
+class Figure1:Figure{
+    var figureWasRotated=false
+    var startOffsetOfPoiIts:[Point] = []
+    
+    override init() {
+        super.init()
+        self.offsetOfPoiIts = [Point(x:-1,y:0),Point(x:0, y:0),Point(x:1, y:0),Point(x:2, y:0)]
+        self.startOffsetOfPoiIts=offsetOfPoiIts
     }
     
-    static func element2()
-        -> Figure
-    {
-        return Figure(offsetPoints: [Point(x:-1,y:0),Point(x:0, y:0),Point(x:1, y:0),Point(x:0, y:1)])
+    override func rotate(){
+        if !figureWasRotated {
+        
+            self.offsetOfPoiIts = offsetOfPoiIts.map {return Point(x: -$0.y, y: $0.x)}
+            figureWasRotated=true
+        
+    } else {
+        self.offsetOfPoiIts = startOffsetOfPoiIts
+        figureWasRotated=false
     }
+}
+}
+class Figure2:Figure{
     
-    static func element3()
-        -> Figure
-    {
-        return Figure(offsetPoints: [Point(x:-1,y:-1),Point(x:0, y:-1),Point(x:0, y:0),Point(x:0, y:1)])
-    }
-    static func element4()
-        -> Figure
-    {
-        return Figure(offsetPoints: [Point(x:0,y:0),Point(x:1, y:0),Point(x:0, y:1),Point(x:1, y:1)])
-    }
-    static func element5()
-        -> Figure
-    {
-        return Figure(offsetPoints: [Point(x:-1,y:0),Point(x:0, y:0),Point(x:0, y:-1),Point(x:1, y:-1)])
-    }
-    
+    override init() {
+        super.init()
+        self.offsetOfPoiIts = [Point(x:-1,y:0),Point(x:0, y:0),Point(x:1, y:0),Point(x:0, y:1)]}
 }
 
-
-
-
-
-
-
+class Figure3:Figure{
+    override init() {
+        super.init()
+        self.offsetOfPoiIts = [Point(x:-1,y:-1),Point(x:0, y:-1),Point(x:0, y:0),Point(x:0, y:1)]}
+}
+class Figure4:Figure{
+    override init() {
+        super.init()
+        self.offsetOfPoiIts = [Point(x:0,y:0),Point(x:1, y:0),Point(x:0, y:1),Point(x:1, y:1)]
+        
+    }
+    override func rotate() {}
+}
+class Figure5:Figure{
+    var figureWasRotated=false
+    var startOffsetOfPoiIts:[Point] = []
+    
+    override init() {
+        super.init()
+        self.offsetOfPoiIts = [Point(x:-1,y:0),Point(x:0, y:0),Point(x:0, y:-1),Point(x:1, y:-1)]
+        self.startOffsetOfPoiIts=offsetOfPoiIts
+    }
+    
+    override func rotate(){
+        if !figureWasRotated {
+            
+            self.offsetOfPoiIts = offsetOfPoiIts.map {return Point(x: -$0.y, y: $0.x)}
+            figureWasRotated=true
+            
+        } else {
+            self.offsetOfPoiIts = startOffsetOfPoiIts
+            figureWasRotated=false
+        }
+    }
+}
 
 
 

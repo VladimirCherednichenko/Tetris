@@ -127,7 +127,7 @@ class Game:GameProtocol{
                         figureChanged=true
                     }
                 }}
-            if !figureChanged{
+            if !figureChanged{//FIX IT
                 figure.rotate()}
         } else {
             figure = provider.getNextFigure();

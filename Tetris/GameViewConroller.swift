@@ -74,8 +74,8 @@ class GameViewController: UIViewController, GameDrow {
     func fillThePixel(gameIndex:Int){
         
         
-        
-        pixelArray[gameIndex].image=#imageLiteral(resourceName: "pixelRed")
+        if gameIndex >= 0 && gameIndex <= 180 {
+            pixelArray[gameIndex].image=#imageLiteral(resourceName: "pixelRed")}
     }
     
     func clearThePixel(gameIndex:Int){
