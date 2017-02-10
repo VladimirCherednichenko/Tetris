@@ -14,11 +14,6 @@ protocol GameDrow {
     func clearView()
     var view: UIView! {get}
 }
-protocol TimerTick{
-    
-    func Tick()
-    func stopTick()
-}
 
 
 @objc protocol protocolGameOver {

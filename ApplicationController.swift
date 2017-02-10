@@ -13,35 +13,33 @@ class ApplicationController:protocolGameOver{
     let navigationViewController:UINavigationController
     var gameViewController = GameViewController()
     var game: Game!
-    var timer:ticker!
+    
     var touch:Touch!
-    //init
+    
     
     
     init(navigationViewController:UINavigationController){
-        //
+       
         self.navigationViewController=navigationViewController
         newGame()
-        //sendGameOverScrean()
+       
     }
-    //init
+   
     @objc func newGame() {
         self.gameViewController = GameViewController()
         
         
         self.game=Game(gameViewController: gameViewController, applicationControllerObject: self)
-        timer=ticker(gameObject: game)
+        
         touch=Touch(viewObject:gameViewController, gameObject:game)
         navigationViewController.pushViewController(gameViewController, animated: false)
         
     }
     
     func sendGameOverScreen() {
-        //timerObject.stopTick
+        
         self.gameOverScrean=nil
         self.game=nil
-        timer.stopTick()
-        self.timer=nil
         self.touch=nil
         self.gameOverScrean=GameOverViewController(applicationControllerObject: self)
         navigationViewController.popViewController(animated: false)

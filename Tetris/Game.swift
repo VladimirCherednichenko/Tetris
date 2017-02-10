@@ -12,11 +12,13 @@ class Game:GameProtocol{
     var indexesOfSavedElements:[Int]=[]
     var provider=Provider()
     var figure:Figure
+    var timer=Timer()
     var applicationControllerObject:protocolGameOver
     init(gameViewController:GameDrow,applicationControllerObject:protocolGameOver){
         self.applicationControllerObject=applicationControllerObject
         self.gameViewController=gameViewController
         figure=provider.getFigure()
+        timer=Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
     }
     
     func clearView() {self.gameViewController.clearView()}
@@ -65,7 +67,9 @@ class Game:GameProtocol{
             if 10>indexesOfSavedElements[0]{
                 self.fillCollor(indexesOfSavedElements+(indexesOfCurrentFigureOnView.map{$0+10}))
                                 indexesOfSavedElements=[]
+                timer.invalidate()
                 applicationControllerObject.sendGameOverScreen()
+                
                 
             }
         }
