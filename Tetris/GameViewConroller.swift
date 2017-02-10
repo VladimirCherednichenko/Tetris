@@ -1,7 +1,7 @@
 import UIKit
 
 
-class GameViewController: UIViewController, GameDrow {
+class GameViewController: UIViewController, GameDraw {
     
    
     

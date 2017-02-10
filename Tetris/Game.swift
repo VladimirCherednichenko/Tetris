@@ -8,13 +8,13 @@ class Game:GameProtocol{
     var y:Int=10
     var cleanTime:Int=0
     var currentElementIndex:[Int] = []
-    var gameViewController:GameDrow
+    var gameViewController:GameDraw
     var indexesOfSavedElements:[Int]=[]
     var provider=Provider()
     var figure:Figure
     var timer=Timer()
     var applicationControllerObject:protocolGameOver
-    init(gameViewController:GameDrow,applicationControllerObject:protocolGameOver){
+    init(gameViewController:GameDraw,applicationControllerObject:protocolGameOver){
         self.applicationControllerObject=applicationControllerObject
         self.gameViewController=gameViewController
         figure=provider.getFigure()

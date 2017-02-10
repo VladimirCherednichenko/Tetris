@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 class ApplicationController:protocolGameOver{
-    var gameOverScrean:GameOverViewController!
+    var gameOverScreen:GameOverViewController!
     let navigationViewController:UINavigationController
     var gameViewController:UIViewController!
     var game: Game!
@@ -26,24 +26,24 @@ class ApplicationController:protocolGameOver{
     
     @objc func newGame() {
         self.gameViewController = GameViewController()
-        self.game=Game(gameViewController: gameViewController as! GameDrow, applicationControllerObject: self)
+        self.game=Game(gameViewController: gameViewController as! GameDraw, applicationControllerObject: self)
         
-        touch=Touch(viewObject:gameViewController as! GameDrow, gameObject:game)
+        touch=Touch(viewObject:gameViewController as! GameDraw, gameObject:game)
         navigationViewController.pushViewController(gameViewController, animated: false)
         
     }
     
     func sendGameOverScreen() {
         
-        self.gameOverScrean=nil
+        self.gameOverScreen=nil
         self.game=nil
         self.touch=nil
         self.gameViewController=nil
-        self.gameOverScrean=GameOverViewController(applicationControllerObject: self)
+        self.gameOverScreen=GameOverViewController(applicationControllerObject: self)
         
         navigationViewController.popViewController(animated: false)
         
-        navigationViewController.pushViewController(gameOverScrean, animated: false)
+        navigationViewController.pushViewController(gameOverScreen, animated: false)
         
         
     }

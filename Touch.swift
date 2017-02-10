@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 class Touch {
     
-    var viewObject:GameDrow
+    var viewObject:GameDraw
     var gameObject:GameProtocol
-    init(viewObject:GameDrow, gameObject:GameProtocol ){
+    init(viewObject:GameDraw, gameObject:GameProtocol ){
         
         self.viewObject=viewObject
         self.gameObject=gameObject

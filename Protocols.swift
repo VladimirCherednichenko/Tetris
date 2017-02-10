@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-protocol GameDrow {
+protocol GameDraw {
     func fillThePixel(gameIndex:Int)
     func clearThePixel(gameIndex:Int)
     func clearView()
