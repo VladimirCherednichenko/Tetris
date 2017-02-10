@@ -6,6 +6,7 @@ class GameViewController: UIViewController, GameDraw {
    
     
     var pixelArray=[UIImageView]()
+    var gameDelegate:GameProtocol?
     
     func createPixelArray(){
         for _ in 0...179{
@@ -23,9 +24,19 @@ class GameViewController: UIViewController, GameDraw {
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
         createPixelArray()
         
-        /*var backImage = UIImage(
-         
-         var resizablebackImage = backImage?.resizableImageWithCapInsets(UIEdgeInsets(top:10,left:0,bottom:10,right:0))*/
+        let swipeRight = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.moveElementRight))
+        swipeRight.direction = .right
+        self.view.addGestureRecognizer(swipeRight)
+        let swipeLeft = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.moveElementLeft))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        let swipeDown = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.moveElementDownTouch))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
+        
+        let tap = UITapGestureRecognizer(target: gameDelegate, action: #selector(Game.rotateElement))
+        
+        self.view.addGestureRecognizer(tap)
         
         
         //Here I creaate vertical Stack, that hold all components

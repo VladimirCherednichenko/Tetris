@@ -1,11 +1,3 @@
-//
-//  Sender.swift
-//  Tetris
-//
-//  Created by Admin on 06.02.17.
-//  Copyright © 2017 Apple. All rights reserved.
-//
-
 import Foundation
 import UIKit
 class ApplicationController:protocolGameOver{
@@ -13,7 +5,7 @@ class ApplicationController:protocolGameOver{
     let navigationViewController:UINavigationController
     var gameViewController:UIViewController!
     var game: Game!
-    var touch:Touch!
+
     
     
     
@@ -28,7 +20,11 @@ class ApplicationController:protocolGameOver{
         self.gameViewController = GameViewController()
         self.game=Game(gameViewController: gameViewController as! GameDraw, applicationControllerObject: self)
         
-        touch=Touch(viewObject:gameViewController as! GameDraw, gameObject:game)
+        if let controller = gameViewController as? GameViewController {
+            controller.gameDelegate=game
+        }
+        
+       
         navigationViewController.pushViewController(gameViewController, animated: false)
         
     }
@@ -37,7 +33,7 @@ class ApplicationController:protocolGameOver{
         
         self.gameOverScreen=nil
         self.game=nil
-        self.touch=nil
+        
         self.gameViewController=nil
         self.gameOverScreen=GameOverViewController(applicationControllerObject: self)
         

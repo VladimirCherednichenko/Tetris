@@ -12,6 +12,7 @@ protocol GameDraw {
     func fillThePixel(gameIndex:Int)
     func clearThePixel(gameIndex:Int)
     func clearView()
+    
     var view: UIView! {get}
 }
 
