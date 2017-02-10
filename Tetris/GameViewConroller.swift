@@ -3,7 +3,7 @@ import UIKit
 
 class GameViewController: UIViewController, GameDrow {
     
-    var timer:Int=0
+   
     
     var pixelArray=[UIImageView]()
     

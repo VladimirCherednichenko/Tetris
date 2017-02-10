@@ -95,10 +95,10 @@
 			children = (
 				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
 				84E944E61E47DFC400EF40D6 /* ApplicationController.swift */,
-				84E944E81E489C9200EF40D6 /* GameOver.swift */,
-				848B433F1E3628C700029892 /* Game.swift */,
 				84E6CF9E1E3A44E700003059 /* Touch.swift */,
 				84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */,
+				84E944E81E489C9200EF40D6 /* GameOver.swift */,
+				848B433F1E3628C700029892 /* Game.swift */,
 				84E6CFA41E3B99A300003059 /* Elements.swift */,
 				84E6CFA01E3AADD600003059 /* Protocols.swift */,
 				84ED60EC1E3E90E500770960 /* Functions.swift */,
