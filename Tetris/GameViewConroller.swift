@@ -2,27 +2,59 @@ import UIKit
 
 
 class GameViewController: UIViewController, GameDraw {
-    
-   
-    
+    var points:Int=0
+    var valueOfDivision:CGFloat
+    var widthPixel:CGFloat!
+    var numberOfPixels:Int!
+    var countVerticalpixels:Int=0
     var pixelArray=[UIImageView]()
     var gameDelegate:GameProtocol?
+    let labelWithPoints=UILabel()
+    //init
+    init(_ valueOfDivision:CGFloat){
+        self.valueOfDivision=valueOfDivision
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     func createPixelArray(){
-        for _ in 0...179{
+        
+        for _ in 0...numberOfPixels-1{
             
             let pixel=UIImageView(image: #imageLiteral(resourceName: "pixelDark"))
             pixel.translatesAutoresizingMaskIntoConstraints = false
-            /*pixel.backgroundColor=UIColor(patternImage:#imageLiteral(resourceName: "pixelRed"))*/
+            
             pixel.contentMode = .scaleAspectFit
             pixelArray.append(pixel)}}
     
     
     override func viewDidLoad() {
         
+        
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
+        widthPixel=view.frame.width*valueOfDivision
+        countVerticalpixels=Int(view.frame.height/widthPixel)
+        numberOfPixels=countVerticalpixels*Int(1/valueOfDivision)
         createPixelArray()
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
+        
+        
+        
+        
+        labelWithPoints.text=String(points)
+        labelWithPoints.textColor=UIColor.white
+        
+        labelWithPoints.font=UIFont(name: "", size: 30.0   )
+        //labelWithPoints.textAlignment = .center
+        labelWithPoints.translatesAutoresizingMaskIntoConstraints=false
+        view.addSubview(labelWithPoints)
+        labelWithPoints.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive=true
+        
+        labelWithPoints.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
         
         let swipeRight = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.moveElementRight))
         swipeRight.direction = .right
@@ -51,11 +83,11 @@ class GameViewController: UIViewController, GameDraw {
         //verticalStack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
         verticalStack.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
         verticalStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
-        //verticalStack.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
+        verticalStack.topAnchor.constraint(equalTo: labelWithPoints.bottomAnchor).isActive=true
         //
         var stackArray=[UIStackView]()
         
-        for j in 0...17 {
+        for j in 0...countVerticalpixels-1 {
             
             let horizontalStack = UIStackView()
             //horizontalStack.spacing=2
@@ -67,13 +99,14 @@ class GameViewController: UIViewController, GameDraw {
             
             
             
-            for i in 0...9
+            for i in 0...Int(1/valueOfDivision)-1
             {  let index:Int=(i+j*10)
                 
                 stackArray[j].addArrangedSubview(pixelArray[index])
                 
-                pixelArray[index].heightAnchor.constraint(equalTo: view.widthAnchor, multiplier:0.1).isActive=true
-                pixelArray[index].widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.1).isActive=true
+                pixelArray[index].heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: CGFloat(valueOfDivision)).isActive=true
+                pixelArray[index].widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: CGFloat(valueOfDivision)).isActive=true
+                
             }
             
         }
@@ -85,8 +118,10 @@ class GameViewController: UIViewController, GameDraw {
     func fillThePixel(gameIndex:Int){
         
         
-        if gameIndex >= 0 && gameIndex <= 180 {
+        if gameIndex >= 0 && gameIndex <= numberOfPixels-1 {
             pixelArray[gameIndex].image=#imageLiteral(resourceName: "pixelRed")}
+        
+        
     }
     
     func clearThePixel(gameIndex:Int){
@@ -94,11 +129,13 @@ class GameViewController: UIViewController, GameDraw {
         
         
         pixelArray[gameIndex].backgroundColor=UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
+        labelWithPoints.text=String(2)
     }
     
     func clearView(){
         for element in pixelArray{
             element.image=#imageLiteral(resourceName: "pixelDark")}
+        labelWithPoints.text=String(points)
     }
     
     

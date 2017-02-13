@@ -13,12 +13,16 @@ class Game:GameProtocol{
     var provider=Provider()
     var figure:Figure
     var timer=Timer()
-    var applicationControllerObject:protocolGameOver
-    init(gameViewController:GameDraw,applicationControllerObject:protocolGameOver){
+    var points:Int=0
+    var maxY:Int!
+    var applicationControllerObject:AppControllerProtocol
+    init(gameViewController:GameDraw,applicationControllerObject:AppControllerProtocol){
+        
         self.applicationControllerObject=applicationControllerObject
         self.gameViewController=gameViewController
         figure=provider.getFigure()
         timer=Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
+        
     }
     
     func clearView() {self.gameViewController.clearView()}
@@ -30,7 +34,7 @@ class Game:GameProtocol{
     
     
     @objc func moveElementDown() {
-        
+        maxY=gameViewController.countVerticalpixels
         var indexesOfCurrentFigureOnView:[Int]=[]
         indexesOfCurrentFigureOnView=figure.getIndexForView()
         self.clearView()
@@ -39,15 +43,15 @@ class Game:GameProtocol{
         
         
         var figureChanged=false
-       
-        if  figure.getIndexOfMaxY()<=16 {
+        print(maxY)
+        if  figure.getIndexOfMaxY()<=maxY-2 {
             for element in indexesOfCurrentFigureOnView{
                 for index in indexesOfSavedElements{
                     if element+10==index {
                         if !figureChanged {
-                        indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
-                        figure = provider.getNextFigure()
-                        
+                            indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
+                            figure = provider.getNextFigure()
+                            
                             figureChanged=true}
                     }
                 }}
@@ -60,13 +64,13 @@ class Game:GameProtocol{
         if indexesOfSavedElements != [] {
             
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
-            indexesOfSavedElements=removeLine(indexesOfSavedElements)
-           
+            indexesOfSavedElements=removeLine(indexesOfSavedElements,self)
+            self.gameViewController.points=points
             //there begins Game Over
             indexesOfSavedElements=indexesOfSavedElements.sorted(by: <)
             if 10>indexesOfSavedElements[0]{
                 self.fillCollor(indexesOfSavedElements+(indexesOfCurrentFigureOnView.map{$0+10}))
-                                indexesOfSavedElements=[]
+                indexesOfSavedElements=[]
                 timer.invalidate()
                 applicationControllerObject.sendGameOverScreen()
                 
@@ -123,7 +127,7 @@ class Game:GameProtocol{
         
         
         var figureChanged=false
-        if  figure.getIndexOfMaxY()<=16 {
+        if  figure.getIndexOfMaxY()<=maxY-2 {
             for element in indexesOfCurrentFigureOnView{
                 for index in indexesOfSavedElements{
                     if element+10==index {indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
@@ -139,7 +143,7 @@ class Game:GameProtocol{
         
         if indexesOfSavedElements != [] {
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
-            indexesOfSavedElements=removeLine(indexesOfSavedElements)
+            indexesOfSavedElements=removeLine(indexesOfSavedElements,self)
         }
         
         

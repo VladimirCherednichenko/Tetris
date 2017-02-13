@@ -11,9 +11,9 @@ import Foundation
 import UIKit
 
 class GameOverViewController: UIViewController {
-    var applicationControllerObject:protocolGameOver
+    var applicationControllerObject:AppControllerProtocol
     
-    init(applicationControllerObject:protocolGameOver){
+    init(applicationControllerObject:AppControllerProtocol){
         self.applicationControllerObject=applicationControllerObject
         super.init(nibName: nil, bundle: nil)
     }

@@ -1,30 +1,34 @@
 import Foundation
 import UIKit
-class ApplicationController:protocolGameOver{
+class ApplicationController:AppControllerProtocol{
     var gameOverScreen:GameOverViewController!
     let navigationViewController:UINavigationController
     var gameViewController:UIViewController!
     var game: Game!
-
+    var valueOfDivision:CGFloat=0.1
+   
     
     
     
     init(navigationViewController:UINavigationController){
         
         self.navigationViewController=navigationViewController
+         
         newGame()
         
     }
     
+ 
+    
     @objc func newGame() {
-        self.gameViewController = GameViewController()
+        self.gameViewController = GameViewController(valueOfDivision)
+        
+        
         self.game=Game(gameViewController: gameViewController as! GameDraw, applicationControllerObject: self)
         
         if let controller = gameViewController as? GameViewController {
             controller.gameDelegate=game
         }
-        
-       
         navigationViewController.pushViewController(gameViewController, animated: false)
         
     }
@@ -33,12 +37,9 @@ class ApplicationController:protocolGameOver{
         
         self.gameOverScreen=nil
         self.game=nil
-        
         self.gameViewController=nil
         self.gameOverScreen=GameOverViewController(applicationControllerObject: self)
-        
         navigationViewController.popViewController(animated: false)
-        
         navigationViewController.pushViewController(gameOverScreen, animated: false)
         
         

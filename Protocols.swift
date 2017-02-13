@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 protocol GameDraw {
+    var points:Int{get set}
+    var countVerticalpixels:Int{get set}
     func fillThePixel(gameIndex:Int)
     func clearThePixel(gameIndex:Int)
     func clearView()
@@ -17,7 +19,7 @@ protocol GameDraw {
 }
 
 
-@objc protocol protocolGameOver {
+@objc protocol AppControllerProtocol {
     
     func sendGameOverScreen()
     @objc func newGame()
@@ -25,6 +27,7 @@ protocol GameDraw {
 }
 
 protocol GameProtocol {
+    var points:Int{get set}
     func moveElementDown()
     func moveElementRight()
     func moveElementLeft()

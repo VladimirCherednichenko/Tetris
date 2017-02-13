@@ -43,10 +43,7 @@ class Figure {
     private(set) var startPoint=Point(x:4,y:0)
     var offsetOfPoiIts:[Point] = []
     
-    /* init(offsetPoints: [Point])
-     {
-     self.offsetOfPoiIts = offsetPoints
-     }*/
+  
     func rotate(){
         self.offsetOfPoiIts = offsetOfPoiIts.map {
             return Point(x: -$0.y, y: $0.x)
