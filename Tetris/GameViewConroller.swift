@@ -10,6 +10,7 @@ class GameViewController: UIViewController, GameDraw {
     var pixelArray=[UIImageView]()
     var gameDelegate:GameProtocol?
     let labelWithPoints=UILabel()
+    
     //init
     init(_ valueOfDivision:CGFloat){
         self.valueOfDivision=valueOfDivision
@@ -40,16 +41,16 @@ class GameViewController: UIViewController, GameDraw {
         countVerticalpixels=Int(view.frame.height/widthPixel)
         numberOfPixels=countVerticalpixels*Int(1/valueOfDivision)
         createPixelArray()
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
+        self.view.backgroundColor = UIColor.white
         
         
         
         
         labelWithPoints.text=String(points)
-        labelWithPoints.textColor=UIColor.white
+        labelWithPoints.textColor=UIColor.black
         
-        labelWithPoints.font=UIFont(name: "", size: 30.0   )
-        //labelWithPoints.textAlignment = .center
+        labelWithPoints.font=UIFont(name: "Xposed", size: 20.0   )
+        
         labelWithPoints.translatesAutoresizingMaskIntoConstraints=false
         view.addSubview(labelWithPoints)
         labelWithPoints.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive=true
@@ -74,13 +75,13 @@ class GameViewController: UIViewController, GameDraw {
         //Here I creaate vertical Stack, that hold all components
         let verticalStack = UIStackView()
         verticalStack.axis = .vertical
-        //verticalStack.spacing = 2
+        //verticalStack.spacing = 0.5
         verticalStack.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(verticalStack)
         
         
-        //verticalStack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
+        verticalStack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
         verticalStack.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
         verticalStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
         verticalStack.topAnchor.constraint(equalTo: labelWithPoints.bottomAnchor).isActive=true
@@ -90,7 +91,7 @@ class GameViewController: UIViewController, GameDraw {
         for j in 0...countVerticalpixels-1 {
             
             let horizontalStack = UIStackView()
-            //horizontalStack.spacing=2
+            //horizontalStack.spacing=0.5
             horizontalStack.axis = .horizontal
             horizontalStack.translatesAutoresizingMaskIntoConstraints = false
             stackArray.append(horizontalStack)
@@ -100,7 +101,7 @@ class GameViewController: UIViewController, GameDraw {
             
             
             for i in 0...Int(1/valueOfDivision)-1
-            {  let index:Int=(i+j*10)
+            {  let index:Int=(i+j*Int(1/valueOfDivision))
                 
                 stackArray[j].addArrangedSubview(pixelArray[index])
                 

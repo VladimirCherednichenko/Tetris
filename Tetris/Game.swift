@@ -15,9 +15,10 @@ class Game:GameProtocol{
     var timer=Timer()
     var points:Int=0
     var maxY:Int!
+    var valueOfDivision:CGFloat
     var applicationControllerObject:AppControllerProtocol
-    init(gameViewController:GameDraw,applicationControllerObject:AppControllerProtocol){
-        
+    init(gameViewController:GameDraw,applicationControllerObject:AppControllerProtocol,_ valueOfDivision:CGFloat){
+        self.valueOfDivision=valueOfDivision
         self.applicationControllerObject=applicationControllerObject
         self.gameViewController=gameViewController
         figure=provider.getFigure()
@@ -36,7 +37,7 @@ class Game:GameProtocol{
     @objc func moveElementDown() {
         maxY=gameViewController.countVerticalpixels
         var indexesOfCurrentFigureOnView:[Int]=[]
-        indexesOfCurrentFigureOnView=figure.getIndexForView()
+        indexesOfCurrentFigureOnView=figure.getIndexForView(Int(1/valueOfDivision))
         self.clearView()
         self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         
@@ -47,7 +48,7 @@ class Game:GameProtocol{
         if  figure.getIndexOfMaxY()<=maxY-2 {
             for element in indexesOfCurrentFigureOnView{
                 for index in indexesOfSavedElements{
-                    if element+10==index {
+                    if element+Int(1/valueOfDivision)==index {
                         if !figureChanged {
                             indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
                             figure = provider.getNextFigure()
@@ -64,12 +65,12 @@ class Game:GameProtocol{
         if indexesOfSavedElements != [] {
             
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
-            indexesOfSavedElements=removeLine(indexesOfSavedElements,self)
+            indexesOfSavedElements=removeLine(indexesOfSavedElements,self, numberOfPixelsInOneLine: Int(1/valueOfDivision))
             self.gameViewController.points=points
             //there begins Game Over
             indexesOfSavedElements=indexesOfSavedElements.sorted(by: <)
-            if 10>indexesOfSavedElements[0]{
-                self.fillCollor(indexesOfSavedElements+(indexesOfCurrentFigureOnView.map{$0+10}))
+            if Int(1/valueOfDivision)>indexesOfSavedElements[0]{
+                self.fillCollor(indexesOfSavedElements+(indexesOfCurrentFigureOnView.map{$0+Int(1/valueOfDivision)}))
                 indexesOfSavedElements=[]
                 timer.invalidate()
                 applicationControllerObject.sendGameOverScreen()
@@ -83,11 +84,11 @@ class Game:GameProtocol{
     
     @objc func moveElementRight(){
         
-        if figure.getMaxX()+figure.startPoint.x<9{
+        if figure.getMaxX()+figure.startPoint.x<Int(1/valueOfDivision)-1{
             figure.moveFigureRight()
             
             var indexesOfCurrentFigureOnView:[Int]=[]
-            indexesOfCurrentFigureOnView=figure.getIndexForView()
+            indexesOfCurrentFigureOnView=figure.getIndexForView(Int(1/valueOfDivision))
             self.clearView()
             self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
             
@@ -100,7 +101,7 @@ class Game:GameProtocol{
             figure.moveFigureLeft()
             
             var indexesOfCurrentFigureOnView:[Int]=[]
-            indexesOfCurrentFigureOnView=figure.getIndexForView()
+            indexesOfCurrentFigureOnView=figure.getIndexForView(Int(1/valueOfDivision))
             self.clearView()
             self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
             
@@ -120,7 +121,7 @@ class Game:GameProtocol{
     
     @objc func rotateElement(){
         var indexesOfCurrentFigureOnView:[Int]=[]
-        indexesOfCurrentFigureOnView=figure.getIndexForView()
+        indexesOfCurrentFigureOnView=figure.getIndexForView(Int(1/valueOfDivision))
         self.clearView()
         self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         
@@ -130,7 +131,7 @@ class Game:GameProtocol{
         if  figure.getIndexOfMaxY()<=maxY-2 {
             for element in indexesOfCurrentFigureOnView{
                 for index in indexesOfSavedElements{
-                    if element+10==index {indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
+                    if element+Int(1/valueOfDivision)==index {indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
                         figure = provider.getNextFigure();
                         figureChanged=true
                     }
@@ -143,7 +144,7 @@ class Game:GameProtocol{
         
         if indexesOfSavedElements != [] {
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
-            indexesOfSavedElements=removeLine(indexesOfSavedElements,self)
+            indexesOfSavedElements=removeLine(indexesOfSavedElements,self, numberOfPixelsInOneLine: Int(1/valueOfDivision))
         }
         
         

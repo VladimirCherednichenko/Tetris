@@ -5,7 +5,7 @@ class ApplicationController:AppControllerProtocol{
     let navigationViewController:UINavigationController
     var gameViewController:UIViewController!
     var game: Game!
-    var valueOfDivision:CGFloat=0.1
+    var valueOfDivision:CGFloat=0.05
    
     
     
@@ -24,7 +24,7 @@ class ApplicationController:AppControllerProtocol{
         self.gameViewController = GameViewController(valueOfDivision)
         
         
-        self.game=Game(gameViewController: gameViewController as! GameDraw, applicationControllerObject: self)
+        self.game=Game(gameViewController: gameViewController as! GameDraw, applicationControllerObject: self, valueOfDivision)
         
         if let controller = gameViewController as? GameViewController {
             controller.gameDelegate=game

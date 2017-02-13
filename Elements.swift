@@ -58,13 +58,13 @@ class Figure {
     func moveFigureLeft(){
         self.startPoint.x=self.startPoint.x-1}
     
-    func getIndexForView()->[Int]{
+    func getIndexForView(_ valueOfDivision:Int)->[Int]{
         var figureWithMovement:[Int]=[]
-        
+        print(valueOfDivision)
         
         for element in self.offsetOfPoiIts{
             
-            let ellementIllappend = element.x + element.y*10+startPoint.x+startPoint.y*10
+            let ellementIllappend = element.x + element.y*valueOfDivision+startPoint.x+startPoint.y*valueOfDivision
             
             figureWithMovement.append(ellementIllappend)
             

@@ -44,7 +44,7 @@ func removeDuplicate(_ Array:[Int])->[Int]{
     return newArray
 }
 
-func removeLine(_ Array:[Int],_ gameObjectPoints:GameProtocol)->[Int]{
+func removeLine(_ Array:[Int],_ gameObjectPoints:GameProtocol, numberOfPixelsInOneLine:Int)->[Int]{
     
     var gameObjectPoints = gameObjectPoints
     var inputArray=Array.sorted(by: >)
@@ -59,18 +59,18 @@ func removeLine(_ Array:[Int],_ gameObjectPoints:GameProtocol)->[Int]{
     for i in 0...(count-2)
         
     {
-        currentElement=inputArray[i]/10
-        nextElement=inputArray[i+1]/10
+        currentElement=inputArray[i]/numberOfPixelsInOneLine
+        nextElement=inputArray[i+1]/numberOfPixelsInOneLine
         
         if currentElement==nextElement {
             countNumberTwo=countNumberTwo+1
-            if countNumberTwo==9 {
-                for j in i-8...i+1{
+            if countNumberTwo==numberOfPixelsInOneLine-1 {
+                for j in i-(numberOfPixelsInOneLine-2)...i+1{
                     arrDelete.append(inputArray[j])}
                 if count != i+2 {
                     gameObjectPoints.points=gameObjectPoints.points+100
                     print(gameObjectPoints.points)
-                    for i1 in i+2...count-1{arrDelete.append(inputArray[i1]); bufer.append(inputArray[i1]+10)}}
+                    for i1 in i+2...count-1{arrDelete.append(inputArray[i1]); bufer.append(inputArray[i1]+numberOfPixelsInOneLine)}}
             }
             
             
