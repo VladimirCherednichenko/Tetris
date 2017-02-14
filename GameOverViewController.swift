@@ -33,13 +33,6 @@ class GameOverViewController: UIViewController {
         gameOverLabel.textAlignment = .center
         gameOverLabel.font=UIFont(name: "XPED Shadow", size: 60.0   )
         gameOverLabel.translatesAutoresizingMaskIntoConstraints=false
-        
-        
-        
-        
-        
-        
-        
         view.addSubview(gameOverLabel)
         gameOverLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive=true
         gameOverLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive=true

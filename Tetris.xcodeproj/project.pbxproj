@@ -11,15 +11,21 @@
 		84CB00211E2FB81D001DF6E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */; };
 		84CB00231E2FB81D001DF6E4 /* GameViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */; };
 		84CB00281E2FB81D001DF6E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CB00271E2FB81D001DF6E4 /* Assets.xcassets */; };
-		84CB00361E2FB81D001DF6E4 /* TetrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00351E2FB81D001DF6E4 /* TetrisTests.swift */; };
 		84E6CFA11E3AADD600003059 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CFA01E3AADD600003059 /* Protocols.swift */; };
-		84E6CFA51E3B99A300003059 /* Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6CFA41E3B99A300003059 /* Elements.swift */; };
 		84E944E71E47DFC400EF40D6 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E944E61E47DFC400EF40D6 /* ApplicationController.swift */; };
-		84E944E91E489C9200EF40D6 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E944E81E489C9200EF40D6 /* GameOver.swift */; };
+		84E944E91E489C9200EF40D6 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E944E81E489C9200EF40D6 /* GameOverViewController.swift */; };
 		84E944ED1E49F57800EF40D6 /* XPED Shadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E944EC1E49F57800EF40D6 /* XPED Shadow.ttf */; };
 		84E944EF1E49F6FF00EF40D6 /* Xacto Blade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E944EE1E49F6FF00EF40D6 /* Xacto Blade.ttf */; };
 		84E944F11E4A2C2D00EF40D6 /* Xposed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E944F01E4A2C2D00EF40D6 /* Xposed.ttf */; };
 		84ED60ED1E3E90E500770960 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED60EC1E3E90E500770960 /* Functions.swift */; };
+		84FE11C41E53266B00E25528 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11C31E53266B00E25528 /* Provider.swift */; };
+		84FE11C61E53271500E25528 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11C51E53271500E25528 /* Figure.swift */; };
+		84FE11C81E5327A400E25528 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11C71E5327A400E25528 /* Point.swift */; };
+		84FE11CA1E532B6E00E25528 /* LineFigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11C91E532B6E00E25528 /* LineFigure.swift */; };
+		84FE11CC1E532B8100E25528 /* T_Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11CB1E532B8100E25528 /* T_Figure.swift */; };
+		84FE11CE1E532BAF00E25528 /* L_Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11CD1E532BAF00E25528 /* L_Figure.swift */; };
+		84FE11D01E532BCD00E25528 /* SquareFigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11CF1E532BCD00E25528 /* SquareFigure.swift */; };
+		84FE11D21E532BEA00E25528 /* Z_Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11D11E532BEA00E25528 /* Z_Figure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,17 +46,22 @@
 		84CB00271E2FB81D001DF6E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CB002C1E2FB81D001DF6E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84CB00311E2FB81D001DF6E4 /* TetrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84CB00351E2FB81D001DF6E4 /* TetrisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisTests.swift; sourceTree = "<group>"; };
-		84CB00371E2FB81D001DF6E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84E6CFA01E3AADD600003059 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = ../Protocols.swift; sourceTree = "<group>"; };
-		84E6CFA41E3B99A300003059 /* Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Elements.swift; path = ../Elements.swift; sourceTree = "<group>"; };
 		84E944E61E47DFC400EF40D6 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationController.swift; path = ../ApplicationController.swift; sourceTree = "<group>"; };
-		84E944E81E489C9200EF40D6 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOver.swift; path = ../GameOver.swift; sourceTree = "<group>"; };
+		84E944E81E489C9200EF40D6 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverViewController.swift; path = ../GameOverViewController.swift; sourceTree = "<group>"; };
 		84E944EC1E49F57800EF40D6 /* XPED Shadow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "XPED Shadow.ttf"; sourceTree = "<group>"; };
 		84E944EE1E49F6FF00EF40D6 /* Xacto Blade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Xacto Blade.ttf"; sourceTree = "<group>"; };
 		84E944F01E4A2C2D00EF40D6 /* Xposed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xposed.ttf; sourceTree = "<group>"; };
 		84ED60EC1E3E90E500770960 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = ../Functions.swift; sourceTree = "<group>"; };
 		84FE11C21E53223800E25528 /* Zapf Elliptical 711 Bold BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zapf Elliptical 711 Bold BT.ttf"; sourceTree = "<group>"; };
+		84FE11C31E53266B00E25528 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Provider.swift; path = ../Provider.swift; sourceTree = "<group>"; };
+		84FE11C51E53271500E25528 /* Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Figure.swift; path = ../Figure.swift; sourceTree = "<group>"; };
+		84FE11C71E5327A400E25528 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Point.swift; path = ../Point.swift; sourceTree = "<group>"; };
+		84FE11C91E532B6E00E25528 /* LineFigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineFigure.swift; path = ../LineFigure.swift; sourceTree = "<group>"; };
+		84FE11CB1E532B8100E25528 /* T_Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = T_Figure.swift; path = ../T_Figure.swift; sourceTree = "<group>"; };
+		84FE11CD1E532BAF00E25528 /* L_Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L_Figure.swift; path = ../L_Figure.swift; sourceTree = "<group>"; };
+		84FE11CF1E532BCD00E25528 /* SquareFigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SquareFigure.swift; path = ../SquareFigure.swift; sourceTree = "<group>"; };
+		84FE11D11E532BEA00E25528 /* Z_Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Z_Figure.swift; path = ../Z_Figure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				84CB001F1E2FB81D001DF6E4 /* Tetris */,
-				84CB00341E2FB81D001DF6E4 /* TetrisTests */,
 				84CB001E1E2FB81D001DF6E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,28 +105,42 @@
 				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
 				84E944E61E47DFC400EF40D6 /* ApplicationController.swift */,
 				84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */,
-				84E944E81E489C9200EF40D6 /* GameOver.swift */,
+				84E944E81E489C9200EF40D6 /* GameOverViewController.swift */,
 				848B433F1E3628C700029892 /* Game.swift */,
-				84E6CFA41E3B99A300003059 /* Elements.swift */,
 				84E6CFA01E3AADD600003059 /* Protocols.swift */,
 				84ED60EC1E3E90E500770960 /* Functions.swift */,
-				84CB00271E2FB81D001DF6E4 /* Assets.xcassets */,
+				84FE11C31E53266B00E25528 /* Provider.swift */,
+				84FE11C51E53271500E25528 /* Figure.swift */,
+				84FE11D31E532CE700E25528 /* Figures */,
+				84FE11C71E5327A400E25528 /* Point.swift */,
 				84CB002C1E2FB81D001DF6E4 /* Info.plist */,
+				84CB00271E2FB81D001DF6E4 /* Assets.xcassets */,
+				84FE11D41E532D0300E25528 /* Fonts */,
+			);
+			path = Tetris;
+			sourceTree = "<group>";
+		};
+		84FE11D31E532CE700E25528 /* Figures */ = {
+			isa = PBXGroup;
+			children = (
+				84FE11CF1E532BCD00E25528 /* SquareFigure.swift */,
+				84FE11D11E532BEA00E25528 /* Z_Figure.swift */,
+				84FE11C91E532B6E00E25528 /* LineFigure.swift */,
+				84FE11CB1E532B8100E25528 /* T_Figure.swift */,
+				84FE11CD1E532BAF00E25528 /* L_Figure.swift */,
+			);
+			name = Figures;
+			sourceTree = "<group>";
+		};
+		84FE11D41E532D0300E25528 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
 				84E944EC1E49F57800EF40D6 /* XPED Shadow.ttf */,
 				84E944EE1E49F6FF00EF40D6 /* Xacto Blade.ttf */,
 				84FE11C21E53223800E25528 /* Zapf Elliptical 711 Bold BT.ttf */,
 				84E944F01E4A2C2D00EF40D6 /* Xposed.ttf */,
 			);
-			path = Tetris;
-			sourceTree = "<group>";
-		};
-		84CB00341E2FB81D001DF6E4 /* TetrisTests */ = {
-			isa = PBXGroup;
-			children = (
-				84CB00351E2FB81D001DF6E4 /* TetrisTests.swift */,
-				84CB00371E2FB81D001DF6E4 /* Info.plist */,
-			);
-			path = TetrisTests;
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,13 +249,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				84CB00231E2FB81D001DF6E4 /* GameViewConroller.swift in Sources */,
+				84FE11CA1E532B6E00E25528 /* LineFigure.swift in Sources */,
 				848B43401E3628C700029892 /* Game.swift in Sources */,
 				84ED60ED1E3E90E500770960 /* Functions.swift in Sources */,
+				84FE11D21E532BEA00E25528 /* Z_Figure.swift in Sources */,
 				84CB00211E2FB81D001DF6E4 /* AppDelegate.swift in Sources */,
+				84FE11D01E532BCD00E25528 /* SquareFigure.swift in Sources */,
 				84E944E71E47DFC400EF40D6 /* ApplicationController.swift in Sources */,
+				84FE11C61E53271500E25528 /* Figure.swift in Sources */,
 				84E6CFA11E3AADD600003059 /* Protocols.swift in Sources */,
-				84E944E91E489C9200EF40D6 /* GameOver.swift in Sources */,
-				84E6CFA51E3B99A300003059 /* Elements.swift in Sources */,
+				84FE11C81E5327A400E25528 /* Point.swift in Sources */,
+				84E944E91E489C9200EF40D6 /* GameOverViewController.swift in Sources */,
+				84FE11CE1E532BAF00E25528 /* L_Figure.swift in Sources */,
+				84FE11CC1E532B8100E25528 /* T_Figure.swift in Sources */,
+				84FE11C41E53266B00E25528 /* Provider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +270,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84CB00361E2FB81D001DF6E4 /* TetrisTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
