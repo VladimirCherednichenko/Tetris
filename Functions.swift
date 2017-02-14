@@ -5,7 +5,7 @@
 //  Created by Admin on 30.01.17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
-
+import UIKit
 import Foundation
 func minInTens(_ Array:[Int])->Int{
     var min:Int=2000
@@ -37,7 +37,7 @@ func removeDuplicate(_ Array:[Int])->[Int]{
     for i in 0...(count-1){
         if i==(count-1) {newArray.append(sortedArray[i])
         } else {
-            if sortedArray[i]==sortedArray[i+1] {
+            if sortedArray[i]/10==sortedArray[i+1]/10 {
                 
             }else{
                 newArray.append(sortedArray[i])}}}
@@ -59,17 +59,19 @@ func removeLine(_ Array:[Int],_ gameObjectPoints:GameProtocol, numberOfPixelsInO
     for i in 0...(count-2)
         
     {
-        currentElement=inputArray[i]/numberOfPixelsInOneLine
-        nextElement=inputArray[i+1]/numberOfPixelsInOneLine
+        currentElement=(inputArray[i]/numberOfPixelsInOneLine)/10
+        nextElement=(inputArray[i+1]/numberOfPixelsInOneLine)/10
         
         if currentElement==nextElement {
             countNumberTwo=countNumberTwo+1
             if countNumberTwo==numberOfPixelsInOneLine-1 {
                 for j in i-(numberOfPixelsInOneLine-2)...i+1{
-                    arrDelete.append(inputArray[j])}
+                    arrDelete.append(inputArray[j])
+                }
+                gameObjectPoints.points=gameObjectPoints.points+100
                 if count != i+2 {
-                    gameObjectPoints.points=gameObjectPoints.points+100
-                    for i1 in i+2...count-1{arrDelete.append(inputArray[i1]); bufer.append(inputArray[i1]+numberOfPixelsInOneLine)}}
+                    
+                    for i1 in i+2...count-1{arrDelete.append(inputArray[i1]); bufer.append(inputArray[i1]+(numberOfPixelsInOneLine*10))}}
             }
             
             
@@ -80,5 +82,8 @@ func removeLine(_ Array:[Int],_ gameObjectPoints:GameProtocol, numberOfPixelsInO
     for element in arrDelete{
         newArray=newArray.filter{$0 - element != 0}
     }
+    
+    print(newArray)
+    print(bufer," bufer")
     return newArray+bufer
 }

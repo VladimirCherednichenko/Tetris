@@ -25,7 +25,29 @@ class Game:GameProtocol{
     
     func clearView() {self.gameViewController.clearView()}
     func fillCollor(_ fillArray:[Int]) {
-        for element in fillArray{self.gameViewController.fillThePixel(gameIndex: element)}}
+        var image:UIImage=#imageLiteral(resourceName: "blockGreen")
+        var colourNumber:Int
+        
+        for element in fillArray{
+            colourNumber=element%10
+            switch colourNumber {
+            case 1:
+                image=#imageLiteral(resourceName: "blockGreen")
+            case 2:
+                image=#imageLiteral(resourceName: "pixelRed")
+            case 3:
+                image=#imageLiteral(resourceName: "blockBlue")
+            case 4:
+                image=#imageLiteral(resourceName: "blockYellow")
+            case 5:
+                image=#imageLiteral(resourceName: "block_pink")
+            default:
+                break
+            }
+            self.gameViewController.fillThePixel(gameIndex: element/10,blockImage: image)}
+    
+    
+    }
     
     
     
@@ -33,7 +55,22 @@ class Game:GameProtocol{
         var figureWithMovement:[Int]=[]
         for element in self.figure.offsetOfPoiIts{
             
-            let ellementIllappend = element.x + element.y*valueOfDivision+figure.startPoint.x+figure.startPoint.y*valueOfDivision
+            var ellementIllappend = element.x + element.y*valueOfDivision+figure.startPoint.x+figure.startPoint.y*valueOfDivision
+            ellementIllappend = ellementIllappend*10
+            switch element.pointColour {
+            case #imageLiteral(resourceName: "blockGreen"):
+                ellementIllappend = ellementIllappend+1
+            case #imageLiteral(resourceName: "pixelRed"):
+                ellementIllappend = ellementIllappend+2
+            case #imageLiteral(resourceName: "blockBlue"):
+                ellementIllappend = ellementIllappend+3
+            case #imageLiteral(resourceName: "blockYellow"):
+                ellementIllappend = ellementIllappend+4
+            case #imageLiteral(resourceName: "block_pink"):
+                ellementIllappend = ellementIllappend+5
+            default:
+                break
+            }
             figureWithMovement.append(ellementIllappend)
             
             
@@ -55,7 +92,7 @@ class Game:GameProtocol{
         if  figure.getIndexOfMaxY()<=maxY-2 {
             for element in indexesOfCurrentFigureOnView{
                 for index in indexesOfSavedElements{
-                    if element+Int(1/valueOfDivision)==index {
+                    if element/10+Int(1/valueOfDivision)==index/10 {
                         if !figureChanged {
                             indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
                             figure = provider.getNextFigure()
@@ -67,8 +104,9 @@ class Game:GameProtocol{
                 figure.moveFigureDown()}
         } else {
             figure = provider.getNextFigure()
-            indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView}
-        
+            indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
+        }
+       // self.fillCollor(indexesOfSavedElements+(indexesOfCurrentFigureOnView.map{$0+Int(1/valueOfDivision)-1}))
         if indexesOfSavedElements != [] {
             
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
@@ -76,8 +114,8 @@ class Game:GameProtocol{
             self.gameViewController.points=points
             //there begins Game Over
             indexesOfSavedElements=indexesOfSavedElements.sorted(by: <)
-            if Int(1/valueOfDivision)>indexesOfSavedElements[0]{
-                self.fillCollor(indexesOfSavedElements+(indexesOfCurrentFigureOnView.map{$0+Int(1/valueOfDivision)}))
+            if Int(1/valueOfDivision)>indexesOfSavedElements[0]/10{
+                
                 indexesOfSavedElements=[]
                 timer.invalidate()
                 applicationControllerObject.sendGameOverScreen()
@@ -122,7 +160,7 @@ class Game:GameProtocol{
         if  figure.getIndexOfMaxY()<=maxY-2 {
             for element in indexesOfCurrentFigureOnView{
                 for index in indexesOfSavedElements{
-                    if element+Int(1/valueOfDivision)==index {indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
+                    if element/10+Int(1/valueOfDivision)/10==index {indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
                         figure = provider.getNextFigure();
                         figureChanged=true
                     }

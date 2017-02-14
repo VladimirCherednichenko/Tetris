@@ -5,10 +5,10 @@
 //  Created by Admin on 14.02.17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
-
+import UIKit
 import Foundation
 class Provider{
-    
+
     private var currentElementIndex = 0
     private var figures: [()->Figure]
     init()
@@ -24,7 +24,7 @@ class Provider{
         let randomNum:UInt32 = arc4random_uniform(UInt32(self.figures.count))
         let randomTime:TimeInterval = TimeInterval(randomNum)
         let randomIndex:Int = Int(randomNum)
-        print(randomNum)
+        //print(randomNum)
         self.currentElementIndex = randomIndex
         if self.figures.count <= self.currentElementIndex {
             self.currentElementIndex = 0

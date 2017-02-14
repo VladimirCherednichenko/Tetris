@@ -93,9 +93,9 @@ class GameViewController: UIViewController, GameDraw {
         
     }
     
-    func fillThePixel(gameIndex:Int){
+    func fillThePixel(gameIndex:Int, blockImage:UIImage){
         if gameIndex >= 0 && gameIndex <= numberOfPixels-1 {
-            pixelArray[gameIndex].image=#imageLiteral(resourceName: "pixelRed")}
+            pixelArray[gameIndex].image=blockImage}
     }
     
     

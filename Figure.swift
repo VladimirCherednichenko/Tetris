@@ -5,17 +5,17 @@
 //  Created by Admin on 14.02.17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
-
+import UIKit
 import Foundation
 class Figure {
     
-    private(set) var startPoint=Point(x:4,y:0)
+    private(set) var startPoint=Point(x:4,y:0, colour: #imageLiteral(resourceName: "pixelDark"))
     var offsetOfPoiIts:[Point] = []
     
     
     func rotate(){
         self.offsetOfPoiIts = offsetOfPoiIts.map {
-            return Point(x: -$0.y, y: $0.x)
+            return Point(x: -$0.y, y: $0.x, colour: $0.pointColour)
         }}
     
     func moveFigureDown(){
