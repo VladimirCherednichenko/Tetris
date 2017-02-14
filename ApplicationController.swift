@@ -5,7 +5,7 @@ class ApplicationController:AppControllerProtocol{
     let navigationViewController:UINavigationController
     var gameViewController:UIViewController!
     var game: Game!
-    var valueOfDivision:CGFloat=0.05
+    var valueOfDivision:CGFloat=0.1
    
     
     

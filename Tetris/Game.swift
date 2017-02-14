@@ -32,12 +32,26 @@ class Game:GameProtocol{
     
     func clearThePixelCollor(_ cleanArray:[Int]) {for element in cleanArray{self.gameViewController.clearThePixel(gameIndex: element)}}
     
+    func getIndexForView(_ valueOfDivision:Int)->[Int]{
+        var figureWithMovement:[Int]=[]
+        print(valueOfDivision)
+        
+        for element in self.figure.offsetOfPoiIts{
+            
+            let ellementIllappend = element.x + element.y*valueOfDivision+figure.startPoint.x+figure.startPoint.y*valueOfDivision
+            
+            figureWithMovement.append(ellementIllappend)
+            
+            
+        }
+        return figureWithMovement.sorted(by: >).filter({return $0>=0})
+    }
     
     
     @objc func moveElementDown() {
         maxY=gameViewController.countVerticalpixels
         var indexesOfCurrentFigureOnView:[Int]=[]
-        indexesOfCurrentFigureOnView=figure.getIndexForView(Int(1/valueOfDivision))
+        indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
         self.clearView()
         self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         
@@ -88,7 +102,7 @@ class Game:GameProtocol{
             figure.moveFigureRight()
             
             var indexesOfCurrentFigureOnView:[Int]=[]
-            indexesOfCurrentFigureOnView=figure.getIndexForView(Int(1/valueOfDivision))
+            indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
             self.clearView()
             self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
             
@@ -101,7 +115,7 @@ class Game:GameProtocol{
             figure.moveFigureLeft()
             
             var indexesOfCurrentFigureOnView:[Int]=[]
-            indexesOfCurrentFigureOnView=figure.getIndexForView(Int(1/valueOfDivision))
+            indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
             self.clearView()
             self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
             
@@ -121,7 +135,7 @@ class Game:GameProtocol{
     
     @objc func rotateElement(){
         var indexesOfCurrentFigureOnView:[Int]=[]
-        indexesOfCurrentFigureOnView=figure.getIndexForView(Int(1/valueOfDivision))
+        indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
         self.clearView()
         self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         
