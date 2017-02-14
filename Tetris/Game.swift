@@ -27,19 +27,17 @@ class Game:GameProtocol{
     }
     
     func clearView() {self.gameViewController.clearView()}
+    func fillCollor(_ fillArray:[Int]) {
+        for element in fillArray{self.gameViewController.fillThePixel(gameIndex: element)}}
     
-    func fillCollor(_ fillArray:[Int]) {for element in fillArray{self.gameViewController.fillThePixel(gameIndex: element)}}
     
-    func clearThePixelCollor(_ cleanArray:[Int]) {for element in cleanArray{self.gameViewController.clearThePixel(gameIndex: element)}}
     
     func getIndexForView(_ valueOfDivision:Int)->[Int]{
         var figureWithMovement:[Int]=[]
         print(valueOfDivision)
-        
         for element in self.figure.offsetOfPoiIts{
             
             let ellementIllappend = element.x + element.y*valueOfDivision+figure.startPoint.x+figure.startPoint.y*valueOfDivision
-            
             figureWithMovement.append(ellementIllappend)
             
             
@@ -93,9 +91,6 @@ class Game:GameProtocol{
             }
         }
     }
-    
-    
-    
     @objc func moveElementRight(){
         
         if figure.getMaxX()+figure.startPoint.x<Int(1/valueOfDivision)-1{
@@ -105,9 +100,6 @@ class Game:GameProtocol{
             indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
             self.clearView()
             self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
-            
-            
-            
         }
     }
     @objc func moveElementLeft(){
@@ -118,18 +110,11 @@ class Game:GameProtocol{
             indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
             self.clearView()
             self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
-            
-            
-            
         }
     }
     @objc func moveElementDownTouch(){
-        
         moveElementDown()
-        
-        
-        
-    }
+        }
     
     
     
@@ -138,9 +123,6 @@ class Game:GameProtocol{
         indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
         self.clearView()
         self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
-        
-        
-        
         var figureChanged=false
         if  figure.getIndexOfMaxY()<=maxY-2 {
             for element in indexesOfCurrentFigureOnView{
@@ -160,10 +142,6 @@ class Game:GameProtocol{
             indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
             indexesOfSavedElements=removeLine(indexesOfSavedElements,self, numberOfPixelsInOneLine: Int(1/valueOfDivision))
         }
-        
-        
-        
-        
     }
 }
 
