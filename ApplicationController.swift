@@ -6,7 +6,7 @@ class ApplicationController:AppControllerProtocol{
     var gameViewController:UIViewController!
     var game: Game!
     
-    var valueOfDivision:CGFloat=0.1 //You can change size here
+    private(set) var valueOfDivision:CGFloat=0.1 //You can change size here
    
     
     

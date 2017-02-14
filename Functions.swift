@@ -69,7 +69,6 @@ func removeLine(_ Array:[Int],_ gameObjectPoints:GameProtocol, numberOfPixelsInO
                     arrDelete.append(inputArray[j])}
                 if count != i+2 {
                     gameObjectPoints.points=gameObjectPoints.points+100
-                    print(gameObjectPoints.points)
                     for i1 in i+2...count-1{arrDelete.append(inputArray[i1]); bufer.append(inputArray[i1]+numberOfPixelsInOneLine)}}
             }
             

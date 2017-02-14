@@ -5,15 +5,15 @@ import UIKit
 
 class Game:GameProtocol{
     
-    var gameViewController:GameDraw
-    var indexesOfSavedElements:[Int]=[]
-    var provider=Provider()
-    var figure:Figure
-    var timer=Timer()
+    private var gameViewController:GameDraw
+    private var indexesOfSavedElements:[Int]=[]
+    private var provider=Provider()
+    private var figure:Figure
+    private var timer=Timer()
     var points:Int=0
-    var maxY:Int!
-    var valueOfDivision:CGFloat
-    var applicationControllerObject:AppControllerProtocol
+    private var maxY:Int!
+    private var valueOfDivision:CGFloat
+    private var applicationControllerObject:AppControllerProtocol
     init(gameViewController:GameDraw,applicationControllerObject:AppControllerProtocol,_ valueOfDivision:CGFloat){
         self.valueOfDivision=valueOfDivision
         self.applicationControllerObject=applicationControllerObject
@@ -31,7 +31,6 @@ class Game:GameProtocol{
     
     func getIndexForView(_ valueOfDivision:Int)->[Int]{
         var figureWithMovement:[Int]=[]
-        print(valueOfDivision)
         for element in self.figure.offsetOfPoiIts{
             
             let ellementIllappend = element.x + element.y*valueOfDivision+figure.startPoint.x+figure.startPoint.y*valueOfDivision
@@ -53,7 +52,6 @@ class Game:GameProtocol{
         
         
         var figureChanged=false
-        print(maxY)
         if  figure.getIndexOfMaxY()<=maxY-2 {
             for element in indexesOfCurrentFigureOnView{
                 for index in indexesOfSavedElements{

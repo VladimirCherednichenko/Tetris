@@ -5,8 +5,8 @@ class GameViewController: UIViewController, GameDraw {
     var points:Int=0
     var valueOfDivision:CGFloat
     var widthPixel:CGFloat!
-    var numberOfPixels:Int!
-    var countVerticalpixels:Int=0
+    private(set) var numberOfPixels:Int!
+    private(set) var countVerticalpixels:Int=0
     var pixelArray=[UIImageView]()
     var gameDelegate:GameProtocol?
     let labelWithPoints=UILabel()
