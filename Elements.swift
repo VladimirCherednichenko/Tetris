@@ -58,20 +58,7 @@ class Figure {
     func moveFigureLeft(){
         self.startPoint.x=self.startPoint.x-1}
     
-//    func getIndexForView(_ valueOfDivision:Int)->[Int]{
-//        var figureWithMovement:[Int]=[]
-//        print(valueOfDivision)
-//        
-//        for element in self.offsetOfPoiIts{
-//            
-//            let ellementIllappend = element.x + element.y*valueOfDivision+startPoint.x+startPoint.y*valueOfDivision
-//            
-//            figureWithMovement.append(ellementIllappend)
-//            
-//            
-//        }
-//        return figureWithMovement.sorted(by: >).filter({return $0>=0})
-//    }
+
     func getIndexOfMaxY()->Int{
         var max:Int=0
         for element in offsetOfPoiIts{

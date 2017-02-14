@@ -41,21 +41,11 @@ class GameViewController: UIViewController, GameDraw {
         countVerticalpixels=Int(view.frame.height/widthPixel)
         numberOfPixels=countVerticalpixels*Int(1/valueOfDivision)
         createPixelArray()
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.darkGray
         
         
         
         
-        labelWithPoints.text=String(points)
-        labelWithPoints.textColor=UIColor.black
-        
-        labelWithPoints.font=UIFont(name: "Xposed", size: 20.0   )
-        
-        labelWithPoints.translatesAutoresizingMaskIntoConstraints=false
-        view.addSubview(labelWithPoints)
-        labelWithPoints.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive=true
-        
-        labelWithPoints.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
         
         let swipeRight = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.moveElementRight))
         swipeRight.direction = .right
@@ -84,7 +74,7 @@ class GameViewController: UIViewController, GameDraw {
         verticalStack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
         verticalStack.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
         verticalStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive=true
-        verticalStack.topAnchor.constraint(equalTo: labelWithPoints.bottomAnchor).isActive=true
+        //verticalStack.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
         //
         var stackArray=[UIStackView]()
         
@@ -112,7 +102,17 @@ class GameViewController: UIViewController, GameDraw {
             
         }
         
+      labelWithPoints.text=String(points)
+        labelWithPoints.textColor=UIColor.white
         
+        labelWithPoints.font=UIFont(name: "XPED Shadow", size: 35.0   )
+        
+        labelWithPoints.translatesAutoresizingMaskIntoConstraints=false
+        view.addSubview(labelWithPoints)
+        labelWithPoints.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive=true
+        
+        labelWithPoints.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
+
         
     }
     
@@ -135,7 +135,10 @@ class GameViewController: UIViewController, GameDraw {
     
     func clearView(){
         for element in pixelArray{
-            element.image=#imageLiteral(resourceName: "pixelDark")}
+            element.image=nil
+            element.backgroundColor=UIColor.darkGray
+        }
+        
         labelWithPoints.text=String(points)
     }
     

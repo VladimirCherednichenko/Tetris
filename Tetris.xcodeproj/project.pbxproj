@@ -50,6 +50,7 @@
 		84E944EE1E49F6FF00EF40D6 /* Xacto Blade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Xacto Blade.ttf"; sourceTree = "<group>"; };
 		84E944F01E4A2C2D00EF40D6 /* Xposed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xposed.ttf; sourceTree = "<group>"; };
 		84ED60EC1E3E90E500770960 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = ../Functions.swift; sourceTree = "<group>"; };
+		84FE11C21E53223800E25528 /* Zapf Elliptical 711 Bold BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zapf Elliptical 711 Bold BT.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 				84CB002C1E2FB81D001DF6E4 /* Info.plist */,
 				84E944EC1E49F57800EF40D6 /* XPED Shadow.ttf */,
 				84E944EE1E49F6FF00EF40D6 /* Xacto Blade.ttf */,
+				84FE11C21E53223800E25528 /* Zapf Elliptical 711 Bold BT.ttf */,
 				84E944F01E4A2C2D00EF40D6 /* Xposed.ttf */,
 			);
 			path = Tetris;

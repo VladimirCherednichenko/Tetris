@@ -6,6 +6,7 @@
 	<string>en</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Zapf Elliptical 711 Bold BT.ttf</string>
 		<string>XPED Shadow.ttf</string>
 		<string>Xacto Blade.ttf</string>
 		<string>Xposed.ttf</string>
