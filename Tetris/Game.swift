@@ -5,9 +5,6 @@ import UIKit
 
 class Game:GameProtocol{
     
-    var y:Int=10
-    var cleanTime:Int=0
-    var currentElementIndex:[Int] = []
     var gameViewController:GameDraw
     var indexesOfSavedElements:[Int]=[]
     var provider=Provider()
