@@ -5,27 +5,33 @@ class ApplicationController:AppControllerProtocol{
     let navigationViewController:UINavigationController
     var gameViewController:UIViewController!
     var game: Game!
+    var columns:Int
+    var rows:Int
     
     private(set) var valueOfDivision:CGFloat=0.1 //You can change size here
-   
+    
     
     
     
     init(navigationViewController:UINavigationController){
         
         self.navigationViewController=navigationViewController
-         
+        
+        self.columns = Int(1/valueOfDivision)
+        self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width*valueOfDivision))
+       // print(rows,columns)
+       
         newGame()
         
     }
     
- 
+    
     
     @objc func newGame() {
-        self.gameViewController = GameViewController(valueOfDivision)
+        self.gameViewController = GameViewController(valueOfDivision, columns, rows)
         
         
-        self.game=Game(gameViewController: gameViewController as! GameDraw, applicationControllerObject: self, valueOfDivision)
+        self.game=Game(gameViewController: gameViewController as! GameDraw, applicationControllerObject: self, rows: self.rows, columns: self.columns )
         
         if let controller = gameViewController as? GameViewController {
             controller.gameDelegate=game

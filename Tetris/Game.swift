@@ -6,175 +6,182 @@ import UIKit
 class Game:GameProtocol{
     
     private var gameViewController:GameDraw
-    private var indexesOfSavedElements:[Int]=[]
     private var provider=Provider()
     private var figure:Figure
     private var timer=Timer()
     var points:Int=0
-    private var maxY:Int!
-    private var valueOfDivision:CGFloat
     private var applicationControllerObject:AppControllerProtocol
-    init(gameViewController:GameDraw,applicationControllerObject:AppControllerProtocol,_ valueOfDivision:CGFloat){
-        self.valueOfDivision=valueOfDivision
+    //new values
+    var objectOfMatrix:Matrix<UIImage>
+    private var rows:Int
+    private var columns:Int
+    private var figureIsOnBottom=false
+    private var figureIsInTouch=false
+    private var gameOverIsHere=false
+    
+    init(gameViewController:GameDraw,applicationControllerObject:AppControllerProtocol, rows:Int, columns:Int)
+    {
+        
+        
         self.applicationControllerObject=applicationControllerObject
         self.gameViewController=gameViewController
         figure=provider.getFigure()
-        timer=Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
         
+        self.rows=rows
+        self.columns=columns
+        objectOfMatrix=Matrix<UIImage>(rows: rows, columns: columns)
+        
+        timer=Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
     }
     
     func clearView() {self.gameViewController.clearView()}
-    func fillCollor(_ fillArray:[Int]) {
-        var image:UIImage=#imageLiteral(resourceName: "blockGreen")
-        var colourNumber:Int
-        
-        for element in fillArray{
-            colourNumber=element%10
-            switch colourNumber {
-            case 1:
-                image=#imageLiteral(resourceName: "blockGreen")
-            case 2:
-                image=#imageLiteral(resourceName: "pixelRed")
-            case 3:
-                image=#imageLiteral(resourceName: "blockBlue")
-            case 4:
-                image=#imageLiteral(resourceName: "blockYellow")
-            case 5:
-                image=#imageLiteral(resourceName: "block_pink")
-            default:
-                break
+    
+    func renewTheView(){
+        for row in 0...rows
+        {
+            for column in 0...columns
+            {
+                
+                if objectOfMatrix[row,column] != nil
+                {
+                    gameViewController.fillThePixel(x: column, y: row, blockImage: objectOfMatrix[row,column]!)
+                }
             }
-            self.gameViewController.fillThePixel(gameIndex: element/10,blockImage: image)}
-    
-    
+        }
     }
     
-    
-    
-    func getIndexForView(_ valueOfDivision:Int)->[Int]{
-        var figureWithMovement:[Int]=[]
-        for element in self.figure.offsetOfPoiIts{
-            
-            var ellementIllappend = element.x + element.y*valueOfDivision+figure.startPoint.x+figure.startPoint.y*valueOfDivision
-            ellementIllappend = ellementIllappend*10
-            switch element.pointColour {
-            case #imageLiteral(resourceName: "blockGreen"):
-                ellementIllappend = ellementIllappend+1
-            case #imageLiteral(resourceName: "pixelRed"):
-                ellementIllappend = ellementIllappend+2
-            case #imageLiteral(resourceName: "blockBlue"):
-                ellementIllappend = ellementIllappend+3
-            case #imageLiteral(resourceName: "blockYellow"):
-                ellementIllappend = ellementIllappend+4
-            case #imageLiteral(resourceName: "block_pink"):
-                ellementIllappend = ellementIllappend+5
-            default:
-                break
+    func removeOvercrowdedLines()
+    {
+        for row in 0...rows-1
+        {   var counter=0
+            for column in 0...columns-1
+            {
+                if objectOfMatrix[row,column] != nil
+                {
+                    counter=counter+1
+                    if counter==10 {removeLine(lineNumber: row)}
+                } else {
+                    counter=0
+                }
             }
-            figureWithMovement.append(ellementIllappend)
-            
-            
         }
-        return figureWithMovement.sorted(by: >).filter({return $0>=0})
+        
+        
+    }
+    
+    func removeLine(lineNumber startRow:Int)
+    {
+        for row in (0...startRow).reversed()
+        {
+            for column in 0...columns-1
+            {
+                objectOfMatrix[row,column]=objectOfMatrix[row-1,column]
+                
+            }
+        }
+        points=points+1
     }
     
     
     @objc func moveElementDown() {
-        maxY=gameViewController.countVerticalpixels
-        var indexesOfCurrentFigureOnView:[Int]=[]
-        indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
         self.clearView()
-        self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         
+        let maxY=figure.getMaxY()
         
-        
-        var figureChanged=false
-        if  figure.getIndexOfMaxY()<=maxY-2 {
-            for element in indexesOfCurrentFigureOnView{
-                for index in indexesOfSavedElements{
-                    if element/10+Int(1/valueOfDivision)==index/10 {
-                        if !figureChanged {
-                            indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
-                            figure = provider.getNextFigure()
-                            
-                            figureChanged=true}
-                    }
-                }}
-            if !figureChanged{
-                figure.moveFigureDown()}
-        } else {
-            figure = provider.getNextFigure()
-            indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
-        }
-       // self.fillCollor(indexesOfSavedElements+(indexesOfCurrentFigureOnView.map{$0+Int(1/valueOfDivision)-1}))
-        if indexesOfSavedElements != [] {
+        for point in figure.offsetOfPoiIts{
             
-            indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
-            indexesOfSavedElements=removeLine(indexesOfSavedElements,self, numberOfPixelsInOneLine: Int(1/valueOfDivision))
-            self.gameViewController.points=points
-            //there begins Game Over
-            indexesOfSavedElements=indexesOfSavedElements.sorted(by: <)
-            if Int(1/valueOfDivision)>indexesOfSavedElements[0]/10{
+            if objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] == nil
+            {
                 
-                indexesOfSavedElements=[]
-                timer.invalidate()
-                applicationControllerObject.sendGameOverScreen()
-                
+                objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
+            } else {
+                for column in 0...columns-1
+                {
+                    if objectOfMatrix[0,column] != nil
+                    {
+                        gameOverIsHere=true
+                    }
+                }
+            }
+            //figure is on a flour?
+            if point.y + figure.startPoint.y >= rows-1
+            {
+                figureIsOnBottom=true
                 
             }
-        }
-    }
-    @objc func moveElementRight(){
-        
-        if figure.getMaxX()+figure.startPoint.x<Int(1/valueOfDivision)-1{
-            figure.moveFigureRight()
             
-            var indexesOfCurrentFigureOnView:[Int]=[]
-            indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
-            self.clearView()
-            self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
+            
+            if point.y == maxY
+            {
+                if objectOfMatrix[point.y + figure.startPoint.y+1,point.x + figure.startPoint.x] != nil
+                {
+                    figureIsInTouch=true
+                    
+                }
+            }
+        }
+        
+        for point in figure.offsetOfPoiIts{
+            if point.y == maxY
+            {
+                if objectOfMatrix[point.y + figure.startPoint.y+1,point.x + figure.startPoint.x] != nil
+                {
+                    figureIsInTouch=true
+                    
+                }
+            }
+        }
+        
+        
+        renewTheView()
+        
+        if gameOverIsHere{
+            timer.invalidate()
+            
+            applicationControllerObject.sendGameOverScreen()
+        }
+        
+        if figureIsOnBottom || figureIsInTouch
+        {
+            figure=provider.getFigure()
+            figureIsOnBottom=false
+            figureIsInTouch=false
+        } else {
+            
+            for element in figure.offsetOfPoiIts
+            {
+                objectOfMatrix[element.y + figure.startPoint.y,element.x + figure.startPoint.x]=nil
+            }
+        }
+        
+        removeOvercrowdedLines()
+        figure.moveFigureDown()
+    }
+    
+    
+    @objc func moveElementRight()
+    {
+        
+        if figure.getMaxX()+figure.startPoint.x<columns-1
+        {
+            figure.moveFigureRight()
+            self.renewTheView()
         }
     }
-    @objc func moveElementLeft(){
+    @objc func moveElementLeft()
+    {
         if figure.getMinX()+figure.startPoint.x>0{
             figure.moveFigureLeft()
+            self.renewTheView()
             
-            var indexesOfCurrentFigureOnView:[Int]=[]
-            indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
-            self.clearView()
-            self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
         }
     }
     @objc func moveElementDownTouch(){
         moveElementDown()
-        }
-    
-    
+    }
     
     @objc func rotateElement(){
-        var indexesOfCurrentFigureOnView:[Int]=[]
-        indexesOfCurrentFigureOnView=self.getIndexForView(Int(1/valueOfDivision))
-        self.clearView()
-        self.fillCollor(indexesOfSavedElements+indexesOfCurrentFigureOnView)
-        var figureChanged=false
-        if  figure.getIndexOfMaxY()<=maxY-2 {
-            for element in indexesOfCurrentFigureOnView{
-                for index in indexesOfSavedElements{
-                    if element/10+Int(1/valueOfDivision)/10==index {indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView
-                        figure = provider.getNextFigure();
-                        figureChanged=true
-                    }
-                }}
-            if !figureChanged{//rotation of the element
-                figure.rotate()}
-        } else {
-            figure = provider.getNextFigure();
-            indexesOfSavedElements=indexesOfSavedElements+indexesOfCurrentFigureOnView}
-        
-        if indexesOfSavedElements != [] {
-            indexesOfSavedElements=removeDuplicate(indexesOfSavedElements)
-            indexesOfSavedElements=removeLine(indexesOfSavedElements,self, numberOfPixelsInOneLine: Int(1/valueOfDivision))
-        }
+        figure.rotate()
     }
 }
 

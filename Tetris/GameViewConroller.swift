@@ -4,17 +4,21 @@ import UIKit
 class GameViewController: UIViewController, GameDraw {
     var points:Int=0
     var valueOfDivision:CGFloat
-    var widthPixel:CGFloat!
-    private(set) var numberOfPixels:Int!
-    private(set) var countVerticalpixels:Int=0
+    var columns:Int
+    private(set) var numberOfPixels:Int
+    private(set) var rows:Int
     var pixelArray=[UIImageView]()
     var gameDelegate:GameProtocol?
     let labelWithPoints=UILabel()
     
     //init
-    init(_ valueOfDivision:CGFloat){
+    init(_ valueOfDivision:CGFloat,_ columns:Int,_ rows:Int){
+        self.columns=columns
+        self.rows=rows
+        self.numberOfPixels=rows*columns
         self.valueOfDivision=valueOfDivision
         super.init(nibName: nil, bundle: nil)
+        //viewDidLoad()
     }
         required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -32,10 +36,6 @@ class GameViewController: UIViewController, GameDraw {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //calculatinng the devision
-        widthPixel=view.frame.width*valueOfDivision
-        countVerticalpixels=Int(view.frame.height/widthPixel)
-        numberOfPixels=countVerticalpixels*Int(1/valueOfDivision)
         createPixelArray()
         self.view.backgroundColor = UIColor.darkGray
         //adding SwipeRecognizer
@@ -63,7 +63,7 @@ class GameViewController: UIViewController, GameDraw {
     
         var stackArray=[UIStackView]()
         
-        for j in 0...countVerticalpixels-1 {
+        for j in 0...rows-1 {
             
             let horizontalStack = UIStackView()
             //horizontalStack.spacing=0.5
@@ -72,8 +72,8 @@ class GameViewController: UIViewController, GameDraw {
             stackArray.append(horizontalStack)
             verticalStack.addArrangedSubview(stackArray[j])
             
-            for i in 0...Int(1/valueOfDivision)-1{
-                let index:Int=(i+j*Int(1/valueOfDivision))
+            for i in 0...columns-1{
+                let index:Int=(i+j*columns)
                 stackArray[j].addArrangedSubview(pixelArray[index])
                 pixelArray[index].heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: CGFloat(valueOfDivision)).isActive=true
                 pixelArray[index].widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: CGFloat(valueOfDivision)).isActive=true
@@ -92,8 +92,10 @@ class GameViewController: UIViewController, GameDraw {
         
         
     }
+    //FILL PIXELS
     
-    func fillThePixel(gameIndex:Int, blockImage:UIImage){
+    func fillThePixel(x:Int,y:Int, blockImage:UIImage){
+        let gameIndex:Int=y*columns+x
         if gameIndex >= 0 && gameIndex <= numberOfPixels-1 {
             pixelArray[gameIndex].image=blockImage}
     }
@@ -105,7 +107,7 @@ class GameViewController: UIViewController, GameDraw {
             element.image=nil
             element.backgroundColor=UIColor.darkGray
         }
-        labelWithPoints.text=String(points)
+        labelWithPoints.text=String(gameDelegate!.points)
     }
     
     

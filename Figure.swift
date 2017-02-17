@@ -21,6 +21,9 @@ class Figure {
     func moveFigureDown(){
         self.startPoint.y = self.startPoint.y + 1 }
     
+    func moveFigureUp(){
+        self.startPoint.y = self.startPoint.y + 1 }
+    
     func moveFigureRight(){
         self.startPoint.x=self.startPoint.x+1}
     
@@ -28,12 +31,12 @@ class Figure {
         self.startPoint.x=self.startPoint.x-1}
     
     
-    func getIndexOfMaxY()->Int{
+    func getMaxY()->Int{
         var max:Int=0
         for element in offsetOfPoiIts{
             if element.y>max{max=element.y}
         }
-        return max+startPoint.y}
+        return max}
     
     
     

@@ -7,19 +7,25 @@
 //
 import UIKit
 import Foundation
-func minInTens(_ Array:[Int])->Int{
+func minInTens(_ Array:[Int])
+    ->Int
+{
     var min:Int=2000
     for element in Array{ if element % 10<min {min=element % 10}}
     return min
 }
 
-func maxInTens(_ Array:[Int])->Int{
+func maxInTens(_ Array:[Int])
+    ->Int
+{
     var max:Int=0
     for element in Array{ if element % 10>max {max=element % 10}}
     return max
 }
 
-func searchMaxNummberInArray(Array:[Int])->Int{
+func searchMaxNummberInArray(Array:[Int])
+    ->Int
+{
     var max=0
     for element in Array {
         if element>max {max=element}
@@ -27,7 +33,9 @@ func searchMaxNummberInArray(Array:[Int])->Int{
     return max
 }
 
-func removeDuplicate(_ Array:[Int])->[Int]{
+func removeDuplicate(_ Array:[Int])
+    ->[Int]
+{
     var newArray:[Int]=[]
     var sortedArray:[Int]=[]
     var count:Int=0
@@ -44,7 +52,9 @@ func removeDuplicate(_ Array:[Int])->[Int]{
     return newArray
 }
 
-func removeLine(_ Array:[Int],_ gameObjectPoints:GameProtocol, numberOfPixelsInOneLine:Int)->[Int]{
+func removeLine(_ Array:[Int],_ gameObjectPoints:GameProtocol, numberOfPixelsInOneLine:Int)
+    ->[Int]
+{
     
     var gameObjectPoints = gameObjectPoints
     var inputArray=Array.sorted(by: >)
@@ -83,7 +93,7 @@ func removeLine(_ Array:[Int],_ gameObjectPoints:GameProtocol, numberOfPixelsInO
         newArray=newArray.filter{$0 - element != 0}
     }
     
-    print(newArray)
-    print(bufer," bufer")
+    //print(newArray)
+    //print(bufer," bufer")
     return newArray+bufer
 }

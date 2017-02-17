@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 protocol GameDraw {
     var points:Int{get set}
-    var countVerticalpixels:Int{get}
-    func fillThePixel(gameIndex:Int, blockImage:UIImage )
+    //var countVerticalpixels:Int{get}
+    func fillThePixel(x:Int,y:Int, blockImage:UIImage)
     func clearView()
     var view: UIView! {get}
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844211641E548DB900257E3C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844211631E548DB900257E3C /* Matrix.swift */; };
 		848B43401E3628C700029892 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B433F1E3628C700029892 /* Game.swift */; };
 		84CB00211E2FB81D001DF6E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */; };
 		84CB00231E2FB81D001DF6E4 /* GameViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		844211631E548DB900257E3C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = ../Matrix.swift; sourceTree = "<group>"; };
 		848B433F1E3628C700029892 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		84CB001D1E2FB81D001DF6E4 /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,9 +106,10 @@
 			children = (
 				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
 				84E944E61E47DFC400EF40D6 /* ApplicationController.swift */,
+				848B433F1E3628C700029892 /* Game.swift */,
 				84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */,
 				84E944E81E489C9200EF40D6 /* GameOverViewController.swift */,
-				848B433F1E3628C700029892 /* Game.swift */,
+				844211631E548DB900257E3C /* Matrix.swift */,
 				84E6CFA01E3AADD600003059 /* Protocols.swift */,
 				84ED60EC1E3E90E500770960 /* Functions.swift */,
 				84FE11C31E53266B00E25528 /* Provider.swift */,
@@ -260,6 +263,7 @@
 				84E6CFA11E3AADD600003059 /* Protocols.swift in Sources */,
 				84FE11C81E5327A400E25528 /* Point.swift in Sources */,
 				84E944E91E489C9200EF40D6 /* GameOverViewController.swift in Sources */,
+				844211641E548DB900257E3C /* Matrix.swift in Sources */,
 				84FE11CE1E532BAF00E25528 /* L_Figure.swift in Sources */,
 				84FE11CC1E532B8100E25528 /* T_Figure.swift in Sources */,
 				84FE11C41E53266B00E25528 /* Provider.swift in Sources */,
