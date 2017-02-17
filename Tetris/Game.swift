@@ -34,9 +34,10 @@ class Game:GameProtocol{
         timer=Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
     }
     
-    func clearView() {self.gameViewController.clearView()}
+
     
-    func renewTheView(){
+    func renewTheView()
+    {
         for row in 0...rows
         {
             for column in 0...columns
@@ -87,7 +88,7 @@ class Game:GameProtocol{
     
     
     @objc func moveElementDown() {
-        self.clearView()
+        self.gameViewController.clearView()
         
         let maxY=figure.getMaxY()
         
