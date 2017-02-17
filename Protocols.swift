@@ -25,8 +25,8 @@ protocol GameDraw {
 
 protocol GameProtocol {
     var points:Int{get set}
-    func moveElementDown()
-    func moveElementRight()
-    func moveElementLeft()
+    func didSwipeDown()
+    func didSwipeRight()
+    func didSwipeLeft()
     
 }

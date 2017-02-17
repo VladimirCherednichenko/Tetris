@@ -159,7 +159,7 @@ class Game:GameProtocol{
     }
     
     
-    @objc func moveElementRight()
+    @objc func didSwipeRight()
     {
         
         if figure.getMaxX()+figure.startPoint.x<columns-1
@@ -168,7 +168,7 @@ class Game:GameProtocol{
             self.renewTheView()
         }
     }
-    @objc func moveElementLeft()
+    @objc func didSwipeLeft()
     {
         if figure.getMinX()+figure.startPoint.x>0{
             figure.moveFigureLeft()
@@ -176,7 +176,7 @@ class Game:GameProtocol{
             
         }
     }
-    @objc func moveElementDownTouch(){
+    @objc func didSwipeDown(){
         moveElementDown()
     }
     

@@ -39,13 +39,13 @@ class GameViewController: UIViewController, GameDraw {
         createPixelArray()
         self.view.backgroundColor = UIColor.darkGray
         //adding SwipeRecognizer
-        let swipeRight = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.moveElementRight))
+        let swipeRight = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.didSwipeRight))
         swipeRight.direction = .right
         self.view.addGestureRecognizer(swipeRight)
-        let swipeLeft = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.moveElementLeft))
+        let swipeLeft = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.didSwipeLeft))
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
-        let swipeDown = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.moveElementDownTouch))
+        let swipeDown = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.didSwipeDown))
         swipeDown.direction = .down
         self.view.addGestureRecognizer(swipeDown)
         let tap = UITapGestureRecognizer(target: gameDelegate, action: #selector(Game.rotateElement))
