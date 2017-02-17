@@ -53,13 +53,13 @@ class Game:GameProtocol{
     
     func removeOvercrowdedLines()
     {
-        for row in 0...rows-1
+        for row in 0...rows - 1
         {   var counter = 0
-            for column in 0...columns-1
+            for column in 0...columns - 1
             {
                 if self.objectOfMatrix[row,column] != nil
                 {
-                    counter = counter+1
+                    counter = counter + 1
                     if counter == 10
                     {
                         self.removeLine(lineNumber: row)
@@ -77,13 +77,13 @@ class Game:GameProtocol{
     {
         for row in (0...startRow).reversed()
         {
-            for column in 0...columns-1
+            for column in 0...columns - 1
             {
-                self.objectOfMatrix[row,column]  =  self.objectOfMatrix[row-1,column]
+                self.objectOfMatrix[row,column]  =  self.objectOfMatrix[row - 1,column]
                 
             }
         }
-        points = points+1
+        points = points + 1
     }
     
     
@@ -99,7 +99,7 @@ class Game:GameProtocol{
                 
                 self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
             } else {
-                for column in 0...columns-1
+                for column in 0...columns - 1
                 {
                     if self.objectOfMatrix[0,column] != nil
                     {
@@ -108,7 +108,7 @@ class Game:GameProtocol{
                 }
             }
             //figure is on a flour?
-            if point.y + figure.startPoint.y >= rows-1
+            if point.y + figure.startPoint.y >= rows - 1
             {
                 self.figureIsOnBottom = true
                 
@@ -164,7 +164,7 @@ class Game:GameProtocol{
     @objc func didSwipeRight()
     {
         
-        if figure.getMaxX() + figure.startPoint.x < columns-1
+        if figure.getMaxX() + figure.startPoint.x < columns - 1
         {
             figure.moveFigureRight()
             self.renewTheView()

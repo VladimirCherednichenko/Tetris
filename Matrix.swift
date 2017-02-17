@@ -17,7 +17,7 @@ class Matrix<Type>
     init(rows:Int, columns:Int){
         self.rows = rows
         self.columns = columns
-        grid = Array(repeating: nil, count: rows*columns)
+        grid = Array(repeating: nil, count: rows * columns)
     }
     
     func indexIsValid(row:Int, column:Int)

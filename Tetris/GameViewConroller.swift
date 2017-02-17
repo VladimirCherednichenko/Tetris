@@ -16,7 +16,7 @@ class GameViewController: UIViewController, GameDraw {
     {
         self.columns = columns
         self.rows = rows
-        self.numberOfPixels = rows*columns
+        self.numberOfPixels = rows * columns
         self.valueOfDivision = valueOfDivision
         super.init(nibName: nil, bundle: nil)
         //viewDidLoad()
@@ -67,7 +67,7 @@ class GameViewController: UIViewController, GameDraw {
         
         var stackArray = [UIStackView]()
         
-        for j in 0...rows-1
+        for j in 0...rows - 1
         {
             let horizontalStack = UIStackView()
             horizontalStack.axis = .horizontal
@@ -75,9 +75,9 @@ class GameViewController: UIViewController, GameDraw {
             stackArray.append(horizontalStack)
             verticalStack.addArrangedSubview(stackArray[j])
             
-            for i in 0...columns-1
+            for i in 0...columns - 1
             {
-                let index:Int = (i+j*columns)
+                let index:Int = (i + j * columns)
                 stackArray[j].addArrangedSubview(pixelArray[index])
                 pixelArray[index].heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: CGFloat(valueOfDivision)).isActive = true
                 pixelArray[index].widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: CGFloat(valueOfDivision)).isActive = true

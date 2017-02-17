@@ -19,7 +19,7 @@ class ApplicationController:AppControllerProtocol{
         self.navigationViewController = navigationViewController
         
         self.columns = Int(1/valueOfDivision)
-        self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width*valueOfDivision))
+        self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * valueOfDivision))
         newGame()
         
     }
