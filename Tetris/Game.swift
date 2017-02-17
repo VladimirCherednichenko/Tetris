@@ -27,14 +27,14 @@ class Game:GameProtocol{
         self.gameViewController = gameViewController
         self.figure = provider.getFigure()
         
-        self.rows=rows
-        self.columns=columns
-        self.objectOfMatrix=Matrix<UIImage>(rows: rows, columns: columns)
+        self.rows = rows
+        self.columns = columns
+        self.objectOfMatrix = Matrix<UIImage>(rows: rows, columns: columns)
         
-        timer=Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
     }
     
-
+    
     
     func renewTheView()
     {
@@ -54,18 +54,18 @@ class Game:GameProtocol{
     func removeOvercrowdedLines()
     {
         for row in 0...rows-1
-        {   var counter=0
+        {   var counter = 0
             for column in 0...columns-1
             {
                 if self.objectOfMatrix[row,column] != nil
                 {
-                    counter=counter+1
-                    if counter==10
+                    counter = counter+1
+                    if counter == 10
                     {
                         self.removeLine(lineNumber: row)
                     }
                 } else {
-                    counter=0
+                    counter  =  0
                 }
             }
         }
@@ -79,18 +79,18 @@ class Game:GameProtocol{
         {
             for column in 0...columns-1
             {
-                self.objectOfMatrix[row,column] = self.objectOfMatrix[row-1,column]
+                self.objectOfMatrix[row,column]  =  self.objectOfMatrix[row-1,column]
                 
             }
         }
-        points=points+1
+        points = points+1
     }
     
     
     @objc func moveElementDown() {
         self.gameViewController.clearView()
         
-        let maxY=figure.getMaxY()
+        let maxY = figure.getMaxY()
         
         for point in figure.offsetOfPoiIts{
             
@@ -103,14 +103,14 @@ class Game:GameProtocol{
                 {
                     if self.objectOfMatrix[0,column] != nil
                     {
-                        self.gameOverIsHere=true
+                        self.gameOverIsHere = true
                     }
                 }
             }
             //figure is on a flour?
             if point.y + figure.startPoint.y >= rows-1
             {
-                self.figureIsOnBottom=true
+                self.figureIsOnBottom = true
                 
             }
             
@@ -119,7 +119,7 @@ class Game:GameProtocol{
             {
                 if self.objectOfMatrix[point.y + figure.startPoint.y + 1,point.x + figure.startPoint.x] != nil
                 {
-                    self.figureIsInTouch=true
+                    self.figureIsInTouch = true
                     
                 }
             }
@@ -130,7 +130,7 @@ class Game:GameProtocol{
             {
                 if self.objectOfMatrix[point.y + figure.startPoint.y + 1,point.x + figure.startPoint.x] != nil
                 {
-                    self.figureIsInTouch=true
+                    self.figureIsInTouch = true
                     
                 }
             }
@@ -145,9 +145,9 @@ class Game:GameProtocol{
         renewTheView()
         if figureIsOnBottom || figureIsInTouch
         {
-            figure=provider.getFigure()
-            figureIsOnBottom=false
-            figureIsInTouch=false
+            figure = provider.getFigure()
+            figureIsOnBottom = false
+            figureIsInTouch = false
         } else {
             
             for element in figure.offsetOfPoiIts
@@ -172,7 +172,8 @@ class Game:GameProtocol{
     }
     @objc func didSwipeLeft()
     {
-        if figure.getMinX() + figure.startPoint.x > 0 {
+        if figure.getMinX() + figure.startPoint.x > 0
+        {
             figure.moveFigureLeft()
             self.renewTheView()
             
@@ -183,7 +184,8 @@ class Game:GameProtocol{
         moveElementDown()
     }
     
-    @objc func rotateElement(){
+    @objc func rotateElement()
+    {
         figure.rotate()
     }
 }

@@ -28,7 +28,7 @@ class GameViewController: UIViewController, GameDraw {
     func createPixelArray()
     {
         
-        for _ in 0...numberOfPixels-1
+        for _ in 0...numberOfPixels - 1
         {
             
             let pixel = UIImageView(image: #imageLiteral(resourceName: "pixelDark"))
@@ -100,8 +100,8 @@ class GameViewController: UIViewController, GameDraw {
     
     func fillThePixel(x:Int,y:Int, blockImage:UIImage)
     {
-        let gameIndex:Int = y*columns+x
-        if gameIndex >= 0 && gameIndex <= numberOfPixels-1
+        let gameIndex:Int = y * columns + x
+        if gameIndex >= 0 && gameIndex <= numberOfPixels - 1
         {
             pixelArray[gameIndex].image = blockImage
         }
