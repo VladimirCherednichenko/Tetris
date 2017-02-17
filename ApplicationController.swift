@@ -8,19 +8,18 @@ class ApplicationController:AppControllerProtocol{
     var columns:Int
     var rows:Int
     
-    private(set) var valueOfDivision:CGFloat=0.1 //You can change size here
+    private(set) var valueOfDivision:CGFloat = 0.1 //You can change size here
     
     
     
     
-    init(navigationViewController:UINavigationController){
+    init(navigationViewController:UINavigationController)
+    {
         
-        self.navigationViewController=navigationViewController
+        self.navigationViewController = navigationViewController
         
         self.columns = Int(1/valueOfDivision)
         self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width*valueOfDivision))
-       // print(rows,columns)
-       
         newGame()
         
     }
@@ -31,10 +30,10 @@ class ApplicationController:AppControllerProtocol{
         self.gameViewController = GameViewController(valueOfDivision, columns, rows)
         
         
-        self.game=Game(gameViewController: gameViewController as! GameDraw, applicationControllerObject: self, rows: self.rows, columns: self.columns )
+        self.game = Game(gameViewController: gameViewController as! GameDraw, applicationControllerObject: self, rows: self.rows, columns: self.columns )
         
         if let controller = gameViewController as? GameViewController {
-            controller.gameDelegate=game
+            controller.gameDelegate = game
         }
         navigationViewController.pushViewController(gameViewController, animated: false)
         
@@ -42,10 +41,10 @@ class ApplicationController:AppControllerProtocol{
     
     func sendGameOverScreen() {
         
-        self.gameOverScreen=nil
-        self.game=nil
-        self.gameViewController=nil
-        self.gameOverScreen=GameOverViewController(applicationControllerObject: self)
+        self.gameOverScreen = nil
+        self.game = nil
+        self.gameViewController = nil
+        self.gameOverScreen = GameOverViewController(applicationControllerObject: self)
         navigationViewController.popViewController(animated: false)
         navigationViewController.pushViewController(gameOverScreen, animated: false)
         

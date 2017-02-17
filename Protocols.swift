@@ -8,22 +8,24 @@
 
 import Foundation
 import UIKit
-protocol GameDraw {
+protocol GameDraw
+{
     var points:Int{get set}
-    //var countVerticalpixels:Int{get}
     func fillThePixel(x:Int,y:Int, blockImage:UIImage)
     func clearView()
     var view: UIView! {get}
 }
 
 
-@objc protocol AppControllerProtocol {
+@objc protocol AppControllerProtocol
+{
     func sendGameOverScreen()
     @objc func newGame()
     
 }
 
-protocol GameProtocol {
+protocol GameProtocol
+{
     var points:Int{get set}
     func didSwipeDown()
     func didSwipeRight()

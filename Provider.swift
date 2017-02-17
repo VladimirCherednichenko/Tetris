@@ -8,12 +8,12 @@
 import UIKit
 import Foundation
 class Provider{
-
+    
     private var currentElementIndex = 0
     private var figures: [()->Figure]
     init()
     {
-       self.figures = [{ let figure=LineFigure(); return figure}, { let figure=T_Figure(); return figure}, { let figure=L_Figure(); return figure},{ let figure=SquareFigure(); return figure},{ let figure=Z_Figure(); return figure}]
+        self.figures = [{ let figure=LineFigure(); return figure}, { let figure=T_Figure(); return figure}, { let figure=L_Figure(); return figure},{ let figure=SquareFigure(); return figure},{ let figure=Z_Figure(); return figure}]
         
     }
     
@@ -25,7 +25,6 @@ class Provider{
         let randomNum:UInt32 = arc4random_uniform(UInt32(self.figures.count))
         let randomTime:TimeInterval = TimeInterval(randomNum)
         let randomIndex:Int = Int(randomNum)
-        //print(randomNum)
         self.currentElementIndex = randomIndex
         if self.figures.count <= self.currentElementIndex {
             self.currentElementIndex = 0

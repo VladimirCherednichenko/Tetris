@@ -6,30 +6,30 @@ import UIKit
 class Game:GameProtocol{
     
     private var gameViewController:GameDraw
-    private var provider=Provider()
+    private var provider = Provider()
     private var figure:Figure
-    private var timer=Timer()
-    var points:Int=0
+    private var timer = Timer()
+    var points:Int = 0
     private var applicationControllerObject:AppControllerProtocol
     //new values
     var objectOfMatrix:Matrix<UIImage>
     private var rows:Int
     private var columns:Int
-    private var figureIsOnBottom=false
-    private var figureIsInTouch=false
-    private var gameOverIsHere=false
+    private var figureIsOnBottom = false
+    private var figureIsInTouch = false
+    private var gameOverIsHere = false
     
     init(gameViewController:GameDraw,applicationControllerObject:AppControllerProtocol, rows:Int, columns:Int)
     {
         
         
-        self.applicationControllerObject=applicationControllerObject
-        self.gameViewController=gameViewController
-        figure=provider.getFigure()
+        self.applicationControllerObject = applicationControllerObject
+        self.gameViewController = gameViewController
+        self.figure = provider.getFigure()
         
         self.rows=rows
         self.columns=columns
-        objectOfMatrix=Matrix<UIImage>(rows: rows, columns: columns)
+        self.objectOfMatrix=Matrix<UIImage>(rows: rows, columns: columns)
         
         timer=Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
     }
@@ -42,9 +42,9 @@ class Game:GameProtocol{
             for column in 0...columns
             {
                 
-                if objectOfMatrix[row,column] != nil
+                if self.objectOfMatrix[row,column] != nil
                 {
-                    gameViewController.fillThePixel(x: column, y: row, blockImage: objectOfMatrix[row,column]!)
+                    self.gameViewController.fillThePixel(x: column, y: row, blockImage: self.objectOfMatrix[row,column]!)
                 }
             }
         }
@@ -56,10 +56,13 @@ class Game:GameProtocol{
         {   var counter=0
             for column in 0...columns-1
             {
-                if objectOfMatrix[row,column] != nil
+                if self.objectOfMatrix[row,column] != nil
                 {
                     counter=counter+1
-                    if counter==10 {removeLine(lineNumber: row)}
+                    if counter==10
+                    {
+                        self.removeLine(lineNumber: row)
+                    }
                 } else {
                     counter=0
                 }
@@ -75,7 +78,7 @@ class Game:GameProtocol{
         {
             for column in 0...columns-1
             {
-                objectOfMatrix[row,column]=objectOfMatrix[row-1,column]
+                self.objectOfMatrix[row,column] = self.objectOfMatrix[row-1,column]
                 
             }
         }
@@ -90,32 +93,32 @@ class Game:GameProtocol{
         
         for point in figure.offsetOfPoiIts{
             
-            if objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] == nil
+            if self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] == nil
             {
                 
-                objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
+                self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
             } else {
                 for column in 0...columns-1
                 {
-                    if objectOfMatrix[0,column] != nil
+                    if self.objectOfMatrix[0,column] != nil
                     {
-                        gameOverIsHere=true
+                        self.gameOverIsHere=true
                     }
                 }
             }
             //figure is on a flour?
             if point.y + figure.startPoint.y >= rows-1
             {
-                figureIsOnBottom=true
+                self.figureIsOnBottom=true
                 
             }
             
             
             if point.y == maxY
             {
-                if objectOfMatrix[point.y + figure.startPoint.y+1,point.x + figure.startPoint.x] != nil
+                if self.objectOfMatrix[point.y + figure.startPoint.y + 1,point.x + figure.startPoint.x] != nil
                 {
-                    figureIsInTouch=true
+                    self.figureIsInTouch=true
                     
                 }
             }
@@ -124,23 +127,21 @@ class Game:GameProtocol{
         for point in figure.offsetOfPoiIts{
             if point.y == maxY
             {
-                if objectOfMatrix[point.y + figure.startPoint.y+1,point.x + figure.startPoint.x] != nil
+                if self.objectOfMatrix[point.y + figure.startPoint.y + 1,point.x + figure.startPoint.x] != nil
                 {
-                    figureIsInTouch=true
+                    self.figureIsInTouch=true
                     
                 }
             }
         }
         
-        
-        renewTheView()
-        
-        if gameOverIsHere{
+        if gameOverIsHere
+        {
             timer.invalidate()
             
             applicationControllerObject.sendGameOverScreen()
         }
-        
+        renewTheView()
         if figureIsOnBottom || figureIsInTouch
         {
             figure=provider.getFigure()
@@ -150,7 +151,7 @@ class Game:GameProtocol{
             
             for element in figure.offsetOfPoiIts
             {
-                objectOfMatrix[element.y + figure.startPoint.y,element.x + figure.startPoint.x]=nil
+                self.objectOfMatrix[element.y + figure.startPoint.y,element.x + figure.startPoint.x] = nil
             }
         }
         
@@ -162,7 +163,7 @@ class Game:GameProtocol{
     @objc func didSwipeRight()
     {
         
-        if figure.getMaxX()+figure.startPoint.x<columns-1
+        if figure.getMaxX() + figure.startPoint.x < columns-1
         {
             figure.moveFigureRight()
             self.renewTheView()
@@ -170,13 +171,14 @@ class Game:GameProtocol{
     }
     @objc func didSwipeLeft()
     {
-        if figure.getMinX()+figure.startPoint.x>0{
+        if figure.getMinX() + figure.startPoint.x > 0 {
             figure.moveFigureLeft()
             self.renewTheView()
             
         }
     }
-    @objc func didSwipeDown(){
+    @objc func didSwipeDown()
+    {
         moveElementDown()
     }
     

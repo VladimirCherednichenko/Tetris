@@ -15,8 +15,8 @@ class Matrix<Type>
     let columns:Int
     var grid: [Type?]
     init(rows:Int, columns:Int){
-        self.rows=rows
-        self.columns=columns
+        self.rows = rows
+        self.columns = columns
         grid = Array(repeating: nil, count: rows*columns)
     }
     
@@ -36,7 +36,6 @@ class Matrix<Type>
         }
         
         set {
-            print(row,column)
             let check = indexIsValid(row: row, column: column)
             let index = self.indexOf(row, column)
             

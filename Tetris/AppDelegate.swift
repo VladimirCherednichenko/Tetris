@@ -15,7 +15,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
+        -> Bool
+    {
         
         
         let windowFrame = UIScreen.main.bounds
@@ -23,12 +25,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         self.window = UIWindow(frame: windowFrame)
         
         let navigationViewController = UINavigationController()
-        _=ApplicationController(navigationViewController: navigationViewController)
+        _ = ApplicationController(navigationViewController: navigationViewController)
         
-        
-        
-        
-        navigationViewController.navigationBar.isHidden=true
+        navigationViewController.navigationBar.isHidden = true
         window?.rootViewController = navigationViewController
         window?.makeKeyAndVisible()
         
