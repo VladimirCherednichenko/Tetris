@@ -30,7 +30,7 @@ class ApplicationController:AppControllerProtocol{
         self.gameViewController = GameViewController(valueOfDivision, columns, rows)
         
         
-        self.game = Game(gameViewController: gameViewController as! GameDraw, applicationControllerObject: self, rows: self.rows, columns: self.columns )
+        self.game = Game(gameViewController: gameViewController as? GameDraw, applicationControllerObject: self, rows: self.rows, columns: self.columns )
         
         if let controller = gameViewController as? GameViewController {
             controller.gameDelegate = game

@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 class Figure {
     
-    private(set) var startPoint = Point(x:4,y:0, colour: #imageLiteral(resourceName: "pixelDark"))
+    private(set) var startPoint = Point(x:4,y:-2, colour: #imageLiteral(resourceName: "pixelDark"))
     var offsetOfPoiIts:[Point] = []
     
     
@@ -76,8 +76,33 @@ class Figure {
         return max
     }
     
+    func duplicateX(x:Int)->Bool {
+        var duplicate = false
+        var foundFirstTime = true
+        for elemnt in offsetOfPoiIts{
+            
+            if elemnt.x == x {
+                if foundFirstTime {
+                    
+                    foundFirstTime = false
+                } else {
+                    duplicate = true
+                }
+            }
+        }
+        return duplicate
+    }
     
-    
+    func verifyingExistenceOfPoint(x:Int,y:Int)->Bool
+    {
+        var status=false
+        for point in offsetOfPoiIts{
+            if point.x==x && point.y==y {
+                status=true
+            }
+        }
+        return status
+    }
     func getMinX()
         ->Int
     {

@@ -23,7 +23,7 @@ class Provider{
     {
         
         let randomNum:UInt32 = arc4random_uniform(UInt32(self.figures.count))
-        let randomTime:TimeInterval = TimeInterval(randomNum)
+        _ = TimeInterval(randomNum)
         let randomIndex:Int = Int(randomNum)
         self.currentElementIndex = randomIndex
         if self.figures.count <= self.currentElementIndex {
@@ -37,7 +37,7 @@ class Provider{
     func getFigure()
         ->Figure
     {   let randomNum:UInt32 = arc4random_uniform(UInt32(self.figures.count))
-        let randomTime:TimeInterval = TimeInterval(randomNum)
+        _ = TimeInterval(randomNum)
         let randomIndex:Int = Int(randomNum)
         
         return self.figures[randomIndex]()

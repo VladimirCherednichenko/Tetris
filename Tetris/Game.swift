@@ -5,12 +5,12 @@ import UIKit
 
 class Game:GameProtocol{
     
-    private var gameViewController:GameDraw
+    var gameViewController:GameDraw?
     private var provider = Provider()
     private var figure:Figure
     private var timer = Timer()
     var points:Int = 0
-    private var applicationControllerObject:AppControllerProtocol
+    var applicationControllerObject:AppControllerProtocol?
     //new values
     var objectOfMatrix:Matrix<UIImage>
     private var rows:Int
@@ -18,8 +18,9 @@ class Game:GameProtocol{
     private var figureIsOnBottom = false
     private var figureIsInTouch = false
     private var gameOverIsHere = false
-    
-    init(gameViewController:GameDraw,applicationControllerObject:AppControllerProtocol, rows:Int, columns:Int)
+    var maxXRepeat = false
+    var minXrepeat = false
+    init(gameViewController:GameDraw?, applicationControllerObject:AppControllerProtocol?, rows:Int, columns:Int)
     {
         
         
@@ -45,7 +46,7 @@ class Game:GameProtocol{
                 
                 if self.objectOfMatrix[row,column] != nil
                 {
-                    self.gameViewController.fillThePixel(x: column, y: row, blockImage: self.objectOfMatrix[row,column]!)
+                    self.gameViewController?.fillThePixel(x: column, y: row, blockImage: self.objectOfMatrix[row,column]!)
                 }
             }
         }
@@ -86,68 +87,77 @@ class Game:GameProtocol{
         points = points + 1
     }
     
-    
-    @objc func moveElementDown() {
-        self.gameViewController.clearView()
+    func touchCheck()->Bool{
+        var status=false
         
         let maxY = figure.getMaxY()
+        let minX = figure.getMinX()
+        let maxX = figure.getMaxX()
+        
         
         for point in figure.offsetOfPoiIts{
             
-            if self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] == nil
-            {
+            
+            
+            if point.x == minX || point.x == maxX || point.y == maxY{
                 
-                self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
-            } else {
-                for column in 0...columns - 1
-                {
-                    if self.objectOfMatrix[0,column] != nil
-                    {
-                        self.gameOverIsHere = true
+                let checkDuplictateX=figure.duplicateX(x: point.x)
+                if checkDuplictateX {
+                    let checkExistence=figure.verifyingExistenceOfPoint(x: point.x, y: maxY)
+                    if point.y == maxY || !checkExistence {
+                        if self.objectOfMatrix[point.y + figure.startPoint.y+1,point.x + figure.startPoint.x] != nil {
+                            status=true
+                        }
+                    }
+                } else {
+                    if self.objectOfMatrix[point.y + figure.startPoint.y+1,point.x + figure.startPoint.x] != nil {
+                        status=true
                     }
                 }
             }
-            //figure is on a flour?
-            if point.y + figure.startPoint.y >= rows - 1
-            {
-                self.figureIsOnBottom = true
+            if point.y + figure.startPoint.y>rows-2 {
+                status = true
+            }
+            
+        }
+        
+        return status
+    }
+    
+    
+    
+    @objc func moveElementDown() {
+        self.gameViewController?.clearView()
+        figureIsOnBottom=touchCheck()
+        
+        for point in figure.offsetOfPoiIts{
+            if self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] == nil {
+                self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
+            } else {
+                
+                    gameOverIsHere=true
                 
             }
             
             
-            if point.y == maxY
-            {
-                if self.objectOfMatrix[point.y + figure.startPoint.y + 1,point.x + figure.startPoint.x] != nil
-                {
-                    self.figureIsInTouch = true
-                    
-                }
-            }
         }
         
-        for point in figure.offsetOfPoiIts{
-            if point.y == maxY
-            {
-                if self.objectOfMatrix[point.y + figure.startPoint.y + 1,point.x + figure.startPoint.x] != nil
-                {
-                    self.figureIsInTouch = true
-                    
-                }
-            }
-        }
-        
-        if gameOverIsHere
-        {
-            timer.invalidate()
-            
-            applicationControllerObject.sendGameOverScreen()
-        }
+        //old working code
         renewTheView()
-        if figureIsOnBottom || figureIsInTouch
-        {
+        if gameOverIsHere{
+            timer.invalidate()
+            applicationControllerObject?.sendGameOverScreen()
+        }
+        
+        
+        
+        if figureIsOnBottom {
             figure = provider.getFigure()
             figureIsOnBottom = false
             figureIsInTouch = false
+            maxXRepeat = false
+            minXrepeat = false
+            
         } else {
             
             for element in figure.offsetOfPoiIts

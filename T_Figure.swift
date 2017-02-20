@@ -13,6 +13,6 @@ class T_Figure:Figure{
     {
         super.init()
         
-        self.offsetOfPoiIts = [Point(x:-1,y:0, colour: #imageLiteral(resourceName: "block_pink")),Point(x:0, y:0, colour: #imageLiteral(resourceName: "block_pink")),Point(x:1, y:0, colour: #imageLiteral(resourceName: "block_pink")),Point(x:0, y:1, colour: #imageLiteral(resourceName: "block_pink"))]
+       self.offsetOfPoiIts = [Point(x:-1,y:0, colour: #imageLiteral(resourceName: "block_pink")),Point(x:0, y:0, colour: #imageLiteral(resourceName: "block_pink")),Point(x:1, y:0, colour: #imageLiteral(resourceName: "block_pink")),Point(x:0, y:1, colour: #imageLiteral(resourceName: "block_pink"))]
     }
 }
