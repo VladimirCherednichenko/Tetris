@@ -7,11 +7,10 @@ class Game:GameProtocol{
     
     var gameViewController:GameDraw?
     private var provider = Provider()
-    private var figure:Figure
+    var figure:Figure
     private var timer = Timer()
     var points:Int = 0
     var applicationControllerObject:AppControllerProtocol?
-    //new values
     var objectOfMatrix:Matrix<UIImage>
     private var rows:Int
     private var columns:Int
@@ -87,7 +86,7 @@ class Game:GameProtocol{
         points = points + 1
     }
     
-    func touchCheck()->Bool{
+    func touchCheck(figure:Figure, objectOfMatrix:Matrix<UIImage>)->Bool{
         var status=false
         
         let maxY = figure.getMaxY()
@@ -104,6 +103,7 @@ class Game:GameProtocol{
                 let checkDuplictateX=figure.duplicateX(x: point.x)
                 if checkDuplictateX {
                     let checkExistence=figure.verifyingExistenceOfPoint(x: point.x, y: maxY)
+                    
                     if point.y == maxY || !checkExistence {
                         if self.objectOfMatrix[point.y + figure.startPoint.y+1,point.x + figure.startPoint.x] != nil {
                             status=true
@@ -128,36 +128,26 @@ class Game:GameProtocol{
     
     @objc func moveElementDown() {
         self.gameViewController?.clearView()
-        figureIsOnBottom=touchCheck()
+        figureIsOnBottom=touchCheck(figure: self.figure,objectOfMatrix: self.objectOfMatrix)
         
         for point in figure.offsetOfPoiIts{
             if self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] == nil {
                 self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
             } else {
-                
-                    gameOverIsHere=true
-                
+                gameOverIsHere=true
             }
-            
-            
         }
-        
-        //old working code
         renewTheView()
         if gameOverIsHere{
             timer.invalidate()
             applicationControllerObject?.sendGameOverScreen()
         }
-        
-        
-        
         if figureIsOnBottom {
             figure = provider.getFigure()
             figureIsOnBottom = false
             figureIsInTouch = false
             maxXRepeat = false
             minXrepeat = false
-            
         } else {
             
             for element in figure.offsetOfPoiIts
@@ -171,10 +161,21 @@ class Game:GameProtocol{
     }
     
     
+    func alreadyExistCheking(x:Int, y:Int)-> Bool {
+        var status = false
+        for point in figure.offsetOfPoiIts{
+            if self.objectOfMatrix[point.y + figure.startPoint.y + y, point.x + figure.startPoint.x + x] != nil {
+                status = true
+            }
+
+        }
+        return status
+    }
+    
     @objc func didSwipeRight()
     {
-        
-        if figure.getMaxX() + figure.startPoint.x < columns - 1
+        let alreadyExist = alreadyExistCheking(x: +1, y: 0)
+        if !alreadyExist && figure.getMaxX() + figure.startPoint.x < columns - 1
         {
             figure.moveFigureRight()
             self.renewTheView()
@@ -182,7 +183,9 @@ class Game:GameProtocol{
     }
     @objc func didSwipeLeft()
     {
-        if figure.getMinX() + figure.startPoint.x > 0
+        let alreadyExist = alreadyExistCheking(x: -1, y: 0)
+        
+        if !alreadyExist && figure.getMinX() + figure.startPoint.x > 0
         {
             figure.moveFigureLeft()
             self.renewTheView()

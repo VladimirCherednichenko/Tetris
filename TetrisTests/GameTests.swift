@@ -28,15 +28,15 @@ class TestClass
 
 class GameTests: XCTestCase
 {
-    
-    var testClass: TestClass?
+    var game = Game(gameViewController:nil, applicationControllerObject:nil, rows:10, columns:17)
+    //var testClass: TestClass?
     
     override func setUp() {
         super.setUp()
-        if self.testClass == nil {
+        /*if self.testClass == nil {
             self.testClass = TestClass()
         }
-        
+        */
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -45,8 +45,24 @@ class GameTests: XCTestCase
         //self.testClass = nil
         super.tearDown()
     }
+    //let figure:Figure = Z_Figure
+    //let Matrix<UIImage>(rows: 10, columns: 17)
+    func testGameNummber1()
+    {
+        let check=game.touchCheck(figure: game.figure , objectOfMatrix: game.objectOfMatrix)
+        XCTAssert(!check, "I have touched something")
+    }
     
-    func testABAndState()
+    func testGameNummber2()
+    {   let check=game.touchCheck(figure: game.figure , objectOfMatrix: game.objectOfMatrix)
+        repeat
+        {
+            game.moveElementDown()
+            
+        } while !check
+       // XCTAssert(!check, "I have touched something")
+    }
+   /* func testABAndState()
     {
         let yes = self.testClass!.IS(10, greaterThan: 5)
         XCTAssert(yes, "10 should be greater than 5")
@@ -60,5 +76,5 @@ class GameTests: XCTestCase
     func testInitialLatestState()
     {
         XCTAssert(self.testClass?.latestState == nil, "Latest state at initialisation should be nil")
-    }
+    }*/
 }
