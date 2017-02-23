@@ -24,6 +24,8 @@
 		844211801E574C9500257E3C /* LineFigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11C91E532B6E00E25528 /* LineFigure.swift */; };
 		844211811E574C9500257E3C /* T_Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11CB1E532B8100E25528 /* T_Figure.swift */; };
 		844211821E574C9500257E3C /* L_Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE11CD1E532BAF00E25528 /* L_Figure.swift */; };
+		844211841E5C8F8000257E3C /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844211831E5C8F8000257E3C /* Functions.swift */; };
+		844211851E5C917F00257E3C /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844211831E5C8F8000257E3C /* Functions.swift */; };
 		848B43401E3628C700029892 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B433F1E3628C700029892 /* Game.swift */; };
 		84CB00211E2FB81D001DF6E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */; };
 		84CB00231E2FB81D001DF6E4 /* GameViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */; };
@@ -59,6 +61,7 @@
 		844211691E57490B00257E3C /* TetrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8442116B1E57490B00257E3C /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		8442116D1E57490B00257E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844211831E5C8F8000257E3C /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = ../Functions.swift; sourceTree = "<group>"; };
 		848B433F1E3628C700029892 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		84CB001D1E2FB81D001DF6E4 /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
 				84E944E61E47DFC400EF40D6 /* ApplicationController.swift */,
 				848B433F1E3628C700029892 /* Game.swift */,
+				844211831E5C8F8000257E3C /* Functions.swift */,
 				84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */,
 				84E944E81E489C9200EF40D6 /* GameOverViewController.swift */,
 				844211631E548DB900257E3C /* Matrix.swift */,
@@ -221,7 +225,6 @@
 				TargetAttributes = {
 					844211681E57490B00257E3C = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = UMPRH5R5SA;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 84CB001C1E2FB81D001DF6E4;
 					};
@@ -288,6 +291,7 @@
 				8442116C1E57490B00257E3C /* GameTests.swift in Sources */,
 				844211821E574C9500257E3C /* L_Figure.swift in Sources */,
 				8442117D1E574C9000257E3C /* Point.swift in Sources */,
+				844211851E5C917F00257E3C /* Functions.swift in Sources */,
 				844211751E574C8C00257E3C /* Game.swift in Sources */,
 				8442117B1E574C8C00257E3C /* Provider.swift in Sources */,
 				844211801E574C9500257E3C /* LineFigure.swift in Sources */,
@@ -303,6 +307,7 @@
 				84CB00231E2FB81D001DF6E4 /* GameViewConroller.swift in Sources */,
 				84FE11CA1E532B6E00E25528 /* LineFigure.swift in Sources */,
 				848B43401E3628C700029892 /* Game.swift in Sources */,
+				844211841E5C8F8000257E3C /* Functions.swift in Sources */,
 				84FE11D21E532BEA00E25528 /* Z_Figure.swift in Sources */,
 				84CB00211E2FB81D001DF6E4 /* AppDelegate.swift in Sources */,
 				84FE11D01E532BCD00E25528 /* SquareFigure.swift in Sources */,
@@ -333,7 +338,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = UMPRH5R5SA;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TetrisTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VladimirChrednichenco.TetrisTests;
@@ -347,7 +353,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = UMPRH5R5SA;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TetrisTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VladimirChrednichenco.TetrisTests;
@@ -381,6 +388,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -391,7 +399,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -431,11 +440,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;

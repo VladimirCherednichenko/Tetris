@@ -9,7 +9,7 @@
 import XCTest
 
 import  Foundation
-
+import UIKit
 class TestClass
 {
     var latestState: Bool?
@@ -21,7 +21,7 @@ class TestClass
         self.latestState = result
         return result
     }
-
+    
 }
 
 
@@ -29,14 +29,11 @@ class TestClass
 class GameTests: XCTestCase
 {
     var game = Game(gameViewController:nil, applicationControllerObject:nil, rows:10, columns:17)
-    //var testClass: TestClass?
+    
     
     override func setUp() {
         super.setUp()
-        /*if self.testClass == nil {
-            self.testClass = TestClass()
-        }
-        */
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -45,36 +42,76 @@ class GameTests: XCTestCase
         //self.testClass = nil
         super.tearDown()
     }
-    //let figure:Figure = Z_Figure
-    //let Matrix<UIImage>(rows: 10, columns: 17)
-    func testGameNummber1()
-    {
-        let check=game.touchCheck(figure: game.figure , objectOfMatrix: game.objectOfMatrix)
-        XCTAssert(!check, "I have touched something")
-    }
+    var emptyMatrix = Matrix<Int>(rows: 17, columns: 10)
+    var matrix: Matrix<Int> = {
+        let m = Matrix<Int>(rows: 17, columns: 10)
+        m[16,2] = 1
+        m[15,2] = 1
+        m[14,2] = 1
+        m[13,2] = 1
+        return m
+    }()
     
-    func testGameNummber2()
-    {   let check=game.touchCheck(figure: game.figure , objectOfMatrix: game.objectOfMatrix)
-        repeat
-        {
-            game.moveElementDown()
-            
-        } while !check
-       // XCTAssert(!check, "I have touched something")
-    }
-   /* func testABAndState()
-    {
-        let yes = self.testClass!.IS(10, greaterThan: 5)
-        XCTAssert(yes, "10 should be greater than 5")
-        XCTAssert(self.testClass?.latestState == true, "Wrong latest state")
+    var matrixZ: Matrix<Int> = {
+        let m = Matrix<Int>(rows: 17, columns: 10)
+        m[14,2] = 1
+        m[14,1] = 1
+        m[13,2] = 1
+        m[13,3] = 1
+        return m
+    } ()
+    
+    var figureZ:Z_Figure = {
+        var returnFigure = Z_Figure()
+        returnFigure.startPoint = Point(x:1,y:13, colour: #imageLiteral(resourceName: "pixelDark"))
+        return returnFigure
+    }()
+    
+    
+    var figureLine:LineFigure = {
+        var returnFigure = LineFigure()
+        returnFigure.startPoint = Point(x:4,y:16, colour: #imageLiteral(resourceName: "pixelDark"))
         
-        let no = self.testClass!.IS(10, greaterThan: 20)
-        XCTAssert(!no, "10 should be less than 20")
-        XCTAssert(self.testClass?.latestState == false, "Wrong latest state")
+        return returnFigure
+    }()
+    
+    
+    
+    func testLineAnd_Z_Figure()
+    {
+        let objectTochedSomething = isFigureTouchedsomething(figure:figureZ, objectOfMatrix: matrix)
+       // XCTAssert(!objectTochedSomething, "figure touched something")
+        XCTAssert(objectTochedSomething, "figure is not touching something")
+        
     }
     
-    func testInitialLatestState()
+    func test_Z_And_Z_Figure()
     {
-        XCTAssert(self.testClass?.latestState == nil, "Latest state at initialisation should be nil")
-    }*/
+        let objectTochedSomething = isFigureTouchedsomething(figure:figureZ, objectOfMatrix: matrixZ)
+       // XCTAssert(!objectTochedSomething, "figure touched something")
+        XCTAssert(objectTochedSomething, "figure is not touching something")
+        
+    }
+    
+    
+    
+    func testRotate(){
+        let check = canRotateFigure(figure: figureLine, objectOfMatrix: emptyMatrix)
+        XCTAssert(!check, "test faield")
+    }
+    
+    func testRightBorder(){
+        let check = figureIsOutsideOfMatrixcCheking(x: +6, y: 0, figure: figureLine, objectOfMatrix: emptyMatrix)
+        XCTAssert(check, "test faield")
+    }
+    
+    func testBorder(){
+        figureLine.rotateRight()
+        let check = figureIsOutsideOfMatrixcCheking(x: 0, y: 0, figure: figureLine, objectOfMatrix: emptyMatrix)
+        XCTAssert(check, "test faield")
+    }
+    
+    
+    
+    
 }

@@ -6,7 +6,7 @@ import UIKit
 class Game:GameProtocol{
     
     var gameViewController:GameDraw?
-    private var provider = Provider()
+    var provider = Provider()
     var figure:Figure
     private var timer = Timer()
     var points:Int = 0
@@ -86,49 +86,15 @@ class Game:GameProtocol{
         points = points + 1
     }
     
-    func touchCheck(figure:Figure, objectOfMatrix:Matrix<UIImage>)->Bool{
-        var status=false
-        
-        let maxY = figure.getMaxY()
-        let minX = figure.getMinX()
-        let maxX = figure.getMaxX()
-        
-        
-        for point in figure.offsetOfPoiIts{
-            
-            
-            
-            if point.x == minX || point.x == maxX || point.y == maxY{
-                
-                let checkDuplictateX=figure.duplicateX(x: point.x)
-                if checkDuplictateX {
-                    let checkExistence=figure.verifyingExistenceOfPoint(x: point.x, y: maxY)
-                    
-                    if point.y == maxY || !checkExistence {
-                        if self.objectOfMatrix[point.y + figure.startPoint.y+1,point.x + figure.startPoint.x] != nil {
-                            status=true
-                        }
-                    }
-                } else {
-                    if self.objectOfMatrix[point.y + figure.startPoint.y+1,point.x + figure.startPoint.x] != nil {
-                        status=true
-                    }
-                }
-            }
-            if point.y + figure.startPoint.y>rows-2 {
-                status = true
-            }
-            
-        }
-        
-        return status
-    }
+    
     
     
     
     @objc func moveElementDown() {
         self.gameViewController?.clearView()
-        figureIsOnBottom=touchCheck(figure: self.figure,objectOfMatrix: self.objectOfMatrix)
+        figureIsOnBottom = isFigureTouchedsomething(figure:self.figure, objectOfMatrix:self.objectOfMatrix)
+        
+        //touchCheck(figure: self.figure,objectOfMatrix: self.objectOfMatrix)
         
         for point in figure.offsetOfPoiIts{
             if self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] == nil {
@@ -161,31 +127,22 @@ class Game:GameProtocol{
     }
     
     
-    func alreadyExistCheking(x:Int, y:Int)-> Bool {
-        var status = false
-        for point in figure.offsetOfPoiIts{
-            if self.objectOfMatrix[point.y + figure.startPoint.y + y, point.x + figure.startPoint.x + x] != nil {
-                status = true
-            }
-
-        }
-        return status
-    }
     
     @objc func didSwipeRight()
-    {
-        let alreadyExist = alreadyExistCheking(x: +1, y: 0)
-        if !alreadyExist && figure.getMaxX() + figure.startPoint.x < columns - 1
+    {   let outOfMatrix = figureIsOutsideOfMatrixcCheking(x: +1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix)
+        let alreadyExist = alreadyExistCheking(x: +1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix)
+        
+        if !alreadyExist && !outOfMatrix
         {
             figure.moveFigureRight()
             self.renewTheView()
         }
     }
     @objc func didSwipeLeft()
-    {
-        let alreadyExist = alreadyExistCheking(x: -1, y: 0)
+    {   let outOfMatrix = figureIsOutsideOfMatrixcCheking(x: +1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix)
+        let alreadyExist = alreadyExistCheking(x: -1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix)
         
-        if !alreadyExist && figure.getMinX() + figure.startPoint.x > 0
+        if !alreadyExist && !outOfMatrix
         {
             figure.moveFigureLeft()
             self.renewTheView()
@@ -199,7 +156,10 @@ class Game:GameProtocol{
     
     @objc func rotateElement()
     {
-        figure.rotate()
+        let canRotate = canRotateFigure(figure:self.figure, objectOfMatrix:self.objectOfMatrix)
+        if canRotate {
+            figure.rotateRight()
+        }
     }
 }
 

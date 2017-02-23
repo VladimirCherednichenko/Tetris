@@ -18,6 +18,8 @@ class Provider{
     }
     
     
+    
+    
     func getNextFigure()
         -> Figure
     {

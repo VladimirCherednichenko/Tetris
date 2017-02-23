@@ -19,7 +19,7 @@ class LineFigure:Figure
         self.startOffsetOfPoiIts=offsetOfPoiIts
     }
     
-    override func rotate(){
+    override func rotateRight(){
         if !figureWasRotated {
             
             self.offsetOfPoiIts = offsetOfPoiIts.map {return Point(x: -$0.y, y: $0.x, colour: $0.pointColour)}

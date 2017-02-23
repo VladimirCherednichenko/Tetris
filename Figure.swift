@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 class Figure {
     
-    private(set) var startPoint = Point(x:4,y:-2, colour: #imageLiteral(resourceName: "pixelDark"))
+    var startPoint = Point(x:4,y:-2, colour: #imageLiteral(resourceName: "pixelDark"))
     var offsetOfPoiIts:[Point] = []
     
     func getPointsWithStartPoint()->[Point]{
@@ -18,12 +18,20 @@ class Figure {
         }
         return pointsWithStartPoint
     }
-    func rotate()
+    func rotateRight()
     {
         self.offsetOfPoiIts = offsetOfPoiIts.map{
             return Point(x: -$0.y, y: $0.x, colour: $0.pointColour)
         }
     }
+    
+    func rotateLeft()
+    {
+        self.offsetOfPoiIts = offsetOfPoiIts.map{
+            return Point(x: $0.y, y: -$0.x, colour: $0.pointColour)
+        }
+    }
+    
     
     func moveFigureDown()
     {
@@ -119,5 +127,12 @@ class Figure {
         }
         return min
     }
-    
+   func copy()
+        ->Figure
+    {
+        let figure = Figure()
+        figure.startPoint = self.startPoint
+        figure.offsetOfPoiIts = self.offsetOfPoiIts
+        return figure
+    }
 }

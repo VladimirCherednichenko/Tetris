@@ -15,5 +15,5 @@ class SquareFigure:Figure
         self.offsetOfPoiIts = [Point(x:0,y:0,colour: #imageLiteral(resourceName: "blockYellow")),Point(x:1, y:0, colour: #imageLiteral(resourceName: "blockYellow")),Point(x:0, y:1, colour: #imageLiteral(resourceName: "blockYellow")),Point(x:1, y:1, colour: #imageLiteral(resourceName: "blockYellow"))]
         
     }
-    override func rotate() {}
+    override func rotateRight() {}
 }
