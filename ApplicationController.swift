@@ -8,7 +8,7 @@ class ApplicationController:AppControllerProtocol{
     var columns:Int
     var rows:Int
     
-    private(set) var valueOfDivision:CGFloat = 0.1 //You can change size here
+    private(set) var valueOfDivision:CGFloat = 0.05 //You can change size here
     
     
     

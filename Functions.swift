@@ -22,9 +22,6 @@ func figureIsOutsideOfMatrixcCheking<Type>(x:Int, y:Int, figure:Figure, objectOf
         
         if point.x + figure.startPoint.x + x > objectOfMatrix.columns-1 || point.y + figure.startPoint.y + y > objectOfMatrix.rows-1 || point.x + figure.startPoint.x + x < 0   {
             status = true
-            print(point.x + figure.startPoint.x,point.y+figure.startPoint.y, objectOfMatrix.rows)
-        } else {
-            print(point.x + figure.startPoint.x,point.y+figure.startPoint.y)
         }
         
     }
@@ -45,7 +42,7 @@ func isFigureTouchedsomething<Type>(figure:Figure, objectOfMatrix:Matrix<Type>)
     
     
     for point in figure.offsetOfPoiIts{
-        //print(point.y + figure.startPoint.y,point.x + figure.startPoint.x)
+        
         
         
         if point.x == minX || point.x == maxX || point.y == maxY{
@@ -85,7 +82,7 @@ func canRotateFigure<Type>(figure:Figure, objectOfMatrix:Matrix<Type>)
     let figureisOutsideOfMatrix = figureIsOutsideOfMatrixcCheking(x: 0, y: 0, figure: copiedFigure!, objectOfMatrix: objectOfMatrix)
     let alreadyExist = alreadyExistCheking(x: 0, y: 0, figure: copiedFigure!, objectOfMatrix: objectOfMatrix)
     if alreadyExist || figureisOutsideOfMatrix {
-        status=false
+        status = false
     }
     
     
