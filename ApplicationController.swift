@@ -1,14 +1,14 @@
 import Foundation
 import UIKit
 class ApplicationController:AppControllerProtocol{
-    var gameOverScreen:GameOverViewController!
+    var gameOverViewConroller:GameOverViewController!
     let navigationViewController:UINavigationController
-    var gameViewController:UIViewController!
+    var gameViewController:GameDraw!
     var game: Game!
     var columns:Int
     var rows:Int
     
-    private(set) var valueOfDivision:CGFloat = 0.05 //You can change size here
+    private(set) var numbersOfColums:CGFloat = 10 //You can change size here
     
     
     
@@ -18,8 +18,8 @@ class ApplicationController:AppControllerProtocol{
         
         self.navigationViewController = navigationViewController
         
-        self.columns = Int(1/valueOfDivision)
-        self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * valueOfDivision))
+        self.columns = Int(numbersOfColums)
+        self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * 1/numbersOfColums))
         newGame()
         
     }
@@ -27,26 +27,26 @@ class ApplicationController:AppControllerProtocol{
     
     
     @objc func newGame() {
-        self.gameViewController = GameViewController(valueOfDivision, columns, rows)
+        self.gameViewController = GameViewController(1/numbersOfColums, columns, rows)
         
         
-        self.game = Game(gameViewController: gameViewController as? GameDraw, applicationControllerObject: self, rows: self.rows, columns: self.columns )
+        self.game = Game(renderDelegate: gameViewController, applicationControllerObject: self, rows: self.rows, columns: self.columns )
         
         if let controller = gameViewController as? GameViewController {
             controller.gameDelegate = game
         }
-        navigationViewController.pushViewController(gameViewController, animated: false)
+        navigationViewController.pushViewController(gameViewController as! UIViewController, animated: false)
         
     }
     
     func sendGameOverScreen() {
         
-        self.gameOverScreen = nil
+        self.gameOverViewConroller = nil
         self.game = nil
         self.gameViewController = nil
-        self.gameOverScreen = GameOverViewController(applicationControllerObject: self)
+        self.gameOverViewConroller = GameOverViewController(applicationControllerObject: self)
         navigationViewController.popViewController(animated: false)
-        navigationViewController.pushViewController(gameOverScreen, animated: false)
+        navigationViewController.pushViewController(gameOverViewConroller, animated: false)
         
         
     }

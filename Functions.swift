@@ -90,3 +90,5 @@ func canRotateFigure<Type>(figure:Figure, objectOfMatrix:Matrix<Type>)
     copiedFigure = nil
     return status
 }
+
+

@@ -98,7 +98,7 @@ class GameViewController: UIViewController, GameDraw {
     }
     //FILL PIXELS
     
-    func fillThePixel(x:Int,y:Int, blockImage:UIImage)
+    func fillThePixel(x:Int,y:Int, blockImage:UIImage?)
     {
         let gameIndex:Int = y * columns + x
         if gameIndex >= 0 && gameIndex <= numberOfPixels - 1
@@ -107,7 +107,14 @@ class GameViewController: UIViewController, GameDraw {
         }
     }
     
-    
+    func clearThePixel(x:Int,y:Int)
+    {
+        let gameIndex:Int = y * columns + x
+        if gameIndex >= 0 && gameIndex <= numberOfPixels - 1
+        {
+            pixelArray[gameIndex].image = #imageLiteral(resourceName: "pixelDark")
+        }
+    }
     
     func clearView()
     {

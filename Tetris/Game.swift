@@ -5,7 +5,7 @@ import UIKit
 
 class Game:GameProtocol{
     
-    var gameViewController:GameDraw?
+    var renderDelegate:GameDraw?
     var provider = Provider()
     var figure:Figure
     private var timer = Timer()
@@ -19,12 +19,12 @@ class Game:GameProtocol{
     private var gameOverIsHere = false
     var maxXRepeat = false
     var minXrepeat = false
-    init(gameViewController:GameDraw?, applicationControllerObject:AppControllerProtocol?, rows:Int, columns:Int)
+    init(renderDelegate:GameDraw?, applicationControllerObject:AppControllerProtocol?, rows:Int, columns:Int)
     {
         
         
         self.applicationControllerObject = applicationControllerObject
-        self.gameViewController = gameViewController
+        self.renderDelegate = renderDelegate
         self.figure = provider.getFigure()
         
         self.rows = rows
@@ -36,54 +36,36 @@ class Game:GameProtocol{
     
     
     
-    func renewTheView()
+    func render()
     {
+        
         for row in 0...rows
         {
             for column in 0...columns
             {
                 
-                if self.objectOfMatrix[row,column] != nil
-                {
-                    self.gameViewController?.fillThePixel(x: column, y: row, blockImage: self.objectOfMatrix[row,column]!)
-                }
-            }
-        }
-    }
-    
-    func removeOvercrowdedLines()
-    {
-        for row in 0...rows - 1
-        {   var counter = 0
-            for column in 0...columns - 1
-            {
-                if self.objectOfMatrix[row,column] != nil
-                {
-                    counter = counter + 1
-                    if counter == 10
-                    {
-                        self.removeLine(lineNumber: row)
-                    }
-                } else {
-                    counter  =  0
-                }
+                self.renderDelegate?.fillThePixel(x: column, y: row, blockImage: self.objectOfMatrix[row,column])
             }
         }
         
-        
+        for point in figure.offsetOfPoiIts{
+            self.renderDelegate?.fillThePixel(x: point.x + figure.startPoint.x, y: point.y + figure.startPoint.y, blockImage: point.pointColour)
+        }
     }
+  
     
-    func removeLine(lineNumber startRow:Int)
-    {
-        for row in (0...startRow).reversed()
+    
+    func removeCurrentFigureOnMatrix(){
+        for element in figure.offsetOfPoiIts
         {
-            for column in 0...columns - 1
-            {
-                self.objectOfMatrix[row,column]  =  self.objectOfMatrix[row - 1,column]
-                
-            }
+            self.objectOfMatrix[element.y + figure.startPoint.y,element.x + figure.startPoint.x] = nil
         }
-        points = points + 1
+    }
+    
+    func pushCurrentFigureOnMatrix(){
+        for point in figure.offsetOfPoiIts{
+            self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
+        }
     }
     
     
@@ -91,38 +73,40 @@ class Game:GameProtocol{
     
     
     @objc func moveElementDown() {
-        self.gameViewController?.clearView()
+        
         figureIsOnBottom = isFigureTouchedsomething(figure:self.figure, objectOfMatrix:self.objectOfMatrix)
         
-        //touchCheck(figure: self.figure,objectOfMatrix: self.objectOfMatrix)
         
-        for point in figure.offsetOfPoiIts{
-            if self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] == nil {
-                self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
-            } else {
-                gameOverIsHere=true
+        
+       for point in figure.offsetOfPoiIts{
+            if self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] != nil {
+              gameOverIsHere=true
             }
         }
-        renewTheView()
+        
+        
+        self.render()
         if gameOverIsHere{
             timer.invalidate()
             applicationControllerObject?.sendGameOverScreen()
         }
         if figureIsOnBottom {
+            self.pushCurrentFigureOnMatrix()
             figure = provider.getFigure()
             figureIsOnBottom = false
             figureIsInTouch = false
             maxXRepeat = false
             minXrepeat = false
-        } else {
             
-            for element in figure.offsetOfPoiIts
-            {
-                self.objectOfMatrix[element.y + figure.startPoint.y,element.x + figure.startPoint.x] = nil
-            }
+        } else {
+           // self.removeCurrentFigureOnMatrix()
         }
+        let numberOfFilledLine:Int?
         
-        removeOvercrowdedLines()
+        
+        numberOfFilledLine = objectOfMatrix.filledRowCheck()
+        objectOfMatrix.removeLine(lineNumber: numberOfFilledLine)
+       
         figure.moveFigureDown()
     }
     
@@ -134,8 +118,12 @@ class Game:GameProtocol{
         
         if !alreadyExist && !outOfMatrix
         {
+           
+            
             figure.moveFigureRight()
-            self.renewTheView()
+            
+            
+            self.render()
         }
     }
     @objc func didSwipeLeft()
@@ -144,8 +132,9 @@ class Game:GameProtocol{
         
         if !alreadyExist && !outOfMatrix
         {
+            
             figure.moveFigureLeft()
-            self.renewTheView()
+            self.render()
             
         }
     }

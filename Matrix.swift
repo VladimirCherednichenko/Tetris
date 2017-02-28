@@ -40,7 +40,7 @@ class Matrix<Type>
             let index = self.indexOf(row, column)
             
             if check{
-            grid[index] = newValue
+                grid[index] = newValue
             }
         }
     }
@@ -51,4 +51,47 @@ class Matrix<Type>
     {
         return row * self.columns + column
     }
+    
+    
+    
+    func filledRowCheck()
+        -> Int?
+    {   var numberOfFilledRow:Int?
+        for row in 0...self.rows - 1
+        {   var counter = 0
+            
+            
+            for column in 0...self.columns - 1
+            {
+                if self[row,column] != nil
+                {
+                    counter = counter + 1
+                    if counter == 10
+                    {
+                        numberOfFilledRow=row
+                        
+                    }
+                } else {
+                    counter  =  0
+                }
+            }
+        }
+        
+        return numberOfFilledRow
+    }
+    
+    func removeLine(lineNumber startRow:Int?)
+    {   if startRow != nil {
+        for row in (0...startRow!).reversed()
+        {
+            for column in 0...self.columns - 1
+            {
+                self[row,column]  =  self[row - 1,column]
+                
+            }
+        }
+        }
+        
+    }
+    
 }

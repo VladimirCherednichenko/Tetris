@@ -11,7 +11,8 @@ import UIKit
 protocol GameDraw
 {
     var points:Int{get set}
-    func fillThePixel(x:Int,y:Int, blockImage:UIImage)
+    func fillThePixel(x:Int,y:Int, blockImage:UIImage?)
+    func clearThePixel(x:Int,y:Int)
     func clearView()
     var view: UIView! {get}
 }
