@@ -44,5 +44,7 @@ class Provider{
         
         return self.figures[randomIndex]()
     }
-    
+    deinit {
+        print("provider going to die")
+    }
 }

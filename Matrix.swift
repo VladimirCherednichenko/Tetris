@@ -93,5 +93,7 @@ class Matrix<Type>
         }
         
     }
-    
+    deinit {
+        print("matrix going to die")
+    }
 }

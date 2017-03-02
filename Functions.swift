@@ -16,11 +16,16 @@ func alreadyExistCheking<Type>(x:Int, y:Int, figure:Figure, objectOfMatrix:Matri
     return status
 }
 
-func figureIsOutsideOfMatrixcCheking<Type>(x:Int, y:Int, figure:Figure, objectOfMatrix:Matrix<Type>)-> Bool {
+func figureIsOutsideOfMatrixcCheking<Type>(figure:Figure, objectOfMatrix:Matrix<Type>, clouser:((Figure)->()))
+    -> Bool
+{
     var status = false
-    for point in figure.offsetOfPoiIts{
+    let copiedFigure:Figure = figure.copy()
+    clouser(copiedFigure)
+    
+    for point in copiedFigure.offsetOfPoiIts{
         
-        if point.x + figure.startPoint.x + x > objectOfMatrix.columns-1 || point.y + figure.startPoint.y + y > objectOfMatrix.rows-1 || point.x + figure.startPoint.x + x < 0   {
+        if point.x + copiedFigure.startPoint.x > objectOfMatrix.columns-1 || point.y + copiedFigure.startPoint.y > objectOfMatrix.rows-1 || point.x + copiedFigure.startPoint.x < 0   {
             status = true
         }
         
@@ -79,7 +84,9 @@ func canRotateFigure<Type>(figure:Figure, objectOfMatrix:Matrix<Type>)
     var copiedFigure:Figure? = figure.copy()
     copiedFigure?.rotateRight()
     
-    let figureisOutsideOfMatrix = figureIsOutsideOfMatrixcCheking(x: 0, y: 0, figure: copiedFigure!, objectOfMatrix: objectOfMatrix)
+    let figureisOutsideOfMatrix = figureIsOutsideOfMatrixcCheking(figure: copiedFigure!, objectOfMatrix: objectOfMatrix) {
+        figure in return figure.rotateRight()
+    }
     let alreadyExist = alreadyExistCheking(x: 0, y: 0, figure: copiedFigure!, objectOfMatrix: objectOfMatrix)
     if alreadyExist || figureisOutsideOfMatrix {
         status = false

@@ -4,14 +4,14 @@ import UIKit
 
 
 class Game:GameProtocol{
-    
-    var renderDelegate:GameDraw?
+    var interval:Double //change timer interval there, if you wish it
+    var renderDelegate:GameDraw?=nil
     var provider = Provider()
     var figure:Figure
     private var timer = Timer()
     var points:Int = 0
-    var applicationControllerObject:AppControllerProtocol?
-    var objectOfMatrix:Matrix<UIImage>
+    var applicationControllerObject:GameDelegate?
+    var objectOfMatrix:Matrix<UIImage>?
     private var rows:Int
     private var columns:Int
     private var figureIsOnBottom = false
@@ -19,19 +19,20 @@ class Game:GameProtocol{
     private var gameOverIsHere = false
     var maxXRepeat = false
     var minXrepeat = false
-    init(renderDelegate:GameDraw?, applicationControllerObject:AppControllerProtocol?, rows:Int, columns:Int)
+    
+    init(renderDelegate:GameDraw?, applicationControllerObject:GameDelegate?, rows:Int, columns:Int, interval:Double)
     {
         
         
         self.applicationControllerObject = applicationControllerObject
         self.renderDelegate = renderDelegate
         self.figure = provider.getFigure()
-        
+        self.interval = interval
         self.rows = rows
         self.columns = columns
         self.objectOfMatrix = Matrix<UIImage>(rows: rows, columns: columns)
         
-        timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
     }
     
     
@@ -44,7 +45,7 @@ class Game:GameProtocol{
             for column in 0...columns
             {
                 
-                self.renderDelegate?.fillThePixel(x: column, y: row, blockImage: self.objectOfMatrix[row,column])
+                self.renderDelegate?.fillThePixel(x: column, y: row, blockImage: self.objectOfMatrix?[row,column])
             }
         }
         
@@ -52,19 +53,22 @@ class Game:GameProtocol{
             self.renderDelegate?.fillThePixel(x: point.x + figure.startPoint.x, y: point.y + figure.startPoint.y, blockImage: point.pointColour)
         }
     }
-  
+    func pointsUpdate(){
+        self.renderDelegate?.updatePoints(points)
+    }
+    
     
     
     func removeCurrentFigureOnMatrix(){
         for element in figure.offsetOfPoiIts
         {
-            self.objectOfMatrix[element.y + figure.startPoint.y,element.x + figure.startPoint.x] = nil
+            self.objectOfMatrix?[element.y + figure.startPoint.y,element.x + figure.startPoint.x] = nil
         }
     }
     
     func pushCurrentFigureOnMatrix(){
         for point in figure.offsetOfPoiIts{
-            self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
+            self.objectOfMatrix?[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
         }
     }
     
@@ -74,13 +78,13 @@ class Game:GameProtocol{
     
     @objc func moveElementDown() {
         
-        figureIsOnBottom = isFigureTouchedsomething(figure:self.figure, objectOfMatrix:self.objectOfMatrix)
+        figureIsOnBottom = isFigureTouchedsomething(figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         
         
         
-       for point in figure.offsetOfPoiIts{
-            if self.objectOfMatrix[point.y + figure.startPoint.y,point.x + figure.startPoint.x] != nil {
-              gameOverIsHere=true
+        for point in figure.offsetOfPoiIts{
+            if self.objectOfMatrix?[point.y + figure.startPoint.y,point.x + figure.startPoint.x] != nil {
+                gameOverIsHere=true
             }
         }
         
@@ -88,7 +92,8 @@ class Game:GameProtocol{
         self.render()
         if gameOverIsHere{
             timer.invalidate()
-            applicationControllerObject?.sendGameOverScreen()
+            applicationControllerObject?.didGameOver()
+            
         }
         if figureIsOnBottom {
             self.pushCurrentFigureOnMatrix()
@@ -98,27 +103,32 @@ class Game:GameProtocol{
             maxXRepeat = false
             minXrepeat = false
             
-        } else {
-           // self.removeCurrentFigureOnMatrix()
         }
+        
         let numberOfFilledLine:Int?
         
         
-        numberOfFilledLine = objectOfMatrix.filledRowCheck()
-        objectOfMatrix.removeLine(lineNumber: numberOfFilledLine)
-       
+        numberOfFilledLine = objectOfMatrix?.filledRowCheck()
+        objectOfMatrix?.removeLine(lineNumber: numberOfFilledLine)
+        if numberOfFilledLine != nil {
+            self.points = points + 1
+            self.pointsUpdate()
+        }
         figure.moveFigureDown()
     }
     
     
     
     @objc func didSwipeRight()
-    {   let outOfMatrix = figureIsOutsideOfMatrixcCheking(x: +1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix)
-        let alreadyExist = alreadyExistCheking(x: +1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix)
+    {   let outOfMatrix = figureIsOutsideOfMatrixcCheking(figure:self.figure, objectOfMatrix:self.objectOfMatrix!){
+            figure in
+            figure.moveFigureRight()
+        }
+        let alreadyExist = alreadyExistCheking(x: +1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         
         if !alreadyExist && !outOfMatrix
         {
-           
+            
             
             figure.moveFigureRight()
             
@@ -127,8 +137,11 @@ class Game:GameProtocol{
         }
     }
     @objc func didSwipeLeft()
-    {   let outOfMatrix = figureIsOutsideOfMatrixcCheking(x: +1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix)
-        let alreadyExist = alreadyExistCheking(x: -1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix)
+    {   let outOfMatrix = figureIsOutsideOfMatrixcCheking(figure:self.figure, objectOfMatrix:self.objectOfMatrix!) {
+            figure in
+            figure.moveFigureLeft()
+        }
+        let alreadyExist = alreadyExistCheking(x: -1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         
         if !alreadyExist && !outOfMatrix
         {
@@ -145,10 +158,13 @@ class Game:GameProtocol{
     
     @objc func rotateElement()
     {
-        let canRotate = canRotateFigure(figure:self.figure, objectOfMatrix:self.objectOfMatrix)
+        let canRotate = canRotateFigure(figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         if canRotate {
             figure.rotateRight()
         }
+    }
+    deinit {
+        print("game going to die")
     }
 }
 

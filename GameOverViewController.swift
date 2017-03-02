@@ -10,19 +10,14 @@ import Foundation
 
 import UIKit
 
-class GameOverViewController: UIViewController {
-    var applicationControllerObject:AppControllerProtocol
+
+class GameOverViewController: UIViewController
+{
+    var applicationControllerDelegate:GameOverViewControllerDelegate?
     
-    init(applicationControllerObject:AppControllerProtocol)
-    {
-        self.applicationControllerObject = applicationControllerObject
-        super.init(nibName: nil, bundle: nil)
-    }
     
-    required init?(coder aDecoder: NSCoder)
-    {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -44,12 +39,20 @@ class GameOverViewController: UIViewController {
         restartButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         restartButton.setTitle("Restart", for: .normal)
         restartButton.titleLabel?.font = UIFont(name: "XPED Shadow", size: 45.0)
-        restartButton.addTarget(applicationControllerObject, action: #selector(applicationControllerObject.newGame), for: .touchUpInside)
-        
+        restartButton.addTarget(self, action: #selector(didPressRestartButton), for: .touchUpInside)
         
     }
+    
+    func didPressRestartButton() {
+        applicationControllerDelegate?.didSelectRestartOption()
+    }
+    
     override var prefersStatusBarHidden: Bool
     {
         return true
     }
+    deinit {
+        print("gameOverViewConroller is dying")
+    }
 }
+

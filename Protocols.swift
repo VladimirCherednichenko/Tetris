@@ -15,13 +15,20 @@ protocol GameDraw
     func clearThePixel(x:Int,y:Int)
     func clearView()
     var view: UIView! {get}
+    func updatePoints(_ points:Int)
 }
 
 
-@objc protocol AppControllerProtocol
+@objc protocol GameDelegate
 {
-    func sendGameOverScreen()
-    @objc func newGame()
+    
+    func didGameOver()
+}
+
+protocol GameOverViewControllerDelegate
+{
+    
+    func didSelectRestartOption()
     
 }
 

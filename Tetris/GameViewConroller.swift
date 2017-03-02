@@ -5,10 +5,11 @@ class GameViewController: UIViewController, GameDraw {
     var points:Int = 0
     var valueOfDivision:CGFloat
     var columns:Int
+    static var counterForDeinit:Int = 0
     private(set) var numberOfPixels:Int
     private(set) var rows:Int
     var pixelArray = [UIImageView]()
-    var gameDelegate:GameProtocol?
+    weak var gameDelegate:Game?
     let labelWithPoints = UILabel()
     
     //init
@@ -18,6 +19,11 @@ class GameViewController: UIViewController, GameDraw {
         self.rows = rows
         self.numberOfPixels = rows * columns
         self.valueOfDivision = valueOfDivision
+        GameViewController.counterForDeinit = GameViewController.counterForDeinit + 1
+
+        print("created view object naumber: ", GameViewController.counterForDeinit)
+        
+      //  self.counterForDeinit = self.counterForDeinit + 1
         super.init(nibName: nil, bundle: nil)
         //viewDidLoad()
     }
@@ -25,6 +31,9 @@ class GameViewController: UIViewController, GameDraw {
         fatalError("init(coder:) has not been implemented")
     }
     
+ /*func objectCounterPlusOne() {
+        GameViewController.counterForDeinit = GameViewController.counterForDeinit + 1
+    }*/
     func createPixelArray()
     {
         
@@ -123,20 +132,25 @@ class GameViewController: UIViewController, GameDraw {
             element.image = nil
             element.backgroundColor = UIColor.darkGray
         }
-        labelWithPoints.text = String(gameDelegate!.points)
+        
     }
-    
+    func updatePoints(_ points:Int) {
+         labelWithPoints.text = String(points)
+    }
     
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
     
     override var prefersStatusBarHidden: Bool
     {
         return true
     }
-    
+    deinit {
+       
+        print("dying object numder", GameViewController.counterForDeinit)
+    }
 }
 
