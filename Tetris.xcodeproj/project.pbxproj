@@ -22,6 +22,24 @@
 		4F28AB801E6DB05500429018 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB7E1E6DB05500429018 /* Lato-Regular.ttf */; };
 		4F28AB821E6DB25400429018 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB811E6DB25400429018 /* Lato-Light.ttf */; };
 		4F28AB831E6DB25400429018 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB811E6DB25400429018 /* Lato-Light.ttf */; };
+		4F28AB881E6E0A1400429018 /* FranklinGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB871E6E0A1400429018 /* FranklinGothic.ttf */; };
+		4F28AB891E6E0A1400429018 /* FranklinGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB871E6E0A1400429018 /* FranklinGothic.ttf */; };
+		4F28AB8B1E6E0BA000429018 /* helvetica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB8A1E6E0BA000429018 /* helvetica.ttf */; };
+		4F28AB8C1E6E0BA000429018 /* helvetica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB8A1E6E0BA000429018 /* helvetica.ttf */; };
+		4F28AB8E1E6E0C8500429018 /* georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB8D1E6E0C8500429018 /* georgia.ttf */; };
+		4F28AB8F1E6E0C8500429018 /* georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB8D1E6E0C8500429018 /* georgia.ttf */; };
+		4F28AB911E6E0CC100429018 /* rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB901E6E0CC100429018 /* rockwell.ttf */; };
+		4F28AB921E6E0CC100429018 /* rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB901E6E0CC100429018 /* rockwell.ttf */; };
+		4F28AB941E6E0CE100429018 /* baskerville.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB931E6E0CE100429018 /* baskerville.ttf */; };
+		4F28AB951E6E0CE100429018 /* baskerville.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB931E6E0CE100429018 /* baskerville.ttf */; };
+		4F28AB971E6E0DAB00429018 /* CenturyGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB961E6E0DAB00429018 /* CenturyGothic.ttf */; };
+		4F28AB981E6E0DAB00429018 /* CenturyGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB961E6E0DAB00429018 /* CenturyGothic.ttf */; };
+		4F28AB9B1E6E0DD500429018 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB9A1E6E0DD500429018 /* Montserrat-Regular.ttf */; };
+		4F28AB9C1E6E0DD500429018 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB9A1E6E0DD500429018 /* Montserrat-Regular.ttf */; };
+		4F28AB9D1E6E0F7300429018 /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB991E6E0DB800429018 /* corbel.ttf */; };
+		4F28AB9E1E6E0F7400429018 /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB991E6E0DB800429018 /* corbel.ttf */; };
+		4F28ABA01E6ECD8100429018 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */; };
+		4F28ABA11E6ECD8100429018 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */; };
 		844211641E548DB900257E3C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844211631E548DB900257E3C /* Matrix.swift */; };
 		8442116C1E57490B00257E3C /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442116B1E57490B00257E3C /* GameTests.swift */; };
 		844211731E574C8C00257E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */; };
@@ -94,6 +112,15 @@
 		4F28AB7B1E6DAEAD00429018 /* HelveticaBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = HelveticaBlack.ttf; path = ../../../Downloads/helvetica/HelveticaBlack/HelveticaBlack.ttf; sourceTree = "<group>"; };
 		4F28AB7E1E6DB05500429018 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../Desktop/ideasForDesign/Lato/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		4F28AB811E6DB25400429018 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "../../../Desktop/ideasForDesign/Lato/Lato-Light.ttf"; sourceTree = "<group>"; };
+		4F28AB871E6E0A1400429018 /* FranklinGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FranklinGothic.ttf; path = ../../../Desktop/Fonts/FranklinGothic.ttf; sourceTree = "<group>"; };
+		4F28AB8A1E6E0BA000429018 /* helvetica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = helvetica.ttf; path = ../../../Desktop/Fonts/helvetica.ttf; sourceTree = "<group>"; };
+		4F28AB8D1E6E0C8500429018 /* georgia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = georgia.ttf; path = ../../../Desktop/Fonts/georgia.ttf; sourceTree = "<group>"; };
+		4F28AB901E6E0CC100429018 /* rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = rockwell.ttf; path = ../../../Desktop/Fonts/rockwell.ttf; sourceTree = "<group>"; };
+		4F28AB931E6E0CE100429018 /* baskerville.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = baskerville.ttf; path = ../../../Desktop/Fonts/baskerville.ttf; sourceTree = "<group>"; };
+		4F28AB961E6E0DAB00429018 /* CenturyGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CenturyGothic.ttf; path = ../../../Desktop/Fonts/CenturyGothic.ttf; sourceTree = "<group>"; };
+		4F28AB991E6E0DB800429018 /* corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbel.ttf; path = ../../../Desktop/Fonts/corbel.ttf; sourceTree = "<group>"; };
+		4F28AB9A1E6E0DD500429018 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../Desktop/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		844211631E548DB900257E3C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = ../Matrix.swift; sourceTree = "<group>"; };
 		844211691E57490B00257E3C /* TetrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8442116B1E57490B00257E3C /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
@@ -180,6 +207,7 @@
 		84CB001F1E2FB81D001DF6E4 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
+				4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */,
 				4F28AB6A1E6D657C00429018 /* LogInViewController.swift */,
 				84E944E61E47DFC400EF40D6 /* ApplicationController.swift */,
 				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
@@ -215,13 +243,21 @@
 		84FE11D41E532D0300E25528 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				4F28AB9A1E6E0DD500429018 /* Montserrat-Regular.ttf */,
+				4F28AB991E6E0DB800429018 /* corbel.ttf */,
+				4F28AB961E6E0DAB00429018 /* CenturyGothic.ttf */,
 				4F28AB811E6DB25400429018 /* Lato-Light.ttf */,
+				4F28AB8D1E6E0C8500429018 /* georgia.ttf */,
 				4F28AB7B1E6DAEAD00429018 /* HelveticaBlack.ttf */,
+				4F28AB8A1E6E0BA000429018 /* helvetica.ttf */,
 				4F28AB7E1E6DB05500429018 /* Lato-Regular.ttf */,
+				4F28AB871E6E0A1400429018 /* FranklinGothic.ttf */,
 				84E944EC1E49F57800EF40D6 /* XPED Shadow.ttf */,
 				4F28AB781E6DA94C00429018 /* nazeefa-demo.ttf */,
 				4F28AB751E6DA78C00429018 /* Lie to Me - TTF.ttf */,
 				84E944EE1E49F6FF00EF40D6 /* Xacto Blade.ttf */,
+				4F28AB931E6E0CE100429018 /* baskerville.ttf */,
+				4F28AB901E6E0CC100429018 /* rockwell.ttf */,
 				84FE11C21E53223800E25528 /* Zapf Elliptical 711 Bold BT.ttf */,
 				4F28AB6C1E6D6F3500429018 /* LOKICOLA.TTF */,
 				84E944F01E4A2C2D00EF40D6 /* Xposed.ttf */,
@@ -314,11 +350,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F28AB891E6E0A1400429018 /* FranklinGothic.ttf in Resources */,
+				4F28AB981E6E0DAB00429018 /* CenturyGothic.ttf in Resources */,
 				4F28AB7D1E6DAEAD00429018 /* HelveticaBlack.ttf in Resources */,
 				4F28AB6E1E6D6F3500429018 /* LOKICOLA.TTF in Resources */,
 				4F28AB801E6DB05500429018 /* Lato-Regular.ttf in Resources */,
+				4F28AB8F1E6E0C8500429018 /* georgia.ttf in Resources */,
+				4F28AB9C1E6E0DD500429018 /* Montserrat-Regular.ttf in Resources */,
+				4F28AB9E1E6E0F7400429018 /* corbel.ttf in Resources */,
 				4F28AB831E6DB25400429018 /* Lato-Light.ttf in Resources */,
 				4F28AB7A1E6DA94C00429018 /* nazeefa-demo.ttf in Resources */,
+				4F28AB921E6E0CC100429018 /* rockwell.ttf in Resources */,
+				4F28AB8C1E6E0BA000429018 /* helvetica.ttf in Resources */,
+				4F28AB951E6E0CE100429018 /* baskerville.ttf in Resources */,
 				4F28AB771E6DA78C00429018 /* Lie to Me - TTF.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,13 +373,21 @@
 			files = (
 				4F28AB7C1E6DAEAD00429018 /* HelveticaBlack.ttf in Resources */,
 				84E944ED1E49F57800EF40D6 /* XPED Shadow.ttf in Resources */,
+				4F28AB9B1E6E0DD500429018 /* Montserrat-Regular.ttf in Resources */,
 				84E944F11E4A2C2D00EF40D6 /* Xposed.ttf in Resources */,
 				84CB00281E2FB81D001DF6E4 /* Assets.xcassets in Resources */,
 				4F28AB7F1E6DB05500429018 /* Lato-Regular.ttf in Resources */,
+				4F28AB971E6E0DAB00429018 /* CenturyGothic.ttf in Resources */,
 				4F28AB821E6DB25400429018 /* Lato-Light.ttf in Resources */,
 				4F28AB6D1E6D6F3500429018 /* LOKICOLA.TTF in Resources */,
 				84E944EF1E49F6FF00EF40D6 /* Xacto Blade.ttf in Resources */,
 				4F28AB791E6DA94C00429018 /* nazeefa-demo.ttf in Resources */,
+				4F28AB9D1E6E0F7300429018 /* corbel.ttf in Resources */,
+				4F28AB8E1E6E0C8500429018 /* georgia.ttf in Resources */,
+				4F28AB881E6E0A1400429018 /* FranklinGothic.ttf in Resources */,
+				4F28AB941E6E0CE100429018 /* baskerville.ttf in Resources */,
+				4F28AB911E6E0CC100429018 /* rockwell.ttf in Resources */,
+				4F28AB8B1E6E0BA000429018 /* helvetica.ttf in Resources */,
 				4F28AB761E6DA78C00429018 /* Lie to Me - TTF.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +412,7 @@
 				8442117D1E574C9000257E3C /* Point.swift in Sources */,
 				844211851E5C917F00257E3C /* Functions.swift in Sources */,
 				844211751E574C8C00257E3C /* Game.swift in Sources */,
+				4F28ABA11E6ECD8100429018 /* MenuViewController.swift in Sources */,
 				8442117B1E574C8C00257E3C /* Provider.swift in Sources */,
 				844211801E574C9500257E3C /* LineFigure.swift in Sources */,
 				844211811E574C9500257E3C /* T_Figure.swift in Sources */,
@@ -384,6 +437,7 @@
 				84FE11C81E5327A400E25528 /* Point.swift in Sources */,
 				4F28AB6B1E6D657C00429018 /* LogInViewController.swift in Sources */,
 				84E944E91E489C9200EF40D6 /* GameOverViewController.swift in Sources */,
+				4F28ABA01E6ECD8100429018 /* MenuViewController.swift in Sources */,
 				844211641E548DB900257E3C /* Matrix.swift in Sources */,
 				84FE11CE1E532BAF00E25528 /* L_Figure.swift in Sources */,
 				84FE11CC1E532B8100E25528 /* T_Figure.swift in Sources */,

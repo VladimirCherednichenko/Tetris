@@ -14,16 +14,41 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.darkGray
+        
+        let nameOfApplication = UILabel()
+        nameOfApplication.text = "Tetris"
+        nameOfApplication.textColor = UIColor.white
+        nameOfApplication.font = UIFont(name: "LOKICOLA", size: 70.0)
+        nameOfApplication.translatesAutoresizingMaskIntoConstraints = false
+        nameOfApplication.layer.shadowColor = UIColor.black.cgColor
+        nameOfApplication.layer.shadowOpacity = 1
+        nameOfApplication.layer.shadowOffset = CGSize.zero
+        nameOfApplication.layer.shadowRadius = 6
+        
+        view.addSubview(nameOfApplication)
+        nameOfApplication.textAlignment = .center
+        nameOfApplication.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nameOfApplication.topAnchor.constraint(equalTo: view.topAnchor, constant: 45).isActive = true
+        nameOfApplication.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        nameOfApplication.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
+        
         let eterYourNameLabel = UILabel()
         eterYourNameLabel.text = "Enter your Name"
         eterYourNameLabel.textColor = UIColor.white
-        eterYourNameLabel.font = UIFont(name: "LOKICOLA", size: 70.0)
+        eterYourNameLabel.font = UIFont(name: "helvetica", size: 35)
         eterYourNameLabel.translatesAutoresizingMaskIntoConstraints = false
         eterYourNameLabel.numberOfLines = 3
+        eterYourNameLabel.layer.shadowColor = UIColor.black.cgColor
+        eterYourNameLabel.layer.shadowOpacity = 1
+        eterYourNameLabel.layer.shadowOffset = CGSize.zero
+        eterYourNameLabel.layer.shadowRadius = 6
+        
         view.addSubview(eterYourNameLabel)
         eterYourNameLabel.textAlignment = .center
         eterYourNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        eterYourNameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
+        eterYourNameLabel.topAnchor.constraint(equalTo: nameOfApplication.bottomAnchor, constant: 20).isActive = true
         eterYourNameLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         eterYourNameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
@@ -32,12 +57,12 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         
        
         nameTextField.placeholder = "name"
-        nameTextField.layer.cornerRadius = 20.0
+        nameTextField.layer.cornerRadius = 15.0
         nameTextField.backgroundColor = UIColor.white
         nameTextField.textColor = UIColor.black
         
         
-        nameTextField.font = UIFont(name: "Lato-Regular", size: 30.0)
+        nameTextField.font = UIFont(name: "corbel", size: 30.0)
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         nameTextField.textAlignment = .center
         nameTextField.returnKeyType = .next
@@ -58,10 +83,10 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         passwordTextField.placeholder = "password"
         passwordTextField.isSecureTextEntry = true
         passwordTextField.backgroundColor = UIColor.white
-        passwordTextField.textColor = UIColor.darkGray
+        passwordTextField.textColor = UIColor.black
         
-        passwordTextField.layer.cornerRadius = 20.0
-        passwordTextField.font = UIFont(name: "Lato-Regular", size: 30.0)
+        passwordTextField.layer.cornerRadius = 15.0
+        passwordTextField.font = UIFont(name: "corbel", size: 30)
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.textAlignment = .center
         passwordTextField.returnKeyType = .go
