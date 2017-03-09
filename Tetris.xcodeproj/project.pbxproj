@@ -40,6 +40,8 @@
 		4F28AB9E1E6E0F7400429018 /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB991E6E0DB800429018 /* corbel.ttf */; };
 		4F28ABA01E6ECD8100429018 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */; };
 		4F28ABA11E6ECD8100429018 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */; };
+		4FF3EB2A1E71B0050010FCAB /* UsersBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3EB291E71B0050010FCAB /* UsersBase.swift */; };
+		4FF3EB2B1E71B0050010FCAB /* UsersBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3EB291E71B0050010FCAB /* UsersBase.swift */; };
 		844211641E548DB900257E3C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844211631E548DB900257E3C /* Matrix.swift */; };
 		8442116C1E57490B00257E3C /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442116B1E57490B00257E3C /* GameTests.swift */; };
 		844211731E574C8C00257E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */; };
@@ -121,6 +123,7 @@
 		4F28AB991E6E0DB800429018 /* corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = corbel.ttf; path = ../../../Desktop/Fonts/corbel.ttf; sourceTree = "<group>"; };
 		4F28AB9A1E6E0DD500429018 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../Desktop/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		4FF3EB291E71B0050010FCAB /* UsersBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersBase.swift; path = ../UsersBase.swift; sourceTree = "<group>"; };
 		844211631E548DB900257E3C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = ../Matrix.swift; sourceTree = "<group>"; };
 		844211691E57490B00257E3C /* TetrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8442116B1E57490B00257E3C /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 		84CB001F1E2FB81D001DF6E4 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
+				4FF3EB291E71B0050010FCAB /* UsersBase.swift */,
 				4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */,
 				4F28AB6A1E6D657C00429018 /* LogInViewController.swift */,
 				84E944E61E47DFC400EF40D6 /* ApplicationController.swift */,
@@ -294,6 +298,7 @@
 				84CB001A1E2FB81D001DF6E4 /* Frameworks */,
 				84CB001B1E2FB81D001DF6E4 /* Resources */,
 				4F28AB741E6D971600429018 /* Embed Frameworks */,
+				4FF3EB281E71A9900010FCAB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -394,6 +399,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4FF3EB281E71A9900010FCAB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		844211651E57490B00257E3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -408,6 +429,7 @@
 				8442117C1E574C8C00257E3C /* Figure.swift in Sources */,
 				844211731E574C8C00257E3C /* AppDelegate.swift in Sources */,
 				8442116C1E57490B00257E3C /* GameTests.swift in Sources */,
+				4FF3EB2B1E71B0050010FCAB /* UsersBase.swift in Sources */,
 				844211821E574C9500257E3C /* L_Figure.swift in Sources */,
 				8442117D1E574C9000257E3C /* Point.swift in Sources */,
 				844211851E5C917F00257E3C /* Functions.swift in Sources */,
@@ -433,6 +455,7 @@
 				84FE11D01E532BCD00E25528 /* SquareFigure.swift in Sources */,
 				84E944E71E47DFC400EF40D6 /* ApplicationController.swift in Sources */,
 				84FE11C61E53271500E25528 /* Figure.swift in Sources */,
+				4FF3EB2A1E71B0050010FCAB /* UsersBase.swift in Sources */,
 				84E6CFA11E3AADD600003059 /* Protocols.swift in Sources */,
 				84FE11C81E5327A400E25528 /* Point.swift in Sources */,
 				4F28AB6B1E6D657C00429018 /* LogInViewController.swift in Sources */,

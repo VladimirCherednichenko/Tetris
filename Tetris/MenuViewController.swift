@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import SnapKit
 
-class Menu {
+class Menu:UIViewController {
+    
+    
     
 }

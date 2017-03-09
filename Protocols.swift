@@ -40,3 +40,12 @@ protocol GameProtocol
     func didSwipeLeft()
     
 }
+
+protocol userBaseProtocol{
+    var   userData:[String:String]?{get set}
+    func addNewUser(name:String,password:String)
+        ->Bool
+    func veriefUser(name:String,password:String)
+        ->Bool
+    
+}

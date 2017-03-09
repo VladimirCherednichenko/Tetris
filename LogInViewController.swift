@@ -12,6 +12,9 @@ import SnapKit
 
 class LogInViewController:UIViewController,UITextFieldDelegate {
     
+    var userBaseDelegate:userBaseProtocol?
+    var userName:String?
+    var password:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGray
@@ -105,11 +108,22 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         
+        
         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            
+            if textField.tag == 0 {
+            self.userName = textField.text
+                
+            }
             nextField.becomeFirstResponder()
+            
         } else {
             // Not found, so remove keyboard.
-            textField.resignFirstResponder()
+            //textField.text
+            
+            print("now on next view", self.userName,textField.text)
+            self.userBaseDelegate?.addNewUser(name: self.userName!, password: textField.text!)
+            
         }
         
         return false

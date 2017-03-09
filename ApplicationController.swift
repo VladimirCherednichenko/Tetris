@@ -8,7 +8,7 @@ class ApplicationController:GameDelegate,GameOverViewControllerDelegate
     let navigationViewController:UINavigationController
     private(set) var columns:Int
     private(set) var rows:Int
-    
+    let userBase = UserBase()
     
     init(navigationViewController:UINavigationController)
     {
@@ -17,7 +17,9 @@ class ApplicationController:GameDelegate,GameOverViewControllerDelegate
         self.columns = Int(numbersOfColums)
         self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * 1/numbersOfColums))
         //newGame()
+        let userBase:UserBase
         showLogInView()
+        
         
     }
     
@@ -40,6 +42,7 @@ class ApplicationController:GameDelegate,GameOverViewControllerDelegate
     func showLogInView() {
         let logInView = LogInViewController()
         navigationViewController.setViewControllers([logInView as UIViewController], animated: false)
+        logInView.userBaseDelegate = userBase
         
     }
     
