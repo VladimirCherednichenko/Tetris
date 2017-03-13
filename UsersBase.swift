@@ -10,7 +10,7 @@ import Foundation
 
 class UserBase:userBaseProtocol {
     var   userData:[String:String]?
-    func veriefUser(name:String,password:String)
+    func verificatUser(name:String,password:String)
         ->Bool{
             var status = false
             if userData != nil {
@@ -46,7 +46,7 @@ class UserBase:userBaseProtocol {
             } else {
                 self.userData = [name:password]
             }
-            
+            print(userData)
             return status
     }
     

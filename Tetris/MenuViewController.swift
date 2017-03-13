@@ -10,8 +10,64 @@ import Foundation
 import UIKit
 import SnapKit
 
-class Menu:UIViewController {
+class MenuViewController:UIViewController {
     
-    
-    
+    override func viewDidLoad() {
+        view.backgroundColor = UIColor.darkGray
+        
+        
+        
+        let nameLabel = UILabel()
+        nameLabel.text = "Hello, John"
+        nameLabel.numberOfLines = 3
+        nameLabel.textColor = UIColor.white
+        nameLabel.font = UIFont(name: "Yellowtail", size: 50.0)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.layer.shadowColor = UIColor.black.cgColor
+        nameLabel.layer.shadowOpacity = 1
+        nameLabel.layer.shadowOffset = CGSize.zero
+        nameLabel.layer.shadowRadius = 6
+        
+        view.addSubview(nameLabel)
+        nameLabel.textAlignment = .center
+        nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
+        
+        let startNewGameButton = UIButton()
+        startNewGameButton.translatesAutoresizingMaskIntoConstraints = false
+        startNewGameButton.setTitleColor(UIColor.blue, for: .highlighted)
+        view.addSubview(startNewGameButton)
+        startNewGameButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 35).isActive = true
+        startNewGameButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        startNewGameButton.setTitle("Start new game", for: .normal)
+        startNewGameButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 35.0)
+        startNewGameButton.layer.shadowOpacity = 1
+        startNewGameButton.layer.shadowOffset = CGSize.zero
+        startNewGameButton.layer.shadowRadius = 6
+        
+        
+        let leaderboord = UIButton()
+        leaderboord.translatesAutoresizingMaskIntoConstraints = false
+        leaderboord.setTitleColor(UIColor.blue, for: .highlighted)
+        view.addSubview(leaderboord)
+        leaderboord.topAnchor.constraint(equalTo: startNewGameButton.bottomAnchor).isActive = true
+        leaderboord.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        leaderboord.setTitle("Leaderboord", for: .normal)
+        leaderboord.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 35.0)
+        leaderboord.layer.shadowOpacity = 1
+        leaderboord.layer.shadowOffset = CGSize.zero
+        leaderboord.layer.shadowRadius = 6
+        
+       // startNewGameButton.addTarget(self, action: #selector(didPressRestartButton), for: .touchUpInside)
+
+        
+        
+    }
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
 }

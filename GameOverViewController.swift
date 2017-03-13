@@ -31,6 +31,7 @@ class GameOverViewController: UIViewController
         view.addSubview(gameOverLabel)
         gameOverLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         gameOverLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         let restartButton = UIButton()
         restartButton.translatesAutoresizingMaskIntoConstraints = false
         restartButton.setTitleColor(UIColor.red, for: .highlighted)

@@ -13,8 +13,8 @@ import SnapKit
 class LogInViewController:UIViewController,UITextFieldDelegate {
     
     var userBaseDelegate:userBaseProtocol?
-    var userName:String?
-    var password:String?
+    var currentUsersName:String?
+    var currentUsersPassword:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGray
@@ -112,7 +112,7 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
             
             if textField.tag == 0 {
-            self.userName = textField.text
+            self.currentUsersName = textField.text
                 
             }
             nextField.becomeFirstResponder()
@@ -120,9 +120,15 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         } else {
             // Not found, so remove keyboard.
             //textField.text
-            
-            print("now on next view", self.userName,textField.text)
-            self.userBaseDelegate?.addNewUser(name: self.userName!, password: textField.text!)
+            currentUsersPassword = textField.text
+            print("now on next view", self.currentUsersName, self.currentUsersPassword)
+            var createdNewUser:Bool? = self.userBaseDelegate?.addNewUser(name: self.currentUsersName!, password: self.currentUsersPassword!)
+            if !createdNewUser! {
+                let userVerifid:Bool? = self.userBaseDelegate?.verificatUser(name: self.currentUsersName!, password: self.currentUsersPassword!)
+                if !userVerifid! {
+                //error label
+                }
+            }
             
         }
         

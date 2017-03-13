@@ -1,0 +1,18 @@
+{
+  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
+  "commitish" : "sdk-version-4.20.1",
+  "iOS" : [
+    {
+      "name" : "FBSDKLoginKit",
+      "md5" : "b3a5e5d2f47e45cce213a5451128d35a"
+    },
+    {
+      "name" : "FBSDKShareKit",
+      "md5" : "d7c80b48de6821e035226743438dd903"
+    },
+    {
+      "name" : "FBSDKCoreKit",
+      "md5" : "c49b326cef391917bcfc24d817d892a0"
+    }
+  ]
+}

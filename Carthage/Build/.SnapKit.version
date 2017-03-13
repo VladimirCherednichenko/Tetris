@@ -1,25 +1,10 @@
 {
+  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
   "commitish" : "3.2.0",
   "iOS" : [
     {
       "name" : "SnapKit",
-      "md5" : "769c2e748a73267513a2427e074ea33c"
-    }
-  ],
-  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
-  "watchOS" : [
-
-  ],
-  "tvOS" : [
-    {
-      "name" : "SnapKit",
-      "md5" : "e3ad30fb5d2fbd6530ef7e54fd890fe3"
-    }
-  ],
-  "Mac" : [
-    {
-      "name" : "SnapKit",
-      "md5" : "a3762ee4cd15b42741c177deb08ca188"
+      "md5" : "af34a3e51be857ff3d2e8941abbb021f"
     }
   ]
 }

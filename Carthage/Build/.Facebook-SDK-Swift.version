@@ -1,0 +1,18 @@
+{
+  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
+  "commitish" : "0.2.0",
+  "iOS" : [
+    {
+      "name" : "FacebookLogin",
+      "md5" : "8e892a2f438110bdf299b19a2f551b2f"
+    },
+    {
+      "name" : "FacebookShare",
+      "md5" : "00dce351887d8c4bbb3e9bbcc367e5f8"
+    },
+    {
+      "name" : "FacebookCore",
+      "md5" : "0b2bafd9f15e330df92e55e4203f3758"
+    }
+  ]
+}

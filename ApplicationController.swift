@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import Realm
 class ApplicationController:GameDelegate,GameOverViewControllerDelegate
 {
     
@@ -19,7 +20,7 @@ class ApplicationController:GameDelegate,GameOverViewControllerDelegate
         //newGame()
         let userBase:UserBase
         showLogInView()
-        
+        //showMenu()
         
     }
     
@@ -44,6 +45,12 @@ class ApplicationController:GameDelegate,GameOverViewControllerDelegate
         navigationViewController.setViewControllers([logInView as UIViewController], animated: false)
         logInView.userBaseDelegate = userBase
         
+    }
+    
+    func showMenu() {
+        let menuView = MenuViewController()
+        navigationViewController.setViewControllers([menuView as UIViewController], animated: false)
+       // logInView.userBaseDelegate = userBase
     }
     
     func sendGameOverScreen() {

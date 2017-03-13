@@ -22,6 +22,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Yellowtail-Regular.ttf</string>
 		<string>Zapf Elliptical 711 Bold BT.ttf</string>
 		<string>XPED Shadow.ttf</string>
 		<string>Xacto Blade.ttf</string>
