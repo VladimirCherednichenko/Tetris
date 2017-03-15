@@ -13,8 +13,12 @@ import SnapKit
 class LogInViewController:UIViewController,UITextFieldDelegate {
     
     var userBaseDelegate:userBaseProtocol?
+    var nameTextField = UITextField()
+    var passwordTextField = UITextField()
     var currentUsersName:String?
     var currentUsersPassword:String?
+    var menuDelegate:MenuDelegate?
+    let warningLabel = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGray
@@ -24,10 +28,10 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         nameOfApplication.textColor = UIColor.white
         nameOfApplication.font = UIFont(name: "LOKICOLA", size: 70.0)
         nameOfApplication.translatesAutoresizingMaskIntoConstraints = false
-        nameOfApplication.layer.shadowColor = UIColor.black.cgColor
+        nameOfApplication.layer.shadowColor = UIColor.red.cgColor
         nameOfApplication.layer.shadowOpacity = 1
         nameOfApplication.layer.shadowOffset = CGSize.zero
-        nameOfApplication.layer.shadowRadius = 6
+        nameOfApplication.layer.shadowRadius = 8
         
         view.addSubview(nameOfApplication)
         nameOfApplication.textAlignment = .center
@@ -38,15 +42,11 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         
         
         let eterYourNameLabel = UILabel()
-        eterYourNameLabel.text = "Enter your Name"
+        eterYourNameLabel.text = "Please login"
         eterYourNameLabel.textColor = UIColor.white
-        eterYourNameLabel.font = UIFont(name: "helvetica", size: 35)
+        eterYourNameLabel.font = UIFont(name: "Montserrat", size: 23)
         eterYourNameLabel.translatesAutoresizingMaskIntoConstraints = false
         eterYourNameLabel.numberOfLines = 3
-        eterYourNameLabel.layer.shadowColor = UIColor.black.cgColor
-        eterYourNameLabel.layer.shadowOpacity = 1
-        eterYourNameLabel.layer.shadowOffset = CGSize.zero
-        eterYourNameLabel.layer.shadowRadius = 6
         
         view.addSubview(eterYourNameLabel)
         eterYourNameLabel.textAlignment = .center
@@ -55,10 +55,11 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         eterYourNameLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         eterYourNameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
-        let nameTextField = UITextField()
+        
+        
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         
-       
+        
         nameTextField.placeholder = "name"
         nameTextField.layer.cornerRadius = 15.0
         nameTextField.backgroundColor = UIColor.white
@@ -73,13 +74,12 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         nameTextField.tag = 0
         view.addSubview(nameTextField)
         
-        nameTextField.topAnchor.constraint(equalTo: eterYourNameLabel.bottomAnchor, constant: 15 ).isActive = true
+        nameTextField.topAnchor.constraint(equalTo: eterYourNameLabel.bottomAnchor, constant: 7 ).isActive = true
         
         nameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         nameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         //nameTextField.delegate = self
         
-        let passwordTextField = UITextField()
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         
         //nameTextField.attributedPlaceholder =
@@ -101,37 +101,71 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         
         passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         passwordTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
-       
+        
+        
+        
+        
+        
+        
+        warningLabel.text = "wrong password"
+        warningLabel.textColor = UIColor.white
+        warningLabel.font = UIFont(name: "Montserrat", size: 20 )
+        warningLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        view.addSubview(warningLabel)
+        warningLabel.textAlignment = .center
+        warningLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        warningLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 2).isActive = true
+        warningLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        warningLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        warningLabel.isHidden = true
     }
+    
+    
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         
-        
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-            
-            if textField.tag == 0 {
+         print("now on next view \(self.nameTextField.text) \(self.passwordTextField.text) ")
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField
+        {
             self.currentUsersName = textField.text
-                
-            }
             nextField.becomeFirstResponder()
             
         } else {
             // Not found, so remove keyboard.
             //textField.text
             currentUsersPassword = textField.text
-            print("now on next view", self.currentUsersName, self.currentUsersPassword)
-            var createdNewUser:Bool? = self.userBaseDelegate?.addNewUser(name: self.currentUsersName!, password: self.currentUsersPassword!)
-            if !createdNewUser! {
-                let userVerifid:Bool? = self.userBaseDelegate?.verificatUser(name: self.currentUsersName!, password: self.currentUsersPassword!)
-                if !userVerifid! {
-                //error label
-                }
-            }
             
+            if currentUsersName != nil {
+                
+                
+                
+            
+                
+                var createdNewUser:Bool? = self.userBaseDelegate?.addNewUser(name: self.currentUsersName!, password: self.currentUsersPassword!)
+                if !createdNewUser! {
+                    let userVerifid:Bool? = self.userBaseDelegate?.verificatUser(name: self.currentUsersName!, password: self.currentUsersPassword!)
+                    if !userVerifid! {
+                        warningLabel.isHidden = false
+                        
+                    } else {
+                        goToMenu()
+                    }
+                } else {
+                    goToMenu()
+                }
+                
+            }
         }
-        
         return false
     }
+    
+    func goToMenu() {
+        
+        menuDelegate?.currentName = self.currentUsersName
+        menuDelegate?.showMenu()
     }
+}

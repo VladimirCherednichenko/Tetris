@@ -36,6 +36,7 @@
 		4F6334C81E75F337001C8AE1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CB002C1E2FB81D001DF6E4 /* Info.plist */; };
 		4F6334CA1E75F419001C8AE1 /* Yellowtail-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F6334C91E75F419001C8AE1 /* Yellowtail-Regular.ttf */; };
 		4F6334CB1E75F419001C8AE1 /* Yellowtail-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F6334C91E75F419001C8AE1 /* Yellowtail-Regular.ttf */; };
+		4FDD5D9A1E79A05D004905A2 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442116B1E57490B00257E3C /* GameTests.swift */; };
 		4FF3EB2A1E71B0050010FCAB /* UsersBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3EB291E71B0050010FCAB /* UsersBase.swift */; };
 		4FF3EB2B1E71B0050010FCAB /* UsersBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3EB291E71B0050010FCAB /* UsersBase.swift */; };
 		4FF664CE1E76CDD5002711B3 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF664CD1E76CDD5002711B3 /* FacebookCore.framework */; };
@@ -46,8 +47,9 @@
 		4FF664D81E76E3A2002711B3 /* LOKICOLA.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4FF664D61E76E3A2002711B3 /* LOKICOLA.TTF */; };
 		4FF664DA1E76F7E3002711B3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF664D91E76F7E3002711B3 /* RealmSwift.framework */; };
 		4FF664DC1E76F7FC002711B3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF664DB1E76F7FC002711B3 /* Realm.framework */; };
+		4FF664DE1E7821F1002711B3 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF664DD1E7821F1002711B3 /* Leaderboard.swift */; };
+		4FF664DF1E7821F1002711B3 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF664DD1E7821F1002711B3 /* Leaderboard.swift */; };
 		844211641E548DB900257E3C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844211631E548DB900257E3C /* Matrix.swift */; };
-		8442116C1E57490B00257E3C /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442116B1E57490B00257E3C /* GameTests.swift */; };
 		844211731E574C8C00257E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */; };
 		844211741E574C8C00257E3C /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E944E61E47DFC400EF40D6 /* ApplicationController.swift */; };
 		844211751E574C8C00257E3C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B433F1E3628C700029892 /* Game.swift */; };
@@ -132,6 +134,7 @@
 		4FF664D61E76E3A2002711B3 /* LOKICOLA.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = LOKICOLA.TTF; path = ../../../Desktop/Fonts/LOKICOLA.TTF; sourceTree = "<group>"; };
 		4FF664D91E76F7E3002711B3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		4FF664DB1E76F7FC002711B3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		4FF664DD1E7821F1002711B3 /* Leaderboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
 		844211631E548DB900257E3C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = ../Matrix.swift; sourceTree = "<group>"; };
 		844211691E57490B00257E3C /* TetrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8442116B1E57490B00257E3C /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
@@ -232,16 +235,17 @@
 			children = (
 				4FF3EB291E71B0050010FCAB /* UsersBase.swift */,
 				4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */,
-				4F28AB6A1E6D657C00429018 /* LogInViewController.swift */,
 				84E944E61E47DFC400EF40D6 /* ApplicationController.swift */,
+				4F28AB6A1E6D657C00429018 /* LogInViewController.swift */,
+				84E6CFA01E3AADD600003059 /* Protocols.swift */,
 				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
 				84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */,
 				848B433F1E3628C700029892 /* Game.swift */,
 				844211831E5C8F8000257E3C /* Functions.swift */,
 				84E944E81E489C9200EF40D6 /* GameOverViewController.swift */,
 				844211631E548DB900257E3C /* Matrix.swift */,
-				84E6CFA01E3AADD600003059 /* Protocols.swift */,
 				84FE11C31E53266B00E25528 /* Provider.swift */,
+				4FF664DD1E7821F1002711B3 /* Leaderboard.swift */,
 				84FE11C51E53271500E25528 /* Figure.swift */,
 				84FE11D31E532CE700E25528 /* Figures */,
 				84FE11C71E5327A400E25528 /* Point.swift */,
@@ -451,7 +455,7 @@
 				844211771E574C8C00257E3C /* GameOverViewController.swift in Sources */,
 				8442117C1E574C8C00257E3C /* Figure.swift in Sources */,
 				844211731E574C8C00257E3C /* AppDelegate.swift in Sources */,
-				8442116C1E57490B00257E3C /* GameTests.swift in Sources */,
+				4FF664DF1E7821F1002711B3 /* Leaderboard.swift in Sources */,
 				4FF3EB2B1E71B0050010FCAB /* UsersBase.swift in Sources */,
 				844211821E574C9500257E3C /* L_Figure.swift in Sources */,
 				8442117D1E574C9000257E3C /* Point.swift in Sources */,
@@ -462,6 +466,7 @@
 				844211801E574C9500257E3C /* LineFigure.swift in Sources */,
 				844211811E574C9500257E3C /* T_Figure.swift in Sources */,
 				844211791E574C8C00257E3C /* Protocols.swift in Sources */,
+				4FDD5D9A1E79A05D004905A2 /* GameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +483,7 @@
 				84FE11D01E532BCD00E25528 /* SquareFigure.swift in Sources */,
 				84E944E71E47DFC400EF40D6 /* ApplicationController.swift in Sources */,
 				84FE11C61E53271500E25528 /* Figure.swift in Sources */,
+				4FF664DE1E7821F1002711B3 /* Leaderboard.swift in Sources */,
 				4FF3EB2A1E71B0050010FCAB /* UsersBase.swift in Sources */,
 				84E6CFA11E3AADD600003059 /* Protocols.swift in Sources */,
 				84FE11C81E5327A400E25528 /* Point.swift in Sources */,
@@ -508,6 +514,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TetrisTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VladimirChrednichenco.TetrisTests;
@@ -523,6 +533,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TetrisTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = VladimirChrednichenco.TetrisTests;

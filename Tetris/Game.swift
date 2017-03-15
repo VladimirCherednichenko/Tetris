@@ -10,7 +10,7 @@ class Game:GameProtocol{
     var figure:Figure
     private var timer = Timer()
     var points:Int = 0
-    var applicationControllerObject:GameDelegate?
+    var gameDelegate:GameDelegate?
     var objectOfMatrix:Matrix<UIImage>?
     private var rows:Int
     private var columns:Int
@@ -24,7 +24,7 @@ class Game:GameProtocol{
     {
         
         
-        self.applicationControllerObject = applicationControllerObject
+        self.gameDelegate = applicationControllerObject
         self.renderDelegate = renderDelegate
         self.figure = provider.getFigure()
         self.interval = interval
@@ -91,8 +91,8 @@ class Game:GameProtocol{
         
         self.render()
         if gameOverIsHere{
-            timer.invalidate()
-            applicationControllerObject?.didGameOver()
+            
+            didGameOver()
             
         }
         if figureIsOnBottom {
@@ -163,6 +163,17 @@ class Game:GameProtocol{
             figure.rotateRight()
         }
     }
+    
+    func didGameOver() {
+        
+        timer.invalidate()
+        gameDelegate?.latestScore = self.points
+        print("points:", gameDelegate?.latestScore)
+        gameDelegate?.didGameOver()
+        
+        
+    }
+    
     deinit {
         print("game going to die")
     }

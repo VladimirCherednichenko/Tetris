@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 import SnapKit
-
+import Realm
 class MenuViewController:UIViewController {
+    var currentName:String?
+    var menuDelegate:MenuDelegate?
     
     override func viewDidLoad() {
         view.backgroundColor = UIColor.darkGray
@@ -18,12 +20,12 @@ class MenuViewController:UIViewController {
         
         
         let nameLabel = UILabel()
-        nameLabel.text = "Hello, John"
+        nameLabel.text = "Hello,  " + currentName! + "!"
         nameLabel.numberOfLines = 3
         nameLabel.textColor = UIColor.white
         nameLabel.font = UIFont(name: "Yellowtail", size: 50.0)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.layer.shadowColor = UIColor.black.cgColor
+        nameLabel.layer.shadowColor = UIColor.red.cgColor
         nameLabel.layer.shadowOpacity = 1
         nameLabel.layer.shadowOffset = CGSize.zero
         nameLabel.layer.shadowRadius = 6
@@ -47,7 +49,7 @@ class MenuViewController:UIViewController {
         startNewGameButton.layer.shadowOpacity = 1
         startNewGameButton.layer.shadowOffset = CGSize.zero
         startNewGameButton.layer.shadowRadius = 6
-        
+        startNewGameButton.addTarget(self, action: #selector(showGame), for: .touchUpInside)
         
         let leaderboord = UIButton()
         leaderboord.translatesAutoresizingMaskIntoConstraints = false
@@ -65,6 +67,10 @@ class MenuViewController:UIViewController {
 
         
         
+    }
+    
+    func showGame() {
+        menuDelegate?.newGame()
     }
     override var prefersStatusBarHidden: Bool
     {

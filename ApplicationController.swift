@@ -1,7 +1,8 @@
 import Foundation
 import UIKit
-import Realm
-class ApplicationController:GameDelegate,GameOverViewControllerDelegate
+
+
+class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDelegate
 {
     
     var interval = 0.5 //change timer interval there, if you wish it
@@ -10,7 +11,8 @@ class ApplicationController:GameDelegate,GameOverViewControllerDelegate
     private(set) var columns:Int
     private(set) var rows:Int
     let userBase = UserBase()
-    
+    var currentName:String?
+    var latestScore:Int = 0
     init(navigationViewController:UINavigationController)
     {
         
@@ -18,8 +20,9 @@ class ApplicationController:GameDelegate,GameOverViewControllerDelegate
         self.columns = Int(numbersOfColums)
         self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * 1/numbersOfColums))
         //newGame()
-        let userBase:UserBase
+        
         showLogInView()
+        
         //showMenu()
         
     }
@@ -29,6 +32,7 @@ class ApplicationController:GameDelegate,GameOverViewControllerDelegate
     }
     
     func didGameOver(){
+        userBase.sendUserScore(name:currentName!, score:latestScore)
         sendGameOverScreen()
     }
     
@@ -44,12 +48,16 @@ class ApplicationController:GameDelegate,GameOverViewControllerDelegate
         let logInView = LogInViewController()
         navigationViewController.setViewControllers([logInView as UIViewController], animated: false)
         logInView.userBaseDelegate = userBase
-        
+        logInView.menuDelegate = self
     }
     
     func showMenu() {
         let menuView = MenuViewController()
+        menuView.currentName = currentName
+        menuView.menuDelegate = self
         navigationViewController.setViewControllers([menuView as UIViewController], animated: false)
+        
+        
        // logInView.userBaseDelegate = userBase
     }
     
@@ -57,7 +65,9 @@ class ApplicationController:GameDelegate,GameOverViewControllerDelegate
         navigationViewController.popViewController(animated: false)
         let gameOverViewConroller = GameOverViewController()
         gameOverViewConroller.applicationControllerDelegate = self
+        gameOverViewConroller.menuDelegate = self
         navigationViewController.popViewController(animated: false)
+        
         navigationViewController.pushViewController(gameOverViewConroller, animated: false)
         navigationViewController.setViewControllers([gameOverViewConroller], animated: false)
     }

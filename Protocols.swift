@@ -21,9 +21,20 @@ protocol GameDraw
 
 @objc protocol GameDelegate
 {
-    
+    var latestScore:Int{get set}
     func didGameOver()
 }
+
+@objc protocol MenuDelegate
+{
+    var currentName:String?{get set}
+    @objc func newGame()
+    @objc func showMenu()
+    
+    
+}
+
+
 
 protocol GameOverViewControllerDelegate
 {
@@ -34,6 +45,7 @@ protocol GameOverViewControllerDelegate
 
 protocol GameProtocol
 {
+    
     var points:Int{get set}
     func didSwipeDown()
     func didSwipeRight()
