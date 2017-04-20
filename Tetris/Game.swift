@@ -9,7 +9,11 @@ class Game:GameProtocol{
     var provider = Provider()
     var figure:Figure
     private var timer = Timer()
-    var points:Int = 0
+    var points:Int = 0 {
+        didSet {
+            self.renderDelegate?.updatePoints(self.points)
+        }
+    }
     var gameDelegate:GameDelegate?
     var objectOfMatrix:Matrix<UIImage>?
     private var rows:Int
@@ -53,9 +57,7 @@ class Game:GameProtocol{
             self.renderDelegate?.fillThePixel(x: point.x + figure.startPoint.x, y: point.y + figure.startPoint.y, blockImage: point.pointColour)
         }
     }
-    func pointsUpdate(){
-        self.renderDelegate?.updatePoints(points)
-    }
+    
     
     
     
@@ -112,7 +114,6 @@ class Game:GameProtocol{
         objectOfMatrix?.removeLine(lineNumber: numberOfFilledLine)
         if numberOfFilledLine != nil {
             self.points = points + 1
-            self.pointsUpdate()
         }
         figure.moveFigureDown()
     }

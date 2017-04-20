@@ -8,12 +8,16 @@
 
 import Foundation
 import UIKit
-import SnapKit
-import Realm
+
+
 class MenuViewController:UIViewController {
     var currentName:String?
     var menuDelegate:MenuDelegate?
     
+    override func viewWillAppear(_ animated: Bool) {
+    
+        self.navigationController?.navigationBar.isHidden = true
+    }
     override func viewDidLoad() {
         view.backgroundColor = UIColor.darkGray
         
@@ -51,18 +55,18 @@ class MenuViewController:UIViewController {
         startNewGameButton.layer.shadowRadius = 6
         startNewGameButton.addTarget(self, action: #selector(showGame), for: .touchUpInside)
         
-        let leaderboord = UIButton()
-        leaderboord.translatesAutoresizingMaskIntoConstraints = false
-        leaderboord.setTitleColor(UIColor.blue, for: .highlighted)
-        view.addSubview(leaderboord)
-        leaderboord.topAnchor.constraint(equalTo: startNewGameButton.bottomAnchor).isActive = true
-        leaderboord.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        leaderboord.setTitle("Leaderboord", for: .normal)
-        leaderboord.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 35.0)
-        leaderboord.layer.shadowOpacity = 1
-        leaderboord.layer.shadowOffset = CGSize.zero
-        leaderboord.layer.shadowRadius = 6
-        
+        let showLeaderboardButton = UIButton()
+        showLeaderboardButton.translatesAutoresizingMaskIntoConstraints = false
+        showLeaderboardButton.setTitleColor(UIColor.blue, for: .highlighted)
+        view.addSubview(showLeaderboardButton)
+        showLeaderboardButton.topAnchor.constraint(equalTo: startNewGameButton.bottomAnchor).isActive = true
+        showLeaderboardButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        showLeaderboardButton.setTitle("Leaderboord", for: .normal)
+        showLeaderboardButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 35.0)
+        showLeaderboardButton.layer.shadowOpacity = 1
+        showLeaderboardButton.layer.shadowOffset = CGSize.zero
+        showLeaderboardButton.layer.shadowRadius = 6
+        showLeaderboardButton.addTarget(self, action: #selector(showLeaderboard), for: .touchUpInside)
        // startNewGameButton.addTarget(self, action: #selector(didPressRestartButton), for: .touchUpInside)
 
         
@@ -72,8 +76,14 @@ class MenuViewController:UIViewController {
     func showGame() {
         menuDelegate?.newGame()
     }
+    
+    func showLeaderboard() {
+        menuDelegate?.showScoreView()
+    }
+    
     override var prefersStatusBarHidden: Bool
     {
         return true
     }
+    
 }
