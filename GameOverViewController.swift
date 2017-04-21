@@ -45,7 +45,7 @@ class GameOverViewController: UIViewController
         
         let menuButton = UIButton()
         menuButton.translatesAutoresizingMaskIntoConstraints = false
-        restartButton.setTitleColor(UIColor.red, for: .highlighted)
+        menuButton.setTitleColor(UIColor.red, for: .highlighted)
         view.addSubview(menuButton)
         menuButton.topAnchor.constraint(equalTo: restartButton.bottomAnchor).isActive = true
         menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

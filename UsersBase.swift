@@ -8,102 +8,130 @@
 
 import Foundation
 
-class UserBase:userBaseProtocol {
-    var   userData:[String:String]?
-    var   leaderBoardData:[String:Int]?
-    let defaults = UserDefaults.standard
+class UserBase:LogInDelegate, LeaderBoardDelegate {
     
+    
+    let store = UserDefaults.standard
+    var usersInfo:[String:[String:String]]?
     
     init() {
-        readUserBase()
-        readLeaderBoardData()
-        print("this is leader board" , leaderBoardData)
         
+        readUsersInfo()
     }
-    func verificatUser(name:String,password:String)
-        ->Bool{
-            var status = false
-            if userData != nil {
-                for user in userData! {
-                    if user.key == name && user.value == password{
-                        status = true
-                    }
-                    
-                }
-            }
-            return status
-    }
-    
     
     func addNewUser(name:String,password:String)
+    {
+        print(name,password)
+        var currentUserInfo:[String:String]
+        currentUserInfo = ["name": name, "password":password, "score":"0"]
+        print(currentUserInfo)
+        if usersInfo != nil {
+            usersInfo?[name] = currentUserInfo
+        } else {
+            usersInfo = [name:currentUserInfo]
+        }
+        saveUsersInfo()
+    }
+    
+    
+    func alreadyExistNameCheck(name:String)
         ->Bool{
-            var status = true
-            
-            
-            
-            if userData != nil {
-                
-                
-                for user in userData! {
-                    if user.key == name {
-                        status = false
-                    }
-                }
-                
-                if status{
-                    self.userData?[name] = password
-                }
-            } else {
-                self.userData = [name:password]
+            var status = false
+            if usersInfo?[name] != nil{
+                status = true
             }
-            print(userData)
+            return status
+    }
+    
+    func userVerification(name:String, password:String)
+        -> Bool{
+            var status = false
+            if let currentCheckedUser:[String:String] = usersInfo?[name] {
+                if currentCheckedUser["name"] == name && currentCheckedUser["password"] == password  {
+                    status = true
+                }
+                
+                
+                
+            }
+            return status
+    }
+    
+    func saveUsersInfo(){
+        print(usersInfo)
+        store.set(usersInfo, forKey: "savedUsersInfo")
+        print(store.value(forKey: "savedUsersInfo"))
+    }
+    
+    func readUsersInfo()
+        
+    {
+        print(store.value(forKey: "savedUsersInfo"))
             
-            rewriteUserBase()
+            usersInfo = store.value(forKey: "savedUsersInfo") as! [String : [String : String]]?
+        
+    }
+    
+    func saveCurrentUserName(name:String){
+        store.set(name, forKey: "currentName")
+        
+    }
+    
+    func readCurrentUserName() -> String?{
+        var name:String?
+        name = store.value(forKey: "currentName") as! String?
+        
+        return name
+    }
+    
+    
+    
+    
+    func setNewRecord (name:String, score:Int)
+        ->Bool{
+            var status = false
+            
+            if var currentCheckedUser:[String:String] = usersInfo?[name]
+            {
+            print((currentCheckedUser["score"]))
+            let currentRecord = (currentCheckedUser["score"])
+            
+            if Int(currentRecord!)! < score {
+                
+                status = true
+                currentCheckedUser["score"] = String(score)
+                usersInfo!.updateValue(currentCheckedUser, forKey: name)
+                print("score \(currentCheckedUser["score"])")
+                saveUsersInfo()
+            }
+            }
             return status
     }
     
     
-    func sendUserScore(name:String, score:Int) {
-        if leaderBoardData != nil {
-            
-            if leaderBoardData![name] == nil {
-                leaderBoardData![name] = score
-            } else {
-                
-                if leaderBoardData![name]! < score {
-                    leaderBoardData!.updateValue(score, forKey: name)
+    
+    func getUsers()
+        -> [User]?
+    {
+        var result: [User] = Array<User>()
+        if let dictionaries = usersInfo?.values {
+            for dictionary in dictionaries {
+                if let user = User(dictionary: dictionary) {
+                    result.append(user)
                 }
             }
-            
-        } else {
-            leaderBoardData = [name:score]
+            result = result.sorted(by: { (first, second) -> Bool in
+                return first.score > second.score
+            })
         }
-        print("this is leaderboard", leaderBoardData)
-        rewriteLeaderBoardData()
+        return (result.count > 0) ? result : nil
     }
     
-    
-    func readUserBase() {
-        self.userData = defaults.value(forKey: "savedUserData") as! [String : String]?
-        print(userData)
-    }
-    
-    func rewriteUserBase() {
-        defaults.set(self.userData, forKey: "savedUserData")
-    }
-    
-    func readLeaderBoardData() {
-        self.leaderBoardData = defaults.value(forKey: "savedLeaderBoardData") as! [String : Int]?
-    }
-    
-    func rewriteLeaderBoardData() {
-        
-       
-        
-        defaults.set(self.leaderBoardData, forKey: "savedLeaderBoardData")
-    }
-    
-    
-    
-     
 }
+
+
+
+
+
+
+

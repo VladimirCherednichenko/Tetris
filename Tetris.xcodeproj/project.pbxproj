@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F02EFC71E7AD807000A3141 /* lol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F02EFC61E7AD807000A3141 /* lol.ttf */; };
+		4F1043D41E8D4E7B00C9EC47 /* ScoreViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1043D31E8D4E7B00C9EC47 /* ScoreViewConroller.swift */; };
 		4F28AB6B1E6D657C00429018 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28AB6A1E6D657C00429018 /* LogInViewController.swift */; };
-		4F28AB721E6D971600429018 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F28AB701E6D953800429018 /* SnapKit.framework */; };
-		4F28AB731E6D971600429018 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F28AB701E6D953800429018 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F28AB7F1E6DB05500429018 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB7E1E6DB05500429018 /* Lato-Regular.ttf */; };
 		4F28AB801E6DB05500429018 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB7E1E6DB05500429018 /* Lato-Regular.ttf */; };
 		4F28AB821E6DB25400429018 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB811E6DB25400429018 /* Lato-Light.ttf */; };
@@ -32,23 +32,15 @@
 		4F28AB9E1E6E0F7400429018 /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F28AB991E6E0DB800429018 /* corbel.ttf */; };
 		4F28ABA01E6ECD8100429018 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */; };
 		4F28ABA11E6ECD8100429018 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */; };
-		4F6334C71E75F335001C8AE1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CB002C1E2FB81D001DF6E4 /* Info.plist */; };
 		4F6334C81E75F337001C8AE1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84CB002C1E2FB81D001DF6E4 /* Info.plist */; };
 		4F6334CA1E75F419001C8AE1 /* Yellowtail-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F6334C91E75F419001C8AE1 /* Yellowtail-Regular.ttf */; };
 		4F6334CB1E75F419001C8AE1 /* Yellowtail-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F6334C91E75F419001C8AE1 /* Yellowtail-Regular.ttf */; };
+		4FC617AE1E8D8782008C4BDB /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC617AD1E8D8782008C4BDB /* DataSource.swift */; };
+		4FC617B01E8D9492008C4BDB /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC617AF1E8D9492008C4BDB /* UserStruct.swift */; };
+		4FC617B21E8E84A6008C4BDB /* InfoViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC617B11E8E84A6008C4BDB /* InfoViewConroller.swift */; };
 		4FDD5D9A1E79A05D004905A2 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442116B1E57490B00257E3C /* GameTests.swift */; };
 		4FF3EB2A1E71B0050010FCAB /* UsersBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3EB291E71B0050010FCAB /* UsersBase.swift */; };
-		4FF3EB2B1E71B0050010FCAB /* UsersBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF3EB291E71B0050010FCAB /* UsersBase.swift */; };
-		4FF664CE1E76CDD5002711B3 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF664CD1E76CDD5002711B3 /* FacebookCore.framework */; };
-		4FF664D01E76CE2A002711B3 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF664CF1E76CE2A002711B3 /* FBSDKCoreKit.framework */; };
-		4FF664D21E76CE48002711B3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF664D11E76CE48002711B3 /* Bolts.framework */; };
-		4FF664D41E76CE75002711B3 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF664D31E76CE75002711B3 /* FacebookLogin.framework */; };
-		4FF664D71E76E3A2002711B3 /* LOKICOLA.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4FF664D61E76E3A2002711B3 /* LOKICOLA.TTF */; };
-		4FF664D81E76E3A2002711B3 /* LOKICOLA.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 4FF664D61E76E3A2002711B3 /* LOKICOLA.TTF */; };
-		4FF664DA1E76F7E3002711B3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF664D91E76F7E3002711B3 /* RealmSwift.framework */; };
-		4FF664DC1E76F7FC002711B3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF664DB1E76F7FC002711B3 /* Realm.framework */; };
-		4FF664DE1E7821F1002711B3 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF664DD1E7821F1002711B3 /* Leaderboard.swift */; };
-		4FF664DF1E7821F1002711B3 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF664DD1E7821F1002711B3 /* Leaderboard.swift */; };
+		8107545523E454D44A9ADACC /* Pods_Tetris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E469F22FAAA063C1E5E5ED3F /* Pods_Tetris.framework */; };
 		844211641E548DB900257E3C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844211631E548DB900257E3C /* Matrix.swift */; };
 		844211731E574C8C00257E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */; };
 		844211741E574C8C00257E3C /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E944E61E47DFC400EF40D6 /* ApplicationController.swift */; };
@@ -97,23 +89,10 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		4F28AB741E6D971600429018 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				4F28AB731E6D971600429018 /* SnapKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		4F02EFC61E7AD807000A3141 /* lol.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lol.ttf; sourceTree = "<group>"; };
+		4F1043D31E8D4E7B00C9EC47 /* ScoreViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewConroller.swift; sourceTree = "<group>"; };
 		4F28AB6A1E6D657C00429018 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ../LogInViewController.swift; sourceTree = "<group>"; };
-		4F28AB701E6D953800429018 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		4F28AB7E1E6DB05500429018 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Regular.ttf"; path = "../../../Desktop/ideasForDesign/Lato/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		4F28AB811E6DB25400429018 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato-Light.ttf"; path = "../../../Desktop/ideasForDesign/Lato/Lato-Light.ttf"; sourceTree = "<group>"; };
 		4F28AB871E6E0A1400429018 /* FranklinGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FranklinGothic.ttf; path = ../../../Desktop/Fonts/FranklinGothic.ttf; sourceTree = "<group>"; };
@@ -126,15 +105,11 @@
 		4F28AB9A1E6E0DD500429018 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../Desktop/Fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
 		4F6334C91E75F419001C8AE1 /* Yellowtail-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yellowtail-Regular.ttf"; sourceTree = "<group>"; };
+		4FC617AD1E8D8782008C4BDB /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		4FC617AF1E8D9492008C4BDB /* UserStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
+		4FC617B11E8E84A6008C4BDB /* InfoViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewConroller.swift; sourceTree = "<group>"; };
 		4FF3EB291E71B0050010FCAB /* UsersBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersBase.swift; path = ../UsersBase.swift; sourceTree = "<group>"; };
-		4FF664CD1E76CDD5002711B3 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
-		4FF664CF1E76CE2A002711B3 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		4FF664D11E76CE48002711B3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
-		4FF664D31E76CE75002711B3 /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = Carthage/Build/iOS/FacebookLogin.framework; sourceTree = "<group>"; };
-		4FF664D61E76E3A2002711B3 /* LOKICOLA.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; name = LOKICOLA.TTF; path = ../../../Desktop/Fonts/LOKICOLA.TTF; sourceTree = "<group>"; };
-		4FF664D91E76F7E3002711B3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		4FF664DB1E76F7FC002711B3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		4FF664DD1E7821F1002711B3 /* Leaderboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
+		5452B7C96334B5F2FCCA269C /* Pods-Tetris.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tetris.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tetris/Pods-Tetris.release.xcconfig"; sourceTree = "<group>"; };
 		844211631E548DB900257E3C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = ../Matrix.swift; sourceTree = "<group>"; };
 		844211691E57490B00257E3C /* TetrisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8442116B1E57490B00257E3C /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
@@ -161,6 +136,8 @@
 		84FE11CD1E532BAF00E25528 /* L_Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = L_Figure.swift; path = ../L_Figure.swift; sourceTree = "<group>"; };
 		84FE11CF1E532BCD00E25528 /* SquareFigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SquareFigure.swift; path = ../SquareFigure.swift; sourceTree = "<group>"; };
 		84FE11D11E532BEA00E25528 /* Z_Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Z_Figure.swift; path = ../Z_Figure.swift; sourceTree = "<group>"; };
+		A9E098BEE5A576CF25B8F433 /* Pods-Tetris.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tetris.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tetris/Pods-Tetris.debug.xcconfig"; sourceTree = "<group>"; };
+		E469F22FAAA063C1E5E5ED3F /* Pods_Tetris.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tetris.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,13 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FF664DC1E76F7FC002711B3 /* Realm.framework in Frameworks */,
-				4FF664DA1E76F7E3002711B3 /* RealmSwift.framework in Frameworks */,
-				4FF664CE1E76CDD5002711B3 /* FacebookCore.framework in Frameworks */,
-				4FF664D41E76CE75002711B3 /* FacebookLogin.framework in Frameworks */,
-				4FF664D21E76CE48002711B3 /* Bolts.framework in Frameworks */,
-				4FF664D01E76CE2A002711B3 /* FBSDKCoreKit.framework in Frameworks */,
-				4F28AB721E6D971600429018 /* SnapKit.framework in Frameworks */,
+				8107545523E454D44A9ADACC /* Pods_Tetris.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,15 +162,18 @@
 		4F28AB6F1E6D953800429018 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4FF664DB1E76F7FC002711B3 /* Realm.framework */,
-				4FF664D91E76F7E3002711B3 /* RealmSwift.framework */,
-				4FF664D31E76CE75002711B3 /* FacebookLogin.framework */,
-				4FF664D11E76CE48002711B3 /* Bolts.framework */,
-				4FF664CF1E76CE2A002711B3 /* FBSDKCoreKit.framework */,
-				4FF664CD1E76CDD5002711B3 /* FacebookCore.framework */,
-				4F28AB701E6D953800429018 /* SnapKit.framework */,
+				E469F22FAAA063C1E5E5ED3F /* Pods_Tetris.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		77E57C6672C852FAE0CF13C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9E098BEE5A576CF25B8F433 /* Pods-Tetris.debug.xcconfig */,
+				5452B7C96334B5F2FCCA269C /* Pods-Tetris.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		8442116A1E57490B00257E3C /* TetrisTests */ = {
@@ -218,6 +192,7 @@
 				8442116A1E57490B00257E3C /* TetrisTests */,
 				84CB001E1E2FB81D001DF6E4 /* Products */,
 				4F28AB6F1E6D953800429018 /* Frameworks */,
+				77E57C6672C852FAE0CF13C9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,19 +208,22 @@
 		84CB001F1E2FB81D001DF6E4 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
-				4FF3EB291E71B0050010FCAB /* UsersBase.swift */,
+				4FC617B11E8E84A6008C4BDB /* InfoViewConroller.swift */,
+				4F1043D31E8D4E7B00C9EC47 /* ScoreViewConroller.swift */,
+				4FC617AD1E8D8782008C4BDB /* DataSource.swift */,
+				4FC617AF1E8D9492008C4BDB /* UserStruct.swift */,
+				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
 				4F28AB9F1E6ECD8100429018 /* MenuViewController.swift */,
 				84E944E61E47DFC400EF40D6 /* ApplicationController.swift */,
 				4F28AB6A1E6D657C00429018 /* LogInViewController.swift */,
+				4FF3EB291E71B0050010FCAB /* UsersBase.swift */,
 				84E6CFA01E3AADD600003059 /* Protocols.swift */,
-				84CB00201E2FB81D001DF6E4 /* AppDelegate.swift */,
 				84CB00221E2FB81D001DF6E4 /* GameViewConroller.swift */,
 				848B433F1E3628C700029892 /* Game.swift */,
 				844211831E5C8F8000257E3C /* Functions.swift */,
 				84E944E81E489C9200EF40D6 /* GameOverViewController.swift */,
 				844211631E548DB900257E3C /* Matrix.swift */,
 				84FE11C31E53266B00E25528 /* Provider.swift */,
-				4FF664DD1E7821F1002711B3 /* Leaderboard.swift */,
 				84FE11C51E53271500E25528 /* Figure.swift */,
 				84FE11D31E532CE700E25528 /* Figures */,
 				84FE11C71E5327A400E25528 /* Point.swift */,
@@ -271,8 +249,8 @@
 		84FE11D41E532D0300E25528 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				4F02EFC61E7AD807000A3141 /* lol.ttf */,
 				4F28AB9A1E6E0DD500429018 /* Montserrat-Regular.ttf */,
-				4FF664D61E76E3A2002711B3 /* LOKICOLA.TTF */,
 				4F28AB991E6E0DB800429018 /* corbel.ttf */,
 				4F28AB961E6E0DAB00429018 /* CenturyGothic.ttf */,
 				4F28AB811E6DB25400429018 /* Lato-Light.ttf */,
@@ -316,11 +294,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84CB003A1E2FB81D001DF6E4 /* Build configuration list for PBXNativeTarget "Tetris" */;
 			buildPhases = (
+				BE57C6CB7D7A1EC79E827FBB /* [CP] Check Pods Manifest.lock */,
 				84CB00191E2FB81D001DF6E4 /* Sources */,
 				84CB001A1E2FB81D001DF6E4 /* Frameworks */,
 				84CB001B1E2FB81D001DF6E4 /* Resources */,
-				4F28AB741E6D971600429018 /* Embed Frameworks */,
-				4FF3EB281E71A9900010FCAB /* ShellScript */,
+				520C26D56EF26AB777D9838F /* [CP] Embed Pods Frameworks */,
+				18CE40ECA744B8F7C5A0781E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -338,7 +317,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					844211681E57490B00257E3C = {
@@ -388,7 +367,6 @@
 				4F28AB831E6DB25400429018 /* Lato-Light.ttf in Resources */,
 				4F28AB921E6E0CC100429018 /* rockwell.ttf in Resources */,
 				4F28AB8C1E6E0BA000429018 /* helvetica.ttf in Resources */,
-				4FF664D81E76E3A2002711B3 /* LOKICOLA.TTF in Resources */,
 				4F28AB951E6E0CE100429018 /* baskerville.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,12 +383,11 @@
 				4F28AB7F1E6DB05500429018 /* Lato-Regular.ttf in Resources */,
 				4F28AB971E6E0DAB00429018 /* CenturyGothic.ttf in Resources */,
 				4F28AB821E6DB25400429018 /* Lato-Light.ttf in Resources */,
-				4FF664D71E76E3A2002711B3 /* LOKICOLA.TTF in Resources */,
-				4F6334C71E75F335001C8AE1 /* Info.plist in Resources */,
 				84E944EF1E49F6FF00EF40D6 /* Xacto Blade.ttf in Resources */,
 				4F28AB9D1E6E0F7300429018 /* corbel.ttf in Resources */,
 				4F28AB8E1E6E0C8500429018 /* georgia.ttf in Resources */,
 				4F28AB881E6E0A1400429018 /* FranklinGothic.ttf in Resources */,
+				4F02EFC71E7AD807000A3141 /* lol.ttf in Resources */,
 				4F28AB941E6E0CE100429018 /* baskerville.ttf in Resources */,
 				4F28AB911E6E0CC100429018 /* rockwell.ttf in Resources */,
 				4F28AB8B1E6E0BA000429018 /* helvetica.ttf in Resources */,
@@ -420,25 +397,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4FF3EB281E71A9900010FCAB /* ShellScript */ = {
+		18CE40ECA744B8F7C5A0781E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FacebookLogin.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tetris/Pods-Tetris-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		520C26D56EF26AB777D9838F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tetris/Pods-Tetris-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE57C6CB7D7A1EC79E827FBB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -455,8 +456,6 @@
 				844211771E574C8C00257E3C /* GameOverViewController.swift in Sources */,
 				8442117C1E574C8C00257E3C /* Figure.swift in Sources */,
 				844211731E574C8C00257E3C /* AppDelegate.swift in Sources */,
-				4FF664DF1E7821F1002711B3 /* Leaderboard.swift in Sources */,
-				4FF3EB2B1E71B0050010FCAB /* UsersBase.swift in Sources */,
 				844211821E574C9500257E3C /* L_Figure.swift in Sources */,
 				8442117D1E574C9000257E3C /* Point.swift in Sources */,
 				844211851E5C917F00257E3C /* Functions.swift in Sources */,
@@ -481,14 +480,17 @@
 				84FE11D21E532BEA00E25528 /* Z_Figure.swift in Sources */,
 				84CB00211E2FB81D001DF6E4 /* AppDelegate.swift in Sources */,
 				84FE11D01E532BCD00E25528 /* SquareFigure.swift in Sources */,
+				4F1043D41E8D4E7B00C9EC47 /* ScoreViewConroller.swift in Sources */,
+				4FC617B01E8D9492008C4BDB /* UserStruct.swift in Sources */,
 				84E944E71E47DFC400EF40D6 /* ApplicationController.swift in Sources */,
 				84FE11C61E53271500E25528 /* Figure.swift in Sources */,
-				4FF664DE1E7821F1002711B3 /* Leaderboard.swift in Sources */,
 				4FF3EB2A1E71B0050010FCAB /* UsersBase.swift in Sources */,
 				84E6CFA11E3AADD600003059 /* Protocols.swift in Sources */,
 				84FE11C81E5327A400E25528 /* Point.swift in Sources */,
 				4F28AB6B1E6D657C00429018 /* LogInViewController.swift in Sources */,
 				84E944E91E489C9200EF40D6 /* GameOverViewController.swift in Sources */,
+				4FC617B21E8E84A6008C4BDB /* InfoViewConroller.swift in Sources */,
+				4FC617AE1E8D8782008C4BDB /* DataSource.swift in Sources */,
 				4F28ABA01E6ECD8100429018 /* MenuViewController.swift in Sources */,
 				844211641E548DB900257E3C /* Matrix.swift in Sources */,
 				84FE11CE1E532BAF00E25528 /* L_Figure.swift in Sources */,
@@ -645,17 +647,18 @@
 		};
 		84CB003B1E2FB81D001DF6E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9E098BEE5A576CF25B8F433 /* Pods-Tetris.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UMPRH5R5SA;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tetris/Info.plist;
+				"LD_MAP_FILE_PATH[arch=*]" = "$(TARGET_TEMP_DIR)/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "./**";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = VladimirChednichenco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -665,17 +668,16 @@
 		};
 		84CB003C1E2FB81D001DF6E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5452B7C96334B5F2FCCA269C /* Pods-Tetris.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UMPRH5R5SA;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Tetris/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "./**";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = VladimirChednichenco;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

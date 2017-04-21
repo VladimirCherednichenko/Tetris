@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 
-class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDelegate
+class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDelegate, ShowLogInViewDelegate, UserInfoDelegate
 {
     
     var interval = 0.5 //change timer interval there, if you wish it
@@ -20,10 +20,13 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDe
         self.columns = Int(numbersOfColums)
         self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * 1/numbersOfColums))
         //newGame()
-        
-        showLogInView()
-        
-        //showMenu()
+        if userBase.readCurrentUserName() == nil {
+            showLogInView()
+        } else {
+           currentName = userBase.readCurrentUserName()
+           showMenu()
+        }
+//        showLogInView()
         
     }
     
@@ -32,7 +35,8 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDe
     }
     
     func didGameOver(){
-        userBase.sendUserScore(name:currentName!, score:latestScore)
+        //userBase.sendUserScore(name:currentName!, score:latestScore)
+       print("this is record \(userBase.setNewRecord(name: currentName!, score: latestScore))")
         sendGameOverScreen()
     }
     
@@ -41,13 +45,13 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDe
         let gameViewController = GameViewController(1/numbersOfColums, columns, rows)
         let game = Game(renderDelegate: gameViewController, applicationControllerObject: self, rows: self.rows, columns: self.columns, interval: interval )
         gameViewController.gameDelegate = game
-        navigationViewController.setViewControllers([gameViewController as UIViewController], animated: false)
+        navigationViewController.setViewControllers([gameViewController as UIViewController], animated: true)
     }
     
     func showLogInView() {
         let logInView = LogInViewController()
-        navigationViewController.setViewControllers([logInView as UIViewController], animated: false)
-        logInView.userBaseDelegate = userBase
+        navigationViewController.setViewControllers([logInView as UIViewController], animated: true)
+        logInView.LogInDelegate = userBase
         logInView.menuDelegate = self
     }
     
@@ -55,10 +59,10 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDe
         let menuView = MenuViewController()
         menuView.currentName = currentName
         menuView.menuDelegate = self
-        navigationViewController.setViewControllers([menuView as UIViewController], animated: false)
+        navigationViewController.setViewControllers([menuView as UIViewController], animated: true)
         
         
-       // logInView.userBaseDelegate = userBase
+        
     }
     
     func sendGameOverScreen() {
@@ -71,5 +75,16 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDe
         navigationViewController.pushViewController(gameOverViewConroller, animated: false)
         navigationViewController.setViewControllers([gameOverViewConroller], animated: false)
     }
+    func showScoreView() {
+        let scoreViewConroller =  ScoreViewConroller(userBase, self)
+        navigationViewController.pushViewController(scoreViewConroller, animated: true)
+    }
+    
+   func showInfoView(currentUser:User) {
+        
+     let infoView = InfoViewConroller(currentUser, self)
+    navigationViewController.pushViewController(infoView, animated: true)
+    }
+    
 }
 

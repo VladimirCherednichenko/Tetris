@@ -32,6 +32,7 @@ class InfoViewConroller:UIViewController {
         view.backgroundColor = UIColor.white
         let nameLabel = UILabel()
         let scoreLabel = UILabel()
+        let logOutButton = UIButton()
         
         
         
@@ -48,6 +49,24 @@ class InfoViewConroller:UIViewController {
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         scoreLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         scoreLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        
+        logOutButton.setTitle("Logout", for: .normal)
+        logOutButton.titleLabel?.font = UIFont(name: "XPED Shadow", size: 35.0)
+        logOutButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        logOutButton.setTitleColor(UIColor.black, for: .normal)
+        logOutButton.setTitleColor(UIColor.red, for: .highlighted)
+        view.addSubview(logOutButton)
+        
+        logOutButton.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor, constant: 70).isActive = true
+        
+        logOutButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        logOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        logOutButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+       
+        logOutButton.contentMode = .center
+        
+
         
         
     }

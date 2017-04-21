@@ -8,17 +8,23 @@
 
 import Foundation
 import UIKit
-import SnapKit
+
 
 class LogInViewController:UIViewController,UITextFieldDelegate {
     
-    var userBaseDelegate:userBaseProtocol?
-    var nameTextField = UITextField()
-    var passwordTextField = UITextField()
+    var LogInDelegate:LogInDelegate?
     var currentUsersName:String?
     var currentUsersPassword:String?
+    
     var menuDelegate:MenuDelegate?
     let warningLabel = UILabel()
+    var nameTextField = UITextField()
+    var passwordTextField = UITextField()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGray
@@ -26,7 +32,7 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         let nameOfApplication = UILabel()
         nameOfApplication.text = "Tetris"
         nameOfApplication.textColor = UIColor.white
-        nameOfApplication.font = UIFont(name: "LOKICOLA", size: 70.0)
+        nameOfApplication.font = UIFont(name: "Loki Cola", size: 70.0)
         nameOfApplication.translatesAutoresizingMaskIntoConstraints = false
         nameOfApplication.layer.shadowColor = UIColor.red.cgColor
         nameOfApplication.layer.shadowOpacity = 1
@@ -128,33 +134,32 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         
-         print("now on next view \(self.nameTextField.text) \(self.passwordTextField.text) ")
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField
+        print("now on next view \(self.nameTextField.text) \(self.passwordTextField.text) ")
+        
+        if textField == nameTextField
         {
             self.currentUsersName = textField.text
-            nextField.becomeFirstResponder()
+            passwordTextField.becomeFirstResponder()
             
-        } else {
-            // Not found, so remove keyboard.
-            //textField.text
+        }
+        
+        if textField == passwordTextField {
+            
             currentUsersPassword = textField.text
             
             if currentUsersName != nil {
                 
+                let alreadyExists = self.LogInDelegate?.alreadyExistNameCheck(name: nameTextField.text!)
                 
-                
-            
-                
-                var createdNewUser:Bool? = self.userBaseDelegate?.addNewUser(name: self.currentUsersName!, password: self.currentUsersPassword!)
-                if !createdNewUser! {
-                    let userVerifid:Bool? = self.userBaseDelegate?.verificatUser(name: self.currentUsersName!, password: self.currentUsersPassword!)
-                    if !userVerifid! {
-                        warningLabel.isHidden = false
-                        
-                    } else {
+                 if alreadyExists! {
+                    let verificationComplete = self.LogInDelegate?.userVerification(name: nameTextField.text!, password: passwordTextField.text!)
+                    if verificationComplete! {
                         goToMenu()
+                    } else {
+                        warningLabel.isHidden = false
                     }
                 } else {
+                    self.LogInDelegate?.addNewUser(name: nameTextField.text!, password: passwordTextField.text!)
                     goToMenu()
                 }
                 
@@ -164,7 +169,7 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
     }
     
     func goToMenu() {
-        
+        self.LogInDelegate?.saveCurrentUserName(name: self.currentUsersName!)
         menuDelegate?.currentName = self.currentUsersName
         menuDelegate?.showMenu()
     }

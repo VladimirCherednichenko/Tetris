@@ -8,6 +8,10 @@
 
 import Foundation
 import UIKit
+
+
+
+
 protocol GameDraw
 {
     var points:Int{get set}
@@ -30,7 +34,15 @@ protocol GameDraw
     var currentName:String?{get set}
     @objc func newGame()
     @objc func showMenu()
+    @objc func showScoreView()
     
+    
+}
+protocol LeaderBoardDelegate
+{
+    func setNewRecord(name:String, score:Int)
+        ->Bool
+    func getUsers() -> [User]?
     
 }
 
@@ -53,11 +65,18 @@ protocol GameProtocol
     
 }
 
-protocol userBaseProtocol{
-    var   userData:[String:String]?{get set}
+protocol LogInDelegate{
+    func saveCurrentUserName(name:String)
     func addNewUser(name:String,password:String)
-        ->Bool
-    func verificatUser(name:String,password:String)
-        ->Bool
+    func alreadyExistNameCheck(name:String) -> Bool
+    func userVerification(name:String, password:String) -> Bool
     
+}
+
+protocol UserInfoDelegate{
+    func showInfoView(currentUser:User)
+}
+
+protocol ShowLogInViewDelegate {
+ func showLogInView()
 }
