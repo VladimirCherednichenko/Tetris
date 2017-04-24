@@ -18,12 +18,31 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Yellowtail-Regular.ttf</string>
+		<string>Zapf Elliptical 711 Bold BT.ttf</string>
+		<string>XPED Shadow.ttf</string>
+		<string>Xacto Blade.ttf</string>
+		<string>Xposed.ttf</string>
+		<string>lol.ttf</string>
+		<string>Lie to Me - TTF.ttf</string>
+		<string>HelveticaBlack.ttf</string>
+		<string>Lato-Regular.ttf</string>
+		<string>Lato-Light.ttf</string>
+		<string>FranklinGothic.ttf</string>
+		<string>helvetica.ttf</string>
+		<string>georgia.ttf</string>
+		<string>rockwell.ttf</string>
+		<string>baskerville.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>corbel.ttf</string>
+		<string>CenturyGothic.ttf</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
