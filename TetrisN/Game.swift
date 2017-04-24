@@ -169,14 +169,15 @@ class Game:GameProtocol{
         
         timer.invalidate()
         gameDelegate?.latestScore = self.points
-        print("points:", gameDelegate?.latestScore)
+        
         gameDelegate?.didGameOver()
         
         
     }
     
     deinit {
-        print("game going to die")
+        
+        
     }
 }
 

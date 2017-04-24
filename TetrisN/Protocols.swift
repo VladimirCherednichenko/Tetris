@@ -77,6 +77,6 @@ protocol UserInfoDelegate{
     func showInfoView(currentUser:User)
 }
 
-protocol ShowInfoViewDelegate {
+protocol LogoutDelegate {
  func showLogInView()
 }

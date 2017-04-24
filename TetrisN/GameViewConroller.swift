@@ -21,7 +21,7 @@ class GameViewController: UIViewController, GameDraw {
         self.valueOfDivision = valueOfDivision
         GameViewController.counterForDeinit = GameViewController.counterForDeinit + 1
 
-        print("created view object naumber: ", GameViewController.counterForDeinit)
+        
         
       //  self.counterForDeinit = self.counterForDeinit + 1
         super.init(nibName: nil, bundle: nil)
@@ -150,7 +150,7 @@ class GameViewController: UIViewController, GameDraw {
     }
     deinit {
        
-        print("dying object numder", GameViewController.counterForDeinit)
+       
     }
 }
 

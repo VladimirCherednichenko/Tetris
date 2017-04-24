@@ -32,7 +32,7 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         let nameOfApplication = UILabel()
         nameOfApplication.text = "Tetris"
         nameOfApplication.textColor = UIColor.white
-        nameOfApplication.font = UIFont(name: "lol", size: 70.0)
+        nameOfApplication.font = UIFont(name: "Yellowtail", size: 70.0)
         nameOfApplication.translatesAutoresizingMaskIntoConstraints = false
         nameOfApplication.layer.shadowColor = UIColor.red.cgColor
         nameOfApplication.layer.shadowOpacity = 1
@@ -134,19 +134,19 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         
-        print("now on next view \(self.nameTextField.text) \(self.passwordTextField.text) ")
+        
         
         if textField == nameTextField
         {
             self.currentUsersName = textField.text
             passwordTextField.becomeFirstResponder()
             
-        }
+        } else {
+            
         
-        if textField == passwordTextField {
             
             currentUsersPassword = textField.text
-            
+            currentUsersName = nameTextField.text
             if currentUsersName != nil {
                 
                 let alreadyExists = self.LogInDelegate?.alreadyExistNameCheck(name: nameTextField.text!)

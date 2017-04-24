@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 
-class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDelegate, ShowInfoViewDelegate, UserInfoDelegate
+class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDelegate, LogoutDelegate, UserInfoDelegate
 {
     
     var interval = 0.5 //change timer interval there, if you wish it
@@ -36,7 +36,7 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDe
     
     func didGameOver(){
         //userBase.sendUserScore(name:currentName!, score:latestScore)
-       print("this is record \(userBase.setNewRecord(name: currentName!, score: latestScore))")
+       
         sendGameOverScreen()
     }
     

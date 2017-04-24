@@ -68,7 +68,7 @@ class GameOverViewController: UIViewController
         return true
     }
     deinit {
-        print("gameOverViewConroller is dying")
+       
     }
 }
 

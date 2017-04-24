@@ -13,10 +13,10 @@ import UIKit
 class InfoViewConroller:UIViewController {
     let currentUserName:String
     let score:Int
-    let logInView:ShowInfoViewDelegate
+    let logoutDelegate:LogoutDelegate
     
-    init(_ currentUser:User, _ logInView:ShowInfoViewDelegate) {
-        self.logInView = logInView
+    init(_ currentUser:User, _ logoutDelegate:LogoutDelegate) {
+        self.logoutDelegate = logoutDelegate
         self.currentUserName = currentUser.name
         self.score = currentUser.score
         
@@ -65,9 +65,12 @@ class InfoViewConroller:UIViewController {
         logOutButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
        
         logOutButton.contentMode = .center
+        logOutButton.addTarget(self, action: #selector(self.didLogout), for: .touchUpInside)
+    }
+    
+    func didLogout(){
         
-
-        
+       logoutDelegate.showLogInView()
         
     }
     

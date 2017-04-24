@@ -28,9 +28,10 @@ class DataSource:NSObject, UITableViewDataSource {
         let newCell = CustomeCell(reuseIdentifier: "leaderboard", name: currentUser.name, score: currentUser.score)
             result = newCell
         }
-        result.selectionStyle = .blue
+        result.selectionStyle = .default
+        
         result.backgroundColor = UIColor.darkGray
-        print(self.leaderBoardDelegate.getUsers()?[indexPath.row])
+        result.accessoryType = .disclosureIndicator
         
         return result
     }

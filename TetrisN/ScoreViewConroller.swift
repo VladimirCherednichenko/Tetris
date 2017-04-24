@@ -49,13 +49,20 @@ class ScoreViewConroller:UIViewController,UITableViewDelegate
         tabelView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         tabelView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         tabelView.backgroundColor = UIColor.darkGray
+        tabelView.separatorStyle = .none
+        tabelView.style
         
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if let currentUser = leaderBoardDelegate.getUsers()?[indexPath.row] {
         showInfoView.showInfoView(currentUser: currentUser)
+        
         }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
 }
