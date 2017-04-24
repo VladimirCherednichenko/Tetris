@@ -81,8 +81,11 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDe
     }
     
    func showInfoView(currentUser:User) {
-        
-     let infoView = InfoViewConroller(currentUser, self)
+    var itIsCurrentName = false
+    if currentUser.name == currentName {
+        itIsCurrentName = true
+    }
+     let infoView = InfoViewConroller(currentUser, self, itIsCurrentName)
     navigationViewController.pushViewController(infoView, animated: true)
     }
     

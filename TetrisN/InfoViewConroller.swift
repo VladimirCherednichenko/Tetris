@@ -14,8 +14,10 @@ class InfoViewConroller:UIViewController {
     let currentUserName:String
     let score:Int
     let logoutDelegate:LogoutDelegate
+    let itIsCurrentUser:Bool
     
-    init(_ currentUser:User, _ logoutDelegate:LogoutDelegate) {
+    init(_ currentUser:User, _ logoutDelegate:LogoutDelegate,_ itIsCurrentUser:Bool) {
+        self.itIsCurrentUser = itIsCurrentUser
         self.logoutDelegate = logoutDelegate
         self.currentUserName = currentUser.name
         self.score = currentUser.score
@@ -44,6 +46,25 @@ class InfoViewConroller:UIViewController {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        let photoButton = UIButton()
+        photoButton.setTitle("+", for: .normal)
+        photoButton.titleLabel?.font = UIFont(name: "PingFang SC", size: 32)
+        UIFont.familyNames.sorted().forEach({print($0)})
+        photoButton.setTitleColor(UIColor.black, for: .normal)
+        view.addSubview(photoButton)
+        photoButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        photoButton.bottomAnchor.constraint(equalTo: nameLabel.topAnchor, constant: -70).isActive = true
+        photoButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        photoButton.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        photoButton.centerXAnchor.constraint(equalTo: nameLabel.centerXAnchor).isActive = true
+        photoButton.backgroundColor = .clear
+        photoButton.layer.cornerRadius = 50
+        print("this is size \(photoButton)")
+        photoButton.layer.borderWidth = 1
+        photoButton.layer.borderColor = UIColor.black.cgColor
         
         view.addSubview(scoreLabel)
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -63,9 +84,17 @@ class InfoViewConroller:UIViewController {
         logOutButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
         logOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         logOutButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-       
+        
         logOutButton.contentMode = .center
         logOutButton.addTarget(self, action: #selector(self.didLogout), for: .touchUpInside)
+        
+        let photoLabel = UILabel()
+        photoLabel.text = "Photo"
+        photoLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(photoLabel)
+        photoLabel.bottomAnchor.constraint(equalTo: photoButton.topAnchor, constant:-30).isActive = true
+        photoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
     }
     
     func didLogout(){

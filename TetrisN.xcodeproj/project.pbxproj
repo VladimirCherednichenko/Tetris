@@ -81,6 +81,7 @@
 		E755D78C1EAE1CAC00D2B31C /* rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6201EAE195900880D61 /* rockwell.ttf */; };
 		E755D78D1EAE1CAC00D2B31C /* Zapf Elliptical 711 Bold BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */; };
 		E755D78E1EAE1CAC00D2B31C /* Xposed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6221EAE195900880D61 /* Xposed.ttf */; };
+		E755D7901EAE542D00D2B31C /* Youth and Beauty.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		E721F6201EAE195900880D61 /* rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rockwell.ttf; sourceTree = "<group>"; };
 		E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zapf Elliptical 711 Bold BT.ttf"; sourceTree = "<group>"; };
 		E721F6221EAE195900880D61 /* Xposed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xposed.ttf; sourceTree = "<group>"; };
+		E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Youth and Beauty.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				E721F6131EAE195900880D61 /* lol.ttf */,
+				E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */,
 				E721F6141EAE195900880D61 /* Montserrat-Regular.ttf */,
 				E721F6151EAE195900880D61 /* corbel.ttf */,
 				E721F6161EAE195900880D61 /* CenturyGothic.ttf */,
@@ -389,6 +392,7 @@
 				E755D7661EAE1CAA00D2B31C /* helvetica.ttf in Resources */,
 				E755D7611EAE1CAA00D2B31C /* corbel.ttf in Resources */,
 				E755D7651EAE1CAA00D2B31C /* Yellowtail-Regular.ttf in Resources */,
+				E755D7901EAE542D00D2B31C /* Youth and Beauty.ttf in Resources */,
 				E755D76C1EAE1CAA00D2B31C /* rockwell.ttf in Resources */,
 				E755D76B1EAE1CAA00D2B31C /* baskerville.ttf in Resources */,
 				E755D7681EAE1CAA00D2B31C /* FranklinGothic.ttf in Resources */,
