@@ -198,15 +198,15 @@
 		E721F5B61EAE184900880D61 /* TetrisN */ = {
 			isa = PBXGroup;
 			children = (
+				E721F5E91EAE18E000880D61 /* UserStruct.swift */,
+				E721F5ED1EAE18E000880D61 /* UsersBase.swift */,
 				E721F5EB1EAE18E000880D61 /* ApplicationController.swift */,
 				E721F5E51EAE18E000880D61 /* AppDelegate.swift */,
 				E721F5E61EAE18E000880D61 /* InfoViewConroller.swift */,
 				E721F5E71EAE18E000880D61 /* ScoreViewConroller.swift */,
 				E721F5E81EAE18E000880D61 /* DataSource.swift */,
-				E721F5E91EAE18E000880D61 /* UserStruct.swift */,
 				E721F5EA1EAE18E000880D61 /* MenuViewController.swift */,
 				E721F5EC1EAE18E000880D61 /* LogInViewController.swift */,
-				E721F5ED1EAE18E000880D61 /* UsersBase.swift */,
 				E721F5EE1EAE18E000880D61 /* Protocols.swift */,
 				E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */,
 				E721F5F01EAE18E000880D61 /* Game.swift */,

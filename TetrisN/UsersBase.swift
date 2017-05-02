@@ -7,11 +7,12 @@
 //
 
 import Foundation
-
+import UIKit
 class UserBase:LogInDelegate, LeaderBoardDelegate {
     
     
     let store = UserDefaults.standard
+    let imageStore = NSDate()
     var usersInfo:[String:[String:String]]?
     
     init() {
@@ -23,7 +24,7 @@ class UserBase:LogInDelegate, LeaderBoardDelegate {
     {
         
         var currentUserInfo:[String:String]
-        currentUserInfo = ["name": name, "password":password, "score":"0"]
+        currentUserInfo = ["name": name, "password":password, "score":"0", "imageURLString" : ""]
         
         if usersInfo != nil {
             usersInfo?[name] = currentUserInfo
@@ -127,6 +128,14 @@ class UserBase:LogInDelegate, LeaderBoardDelegate {
         return (result.count > 0) ? result : nil
     }
     
+    func saveImage(currentUserName:String,image:UIImage){
+        
+    }
+    
+    func readImage(currentUserName:String) -> UIImage? {
+        
+        return nil
+    }
 }
 
 

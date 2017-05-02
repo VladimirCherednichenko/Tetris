@@ -20,13 +20,13 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDe
         self.columns = Int(numbersOfColums)
         self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * 1/numbersOfColums))
         //newGame()
-        if userBase.readCurrentUserName() == nil {
+       if userBase.readCurrentUserName() == nil {
             showLogInView()
         } else {
            currentName = userBase.readCurrentUserName()
            showMenu()
         }
-//        showLogInView()
+      //showLogInView()
         
     }
     
@@ -86,7 +86,7 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverViewControllerDe
         itIsCurrentName = true
     }
      let infoView = InfoViewConroller(currentUser, self, itIsCurrentName)
-    navigationViewController.pushViewController(infoView, animated: true)
+     navigationViewController.pushViewController(infoView, animated: true)
     }
     
 }

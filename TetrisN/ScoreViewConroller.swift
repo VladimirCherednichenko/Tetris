@@ -50,10 +50,14 @@ class ScoreViewConroller:UIViewController,UITableViewDelegate
         tabelView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         tabelView.backgroundColor = UIColor.darkGray
         tabelView.separatorStyle = .none
-        tabelView.style
-        
-        
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)
+        -> CGFloat
+    {
+        return 50.0 
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let currentUser = leaderBoardDelegate.getUsers()?[indexPath.row] {
