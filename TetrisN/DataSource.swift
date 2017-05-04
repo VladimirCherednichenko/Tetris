@@ -81,15 +81,19 @@ class CustomeCell:UITableViewCell {
     
     func setImage(image:UIImage?){
         if image != nil {
+            
             self.icon.alpha = 0.0
             self.icon.image = image
             UIView.animate(withDuration: 0.5, animations: {
                 self.icon.alpha = 1.0
             })
-            self.setLabelsAndImageView()
+            
         } else {
-            self.setLabels()
+            
+            self.icon.image = #imageLiteral(resourceName: "defaultImage")
         }
+        
+        self.setLabelsAndImageView()
     }
 
     
@@ -97,26 +101,11 @@ class CustomeCell:UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setLabels() {
-        addSubview(nameLabel)
-        addSubview(scoreLabel)
-        
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        
-        
-        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
-        scoreLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        scoreLabel.leftAnchor.constraint(equalTo: self.nameLabel.rightAnchor, constant: 1 ).isActive = true
-        scoreLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        
-    }
+    
     
     func setLabelsAndImageView()
     {
+        self.icon.isHidden = false
         addSubview(nameLabel)
         addSubview(scoreLabel)
         addSubview(icon)

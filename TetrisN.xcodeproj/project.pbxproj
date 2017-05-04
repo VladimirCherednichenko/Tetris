@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		155D942757C2E5DA32074EA1 /* Pods_TetrisN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95310BFED167D06E40D7BE0A /* Pods_TetrisN.framework */; };
+		6D3B410E84B21B95C09FD535 /* Pods_TetrisNTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCCE2AE5127D1D4725751E2 /* Pods_TetrisNTests.framework */; };
+		B10E106C1754FF96477CB8F5 /* Pods_TetrisNUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B06F92CDCC113FDFD9C416 /* Pods_TetrisNUITests.framework */; };
 		E721F5BF1EAE184900880D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E721F5BE1EAE184900880D61 /* Assets.xcassets */; };
 		E721F5CD1EAE184900880D61 /* TetrisNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5CC1EAE184900880D61 /* TetrisNTests.swift */; };
 		E721F5F61EAE18E000880D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E51EAE18E000880D61 /* AppDelegate.swift */; };
@@ -102,6 +105,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		245E78E074BBC405F624583B /* Pods-TetrisN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisN/Pods-TetrisN.debug.xcconfig"; sourceTree = "<group>"; };
+		2DCCE2AE5127D1D4725751E2 /* Pods_TetrisNTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TetrisNTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D3570185F92CEF138FC2187 /* Pods-TetrisNUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisNUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisNUITests/Pods-TetrisNUITests.release.xcconfig"; sourceTree = "<group>"; };
+		78A27E7C99899C7C6CDCA8DE /* Pods-TetrisNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisNTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisNTests/Pods-TetrisNTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90EBAB6B0BBF71246D89EBA5 /* Pods-TetrisNTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisNTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisNTests/Pods-TetrisNTests.release.xcconfig"; sourceTree = "<group>"; };
+		95310BFED167D06E40D7BE0A /* Pods_TetrisN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TetrisN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B06F92CDCC113FDFD9C416 /* Pods_TetrisNUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TetrisNUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6BD008D7DBF074F38FC41BF /* Pods-TetrisN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisN.release.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisN/Pods-TetrisN.release.xcconfig"; sourceTree = "<group>"; };
+		D9DF844F19D126B0C1E20FA8 /* Pods-TetrisNUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisNUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisNUITests/Pods-TetrisNUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E721F5B41EAE184900880D61 /* TetrisN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrisN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E721F5BE1EAE184900880D61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E721F5C31EAE184900880D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				155D942757C2E5DA32074EA1 /* Pods_TetrisN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3B410E84B21B95C09FD535 /* Pods_TetrisNTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,18 +184,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10E106C1754FF96477CB8F5 /* Pods_TetrisNUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18F476182DCDF2FB52373413 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				245E78E074BBC405F624583B /* Pods-TetrisN.debug.xcconfig */,
+				D6BD008D7DBF074F38FC41BF /* Pods-TetrisN.release.xcconfig */,
+				78A27E7C99899C7C6CDCA8DE /* Pods-TetrisNTests.debug.xcconfig */,
+				90EBAB6B0BBF71246D89EBA5 /* Pods-TetrisNTests.release.xcconfig */,
+				D9DF844F19D126B0C1E20FA8 /* Pods-TetrisNUITests.debug.xcconfig */,
+				5D3570185F92CEF138FC2187 /* Pods-TetrisNUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA4EE2C467F6C12D9475CB41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95310BFED167D06E40D7BE0A /* Pods_TetrisN.framework */,
+				2DCCE2AE5127D1D4725751E2 /* Pods_TetrisNTests.framework */,
+				B6B06F92CDCC113FDFD9C416 /* Pods_TetrisNUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E721F5AB1EAE184900880D61 = {
 			isa = PBXGroup;
 			children = (
 				E721F5B61EAE184900880D61 /* TetrisN */,
 				E721F5CB1EAE184900880D61 /* TetrisNTests */,
 				E721F5B51EAE184900880D61 /* Products */,
+				18F476182DCDF2FB52373413 /* Pods */,
+				BA4EE2C467F6C12D9475CB41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,9 +316,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E721F5DC1EAE184900880D61 /* Build configuration list for PBXNativeTarget "TetrisN" */;
 			buildPhases = (
+				813F05430693EEA2424EAAC1 /* [CP] Check Pods Manifest.lock */,
 				E721F5B01EAE184900880D61 /* Sources */,
 				E721F5B11EAE184900880D61 /* Frameworks */,
 				E721F5B21EAE184900880D61 /* Resources */,
+				F60BE123465AAFCA3EA0C602 /* [CP] Embed Pods Frameworks */,
+				DD32850A3A05EA348935A7C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,9 +336,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E721F5DF1EAE184900880D61 /* Build configuration list for PBXNativeTarget "TetrisNTests" */;
 			buildPhases = (
+				53C82E98667991444588B49D /* [CP] Check Pods Manifest.lock */,
 				E721F5C41EAE184900880D61 /* Sources */,
 				E721F5C51EAE184900880D61 /* Frameworks */,
 				E721F5C61EAE184900880D61 /* Resources */,
+				1FFAF87ED71A3E5F7CAED736 /* [CP] Embed Pods Frameworks */,
+				E066CE39A612C2A35F906D32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,9 +357,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E721F5E21EAE184900880D61 /* Build configuration list for PBXNativeTarget "TetrisNUITests" */;
 			buildPhases = (
+				C280EC7F6D03A6172DB1F857 /* [CP] Check Pods Manifest.lock */,
 				E721F5CF1EAE184900880D61 /* Sources */,
 				E721F5D01EAE184900880D61 /* Frameworks */,
 				E721F5D11EAE184900880D61 /* Resources */,
+				D7C09F1868C2C5C41AA035E8 /* [CP] Embed Pods Frameworks */,
+				F6EC2B12B650CAC1120B31B0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -448,6 +497,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FFAF87ED71A3E5F7CAED736 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisNTests/Pods-TetrisNTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53C82E98667991444588B49D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		813F05430693EEA2424EAAC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C280EC7F6D03A6172DB1F857 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D7C09F1868C2C5C41AA035E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisNUITests/Pods-TetrisNUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD32850A3A05EA348935A7C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisN/Pods-TetrisN-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E066CE39A612C2A35F906D32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisNTests/Pods-TetrisNTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F60BE123465AAFCA3EA0C602 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisN/Pods-TetrisN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6EC2B12B650CAC1120B31B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisNUITests/Pods-TetrisNUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E721F5B01EAE184900880D61 /* Sources */ = {
@@ -608,6 +795,7 @@
 		};
 		E721F5DD1EAE184900880D61 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 245E78E074BBC405F624583B /* Pods-TetrisN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UMPRH5R5SA;
@@ -621,6 +809,7 @@
 		};
 		E721F5DE1EAE184900880D61 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6BD008D7DBF074F38FC41BF /* Pods-TetrisN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UMPRH5R5SA;
@@ -634,6 +823,7 @@
 		};
 		E721F5E01EAE184900880D61 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78A27E7C99899C7C6CDCA8DE /* Pods-TetrisNTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -649,6 +839,7 @@
 		};
 		E721F5E11EAE184900880D61 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90EBAB6B0BBF71246D89EBA5 /* Pods-TetrisNTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -664,6 +855,7 @@
 		};
 		E721F5E31EAE184900880D61 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9DF844F19D126B0C1E20FA8 /* Pods-TetrisNUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = UMPRH5R5SA;
@@ -678,6 +870,7 @@
 		};
 		E721F5E41EAE184900880D61 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D3570185F92CEF138FC2187 /* Pods-TetrisNUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = UMPRH5R5SA;
