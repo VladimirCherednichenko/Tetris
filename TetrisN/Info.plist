@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>CFBundleURLTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>fb397493217292357</string>
+                </array>
+                
+                
+            </dict>
+        </array>
+        <key>FacebookAppID</key>
+        <string>397493217292357</string>
+        <key>FacebookDisplayName</key>
+        <string>Tertis</string>
+        <key>CFBundleDevelopmentRegion</key>
+        <string>en</string>
+        <key>CFBundleExecutable</key>
+        <string>$(EXECUTABLE_NAME)</string>
+        <key>CFBundleIdentifier</key>
+        <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+        <key>CFBundleInfoDictionaryVersion</key>
+        <string>6.0</string>
+        <key>CFBundleName</key>
+        <string>$(PRODUCT_NAME)</string>
+        <key>CFBundlePackageType</key>
+        <string>APPL</string>
+        <key>CFBundleShortVersionString</key>
+        <string>1.0</string>
+        <key>CFBundleVersion</key>
+        <string>1</string>
+        <key>UIAppFonts</key>
+        <array>
+            <string>Yellowtail-Regular.ttf</string>
+            <string>Zapf Elliptical 711 Bold BT.ttf</string>
+            <string>XPED Shadow.ttf</string>
+            <string>Xacto Blade.ttf</string>
+            <string>Xposed.ttf</string>
+            <string>lol.ttf</string>
+            <string>Lie to Me - TTF.ttf</string>
+            <string>HelveticaBlack.ttf</string>
+            <string>Lato-Regular.ttf</string>
+            <string>Lato-Light.ttf</string>
+            <string>FranklinGothic.ttf</string>
+            <string>helvetica.ttf</string>
+            <string>georgia.ttf</string>
+            <string>rockwell.ttf</string>
+            <string>baskerville.ttf</string>
+            <string>Montserrat-Regular.ttf</string>
+            <string>corbel.ttf</string>
+            <string>CenturyGothic.ttf</string>
+            <string>Youth and Beauty.ttf</string>
+        </array>
+        <key>LSRequiresIPhoneOS</key>
+        <true/>
+        <key>UILaunchStoryboardName</key>
+        <string>LaunchScreen</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>Allow to change a photo </string>
+        <key>UIRequiredDeviceCapabilities</key>
+        <array>
+            <string>armv7</string>
+        </array>
+        <key>UISupportedInterfaceOrientations</key>
+        <array>
+            <string>UIInterfaceOrientationPortrait</string>
+            <string>UIInterfaceOrientationLandscapeLeft</string>
+            <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+        <key>UISupportedInterfaceOrientations~ipad</key>
+        <array>
+            <string>UIInterfaceOrientationPortrait</string>
+            <string>UIInterfaceOrientationPortraitUpsideDown</string>
+            <string>UIInterfaceOrientationLandscapeLeft</string>
+            <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+    </dict>
+</plist>

@@ -1,0 +1,928 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		155D942757C2E5DA32074EA1 /* Pods_TetrisN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95310BFED167D06E40D7BE0A /* Pods_TetrisN.framework */; };
+		6D3B410E84B21B95C09FD535 /* Pods_TetrisNTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCCE2AE5127D1D4725751E2 /* Pods_TetrisNTests.framework */; };
+		B10E106C1754FF96477CB8F5 /* Pods_TetrisNUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B06F92CDCC113FDFD9C416 /* Pods_TetrisNUITests.framework */; };
+		E721F5BF1EAE184900880D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E721F5BE1EAE184900880D61 /* Assets.xcassets */; };
+		E721F5CD1EAE184900880D61 /* TetrisNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5CC1EAE184900880D61 /* TetrisNTests.swift */; };
+		E721F5F61EAE18E000880D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E51EAE18E000880D61 /* AppDelegate.swift */; };
+		E721F5F71EAE18E000880D61 /* InfoViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E61EAE18E000880D61 /* InfoViewConroller.swift */; };
+		E721F5F81EAE18E000880D61 /* ScoreViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E71EAE18E000880D61 /* ScoreViewConroller.swift */; };
+		E721F5F91EAE18E000880D61 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E81EAE18E000880D61 /* DataSource.swift */; };
+		E721F5FA1EAE18E000880D61 /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E91EAE18E000880D61 /* UserStruct.swift */; };
+		E721F5FB1EAE18E000880D61 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EA1EAE18E000880D61 /* MenuViewController.swift */; };
+		E721F5FC1EAE18E000880D61 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EB1EAE18E000880D61 /* ApplicationController.swift */; };
+		E721F5FD1EAE18E000880D61 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EC1EAE18E000880D61 /* LogInViewController.swift */; };
+		E721F5FE1EAE18E000880D61 /* UsersBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5ED1EAE18E000880D61 /* UsersBase.swift */; };
+		E721F5FF1EAE18E000880D61 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EE1EAE18E000880D61 /* Protocols.swift */; };
+		E721F6001EAE18E000880D61 /* GameViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */; };
+		E721F6011EAE18E000880D61 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F01EAE18E000880D61 /* Game.swift */; };
+		E721F6021EAE18E000880D61 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F11EAE18E000880D61 /* Functions.swift */; };
+		E721F6031EAE18E000880D61 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F21EAE18E000880D61 /* GameOverViewController.swift */; };
+		E721F6041EAE18E000880D61 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F31EAE18E000880D61 /* Matrix.swift */; };
+		E721F6051EAE18E000880D61 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F41EAE18E000880D61 /* Provider.swift */; };
+		E721F6061EAE18E000880D61 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F51EAE18E000880D61 /* Figure.swift */; };
+		E721F60C1EAE18F000880D61 /* SquareFigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F6071EAE18F000880D61 /* SquareFigure.swift */; };
+		E721F60D1EAE18F000880D61 /* Z_Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F6081EAE18F000880D61 /* Z_Figure.swift */; };
+		E721F60E1EAE18F000880D61 /* LineFigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F6091EAE18F000880D61 /* LineFigure.swift */; };
+		E721F60F1EAE18F000880D61 /* T_Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F60A1EAE18F000880D61 /* T_Figure.swift */; };
+		E721F6101EAE18F000880D61 /* L_Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F60B1EAE18F000880D61 /* L_Figure.swift */; };
+		E721F6121EAE18FC00880D61 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F6111EAE18FC00880D61 /* Point.swift */; };
+		E755D75C1EAE1C9500D2B31C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E721F5C31EAE184900880D61 /* Info.plist */; };
+		E755D75F1EAE1CAA00D2B31C /* lol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6131EAE195900880D61 /* lol.ttf */; };
+		E755D7601EAE1CAA00D2B31C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6141EAE195900880D61 /* Montserrat-Regular.ttf */; };
+		E755D7611EAE1CAA00D2B31C /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6151EAE195900880D61 /* corbel.ttf */; };
+		E755D7621EAE1CAA00D2B31C /* CenturyGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6161EAE195900880D61 /* CenturyGothic.ttf */; };
+		E755D7631EAE1CAA00D2B31C /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6171EAE195900880D61 /* Lato-Light.ttf */; };
+		E755D7641EAE1CAA00D2B31C /* georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6181EAE195900880D61 /* georgia.ttf */; };
+		E755D7651EAE1CAA00D2B31C /* Yellowtail-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6191EAE195900880D61 /* Yellowtail-Regular.ttf */; };
+		E755D7661EAE1CAA00D2B31C /* helvetica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61A1EAE195900880D61 /* helvetica.ttf */; };
+		E755D7671EAE1CAA00D2B31C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61B1EAE195900880D61 /* Lato-Regular.ttf */; };
+		E755D7681EAE1CAA00D2B31C /* FranklinGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61C1EAE195900880D61 /* FranklinGothic.ttf */; };
+		E755D7691EAE1CAA00D2B31C /* XPED Shadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61D1EAE195900880D61 /* XPED Shadow.ttf */; };
+		E755D76A1EAE1CAA00D2B31C /* Xacto Blade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61E1EAE195900880D61 /* Xacto Blade.ttf */; };
+		E755D76B1EAE1CAA00D2B31C /* baskerville.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61F1EAE195900880D61 /* baskerville.ttf */; };
+		E755D76C1EAE1CAA00D2B31C /* rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6201EAE195900880D61 /* rockwell.ttf */; };
+		E755D76D1EAE1CAA00D2B31C /* Zapf Elliptical 711 Bold BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */; };
+		E755D76E1EAE1CAA00D2B31C /* Xposed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6221EAE195900880D61 /* Xposed.ttf */; };
+		E755D76F1EAE1CAB00D2B31C /* lol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6131EAE195900880D61 /* lol.ttf */; };
+		E755D7701EAE1CAB00D2B31C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6141EAE195900880D61 /* Montserrat-Regular.ttf */; };
+		E755D7711EAE1CAB00D2B31C /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6151EAE195900880D61 /* corbel.ttf */; };
+		E755D7721EAE1CAB00D2B31C /* CenturyGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6161EAE195900880D61 /* CenturyGothic.ttf */; };
+		E755D7731EAE1CAB00D2B31C /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6171EAE195900880D61 /* Lato-Light.ttf */; };
+		E755D7741EAE1CAB00D2B31C /* georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6181EAE195900880D61 /* georgia.ttf */; };
+		E755D7751EAE1CAB00D2B31C /* Yellowtail-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6191EAE195900880D61 /* Yellowtail-Regular.ttf */; };
+		E755D7761EAE1CAB00D2B31C /* helvetica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61A1EAE195900880D61 /* helvetica.ttf */; };
+		E755D7771EAE1CAB00D2B31C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61B1EAE195900880D61 /* Lato-Regular.ttf */; };
+		E755D7781EAE1CAB00D2B31C /* FranklinGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61C1EAE195900880D61 /* FranklinGothic.ttf */; };
+		E755D7791EAE1CAB00D2B31C /* XPED Shadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61D1EAE195900880D61 /* XPED Shadow.ttf */; };
+		E755D77A1EAE1CAB00D2B31C /* Xacto Blade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61E1EAE195900880D61 /* Xacto Blade.ttf */; };
+		E755D77B1EAE1CAB00D2B31C /* baskerville.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61F1EAE195900880D61 /* baskerville.ttf */; };
+		E755D77C1EAE1CAB00D2B31C /* rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6201EAE195900880D61 /* rockwell.ttf */; };
+		E755D77D1EAE1CAB00D2B31C /* Zapf Elliptical 711 Bold BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */; };
+		E755D77E1EAE1CAB00D2B31C /* Xposed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6221EAE195900880D61 /* Xposed.ttf */; };
+		E755D77F1EAE1CAC00D2B31C /* lol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6131EAE195900880D61 /* lol.ttf */; };
+		E755D7801EAE1CAC00D2B31C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6141EAE195900880D61 /* Montserrat-Regular.ttf */; };
+		E755D7811EAE1CAC00D2B31C /* corbel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6151EAE195900880D61 /* corbel.ttf */; };
+		E755D7821EAE1CAC00D2B31C /* CenturyGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6161EAE195900880D61 /* CenturyGothic.ttf */; };
+		E755D7831EAE1CAC00D2B31C /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6171EAE195900880D61 /* Lato-Light.ttf */; };
+		E755D7841EAE1CAC00D2B31C /* georgia.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6181EAE195900880D61 /* georgia.ttf */; };
+		E755D7851EAE1CAC00D2B31C /* Yellowtail-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6191EAE195900880D61 /* Yellowtail-Regular.ttf */; };
+		E755D7861EAE1CAC00D2B31C /* helvetica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61A1EAE195900880D61 /* helvetica.ttf */; };
+		E755D7871EAE1CAC00D2B31C /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61B1EAE195900880D61 /* Lato-Regular.ttf */; };
+		E755D7881EAE1CAC00D2B31C /* FranklinGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61C1EAE195900880D61 /* FranklinGothic.ttf */; };
+		E755D7891EAE1CAC00D2B31C /* XPED Shadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61D1EAE195900880D61 /* XPED Shadow.ttf */; };
+		E755D78A1EAE1CAC00D2B31C /* Xacto Blade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61E1EAE195900880D61 /* Xacto Blade.ttf */; };
+		E755D78B1EAE1CAC00D2B31C /* baskerville.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F61F1EAE195900880D61 /* baskerville.ttf */; };
+		E755D78C1EAE1CAC00D2B31C /* rockwell.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6201EAE195900880D61 /* rockwell.ttf */; };
+		E755D78D1EAE1CAC00D2B31C /* Zapf Elliptical 711 Bold BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */; };
+		E755D78E1EAE1CAC00D2B31C /* Xposed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6221EAE195900880D61 /* Xposed.ttf */; };
+		E755D7901EAE542D00D2B31C /* Youth and Beauty.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E721F5C91EAE184900880D61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E721F5AC1EAE184900880D61 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E721F5B31EAE184900880D61;
+			remoteInfo = TetrisN;
+		};
+		E721F5D41EAE184900880D61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E721F5AC1EAE184900880D61 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E721F5B31EAE184900880D61;
+			remoteInfo = TetrisN;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		245E78E074BBC405F624583B /* Pods-TetrisN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisN/Pods-TetrisN.debug.xcconfig"; sourceTree = "<group>"; };
+		2DCCE2AE5127D1D4725751E2 /* Pods_TetrisNTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TetrisNTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D3570185F92CEF138FC2187 /* Pods-TetrisNUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisNUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisNUITests/Pods-TetrisNUITests.release.xcconfig"; sourceTree = "<group>"; };
+		78A27E7C99899C7C6CDCA8DE /* Pods-TetrisNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisNTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisNTests/Pods-TetrisNTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90EBAB6B0BBF71246D89EBA5 /* Pods-TetrisNTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisNTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisNTests/Pods-TetrisNTests.release.xcconfig"; sourceTree = "<group>"; };
+		95310BFED167D06E40D7BE0A /* Pods_TetrisN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TetrisN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6B06F92CDCC113FDFD9C416 /* Pods_TetrisNUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TetrisNUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6BD008D7DBF074F38FC41BF /* Pods-TetrisN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisN.release.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisN/Pods-TetrisN.release.xcconfig"; sourceTree = "<group>"; };
+		D9DF844F19D126B0C1E20FA8 /* Pods-TetrisNUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisNUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisNUITests/Pods-TetrisNUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E721F5B41EAE184900880D61 /* TetrisN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrisN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E721F5BE1EAE184900880D61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E721F5C31EAE184900880D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E721F5C81EAE184900880D61 /* TetrisNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E721F5CC1EAE184900880D61 /* TetrisNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetrisNTests.swift; sourceTree = "<group>"; };
+		E721F5CE1EAE184900880D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E721F5D31EAE184900880D61 /* TetrisNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E721F5E51EAE18E000880D61 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E721F5E61EAE18E000880D61 /* InfoViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewConroller.swift; sourceTree = "<group>"; };
+		E721F5E71EAE18E000880D61 /* ScoreViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewConroller.swift; sourceTree = "<group>"; };
+		E721F5E81EAE18E000880D61 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		E721F5E91EAE18E000880D61 /* UserStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
+		E721F5EA1EAE18E000880D61 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E721F5EB1EAE18E000880D61 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
+		E721F5EC1EAE18E000880D61 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		E721F5ED1EAE18E000880D61 /* UsersBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersBase.swift; sourceTree = "<group>"; };
+		E721F5EE1EAE18E000880D61 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewConroller.swift; sourceTree = "<group>"; };
+		E721F5F01EAE18E000880D61 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E721F5F11EAE18E000880D61 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		E721F5F21EAE18E000880D61 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		E721F5F31EAE18E000880D61 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		E721F5F41EAE18E000880D61 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		E721F5F51EAE18E000880D61 /* Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Figure.swift; sourceTree = "<group>"; };
+		E721F6071EAE18F000880D61 /* SquareFigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareFigure.swift; sourceTree = "<group>"; };
+		E721F6081EAE18F000880D61 /* Z_Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Z_Figure.swift; sourceTree = "<group>"; };
+		E721F6091EAE18F000880D61 /* LineFigure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineFigure.swift; sourceTree = "<group>"; };
+		E721F60A1EAE18F000880D61 /* T_Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T_Figure.swift; sourceTree = "<group>"; };
+		E721F60B1EAE18F000880D61 /* L_Figure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L_Figure.swift; sourceTree = "<group>"; };
+		E721F6111EAE18FC00880D61 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		E721F6131EAE195900880D61 /* lol.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = lol.ttf; sourceTree = "<group>"; };
+		E721F6141EAE195900880D61 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		E721F6151EAE195900880D61 /* corbel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = corbel.ttf; sourceTree = "<group>"; };
+		E721F6161EAE195900880D61 /* CenturyGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CenturyGothic.ttf; sourceTree = "<group>"; };
+		E721F6171EAE195900880D61 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		E721F6181EAE195900880D61 /* georgia.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = georgia.ttf; sourceTree = "<group>"; };
+		E721F6191EAE195900880D61 /* Yellowtail-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Yellowtail-Regular.ttf"; sourceTree = "<group>"; };
+		E721F61A1EAE195900880D61 /* helvetica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = helvetica.ttf; sourceTree = "<group>"; };
+		E721F61B1EAE195900880D61 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		E721F61C1EAE195900880D61 /* FranklinGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FranklinGothic.ttf; sourceTree = "<group>"; };
+		E721F61D1EAE195900880D61 /* XPED Shadow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "XPED Shadow.ttf"; sourceTree = "<group>"; };
+		E721F61E1EAE195900880D61 /* Xacto Blade.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Xacto Blade.ttf"; sourceTree = "<group>"; };
+		E721F61F1EAE195900880D61 /* baskerville.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = baskerville.ttf; sourceTree = "<group>"; };
+		E721F6201EAE195900880D61 /* rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rockwell.ttf; sourceTree = "<group>"; };
+		E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zapf Elliptical 711 Bold BT.ttf"; sourceTree = "<group>"; };
+		E721F6221EAE195900880D61 /* Xposed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xposed.ttf; sourceTree = "<group>"; };
+		E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Youth and Beauty.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E721F5B11EAE184900880D61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				155D942757C2E5DA32074EA1 /* Pods_TetrisN.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E721F5C51EAE184900880D61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3B410E84B21B95C09FD535 /* Pods_TetrisNTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E721F5D01EAE184900880D61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10E106C1754FF96477CB8F5 /* Pods_TetrisNUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18F476182DCDF2FB52373413 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				245E78E074BBC405F624583B /* Pods-TetrisN.debug.xcconfig */,
+				D6BD008D7DBF074F38FC41BF /* Pods-TetrisN.release.xcconfig */,
+				78A27E7C99899C7C6CDCA8DE /* Pods-TetrisNTests.debug.xcconfig */,
+				90EBAB6B0BBF71246D89EBA5 /* Pods-TetrisNTests.release.xcconfig */,
+				D9DF844F19D126B0C1E20FA8 /* Pods-TetrisNUITests.debug.xcconfig */,
+				5D3570185F92CEF138FC2187 /* Pods-TetrisNUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA4EE2C467F6C12D9475CB41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95310BFED167D06E40D7BE0A /* Pods_TetrisN.framework */,
+				2DCCE2AE5127D1D4725751E2 /* Pods_TetrisNTests.framework */,
+				B6B06F92CDCC113FDFD9C416 /* Pods_TetrisNUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E721F5AB1EAE184900880D61 = {
+			isa = PBXGroup;
+			children = (
+				E721F5B61EAE184900880D61 /* TetrisN */,
+				E721F5CB1EAE184900880D61 /* TetrisNTests */,
+				E721F5B51EAE184900880D61 /* Products */,
+				18F476182DCDF2FB52373413 /* Pods */,
+				BA4EE2C467F6C12D9475CB41 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E721F5B51EAE184900880D61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E721F5B41EAE184900880D61 /* TetrisN.app */,
+				E721F5C81EAE184900880D61 /* TetrisNTests.xctest */,
+				E721F5D31EAE184900880D61 /* TetrisNUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E721F5B61EAE184900880D61 /* TetrisN */ = {
+			isa = PBXGroup;
+			children = (
+				E721F5E91EAE18E000880D61 /* UserStruct.swift */,
+				E721F5ED1EAE18E000880D61 /* UsersBase.swift */,
+				E721F5EB1EAE18E000880D61 /* ApplicationController.swift */,
+				E721F5E51EAE18E000880D61 /* AppDelegate.swift */,
+				E721F5E61EAE18E000880D61 /* InfoViewConroller.swift */,
+				E721F5E71EAE18E000880D61 /* ScoreViewConroller.swift */,
+				E721F5E81EAE18E000880D61 /* DataSource.swift */,
+				E721F5EA1EAE18E000880D61 /* MenuViewController.swift */,
+				E721F5EC1EAE18E000880D61 /* LogInViewController.swift */,
+				E721F5EE1EAE18E000880D61 /* Protocols.swift */,
+				E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */,
+				E721F5F01EAE18E000880D61 /* Game.swift */,
+				E721F5F11EAE18E000880D61 /* Functions.swift */,
+				E721F5F21EAE18E000880D61 /* GameOverViewController.swift */,
+				E721F5F31EAE18E000880D61 /* Matrix.swift */,
+				E721F5F41EAE18E000880D61 /* Provider.swift */,
+				E721F5F51EAE18E000880D61 /* Figure.swift */,
+				E721F6111EAE18FC00880D61 /* Point.swift */,
+				E721F5C31EAE184900880D61 /* Info.plist */,
+				E721F5BE1EAE184900880D61 /* Assets.xcassets */,
+				E721F6231EAE197800880D61 /* Figures */,
+				E721F6241EAE199A00880D61 /* Fonts */,
+			);
+			path = TetrisN;
+			sourceTree = "<group>";
+		};
+		E721F5CB1EAE184900880D61 /* TetrisNTests */ = {
+			isa = PBXGroup;
+			children = (
+				E721F5CC1EAE184900880D61 /* TetrisNTests.swift */,
+				E721F5CE1EAE184900880D61 /* Info.plist */,
+			);
+			path = TetrisNTests;
+			sourceTree = "<group>";
+		};
+		E721F6231EAE197800880D61 /* Figures */ = {
+			isa = PBXGroup;
+			children = (
+				E721F6071EAE18F000880D61 /* SquareFigure.swift */,
+				E721F6081EAE18F000880D61 /* Z_Figure.swift */,
+				E721F6091EAE18F000880D61 /* LineFigure.swift */,
+				E721F60A1EAE18F000880D61 /* T_Figure.swift */,
+				E721F60B1EAE18F000880D61 /* L_Figure.swift */,
+			);
+			name = Figures;
+			sourceTree = "<group>";
+		};
+		E721F6241EAE199A00880D61 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E721F6131EAE195900880D61 /* lol.ttf */,
+				E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */,
+				E721F6141EAE195900880D61 /* Montserrat-Regular.ttf */,
+				E721F6151EAE195900880D61 /* corbel.ttf */,
+				E721F6161EAE195900880D61 /* CenturyGothic.ttf */,
+				E721F6171EAE195900880D61 /* Lato-Light.ttf */,
+				E721F6181EAE195900880D61 /* georgia.ttf */,
+				E721F6191EAE195900880D61 /* Yellowtail-Regular.ttf */,
+				E721F61A1EAE195900880D61 /* helvetica.ttf */,
+				E721F61B1EAE195900880D61 /* Lato-Regular.ttf */,
+				E721F61C1EAE195900880D61 /* FranklinGothic.ttf */,
+				E721F61D1EAE195900880D61 /* XPED Shadow.ttf */,
+				E721F61E1EAE195900880D61 /* Xacto Blade.ttf */,
+				E721F61F1EAE195900880D61 /* baskerville.ttf */,
+				E721F6201EAE195900880D61 /* rockwell.ttf */,
+				E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */,
+				E721F6221EAE195900880D61 /* Xposed.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E721F5B31EAE184900880D61 /* TetrisN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E721F5DC1EAE184900880D61 /* Build configuration list for PBXNativeTarget "TetrisN" */;
+			buildPhases = (
+				813F05430693EEA2424EAAC1 /* [CP] Check Pods Manifest.lock */,
+				E721F5B01EAE184900880D61 /* Sources */,
+				E721F5B11EAE184900880D61 /* Frameworks */,
+				E721F5B21EAE184900880D61 /* Resources */,
+				F60BE123465AAFCA3EA0C602 /* [CP] Embed Pods Frameworks */,
+				DD32850A3A05EA348935A7C9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TetrisN;
+			productName = TetrisN;
+			productReference = E721F5B41EAE184900880D61 /* TetrisN.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E721F5C71EAE184900880D61 /* TetrisNTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E721F5DF1EAE184900880D61 /* Build configuration list for PBXNativeTarget "TetrisNTests" */;
+			buildPhases = (
+				53C82E98667991444588B49D /* [CP] Check Pods Manifest.lock */,
+				E721F5C41EAE184900880D61 /* Sources */,
+				E721F5C51EAE184900880D61 /* Frameworks */,
+				E721F5C61EAE184900880D61 /* Resources */,
+				1FFAF87ED71A3E5F7CAED736 /* [CP] Embed Pods Frameworks */,
+				E066CE39A612C2A35F906D32 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E721F5CA1EAE184900880D61 /* PBXTargetDependency */,
+			);
+			name = TetrisNTests;
+			productName = TetrisNTests;
+			productReference = E721F5C81EAE184900880D61 /* TetrisNTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E721F5D21EAE184900880D61 /* TetrisNUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E721F5E21EAE184900880D61 /* Build configuration list for PBXNativeTarget "TetrisNUITests" */;
+			buildPhases = (
+				C280EC7F6D03A6172DB1F857 /* [CP] Check Pods Manifest.lock */,
+				E721F5CF1EAE184900880D61 /* Sources */,
+				E721F5D01EAE184900880D61 /* Frameworks */,
+				E721F5D11EAE184900880D61 /* Resources */,
+				D7C09F1868C2C5C41AA035E8 /* [CP] Embed Pods Frameworks */,
+				F6EC2B12B650CAC1120B31B0 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E721F5D51EAE184900880D61 /* PBXTargetDependency */,
+			);
+			name = TetrisNUITests;
+			productName = TetrisNUITests;
+			productReference = E721F5D31EAE184900880D61 /* TetrisNUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E721F5AC1EAE184900880D61 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Vladimir;
+				TargetAttributes = {
+					E721F5B31EAE184900880D61 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = UMPRH5R5SA;
+						ProvisioningStyle = Automatic;
+					};
+					E721F5C71EAE184900880D61 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = UMPRH5R5SA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E721F5B31EAE184900880D61;
+					};
+					E721F5D21EAE184900880D61 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = UMPRH5R5SA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E721F5B31EAE184900880D61;
+					};
+				};
+			};
+			buildConfigurationList = E721F5AF1EAE184900880D61 /* Build configuration list for PBXProject "TetrisN" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E721F5AB1EAE184900880D61;
+			productRefGroup = E721F5B51EAE184900880D61 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E721F5B31EAE184900880D61 /* TetrisN */,
+				E721F5C71EAE184900880D61 /* TetrisNTests */,
+				E721F5D21EAE184900880D61 /* TetrisNUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E721F5B21EAE184900880D61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E755D7691EAE1CAA00D2B31C /* XPED Shadow.ttf in Resources */,
+				E755D7601EAE1CAA00D2B31C /* Montserrat-Regular.ttf in Resources */,
+				E755D7621EAE1CAA00D2B31C /* CenturyGothic.ttf in Resources */,
+				E755D75F1EAE1CAA00D2B31C /* lol.ttf in Resources */,
+				E755D76A1EAE1CAA00D2B31C /* Xacto Blade.ttf in Resources */,
+				E755D76D1EAE1CAA00D2B31C /* Zapf Elliptical 711 Bold BT.ttf in Resources */,
+				E755D75C1EAE1C9500D2B31C /* Info.plist in Resources */,
+				E755D76E1EAE1CAA00D2B31C /* Xposed.ttf in Resources */,
+				E721F5BF1EAE184900880D61 /* Assets.xcassets in Resources */,
+				E755D7641EAE1CAA00D2B31C /* georgia.ttf in Resources */,
+				E755D7661EAE1CAA00D2B31C /* helvetica.ttf in Resources */,
+				E755D7611EAE1CAA00D2B31C /* corbel.ttf in Resources */,
+				E755D7651EAE1CAA00D2B31C /* Yellowtail-Regular.ttf in Resources */,
+				E755D7901EAE542D00D2B31C /* Youth and Beauty.ttf in Resources */,
+				E755D76C1EAE1CAA00D2B31C /* rockwell.ttf in Resources */,
+				E755D76B1EAE1CAA00D2B31C /* baskerville.ttf in Resources */,
+				E755D7681EAE1CAA00D2B31C /* FranklinGothic.ttf in Resources */,
+				E755D7631EAE1CAA00D2B31C /* Lato-Light.ttf in Resources */,
+				E755D7671EAE1CAA00D2B31C /* Lato-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E721F5C61EAE184900880D61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E755D77A1EAE1CAB00D2B31C /* Xacto Blade.ttf in Resources */,
+				E755D7741EAE1CAB00D2B31C /* georgia.ttf in Resources */,
+				E755D7761EAE1CAB00D2B31C /* helvetica.ttf in Resources */,
+				E755D7791EAE1CAB00D2B31C /* XPED Shadow.ttf in Resources */,
+				E755D7701EAE1CAB00D2B31C /* Montserrat-Regular.ttf in Resources */,
+				E755D77B1EAE1CAB00D2B31C /* baskerville.ttf in Resources */,
+				E755D7711EAE1CAB00D2B31C /* corbel.ttf in Resources */,
+				E755D7721EAE1CAB00D2B31C /* CenturyGothic.ttf in Resources */,
+				E755D7731EAE1CAB00D2B31C /* Lato-Light.ttf in Resources */,
+				E755D76F1EAE1CAB00D2B31C /* lol.ttf in Resources */,
+				E755D7771EAE1CAB00D2B31C /* Lato-Regular.ttf in Resources */,
+				E755D77C1EAE1CAB00D2B31C /* rockwell.ttf in Resources */,
+				E755D7781EAE1CAB00D2B31C /* FranklinGothic.ttf in Resources */,
+				E755D7751EAE1CAB00D2B31C /* Yellowtail-Regular.ttf in Resources */,
+				E755D77E1EAE1CAB00D2B31C /* Xposed.ttf in Resources */,
+				E755D77D1EAE1CAB00D2B31C /* Zapf Elliptical 711 Bold BT.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E721F5D11EAE184900880D61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E755D78A1EAE1CAC00D2B31C /* Xacto Blade.ttf in Resources */,
+				E755D7841EAE1CAC00D2B31C /* georgia.ttf in Resources */,
+				E755D7861EAE1CAC00D2B31C /* helvetica.ttf in Resources */,
+				E755D7891EAE1CAC00D2B31C /* XPED Shadow.ttf in Resources */,
+				E755D7801EAE1CAC00D2B31C /* Montserrat-Regular.ttf in Resources */,
+				E755D78B1EAE1CAC00D2B31C /* baskerville.ttf in Resources */,
+				E755D7811EAE1CAC00D2B31C /* corbel.ttf in Resources */,
+				E755D7821EAE1CAC00D2B31C /* CenturyGothic.ttf in Resources */,
+				E755D7831EAE1CAC00D2B31C /* Lato-Light.ttf in Resources */,
+				E755D77F1EAE1CAC00D2B31C /* lol.ttf in Resources */,
+				E755D7871EAE1CAC00D2B31C /* Lato-Regular.ttf in Resources */,
+				E755D78C1EAE1CAC00D2B31C /* rockwell.ttf in Resources */,
+				E755D7881EAE1CAC00D2B31C /* FranklinGothic.ttf in Resources */,
+				E755D7851EAE1CAC00D2B31C /* Yellowtail-Regular.ttf in Resources */,
+				E755D78E1EAE1CAC00D2B31C /* Xposed.ttf in Resources */,
+				E755D78D1EAE1CAC00D2B31C /* Zapf Elliptical 711 Bold BT.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FFAF87ED71A3E5F7CAED736 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisNTests/Pods-TetrisNTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53C82E98667991444588B49D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		813F05430693EEA2424EAAC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C280EC7F6D03A6172DB1F857 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D7C09F1868C2C5C41AA035E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisNUITests/Pods-TetrisNUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD32850A3A05EA348935A7C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisN/Pods-TetrisN-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E066CE39A612C2A35F906D32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisNTests/Pods-TetrisNTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F60BE123465AAFCA3EA0C602 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisN/Pods-TetrisN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6EC2B12B650CAC1120B31B0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TetrisNUITests/Pods-TetrisNUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E721F5B01EAE184900880D61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E721F60F1EAE18F000880D61 /* T_Figure.swift in Sources */,
+				E721F5F71EAE18E000880D61 /* InfoViewConroller.swift in Sources */,
+				E721F5F61EAE18E000880D61 /* AppDelegate.swift in Sources */,
+				E721F6051EAE18E000880D61 /* Provider.swift in Sources */,
+				E721F5FD1EAE18E000880D61 /* LogInViewController.swift in Sources */,
+				E721F60E1EAE18F000880D61 /* LineFigure.swift in Sources */,
+				E721F6021EAE18E000880D61 /* Functions.swift in Sources */,
+				E721F6101EAE18F000880D61 /* L_Figure.swift in Sources */,
+				E721F6121EAE18FC00880D61 /* Point.swift in Sources */,
+				E721F6061EAE18E000880D61 /* Figure.swift in Sources */,
+				E721F6011EAE18E000880D61 /* Game.swift in Sources */,
+				E721F5FF1EAE18E000880D61 /* Protocols.swift in Sources */,
+				E721F5F81EAE18E000880D61 /* ScoreViewConroller.swift in Sources */,
+				E721F5FB1EAE18E000880D61 /* MenuViewController.swift in Sources */,
+				E721F5FE1EAE18E000880D61 /* UsersBase.swift in Sources */,
+				E721F5FA1EAE18E000880D61 /* UserStruct.swift in Sources */,
+				E721F5F91EAE18E000880D61 /* DataSource.swift in Sources */,
+				E721F5FC1EAE18E000880D61 /* ApplicationController.swift in Sources */,
+				E721F6041EAE18E000880D61 /* Matrix.swift in Sources */,
+				E721F60D1EAE18F000880D61 /* Z_Figure.swift in Sources */,
+				E721F6001EAE18E000880D61 /* GameViewConroller.swift in Sources */,
+				E721F6031EAE18E000880D61 /* GameOverViewController.swift in Sources */,
+				E721F60C1EAE18F000880D61 /* SquareFigure.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E721F5C41EAE184900880D61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E721F5CD1EAE184900880D61 /* TetrisNTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E721F5CF1EAE184900880D61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E721F5CA1EAE184900880D61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E721F5B31EAE184900880D61 /* TetrisN */;
+			targetProxy = E721F5C91EAE184900880D61 /* PBXContainerItemProxy */;
+		};
+		E721F5D51EAE184900880D61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E721F5B31EAE184900880D61 /* TetrisN */;
+			targetProxy = E721F5D41EAE184900880D61 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E721F5DA1EAE184900880D61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E721F5DB1EAE184900880D61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E721F5DD1EAE184900880D61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 245E78E074BBC405F624583B /* Pods-TetrisN.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UMPRH5R5SA;
+				INFOPLIST_FILE = TetrisN/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VladimirCherednichenko.TetrisN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		E721F5DE1EAE184900880D61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6BD008D7DBF074F38FC41BF /* Pods-TetrisN.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UMPRH5R5SA;
+				INFOPLIST_FILE = TetrisN/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VladimirCherednichenko.TetrisN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		E721F5E01EAE184900880D61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78A27E7C99899C7C6CDCA8DE /* Pods-TetrisNTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UMPRH5R5SA;
+				INFOPLIST_FILE = TetrisNTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VladimirCherednichenko.TetrisNTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TetrisN.app/TetrisN";
+			};
+			name = Debug;
+		};
+		E721F5E11EAE184900880D61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90EBAB6B0BBF71246D89EBA5 /* Pods-TetrisNTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UMPRH5R5SA;
+				INFOPLIST_FILE = TetrisNTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VladimirCherednichenko.TetrisNTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TetrisN.app/TetrisN";
+			};
+			name = Release;
+		};
+		E721F5E31EAE184900880D61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9DF844F19D126B0C1E20FA8 /* Pods-TetrisNUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = UMPRH5R5SA;
+				INFOPLIST_FILE = TetrisNUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VladimirCherednichenko.TetrisNUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TetrisN;
+			};
+			name = Debug;
+		};
+		E721F5E41EAE184900880D61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D3570185F92CEF138FC2187 /* Pods-TetrisNUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = UMPRH5R5SA;
+				INFOPLIST_FILE = TetrisNUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VladimirCherednichenko.TetrisNUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TetrisN;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E721F5AF1EAE184900880D61 /* Build configuration list for PBXProject "TetrisN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E721F5DA1EAE184900880D61 /* Debug */,
+				E721F5DB1EAE184900880D61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E721F5DC1EAE184900880D61 /* Build configuration list for PBXNativeTarget "TetrisN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E721F5DD1EAE184900880D61 /* Debug */,
+				E721F5DE1EAE184900880D61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E721F5DF1EAE184900880D61 /* Build configuration list for PBXNativeTarget "TetrisNTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E721F5E01EAE184900880D61 /* Debug */,
+				E721F5E11EAE184900880D61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E721F5E21EAE184900880D61 /* Build configuration list for PBXNativeTarget "TetrisNUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E721F5E31EAE184900880D61 /* Debug */,
+				E721F5E41EAE184900880D61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E721F5AC1EAE184900880D61 /* Project object */;
+}

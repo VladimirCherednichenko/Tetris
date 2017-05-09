@@ -1,0 +1,6 @@
+framework module Pods_TetrisN {
+  umbrella header "Pods-TetrisN-umbrella.h"
+
+  export *
+  module * { export * }
+}
