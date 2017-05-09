@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 import SnapKit
+import FBSDKShareKit
+import Social
+
 
 
 class InfoViewConroller:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -131,14 +134,31 @@ class InfoViewConroller:UIViewController, UIImagePickerControllerDelegate, UINav
         
         photoButton.addTarget(self, action: #selector(didPhotoButtonTup), for: .touchDown )
         photoButton.addTarget(self, action: #selector(makeButtonStandart), for: .touchUpInside )
-        //photoButton.setTitleColor(UIColor.red, for: .highlighted)
         photoButton.setBackgroundImage(currentUserStruct.readUIImage(), for: .normal)
+        
+        let facebookShareButton = UIButton()
+        
+        facebookShareButton.translatesAutoresizingMaskIntoConstraints = false
+        facebookShareButton.setImage(#imageLiteral(resourceName: "facebookImage"), for: .normal)
+        facebookShareButton.addTarget(self, action: #selector(self.didFacebookShare), for: .touchUpInside)
+        view.addSubview(facebookShareButton)
+        
+        facebookShareButton.snp.makeConstraints{ (make) -> Void in
+        make.top.equalTo(scoreLabel.snp.bottom).offset(10)
+        make.centerX.equalTo(view.snp.centerX)
+        make.width.equalTo(40)
+        make.height.equalTo(40)
+        }
+        
+       
+        
         if currentUserStruct.readUIImage() != nil
         {
            self.preparePhotoButtonForImage()
         }
         if !itIsCurrentUser {
             logOutButton.isHidden = true
+            facebookShareButton.isHidden = true
         }
     }
     
@@ -147,6 +167,12 @@ class InfoViewConroller:UIViewController, UIImagePickerControllerDelegate, UINav
         
        logoutDelegate.showLogInView()
         
+    }
+    func didFacebookShare() {
+        if let facebookView = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
+        facebookView.setInitialText("Hi, I achieved \(score) points in(at) Tetris, try by yourself")
+        self.view?.window?.rootViewController?.present(facebookView, animated: true, completion: nil)
+        }
     }
     
     func didPhotoButtonTup(sender: UIButton){
@@ -210,12 +236,6 @@ class InfoViewConroller:UIViewController, UIImagePickerControllerDelegate, UINav
         
         
     }
-    
-    
-    
-    
-    
-    
 }
 
 

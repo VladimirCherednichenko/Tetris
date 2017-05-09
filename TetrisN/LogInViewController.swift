@@ -41,27 +41,36 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         
         view.addSubview(nameOfApplication)
         nameOfApplication.textAlignment = .center
-        nameOfApplication.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameOfApplication.topAnchor.constraint(equalTo: view.topAnchor, constant: 45).isActive = true
-        nameOfApplication.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        nameOfApplication.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
         
-        let eterYourNameLabel = UILabel()
-        eterYourNameLabel.text = "Please login"
-        eterYourNameLabel.textColor = UIColor.white
-        eterYourNameLabel.font = UIFont(name: "Montserrat", size: 23)
-        eterYourNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        eterYourNameLabel.numberOfLines = 3
-        
-        view.addSubview(eterYourNameLabel)
-        eterYourNameLabel.textAlignment = .center
-        eterYourNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        eterYourNameLabel.topAnchor.constraint(equalTo: nameOfApplication.bottomAnchor, constant: 20).isActive = true
-        eterYourNameLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        eterYourNameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+
+        nameOfApplication.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(view.snp.top).offset(45)
+            make.right.equalTo(view.snp.right)
+            make.left.equalTo(view.snp.left)
+            make.centerX.equalTo(view.snp.centerX)
+        }
         
         
+        let enterYourNameLabel = UILabel()
+        enterYourNameLabel.text = "Please login"
+        enterYourNameLabel.textColor = UIColor.white
+        enterYourNameLabel.font = UIFont(name: "Montserrat", size: 23)
+        enterYourNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        enterYourNameLabel.numberOfLines = 3
+        
+        view.addSubview(enterYourNameLabel)
+        enterYourNameLabel.textAlignment = .center
+        
+        
+        
+        
+        enterYourNameLabel.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(nameOfApplication.snp.bottom).offset(20)
+            make.right.equalTo(view.snp.right)
+            make.left.equalTo(view.snp.left)
+            make.centerX.equalTo(view.snp.centerX)
+        }
         
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         
@@ -80,15 +89,17 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         nameTextField.tag = 0
         view.addSubview(nameTextField)
         
-        nameTextField.topAnchor.constraint(equalTo: eterYourNameLabel.bottomAnchor, constant: 7 ).isActive = true
         
-        nameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
-        //nameTextField.delegate = self
+        
+       
+        nameTextField.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(enterYourNameLabel.snp.bottom).offset(7)
+            make.width.equalTo(view.snp.width).multipliedBy(0.7)
+            make.centerX.equalTo(view.snp.centerX)
+            
+        }
         
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        
-        //nameTextField.attributedPlaceholder =
         passwordTextField.placeholder = "password"
         passwordTextField.isSecureTextEntry = true
         passwordTextField.backgroundColor = UIColor.white
@@ -103,13 +114,15 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         passwordTextField.tag = 1
         view.addSubview(passwordTextField)
         
-        passwordTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 10).isActive = true
-        
-        passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        passwordTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
         
         
         
+        passwordTextField.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(nameTextField.snp.bottom).offset(10)
+            make.width.equalTo(nameTextField.snp.width)
+            make.centerX.equalTo(view.snp.centerX)
+            
+        }
         
         
         
@@ -121,10 +134,16 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         
         view.addSubview(warningLabel)
         warningLabel.textAlignment = .center
-        warningLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        warningLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 2).isActive = true
-        warningLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        warningLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
+        
+        
+        warningLabel.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(passwordTextField.snp.bottom)
+            make.right.equalTo(view.snp.right)
+            make.left.equalTo(view.snp.left)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+        
         warningLabel.isHidden = true
     }
     

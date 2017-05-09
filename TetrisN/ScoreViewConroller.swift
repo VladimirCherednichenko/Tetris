@@ -44,10 +44,15 @@ class ScoreViewConroller:UIViewController,UITableViewDelegate
         view.addSubview(tabelView)
         
         tabelView.translatesAutoresizingMaskIntoConstraints = false
-        tabelView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        tabelView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        tabelView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        tabelView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        tabelView.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(view.snp.top)
+            make.right.equalTo(view.snp.right)
+            make.left.equalTo(view.snp.left)
+            make.bottom.equalTo(view.snp.bottom)
+        }
+        
+        
         tabelView.backgroundColor = UIColor.darkGray
         tabelView.separatorStyle = .none
     }

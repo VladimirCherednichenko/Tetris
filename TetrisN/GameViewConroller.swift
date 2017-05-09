@@ -12,7 +12,7 @@ class GameViewController: UIViewController, GameDraw {
     weak var gameDelegate:Game?
     let labelWithPoints = UILabel()
     
-    //init
+   
     init(_ valueOfDivision:CGFloat,_ columns:Int,_ rows:Int)
     {
         self.columns = columns
@@ -23,17 +23,14 @@ class GameViewController: UIViewController, GameDraw {
 
         
         
-      //  self.counterForDeinit = self.counterForDeinit + 1
+    
         super.init(nibName: nil, bundle: nil)
-        //viewDidLoad()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
- /*func objectCounterPlusOne() {
-        GameViewController.counterForDeinit = GameViewController.counterForDeinit + 1
-    }*/
+ 
     func createPixelArray()
     {
         
@@ -69,9 +66,15 @@ class GameViewController: UIViewController, GameDraw {
         //verticalStack.spacing = 0.5
         verticalStack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(verticalStack)
-        verticalStack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        verticalStack.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        verticalStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        
+        verticalStack.snp.makeConstraints{ (make) -> Void in
+            
+            make.right.equalTo(view.snp.right)
+            make.left.equalTo(view.snp.left)
+            make.bottom.equalTo(view.snp.bottom)
+        }
+        
         
         
         var stackArray = [UIStackView]()
@@ -88,8 +91,11 @@ class GameViewController: UIViewController, GameDraw {
             {
                 let index:Int = (i + j * columns)
                 stackArray[j].addArrangedSubview(pixelArray[index])
-                pixelArray[index].heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: CGFloat(valueOfDivision)).isActive = true
-                pixelArray[index].widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: CGFloat(valueOfDivision)).isActive = true
+                
+                pixelArray[index].snp.makeConstraints{ (make) -> Void in
+                    make.height.equalTo(view.snp.width).multipliedBy(valueOfDivision)
+                    make.width.equalTo(view.snp.width).multipliedBy(valueOfDivision)
+                }
                 
             }
             
@@ -100,9 +106,14 @@ class GameViewController: UIViewController, GameDraw {
         labelWithPoints.font = UIFont(name: "XPED Shadow", size: 35.0   )
         labelWithPoints.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(labelWithPoints)
-        labelWithPoints.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        labelWithPoints.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         
+        
+        
+        
+        labelWithPoints.snp.makeConstraints{ (make) -> Void in
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(view.snp.top)
+        }
         
     }
     //FILL PIXELS

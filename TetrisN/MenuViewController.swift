@@ -36,18 +36,28 @@ class MenuViewController:UIViewController {
         
         view.addSubview(nameLabel)
         nameLabel.textAlignment = .center
-        nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
+        
+        
+        nameLabel.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(view.snp.top).offset(25)
+            make.right.equalTo(view.snp.right)
+            make.left.equalTo(view.snp.left)
+            make.centerX.equalTo(view.snp.centerX)
+        }
         
         
         let startNewGameButton = UIButton()
         startNewGameButton.translatesAutoresizingMaskIntoConstraints = false
         startNewGameButton.setTitleColor(UIColor.blue, for: .highlighted)
         view.addSubview(startNewGameButton)
-        startNewGameButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 35).isActive = true
-        startNewGameButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        
+        startNewGameButton.snp.makeConstraints{(make) -> Void in
+            make.top.equalTo(nameLabel.snp.bottom).offset(35)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+        
         startNewGameButton.setTitle("Start new game", for: .normal)
         startNewGameButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 35.0)
         startNewGameButton.layer.shadowOpacity = 1
@@ -59,8 +69,14 @@ class MenuViewController:UIViewController {
         showLeaderboardButton.translatesAutoresizingMaskIntoConstraints = false
         showLeaderboardButton.setTitleColor(UIColor.blue, for: .highlighted)
         view.addSubview(showLeaderboardButton)
-        showLeaderboardButton.topAnchor.constraint(equalTo: startNewGameButton.bottomAnchor).isActive = true
-        showLeaderboardButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        
+        
+        showLeaderboardButton.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(startNewGameButton.snp.bottom)
+            make.centerX.equalTo(startNewGameButton.snp.centerX)
+        }
+        
         showLeaderboardButton.setTitle("Leaderboord", for: .normal)
         showLeaderboardButton.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 35.0)
         showLeaderboardButton.layer.shadowOpacity = 1
