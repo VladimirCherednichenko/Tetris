@@ -63,7 +63,7 @@ class GameViewController: UIViewController, GameDraw {
         //Here I creaate vertical Stack, that hold all components
         let verticalStack = UIStackView()
         verticalStack.axis = .vertical
-        //verticalStack.spacing = 0.5
+        
         verticalStack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(verticalStack)
         
