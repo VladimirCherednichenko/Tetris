@@ -9,16 +9,16 @@
 import Foundation
 import UIKit
 
-class ScoreViewConroller:UIViewController,UITableViewDelegate
+class ScoreViewController:UIViewController,UITableViewDelegate
 {
     var tabelView:UITableView =  UITableView()
-    private var dataSource: UITableViewDataSource
+    private var leaderboardDataSource: UITableViewDataSource
     var leaderBoardDelegate:LeaderBoardDelegate
     let showInfoView: UserInfoDelegate
     
     init(_ leaderBoardDelegate:LeaderBoardDelegate,_ showInfoViewDelegate:UserInfoDelegate) {
         self.showInfoView = showInfoViewDelegate
-        self.dataSource = DataSource(leaderBoardDelegate)
+        self.leaderboardDataSource = LeaderboardDataSource(leaderBoardDelegate)
         self.leaderBoardDelegate = leaderBoardDelegate
         super.init(nibName: nil, bundle: nil)
         
@@ -37,7 +37,7 @@ class ScoreViewConroller:UIViewController,UITableViewDelegate
         view.backgroundColor = UIColor.white
         
         tabelView.delegate = self
-        tabelView.dataSource = self.dataSource
+        tabelView.dataSource = self.leaderboardDataSource
         tabelView.allowsSelection = true
         
         

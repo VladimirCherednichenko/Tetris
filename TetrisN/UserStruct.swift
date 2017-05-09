@@ -35,7 +35,7 @@ struct User
         var image:UIImage?
         let photoURL = getDocumentsDirectory().appendingPathComponent(self.name + ".png")
         if let data = try? Data(contentsOf: photoURL) {
-            image = try! UIImage(data:data)
+            image = UIImage(data:data)
             
         }
         

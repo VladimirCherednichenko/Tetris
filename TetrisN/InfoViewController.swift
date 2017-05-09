@@ -14,7 +14,7 @@ import Social
 
 
 
-class InfoViewConroller:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let currentUserName:String
     let score:Int
     private var myImage = UIImage()

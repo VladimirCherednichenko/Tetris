@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DataSource:NSObject, UITableViewDataSource {
+class LeaderboardDataSource:NSObject, UITableViewDataSource {
     var leaderBoardDelegate:LeaderBoardDelegate
     
     init(_ leaderBoardDelegate:LeaderBoardDelegate) {
@@ -95,7 +95,7 @@ class CustomeCell:UITableViewCell {
         
         self.setLabelsAndImageView()
     }
-
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -110,27 +110,34 @@ class CustomeCell:UITableViewCell {
         addSubview(scoreLabel)
         addSubview(icon)
         
-        icon.translatesAutoresizingMaskIntoConstraints = false
-        icon.topAnchor.constraint(equalTo: self.topAnchor, constant: 2).isActive = true
-        icon.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
-        icon.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        icon.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        icon.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        
+        
+        
+        icon.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(self.snp.top).offset(2)
+            make.left.equalTo(self.snp.left).offset(30)
+            make.width.equalTo(50)
+            make.height.equalTo(50)
+            make.bottom.equalTo(self.snp.bottom)
+        }
         icon.clipsToBounds = true
         icon.layer.borderColor = UIColor.black.cgColor
         icon.layer.borderWidth = 1
         icon.layer.cornerRadius = 25
-
         
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 2).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: 20).isActive = true
-        nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
-        scoreLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 2).isActive = true
-        scoreLabel.leftAnchor.constraint(equalTo: self.nameLabel.rightAnchor, constant: 1 ).isActive = true
-        scoreLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        nameLabel.snp.makeConstraints{(make) -> Void in
+            make.top.equalTo(self.snp.top).offset(2)
+            make.left.equalTo(icon.snp.right).offset(20)
+            make.width.equalTo(100)
+            make.bottom.equalTo(self.snp.bottom)
+        }
+        
+        scoreLabel.snp.makeConstraints{(make) -> Void in
+            make.top.equalTo(self.snp.top).offset(2)
+            make.left.equalTo(nameLabel.snp.right).offset(1)
+            make.width.equalTo(100)
+            make.bottom.equalTo(self.snp.bottom)
+        }
     }
 }

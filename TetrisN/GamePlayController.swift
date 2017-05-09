@@ -3,10 +3,10 @@
 import UIKit
 
 
-class Game:GameProtocol{
+class GamePlayController:GameProtocol{
     var interval:Double //change timer interval there, if you wish it
     var renderDelegate:GameDraw?=nil
-    var provider = Provider()
+    var figureProvider = FigureProvider()
     var figure:Figure
     private var timer = Timer()
     var points:Int = 0 {
@@ -30,7 +30,7 @@ class Game:GameProtocol{
         
         self.gameDelegate = applicationControllerObject
         self.renderDelegate = renderDelegate
-        self.figure = provider.getFigure()
+        self.figure = figureProvider.getFigure()
         self.interval = interval
         self.rows = rows
         self.columns = columns
@@ -99,7 +99,7 @@ class Game:GameProtocol{
         }
         if figureIsOnBottom {
             self.pushCurrentFigureOnMatrix()
-            figure = provider.getFigure()
+            figure = figureProvider.getFigure()
             figureIsOnBottom = false
             figureIsInTouch = false
             maxXRepeat = false

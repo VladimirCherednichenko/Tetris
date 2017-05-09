@@ -9,7 +9,7 @@ class GameViewController: UIViewController, GameDraw {
     private(set) var numberOfPixels:Int
     private(set) var rows:Int
     var pixelArray = [UIImageView]()
-    weak var gameDelegate:Game?
+    weak var gameDelegate:GamePlayController?
     let labelWithPoints = UILabel()
     
    
@@ -49,16 +49,16 @@ class GameViewController: UIViewController, GameDraw {
         createPixelArray()
         self.view.backgroundColor = UIColor.darkGray
         //adding SwipeRecognizer
-        let swipeRight = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.didSwipeRight))
+        let swipeRight = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(GamePlayController.didSwipeRight))
         swipeRight.direction = .right
         self.view.addGestureRecognizer(swipeRight)
-        let swipeLeft = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.didSwipeLeft))
+        let swipeLeft = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(GamePlayController.didSwipeLeft))
         swipeLeft.direction = .left
         self.view.addGestureRecognizer(swipeLeft)
-        let swipeDown = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(Game.didSwipeDown))
+        let swipeDown = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(GamePlayController.didSwipeDown))
         swipeDown.direction = .down
         self.view.addGestureRecognizer(swipeDown)
-        let tap = UITapGestureRecognizer(target: gameDelegate, action: #selector(Game.rotateElement))
+        let tap = UITapGestureRecognizer(target: gameDelegate, action: #selector(GamePlayController.rotateElement))
         self.view.addGestureRecognizer(tap)
         //Here I creaate vertical Stack, that hold all components
         let verticalStack = UIStackView()

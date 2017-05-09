@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 
-class LogInViewController:UIViewController,UITextFieldDelegate {
+class LogInViewController:UIViewController,UITextFieldDelegate, ShowWarningLabelDelegate
+{
     
-    var LogInDelegate:LogInDelegate?
+    
+    var userVerificationDelegate:UserVerificationDelegate?
     var currentUsersName:String?
     var currentUsersPassword:String?
-    
-    var menuDelegate:MenuDelegate?
     let warningLabel = UILabel()
     var nameTextField = UITextField()
-    var passwordTextField = UITextField()
+    private var passwordTextField = UITextField()
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
@@ -43,7 +43,7 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         nameOfApplication.textAlignment = .center
         
         
-
+        
         nameOfApplication.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(view.snp.top).offset(45)
             make.right.equalTo(view.snp.right)
@@ -91,7 +91,7 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
         
         
         
-       
+        
         nameTextField.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(enterYourNameLabel.snp.bottom).offset(7)
             make.width.equalTo(view.snp.width).multipliedBy(0.7)
@@ -150,46 +150,28 @@ class LogInViewController:UIViewController,UITextFieldDelegate {
     
     
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    func textFieldShouldReturn(_ textField: UITextField)
+        -> Bool
     {
-        
-        
-        
-        if textField == nameTextField
-        {
+        if textField == nameTextField {
             self.currentUsersName = textField.text
             passwordTextField.becomeFirstResponder()
             
         } else {
             
-        
-            
             currentUsersPassword = textField.text
             currentUsersName = nameTextField.text
-            if currentUsersName != nil {
-                
-                let alreadyExists = self.LogInDelegate?.alreadyExistNameCheck(name: nameTextField.text!)
-                
-                 if alreadyExists! {
-                    let verificationComplete = self.LogInDelegate?.userVerification(name: nameTextField.text!, password: passwordTextField.text!)
-                    if verificationComplete! {
-                        goToMenu()
-                    } else {
-                        warningLabel.isHidden = false
-                    }
-                } else {
-                    self.LogInDelegate?.addNewUser(name: nameTextField.text!, password: passwordTextField.text!)
-                    goToMenu()
-                }
+            
+            if currentUsersName != nil && currentUsersPassword != nil  {
+                userVerificationDelegate?.userVerificate(userName: currentUsersName!, userPass: currentUsersPassword!, showWarningLabeldDeledate: self)
                 
             }
         }
+        
         return false
     }
     
-    func goToMenu() {
-        self.LogInDelegate?.saveCurrentUserName(name: self.currentUsersName!)
-        menuDelegate?.currentName = self.currentUsersName
-        menuDelegate?.showMenu()
+    func showWarningLabel() {
+        warningLabel.isHidden = false
     }
 }

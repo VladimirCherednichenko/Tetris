@@ -13,17 +13,17 @@
 		E721F5BF1EAE184900880D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E721F5BE1EAE184900880D61 /* Assets.xcassets */; };
 		E721F5CD1EAE184900880D61 /* TetrisNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5CC1EAE184900880D61 /* TetrisNTests.swift */; };
 		E721F5F61EAE18E000880D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E51EAE18E000880D61 /* AppDelegate.swift */; };
-		E721F5F71EAE18E000880D61 /* InfoViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E61EAE18E000880D61 /* InfoViewConroller.swift */; };
-		E721F5F81EAE18E000880D61 /* ScoreViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E71EAE18E000880D61 /* ScoreViewConroller.swift */; };
-		E721F5F91EAE18E000880D61 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E81EAE18E000880D61 /* DataSource.swift */; };
+		E721F5F71EAE18E000880D61 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E61EAE18E000880D61 /* InfoViewController.swift */; };
+		E721F5F81EAE18E000880D61 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E71EAE18E000880D61 /* ScoreViewController.swift */; };
+		E721F5F91EAE18E000880D61 /* LeaderboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E81EAE18E000880D61 /* LeaderboardDataSource.swift */; };
 		E721F5FA1EAE18E000880D61 /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E91EAE18E000880D61 /* UserStruct.swift */; };
 		E721F5FB1EAE18E000880D61 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EA1EAE18E000880D61 /* MenuViewController.swift */; };
 		E721F5FC1EAE18E000880D61 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EB1EAE18E000880D61 /* ApplicationController.swift */; };
 		E721F5FD1EAE18E000880D61 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EC1EAE18E000880D61 /* LogInViewController.swift */; };
-		E721F5FE1EAE18E000880D61 /* UsersBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5ED1EAE18E000880D61 /* UsersBase.swift */; };
+		E721F5FE1EAE18E000880D61 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5ED1EAE18E000880D61 /* UserStorage.swift */; };
 		E721F5FF1EAE18E000880D61 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EE1EAE18E000880D61 /* Protocols.swift */; };
 		E721F6001EAE18E000880D61 /* GameViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */; };
-		E721F6011EAE18E000880D61 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F01EAE18E000880D61 /* Game.swift */; };
+		E721F6011EAE18E000880D61 /* GamePlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F01EAE18E000880D61 /* GamePlayController.swift */; };
 		E721F6021EAE18E000880D61 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F11EAE18E000880D61 /* Functions.swift */; };
 		E721F6031EAE18E000880D61 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F21EAE18E000880D61 /* GameOverViewController.swift */; };
 		E721F6041EAE18E000880D61 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F31EAE18E000880D61 /* Matrix.swift */; };
@@ -122,17 +122,17 @@
 		E721F5CE1EAE184900880D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E721F5D31EAE184900880D61 /* TetrisNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E721F5E51EAE18E000880D61 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E721F5E61EAE18E000880D61 /* InfoViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewConroller.swift; sourceTree = "<group>"; };
-		E721F5E71EAE18E000880D61 /* ScoreViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewConroller.swift; sourceTree = "<group>"; };
-		E721F5E81EAE18E000880D61 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		E721F5E61EAE18E000880D61 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		E721F5E71EAE18E000880D61 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		E721F5E81EAE18E000880D61 /* LeaderboardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardDataSource.swift; sourceTree = "<group>"; };
 		E721F5E91EAE18E000880D61 /* UserStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
 		E721F5EA1EAE18E000880D61 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E721F5EB1EAE18E000880D61 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		E721F5EC1EAE18E000880D61 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		E721F5ED1EAE18E000880D61 /* UsersBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersBase.swift; sourceTree = "<group>"; };
+		E721F5ED1EAE18E000880D61 /* UserStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		E721F5EE1EAE18E000880D61 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewConroller.swift; sourceTree = "<group>"; };
-		E721F5F01EAE18E000880D61 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E721F5F01EAE18E000880D61 /* GamePlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayController.swift; sourceTree = "<group>"; };
 		E721F5F11EAE18E000880D61 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		E721F5F21EAE18E000880D61 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		E721F5F31EAE18E000880D61 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
@@ -239,17 +239,17 @@
 			isa = PBXGroup;
 			children = (
 				E721F5E91EAE18E000880D61 /* UserStruct.swift */,
-				E721F5ED1EAE18E000880D61 /* UsersBase.swift */,
+				E721F5ED1EAE18E000880D61 /* UserStorage.swift */,
 				E721F5EB1EAE18E000880D61 /* ApplicationController.swift */,
-				E721F5E51EAE18E000880D61 /* AppDelegate.swift */,
-				E721F5E61EAE18E000880D61 /* InfoViewConroller.swift */,
-				E721F5E71EAE18E000880D61 /* ScoreViewConroller.swift */,
-				E721F5E81EAE18E000880D61 /* DataSource.swift */,
-				E721F5EA1EAE18E000880D61 /* MenuViewController.swift */,
 				E721F5EC1EAE18E000880D61 /* LogInViewController.swift */,
+				E721F5E51EAE18E000880D61 /* AppDelegate.swift */,
+				E721F5E61EAE18E000880D61 /* InfoViewController.swift */,
+				E721F5E71EAE18E000880D61 /* ScoreViewController.swift */,
+				E721F5E81EAE18E000880D61 /* LeaderboardDataSource.swift */,
+				E721F5EA1EAE18E000880D61 /* MenuViewController.swift */,
 				E721F5EE1EAE18E000880D61 /* Protocols.swift */,
 				E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */,
-				E721F5F01EAE18E000880D61 /* Game.swift */,
+				E721F5F01EAE18E000880D61 /* GamePlayController.swift */,
 				E721F5F11EAE18E000880D61 /* Functions.swift */,
 				E721F5F21EAE18E000880D61 /* GameOverViewController.swift */,
 				E721F5F31EAE18E000880D61 /* Matrix.swift */,
@@ -642,7 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E721F60F1EAE18F000880D61 /* T_Figure.swift in Sources */,
-				E721F5F71EAE18E000880D61 /* InfoViewConroller.swift in Sources */,
+				E721F5F71EAE18E000880D61 /* InfoViewController.swift in Sources */,
 				E721F5F61EAE18E000880D61 /* AppDelegate.swift in Sources */,
 				E721F6051EAE18E000880D61 /* Provider.swift in Sources */,
 				E721F5FD1EAE18E000880D61 /* LogInViewController.swift in Sources */,
@@ -651,13 +651,13 @@
 				E721F6101EAE18F000880D61 /* L_Figure.swift in Sources */,
 				E721F6121EAE18FC00880D61 /* Point.swift in Sources */,
 				E721F6061EAE18E000880D61 /* Figure.swift in Sources */,
-				E721F6011EAE18E000880D61 /* Game.swift in Sources */,
+				E721F6011EAE18E000880D61 /* GamePlayController.swift in Sources */,
 				E721F5FF1EAE18E000880D61 /* Protocols.swift in Sources */,
-				E721F5F81EAE18E000880D61 /* ScoreViewConroller.swift in Sources */,
+				E721F5F81EAE18E000880D61 /* ScoreViewController.swift in Sources */,
 				E721F5FB1EAE18E000880D61 /* MenuViewController.swift in Sources */,
-				E721F5FE1EAE18E000880D61 /* UsersBase.swift in Sources */,
+				E721F5FE1EAE18E000880D61 /* UserStorage.swift in Sources */,
 				E721F5FA1EAE18E000880D61 /* UserStruct.swift in Sources */,
-				E721F5F91EAE18E000880D61 /* DataSource.swift in Sources */,
+				E721F5F91EAE18E000880D61 /* LeaderboardDataSource.swift in Sources */,
 				E721F5FC1EAE18E000880D61 /* ApplicationController.swift in Sources */,
 				E721F6041EAE18E000880D61 /* Matrix.swift in Sources */,
 				E721F60D1EAE18F000880D61 /* Z_Figure.swift in Sources */,

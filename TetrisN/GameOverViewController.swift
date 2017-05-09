@@ -13,10 +13,7 @@ import UIKit
 
 class GameOverViewController: UIViewController
 {
-    var applicationControllerDelegate:GameOverViewControllerDelegate?
-    var menuDelegate:MenuDelegate?
-    
-    
+    var gameOverDelegate:GameOverDelegate?
     
     override func viewDidLoad()
     {
@@ -30,8 +27,8 @@ class GameOverViewController: UIViewController
         gameOverLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gameOverLabel)
         
-        gameOverLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 170).isActive = true
-        gameOverLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        
         
         gameOverLabel.snp.makeConstraints{(make) -> Void in
             make.top.equalTo(view.snp.top).offset(170)
@@ -42,8 +39,7 @@ class GameOverViewController: UIViewController
         restartButton.setTitleColor(UIColor.red, for: .highlighted)
         view.addSubview(restartButton)
         
-        restartButton.topAnchor.constraint(equalTo: gameOverLabel.bottomAnchor).isActive = true
-        restartButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         
         restartButton.snp.makeConstraints{(make) -> Void in
             make.top.equalTo(gameOverLabel.snp.bottom).offset(10)
@@ -59,8 +55,7 @@ class GameOverViewController: UIViewController
         menuButton.setTitleColor(UIColor.red, for: .highlighted)
         view.addSubview(menuButton)
         
-        menuButton.topAnchor.constraint(equalTo: restartButton.bottomAnchor).isActive = true
-        menuButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         
         menuButton.snp.makeConstraints{(make) -> Void in
             make.top.equalTo(restartButton.snp.bottom).offset(10)
@@ -73,11 +68,11 @@ class GameOverViewController: UIViewController
     }
     
     func didPressRestartButton() {
-        applicationControllerDelegate?.didSelectRestartOption()
+        gameOverDelegate?.didSelectRestartOption()
     }
     
     func didPressMenuButton() {
-        menuDelegate?.showMenu()
+        gameOverDelegate?.showMenu()
     }
     
     override var prefersStatusBarHidden: Bool

@@ -48,12 +48,6 @@ protocol LeaderBoardDelegate
 
 
 
-protocol GameOverViewControllerDelegate
-{
-    
-    func didSelectRestartOption()
-    
-}
 
 protocol GameProtocol
 {
@@ -65,7 +59,7 @@ protocol GameProtocol
     
 }
 
-protocol LogInDelegate{
+protocol UserStorageDelegate{
     func saveCurrentUserName(name:String)
     func addNewUser(name:String,password:String)
     func alreadyExistNameCheck(name:String) -> Bool
@@ -80,3 +74,18 @@ protocol UserInfoDelegate{
 protocol LogoutDelegate {
  func showLogInView()
 }
+
+protocol UserVerificationDelegate
+{
+    func userVerificate (userName:String, userPass:String, showWarningLabeldDeledate:ShowWarningLabelDelegate)
+}
+
+protocol GameOverDelegate {
+    func didSelectRestartOption()
+    func showMenu()
+}
+
+protocol ShowWarningLabelDelegate {
+    func showWarningLabel()
+}
+

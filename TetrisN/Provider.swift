@@ -7,7 +7,7 @@
 //
 import UIKit
 import Foundation
-class Provider{
+class FigureProvider{
     
     private var currentElementIndex = 0
     private var figures: [()->Figure]
@@ -16,9 +16,6 @@ class Provider{
         self.figures = [{ let figure = LineFigure(); return figure}, { let figure = T_Figure(); return figure}, { let figure = L_Figure(); return figure},{ let figure = SquareFigure(); return figure},{ let figure = Z_Figure(); return figure}]
         
     }
-    
-    
-    
     
     func getNextFigure()
         -> Figure
