@@ -22,14 +22,12 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         self.navigationViewController = navigationViewController
         self.columns = Int(numbersOfColums)
         self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * 1/numbersOfColums))
-        //newGame()
         if userStorage.readCurrentUserName() == nil {
             showLogInView()
         } else {
             currentName = userStorage.readCurrentUserName()
             showMenu()
         }
-        //showLogInView()
         
     }
     
