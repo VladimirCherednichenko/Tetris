@@ -99,7 +99,8 @@ class UserStorage:LeaderBoardDelegate
     {
         var result: [User] = Array<User>()
         if let dictionaries = usersInfo?.values {
-            for dictionary in dictionaries {
+            for dictionary in dictionaries
+            {
                 if let user = User(dictionary: dictionary) {
                     result.append(user)
                 }

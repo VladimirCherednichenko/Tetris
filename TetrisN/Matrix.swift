@@ -40,7 +40,7 @@ class Matrix<Type>
             let check = indexIsValid(row: row, column: column)
             let index = self.indexOf(row, column)
             
-            if check{
+            if check {
                 grid[index] = newValue
             }
         }

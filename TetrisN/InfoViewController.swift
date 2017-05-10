@@ -127,8 +127,7 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
             make.height.equalTo(40)
         }
         
-        if currentUserStruct.readUIImage() != nil
-        {
+        if currentUserStruct.readUIImage() != nil {
             self.preparePhotoButtonForImage()
         }
         if !itIsCurrentUser {
@@ -167,7 +166,7 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         imagePicker.allowsEditing = false
-        self.present(imagePicker, animated: true){
+        self.present(imagePicker, animated: true) {
             
         }
     }

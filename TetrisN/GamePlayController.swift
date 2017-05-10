@@ -69,7 +69,8 @@ class GamePlayController
             }
         }
         
-        for point in figure.offsetOfPoiIts{
+        for point in figure.offsetOfPoiIts
+        {
             self.renderDelegate?.fillThePixel(x: point.x + figure.startPoint.x, y: point.y + figure.startPoint.y, blockImage: point.pointColour)
         }
     }
@@ -83,14 +84,16 @@ class GamePlayController
     
     func pushCurrentFigureOnMatrix()
     {
-        for point in figure.offsetOfPoiIts{
+        for point in figure.offsetOfPoiIts
+        {
             self.objectOfMatrix?[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
         }
     }
     @objc func moveElementDown()
     {
         figureIsOnBottom = isFigureTouchedsomething(figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
-        for point in figure.offsetOfPoiIts{
+        for point in figure.offsetOfPoiIts
+        {
             if self.objectOfMatrix?[point.y + figure.startPoint.y,point.x + figure.startPoint.x] != nil {
                 gameOverIsHere=true
             }
@@ -135,11 +138,7 @@ class GamePlayController
         
         if !alreadyExist && !outOfMatrix
         {
-            
-            
             figure.moveFigureRight()
-            
-            
             self.render()
         }
     }
@@ -171,7 +170,8 @@ class GamePlayController
         }
     }
     
-    func didGameOver() {
+    func didGameOver()
+    {
         
         timer.invalidate()
         gameDelegate?.latestScore = self.points

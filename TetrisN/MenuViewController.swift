@@ -80,11 +80,13 @@ class MenuViewController:UIViewController
         showLeaderboardButton.addTarget(self, action: #selector(showLeaderboard), for: .touchUpInside)
     }
     
-    func showGame() {
+    func showGame()
+    {
         menuDelegate?.newGame()
     }
     
-    func showLeaderboard() {
+    func showLeaderboard()
+    {
         menuDelegate?.showScoreView()
     }
     

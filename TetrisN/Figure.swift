@@ -14,7 +14,8 @@ class Figure
     var offsetOfPoiIts:[Point] = []
     
     func getPointsWithStartPoint()
-        ->[Point]{
+        ->[Point]
+    {
             let pointsWithStartPoint = self.offsetOfPoiIts.map {
                 return Point(x:$0.x+startPoint.x, y:$0.y+startPoint.y, colour: $0.pointColour)
             }
@@ -62,7 +63,9 @@ class Figure
         var max:Int=0
         for element in offsetOfPoiIts
         {
-            if element.y>max{max = element.y}
+            if element.y>max {
+                max = element.y
+            }
         }
         return max
     }
@@ -75,7 +78,9 @@ class Figure
         var min:Int=50
         for element in offsetOfPoiIts
         {
-            if element.y<min{min = element.y}
+            if element.y<min{
+                min = element.y
+            }
         }
         return min+startPoint.y
     }
@@ -88,7 +93,8 @@ class Figure
         var max:Int = 0
         for element in offsetOfPoiIts
         {
-            if element.x>max{max = element.x
+            if element.x>max{
+                max = element.x
             }
         }
         return max
@@ -99,7 +105,8 @@ class Figure
     {
         var duplicate = false
         var foundFirstTime = true
-        for elemnt in offsetOfPoiIts{
+        for elemnt in offsetOfPoiIts
+        {
             
             if elemnt.x == x {
                 if foundFirstTime {
@@ -117,7 +124,8 @@ class Figure
         ->Bool
     {
         var status=false
-        for point in offsetOfPoiIts{
+        for point in offsetOfPoiIts
+        {
             if point.x==x && point.y==y {
                 status=true
             }
@@ -130,7 +138,8 @@ class Figure
         var min:Int = 50
         for element in offsetOfPoiIts
         {
-            if element.x<min{min = element.x
+            if element.x<min{
+                min = element.x
             }
         }
         return min

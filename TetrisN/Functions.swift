@@ -6,7 +6,8 @@ func alreadyExistCheking<Type>(x:Int, y:Int, figure:Figure, objectOfMatrix:Matri
     -> Bool
 {
     var status = false
-    for point in figure.offsetOfPoiIts{
+    for point in figure.offsetOfPoiIts
+    {
         if objectOfMatrix[point.y + figure.startPoint.y + y, point.x + figure.startPoint.x + x] != nil {
             status = true
         }
@@ -21,7 +22,8 @@ func figureIsOutsideOfMatrixcCheking<Type>(figure:Figure, objectOfMatrix:Matrix<
     let copiedFigure:Figure = figure.copy()
     clouser(copiedFigure)
     
-    for point in copiedFigure.offsetOfPoiIts{
+    for point in copiedFigure.offsetOfPoiIts
+    {
         
         if point.x + copiedFigure.startPoint.x > objectOfMatrix.columns-1 || point.y + copiedFigure.startPoint.y > objectOfMatrix.rows-1 || point.x + copiedFigure.startPoint.x < 0   {
             status = true
@@ -39,7 +41,8 @@ func isFigureTouchedsomething<Type>(figure:Figure, objectOfMatrix:Matrix<Type>)
     let maxY = figure.getMaxY()
     let minX = figure.getMinX()
     let maxX = figure.getMaxX()
-    for point in figure.offsetOfPoiIts{
+    for point in figure.offsetOfPoiIts
+    {
         if point.x == minX || point.x == maxX || point.y == maxY{
             
             let checkDuplictateX=figure.duplicateX(x: point.x)
