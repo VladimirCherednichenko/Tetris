@@ -174,4 +174,10 @@ class LogInViewController:UIViewController,UITextFieldDelegate, ShowWarningLabel
     func showWarningLabel() {
         warningLabel.isHidden = false
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
+    }
+    
 }

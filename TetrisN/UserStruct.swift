@@ -19,7 +19,6 @@ struct User
         guard let name = dictionary["name"], let score = dictionary["score"], let password = dictionary["password"], let imageURLString = dictionary["imageURLString"] else {
             return nil
         }
-        
         self.name = name
         self.password = password
         self.imageURLString = imageURLString
@@ -27,10 +26,8 @@ struct User
             self.score = scoreNumber
         }
     }
-    
-   
-    
-    func readUIImage() -> UIImage?
+    func readUIImage()
+        -> UIImage?
     {
         var image:UIImage?
         let photoURL = getDocumentsDirectory().appendingPathComponent(self.name + ".png")

@@ -2,18 +2,15 @@
 import Foundation
 import UIKit
 
-func alreadyExistCheking<Type>(x:Int, y:Int, figure:Figure, objectOfMatrix:Matrix<Type>)-> Bool {
-    var status = false
-    for point in figure.offsetOfPoiIts{
-        if objectOfMatrix[point.y + figure.startPoint.y + y, point.x + figure.startPoint.x + x] != nil {
-            status = true
+func alreadyExistCheking<Type>(x:Int, y:Int, figure:Figure, objectOfMatrix:Matrix<Type>)
+    -> Bool {
+        var status = false
+        for point in figure.offsetOfPoiIts{
+            if objectOfMatrix[point.y + figure.startPoint.y + y, point.x + figure.startPoint.x + x] != nil {
+                status = true
+            }
         }
-        
-        
-    }
-    
-    
-    return status
+        return status
 }
 
 func figureIsOutsideOfMatrixcCheking<Type>(figure:Figure, objectOfMatrix:Matrix<Type>, clouser:((Figure)->()))

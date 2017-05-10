@@ -16,7 +16,6 @@ class UserStorage:UserStorageDelegate, LeaderBoardDelegate {
     var usersInfo:[String:[String:String]]?
     
     init() {
-        
         readUsersInfo()
     }
     
@@ -25,7 +24,6 @@ class UserStorage:UserStorageDelegate, LeaderBoardDelegate {
         
         var currentUserInfo:[String:String]
         currentUserInfo = ["name": name, "password":password, "score":"0", "imageURLString" : ""]
-        
         if usersInfo != nil {
             usersInfo?[name] = currentUserInfo
         } else {
@@ -67,49 +65,37 @@ class UserStorage:UserStorageDelegate, LeaderBoardDelegate {
     func readUsersInfo()
         
     {
-       
-            
-            usersInfo = store.value(forKey: "savedUsersInfo") as! [String : [String : String]]?
-        
+        usersInfo = store.value(forKey: "savedUsersInfo") as! [String : [String : String]]?
     }
     
     func saveCurrentUserName(name:String){
         store.set(name, forKey: "currentName")
-        
     }
     
-    func readCurrentUserName() -> String?{
-        var name:String?
-        name = store.value(forKey: "currentName") as! String?
-        
-        return name
+    func readCurrentUserName()
+        -> String?{
+            var name:String?
+            name = store.value(forKey: "currentName") as! String?
+            return name
     }
-    
-    
-    
     
     func setNewRecord (name:String, score:Int)
         ->Bool{
             var status = false
-            
             if var currentCheckedUser:[String:String] = usersInfo?[name]
             {
-            
-            let currentRecord = (currentCheckedUser["score"])
-            
-            if Int(currentRecord!)! < score {
-                
-                status = true
-                currentCheckedUser["score"] = String(score)
-                usersInfo!.updateValue(currentCheckedUser, forKey: name)
-                
-                saveUsersInfo()
-            }
+                let currentRecord = (currentCheckedUser["score"])
+                if Int(currentRecord!)! < score {
+                    
+                    status = true
+                    currentCheckedUser["score"] = String(score)
+                    usersInfo!.updateValue(currentCheckedUser, forKey: name)
+                    
+                    saveUsersInfo()
+                }
             }
             return status
     }
-    
-    
     
     func getUsers()
         -> [User]?
@@ -126,15 +112,6 @@ class UserStorage:UserStorageDelegate, LeaderBoardDelegate {
             })
         }
         return (result.count > 0) ? result : nil
-    }
-    
-    func saveImage(currentUserName:String,image:UIImage){
-        
-    }
-    
-    func readImage(currentUserName:String) -> UIImage? {
-        
-        return nil
     }
 }
 

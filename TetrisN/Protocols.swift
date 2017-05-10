@@ -42,7 +42,8 @@ protocol LeaderBoardDelegate
 {
     func setNewRecord(name:String, score:Int)
         ->Bool
-    func getUsers() -> [User]?
+    func getUsers()
+        -> [User]?
     
 }
 
@@ -62,8 +63,10 @@ protocol GameProtocol
 protocol UserStorageDelegate{
     func saveCurrentUserName(name:String)
     func addNewUser(name:String,password:String)
-    func alreadyExistNameCheck(name:String) -> Bool
-    func userVerification(name:String, password:String) -> Bool
+    func alreadyExistNameCheck(name:String)
+        -> Bool
+    func userVerification(name:String, password:String)
+        -> Bool
     
 }
 
@@ -72,7 +75,7 @@ protocol UserInfoDelegate{
 }
 
 protocol LogoutDelegate {
- func showLogInView()
+    func showLogInView()
 }
 
 protocol UserVerificationDelegate

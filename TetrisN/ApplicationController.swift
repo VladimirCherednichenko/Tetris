@@ -16,7 +16,6 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
     
     init(navigationViewController:UINavigationController)
     {
-        
         self.navigationViewController = navigationViewController
         self.columns = Int(numbersOfColums)
         self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * 1/numbersOfColums))
@@ -36,8 +35,6 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
     }
     
     func didGameOver(){
-        //userBase.sendUserScore(name:currentName!, score:latestScore)
-        
         sendGameOverScreen()
     }
     
@@ -53,10 +50,10 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         let logInView = LogInViewController()
         navigationViewController.setViewControllers([logInView as UIViewController], animated: true)
         logInView.userVerificationDelegate = self
-        
     }
     
     func showMenu() {
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         let menuView = MenuViewController()
         menuView.currentName = currentName
         menuView.menuDelegate = self
@@ -68,7 +65,7 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         navigationViewController.popViewController(animated: false)
         let gameOverViewController = GameOverViewController()
         gameOverViewController.gameOverDelegate = self
-       
+        
         navigationViewController.popViewController(animated: false)
         
         navigationViewController.pushViewController(gameOverViewController, animated: false)
@@ -91,18 +88,18 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
     func userVerificate (userName:String, userPass:String, showWarningLabeldDeledate:ShowWarningLabelDelegate) {
         var status = false
         let alreadyExists = self.userStorage.alreadyExistNameCheck(name: userName)
-            
-            if alreadyExists {
-                let verificationComplete = self.userStorage.userVerification(name: userName, password: userPass)
-                if verificationComplete {
-                    status = true
-                }
-            } else {
-                self.userStorage.addNewUser(name: userName, password: userPass)
+        
+        if alreadyExists {
+            let verificationComplete = self.userStorage.userVerification(name: userName, password: userPass)
+            if verificationComplete {
                 status = true
-                self.currentName = userName
-                self.showMenu()
             }
+        } else {
+            self.userStorage.addNewUser(name: userName, password: userPass)
+            status = true
+            self.currentName = userName
+            self.showMenu()
+        }
         
         if status{
             self.userStorage.saveCurrentUserName(name: userName)

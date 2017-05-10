@@ -12,7 +12,7 @@ class GameViewController: UIViewController, GameDraw {
     weak var gameDelegate:GamePlayController?
     let labelWithPoints = UILabel()
     
-   
+    
     init(_ valueOfDivision:CGFloat,_ columns:Int,_ rows:Int)
     {
         self.columns = columns
@@ -20,17 +20,17 @@ class GameViewController: UIViewController, GameDraw {
         self.numberOfPixels = rows * columns
         self.valueOfDivision = valueOfDivision
         GameViewController.counterForDeinit = GameViewController.counterForDeinit + 1
-
         
         
-    
+        
+        
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
- 
+    
     func createPixelArray()
     {
         
@@ -146,13 +146,13 @@ class GameViewController: UIViewController, GameDraw {
         
     }
     func updatePoints(_ points:Int) {
-         labelWithPoints.text = String(points)
+        labelWithPoints.text = String(points)
     }
     
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-       
+        
     }
     
     override var prefersStatusBarHidden: Bool
@@ -160,8 +160,8 @@ class GameViewController: UIViewController, GameDraw {
         return true
     }
     deinit {
-       
-       
+        
+        
     }
 }
 

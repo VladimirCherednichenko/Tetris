@@ -57,10 +57,6 @@ class GamePlayController:GameProtocol{
             self.renderDelegate?.fillThePixel(x: point.x + figure.startPoint.x, y: point.y + figure.startPoint.y, blockImage: point.pointColour)
         }
     }
-    
-    
-    
-    
     func removeCurrentFigureOnMatrix(){
         for element in figure.offsetOfPoiIts
         {
@@ -73,17 +69,8 @@ class GamePlayController:GameProtocol{
             self.objectOfMatrix?[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
         }
     }
-    
-    
-    
-    
-    
     @objc func moveElementDown() {
-        
         figureIsOnBottom = isFigureTouchedsomething(figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
-        
-        
-        
         for point in figure.offsetOfPoiIts{
             if self.objectOfMatrix?[point.y + figure.startPoint.y,point.x + figure.startPoint.x] != nil {
                 gameOverIsHere=true
@@ -122,8 +109,8 @@ class GamePlayController:GameProtocol{
     
     @objc func didSwipeRight()
     {   let outOfMatrix = figureIsOutsideOfMatrixcCheking(figure:self.figure, objectOfMatrix:self.objectOfMatrix!){
-            figure in
-            figure.moveFigureRight()
+        figure in
+        figure.moveFigureRight()
         }
         let alreadyExist = alreadyExistCheking(x: +1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         
@@ -139,8 +126,8 @@ class GamePlayController:GameProtocol{
     }
     @objc func didSwipeLeft()
     {   let outOfMatrix = figureIsOutsideOfMatrixcCheking(figure:self.figure, objectOfMatrix:self.objectOfMatrix!) {
-            figure in
-            figure.moveFigureLeft()
+        figure in
+        figure.moveFigureLeft()
         }
         let alreadyExist = alreadyExistCheking(x: -1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         

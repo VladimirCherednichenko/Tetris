@@ -26,10 +26,6 @@ class GameOverViewController: UIViewController
         gameOverLabel.font = UIFont(name: "XPED Shadow", size: 60.0   )
         gameOverLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gameOverLabel)
-        
-        
-        
-        
         gameOverLabel.snp.makeConstraints{(make) -> Void in
             make.top.equalTo(view.snp.top).offset(170)
             make.centerX.equalTo(view.snp.centerX)
@@ -80,7 +76,7 @@ class GameOverViewController: UIViewController
         return true
     }
     deinit {
-       
+        
     }
 }
 

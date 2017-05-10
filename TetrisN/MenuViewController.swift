@@ -15,14 +15,11 @@ class MenuViewController:UIViewController {
     var menuDelegate:MenuDelegate?
     
     override func viewWillAppear(_ animated: Bool) {
-    
+        
         self.navigationController?.navigationBar.isHidden = true
     }
     override func viewDidLoad() {
         view.backgroundColor = UIColor.darkGray
-        
-        
-        
         let nameLabel = UILabel()
         nameLabel.text = "Hello,  " + currentName! + "!"
         nameLabel.numberOfLines = 3
@@ -33,20 +30,14 @@ class MenuViewController:UIViewController {
         nameLabel.layer.shadowOpacity = 1
         nameLabel.layer.shadowOffset = CGSize.zero
         nameLabel.layer.shadowRadius = 6
-        
         view.addSubview(nameLabel)
         nameLabel.textAlignment = .center
-        
-        
-        
         nameLabel.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(view.snp.top).offset(25)
             make.right.equalTo(view.snp.right)
             make.left.equalTo(view.snp.left)
             make.centerX.equalTo(view.snp.centerX)
         }
-        
-        
         let startNewGameButton = UIButton()
         startNewGameButton.translatesAutoresizingMaskIntoConstraints = false
         startNewGameButton.setTitleColor(UIColor.blue, for: .highlighted)
@@ -83,10 +74,6 @@ class MenuViewController:UIViewController {
         showLeaderboardButton.layer.shadowOffset = CGSize.zero
         showLeaderboardButton.layer.shadowRadius = 6
         showLeaderboardButton.addTarget(self, action: #selector(showLeaderboard), for: .touchUpInside)
-       // startNewGameButton.addTarget(self, action: #selector(didPressRestartButton), for: .touchUpInside)
-
-        
-        
     }
     
     func showGame() {
@@ -101,5 +88,6 @@ class MenuViewController:UIViewController {
     {
         return true
     }
+    
     
 }

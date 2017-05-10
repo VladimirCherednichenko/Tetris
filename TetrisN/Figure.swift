@@ -12,11 +12,12 @@ class Figure {
     var startPoint = Point(x:4,y:-2, colour: #imageLiteral(resourceName: "pixelDark"))
     var offsetOfPoiIts:[Point] = []
     
-    func getPointsWithStartPoint()->[Point]{
-        let pointsWithStartPoint = self.offsetOfPoiIts.map {
-            return Point(x:$0.x+startPoint.x, y:$0.y+startPoint.y, colour: $0.pointColour)
-        }
-        return pointsWithStartPoint
+    func getPointsWithStartPoint()
+        ->[Point]{
+            let pointsWithStartPoint = self.offsetOfPoiIts.map {
+                return Point(x:$0.x+startPoint.x, y:$0.y+startPoint.y, colour: $0.pointColour)
+            }
+            return pointsWithStartPoint
     }
     func rotateRight()
     {
@@ -127,7 +128,7 @@ class Figure {
         }
         return min
     }
-   func copy()
+    func copy()
         ->Figure
     {
         let figure = Figure()
