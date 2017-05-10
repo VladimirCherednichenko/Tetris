@@ -69,7 +69,6 @@ func isFigureTouchedsomething<Type>(figure:Figure, objectOfMatrix:Matrix<Type>)
         }
         
     }
-    
     return status
 }
 

@@ -14,8 +14,6 @@ import Social
 protocol LogoutDelegate {
     func showLogInView()
 }
-
-
 class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let currentUserName:String
     let score:Int
@@ -44,7 +42,6 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
-        
     }
     
     override func viewDidLoad() {
@@ -52,32 +49,15 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         let nameLabel = UILabel()
-        
-        
-        
-        
-        
         nameLabel.text = currentUserName
-        
-        
-        
-        
         view.addSubview(nameLabel)
-        
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.snp.makeConstraints{(make) -> Void in
             make.center.equalTo(view)
         }
-        
-        
-        
         photoButton.setTitle("+", for: .normal)
         photoButton.titleLabel?.font = UIFont(name: "PingFang SC", size: 32)
-        
         photoButton.setTitleColor(UIColor.black, for: .normal)
         view.addSubview(photoButton)
-        photoButton.translatesAutoresizingMaskIntoConstraints = false
-        
         photoButton.snp.makeConstraints{(make) -> Void in
             make.bottom.equalTo(nameLabel.snp.top).offset(-70)
             make.centerX.equalTo(view.snp.centerX)
@@ -95,23 +75,14 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         let scoreLabel = UILabel()
         scoreLabel.text =  ("score: \(score)")
         view.addSubview(scoreLabel)
-        
-        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         scoreLabel.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(nameLabel.snp.bottom)
             
         }
-        
-        
-        
         let logOutButton = UIButton()
-        
         logOutButton.setTitle("Logout", for: .normal)
-        
         logOutButton.titleLabel?.font = UIFont(name: "XPED Shadow", size: 35.0)
-        logOutButton.translatesAutoresizingMaskIntoConstraints = false
-        
         logOutButton.setTitleColor(UIColor.black, for: .normal)
         logOutButton.setTitleColor(UIColor.blue, for: .highlighted)
         view.addSubview(logOutButton)
@@ -128,7 +99,6 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         logOutButton.addTarget(self, action: #selector(self.didLogout), for: .touchUpInside)
         let photoLabel = UILabel()
         photoLabel.text = "Photo"
-        photoLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(photoLabel)
         photoLabel.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(view.snp.top).offset(30)
@@ -139,7 +109,6 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         photoButton.addTarget(self, action: #selector(makeButtonStandart), for: .touchUpInside )
         photoButton.setBackgroundImage(currentUserStruct.readUIImage(), for: .normal)
         let facebookShareButton = UIButton()
-        facebookShareButton.translatesAutoresizingMaskIntoConstraints = false
         facebookShareButton.setImage(#imageLiteral(resourceName: "facebookImage"), for: .normal)
         facebookShareButton.addTarget(self, action: #selector(self.didFacebookShare), for: .touchUpInside)
         view.addSubview(facebookShareButton)

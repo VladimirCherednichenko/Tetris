@@ -17,8 +17,7 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
     var currentName:String?
     var latestScore:Int = 0
     
-    init(navigationViewController:UINavigationController)
-    {
+    init(navigationViewController:UINavigationController) {
         self.navigationViewController = navigationViewController
         self.columns = Int(numbersOfColums)
         self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * 1/numbersOfColums))
@@ -104,15 +103,12 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
             self.showMenu()
         }
         
-        if status{
+        if status {
             self.userStorage.saveCurrentUserName(name: userName)
         } else {
             
         }
         
     }
-    
-    
-    
 }
 

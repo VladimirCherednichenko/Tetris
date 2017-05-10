@@ -8,8 +8,7 @@
 
 import Foundation
 class L_Figure:Figure{
-    override init()
-    {
+    override init() {
         super.init()
         
         self.offsetOfPoiIts = [Point(x:-1,y:-1, colour: #imageLiteral(resourceName: "pixelRed")),Point(x:0, y:-1, colour: #imageLiteral(resourceName: "pixelRed")),Point(x:0, y:0, colour: #imageLiteral(resourceName: "pixelRed")),Point(x:0, y:1, colour: #imageLiteral(resourceName: "pixelRed"))]

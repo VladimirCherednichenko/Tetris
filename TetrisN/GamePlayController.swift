@@ -39,8 +39,7 @@ class GamePlayController{
     var maxXRepeat = false
     var minXrepeat = false
     
-    init(renderDelegate:GameDraw?, applicationControllerObject:GameDelegate?, rows:Int, columns:Int, interval:Double)
-    {
+    init(renderDelegate:GameDraw?, applicationControllerObject:GameDelegate?, rows:Int, columns:Int, interval:Double) {
         
         
         self.gameDelegate = applicationControllerObject

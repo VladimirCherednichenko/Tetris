@@ -51,16 +51,11 @@ class Matrix<Type>
     {
         return row * self.columns + column
     }
-    
-    
-    
     func filledRowCheck()
         -> Int?
     {   var numberOfFilledRow:Int?
         for row in 0...self.rows - 1
         {   var counter = 0
-            
-            
             for column in 0...self.columns - 1
             {
                 if self[row,column] != nil

@@ -15,8 +15,6 @@ import UIKit
     @objc func newGame()
     @objc func showMenu()
     @objc func showScoreView()
-    
-    
 }
 
 class MenuViewController:UIViewController {
@@ -34,7 +32,6 @@ class MenuViewController:UIViewController {
         nameLabel.numberOfLines = 3
         nameLabel.textColor = UIColor.white
         nameLabel.font = UIFont(name: "Yellowtail", size: 50.0)
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.layer.shadowColor = UIColor.red.cgColor
         nameLabel.layer.shadowOpacity = 1
         nameLabel.layer.shadowOffset = CGSize.zero
@@ -48,7 +45,6 @@ class MenuViewController:UIViewController {
             make.centerX.equalTo(view.snp.centerX)
         }
         let startNewGameButton = UIButton()
-        startNewGameButton.translatesAutoresizingMaskIntoConstraints = false
         startNewGameButton.setTitleColor(UIColor.blue, for: .highlighted)
         view.addSubview(startNewGameButton)
         
@@ -66,7 +62,6 @@ class MenuViewController:UIViewController {
         startNewGameButton.addTarget(self, action: #selector(showGame), for: .touchUpInside)
         
         let showLeaderboardButton = UIButton()
-        showLeaderboardButton.translatesAutoresizingMaskIntoConstraints = false
         showLeaderboardButton.setTitleColor(UIColor.blue, for: .highlighted)
         view.addSubview(showLeaderboardButton)
         

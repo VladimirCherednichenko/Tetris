@@ -12,7 +12,6 @@ import UIKit
 protocol UserInfoDelegate{
     func showInfoView(currentUser:User)
 }
-
 protocol LeaderBoardDelegate
 {
     func setNewRecord(name:String, score:Int)
@@ -58,7 +57,6 @@ class ScoreViewController:UIViewController,UITableViewDelegate
         tabelView.dataSource = self.leaderboardDataSource
         tabelView.allowsSelection = true
         view.addSubview(tabelView)
-        tabelView.translatesAutoresizingMaskIntoConstraints = false
         tabelView.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(view.snp.top)
             make.right.equalTo(view.snp.right)

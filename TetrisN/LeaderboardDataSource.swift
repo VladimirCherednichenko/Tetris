@@ -61,8 +61,7 @@ class CustomeCell:UITableViewCell {
     
     
     
-    init(reuseIdentifier: String)
-    {
+    init(reuseIdentifier: String) {
         
         
         
@@ -109,10 +108,6 @@ class CustomeCell:UITableViewCell {
         addSubview(nameLabel)
         addSubview(scoreLabel)
         addSubview(icon)
-        
-        
-        
-        
         icon.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(self.snp.top).offset(2)
             make.left.equalTo(self.snp.left).offset(30)

@@ -28,14 +28,12 @@ class GameOverViewController: UIViewController
         gameOverLabel.textColor = UIColor.white
         gameOverLabel.textAlignment = .center
         gameOverLabel.font = UIFont(name: "XPED Shadow", size: 60.0   )
-        gameOverLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gameOverLabel)
         gameOverLabel.snp.makeConstraints{(make) -> Void in
             make.top.equalTo(view.snp.top).offset(170)
             make.centerX.equalTo(view.snp.centerX)
         }
         let restartButton = UIButton()
-        restartButton.translatesAutoresizingMaskIntoConstraints = false
         restartButton.setTitleColor(UIColor.red, for: .highlighted)
         view.addSubview(restartButton)
         
@@ -51,7 +49,6 @@ class GameOverViewController: UIViewController
         
         
         let menuButton = UIButton()
-        menuButton.translatesAutoresizingMaskIntoConstraints = false
         menuButton.setTitleColor(UIColor.red, for: .highlighted)
         view.addSubview(menuButton)
         
@@ -79,8 +76,6 @@ class GameOverViewController: UIViewController
     {
         return true
     }
-    deinit {
-        
-    }
+    
 }
 

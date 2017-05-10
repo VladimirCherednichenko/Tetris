@@ -19,50 +19,46 @@ class Figure {
             }
             return pointsWithStartPoint
     }
-    func rotateRight()
-    {
+    func rotateRight() {
         self.offsetOfPoiIts = offsetOfPoiIts.map{
             return Point(x: -$0.y, y: $0.x, colour: $0.pointColour)
         }
     }
     
-    func rotateLeft()
-    {
+    func rotateLeft() {
         self.offsetOfPoiIts = offsetOfPoiIts.map{
             return Point(x: $0.y, y: -$0.x, colour: $0.pointColour)
         }
     }
     
     
-    func moveFigureDown()
-    {
+    func moveFigureDown() {
         self.startPoint.y = self.startPoint.y + 1
     }
     
-    func moveFigureUp()
-    {
+    func moveFigureUp() {
         self.startPoint.y = self.startPoint.y + 1
     }
     
-    func moveFigureRight()
-    {
+    func moveFigureRight() {
         self.startPoint.x = self.startPoint.x + 1
     }
     
-    func moveFigureLeft()
-    {
+    func moveFigureLeft() {
         self.startPoint.x = self.startPoint.x - 1
     }
     
     
     func getMaxY()
-        ->Int{
-            var max:Int=0
-            for element in offsetOfPoiIts
-            {
-                if element.y>max{max = element.y}
-            }
-            return max}
+        ->Int
+    {
+        var max:Int=0
+        for element in offsetOfPoiIts
+        {
+            if element.y>max{max = element.y}
+        }
+        return max
+    }
     
     
     
@@ -74,7 +70,8 @@ class Figure {
         {
             if element.y<min{min = element.y}
         }
-        return min+startPoint.y}
+        return min+startPoint.y
+    }
     
     
     
@@ -90,7 +87,9 @@ class Figure {
         return max
     }
     
-    func duplicateX(x:Int)->Bool {
+    func duplicateX(x:Int)
+        ->Bool
+    {
         var duplicate = false
         var foundFirstTime = true
         for elemnt in offsetOfPoiIts{
@@ -107,7 +106,8 @@ class Figure {
         return duplicate
     }
     
-    func verifyingExistenceOfPoint(x:Int,y:Int)->Bool
+    func verifyingExistenceOfPoint(x:Int,y:Int)
+        ->Bool
     {
         var status=false
         for point in offsetOfPoiIts{

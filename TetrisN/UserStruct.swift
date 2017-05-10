@@ -14,8 +14,7 @@ struct User
     var score: Int = 0
     let password: String
     var imageURLString:String = ""
-    init?(dictionary: [String:String])
-    {
+    init?(dictionary: [String:String]) {
         guard let name = dictionary["name"], let score = dictionary["score"], let password = dictionary["password"], let imageURLString = dictionary["imageURLString"] else {
             return nil
         }

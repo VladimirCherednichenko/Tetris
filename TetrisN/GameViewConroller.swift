@@ -12,18 +12,12 @@ class GameViewController: UIViewController, GameDraw {
     weak var gameDelegate:GamePlayController?
     let labelWithPoints = UILabel()
     
-    
-    init(_ valueOfDivision:CGFloat,_ columns:Int,_ rows:Int)
-    {
+    init(_ valueOfDivision:CGFloat,_ columns:Int,_ rows:Int) {
         self.columns = columns
         self.rows = rows
         self.numberOfPixels = rows * columns
         self.valueOfDivision = valueOfDivision
         GameViewController.counterForDeinit = GameViewController.counterForDeinit + 1
-        
-        
-        
-        
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +32,6 @@ class GameViewController: UIViewController, GameDraw {
         {
             
             let pixel = UIImageView(image: #imageLiteral(resourceName: "pixelDark"))
-            pixel.translatesAutoresizingMaskIntoConstraints = false
             pixel.contentMode = .scaleAspectFit
             pixelArray.append(pixel)}}
     
@@ -63,8 +56,6 @@ class GameViewController: UIViewController, GameDraw {
         //Here I creaate vertical Stack, that hold all components
         let verticalStack = UIStackView()
         verticalStack.axis = .vertical
-        
-        verticalStack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(verticalStack)
         
         
@@ -83,7 +74,6 @@ class GameViewController: UIViewController, GameDraw {
         {
             let horizontalStack = UIStackView()
             horizontalStack.axis = .horizontal
-            horizontalStack.translatesAutoresizingMaskIntoConstraints = false
             stackArray.append(horizontalStack)
             verticalStack.addArrangedSubview(stackArray[j])
             
@@ -104,12 +94,7 @@ class GameViewController: UIViewController, GameDraw {
         labelWithPoints.text = String(points)
         labelWithPoints.textColor = UIColor.white
         labelWithPoints.font = UIFont(name: "XPED Shadow", size: 35.0   )
-        labelWithPoints.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(labelWithPoints)
-        
-        
-        
-        
         labelWithPoints.snp.makeConstraints{ (make) -> Void in
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(view.snp.top)
@@ -118,8 +103,7 @@ class GameViewController: UIViewController, GameDraw {
     }
     //FILL PIXELS
     
-    func fillThePixel(x:Int,y:Int, blockImage:UIImage?)
-    {
+    func fillThePixel(x:Int,y:Int, blockImage:UIImage?) {
         let gameIndex:Int = y * columns + x
         if gameIndex >= 0 && gameIndex <= numberOfPixels - 1
         {
@@ -127,8 +111,7 @@ class GameViewController: UIViewController, GameDraw {
         }
     }
     
-    func clearThePixel(x:Int,y:Int)
-    {
+    func clearThePixel(x:Int,y:Int) {
         let gameIndex:Int = y * columns + x
         if gameIndex >= 0 && gameIndex <= numberOfPixels - 1
         {
@@ -136,8 +119,7 @@ class GameViewController: UIViewController, GameDraw {
         }
     }
     
-    func clearView()
-    {
+    func clearView() {
         for element in pixelArray
         {
             element.image = nil
@@ -149,19 +131,14 @@ class GameViewController: UIViewController, GameDraw {
         labelWithPoints.text = String(points)
     }
     
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
     
-    override var prefersStatusBarHidden: Bool
-    {
+    override var prefersStatusBarHidden: Bool {
         return true
     }
-    deinit {
-        
-        
-    }
+    
 }
 
