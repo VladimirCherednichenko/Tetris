@@ -55,10 +55,9 @@ class Matrix<Type>
     func filledRowCheck()
         -> Int?
     {   var numberOfFilledRow:Int?
-        for row in 0...self.rows - 1
-        {   var counter = 0
-            for column in 0...self.columns - 1
-            {
+        for row in 0...self.rows - 1 {
+            var counter = 0
+            for column in 0...self.columns - 1 {
                 if self[row,column] != nil
                 {
                     counter = counter + 1
@@ -79,10 +78,8 @@ class Matrix<Type>
     func removeLine(lineNumber startRow:Int?)
     {
         if startRow != nil {
-            for row in (0...startRow!).reversed()
-            {
-                for column in 0...self.columns - 1
-                {
+            for row in (0...startRow!).reversed() {
+                for column in 0...self.columns - 1 {
                     self[row,column]  =  self[row - 1,column]
                     
                 }

@@ -29,8 +29,7 @@ class GameViewController: UIViewController, GameDraw
     func createPixelArray()
     {
         
-        for _ in 0...numberOfPixels - 1
-        {
+        for _ in 0...numberOfPixels - 1 {
             
             let pixel = UIImageView(image: #imageLiteral(resourceName: "pixelDark"))
             pixel.contentMode = .scaleAspectFit
@@ -71,15 +70,13 @@ class GameViewController: UIViewController, GameDraw
         
         var stackArray = [UIStackView]()
         
-        for j in 0...rows - 1
-        {
+        for j in 0...rows - 1 {
             let horizontalStack = UIStackView()
             horizontalStack.axis = .horizontal
             stackArray.append(horizontalStack)
             verticalStack.addArrangedSubview(stackArray[j])
             
-            for i in 0...columns - 1
-            {
+            for i in 0...columns - 1 {
                 let index:Int = (i + j * columns)
                 stackArray[j].addArrangedSubview(pixelArray[index])
                 
@@ -124,8 +121,7 @@ class GameViewController: UIViewController, GameDraw
     
     func clearView()
     {
-        for element in pixelArray
-        {
+        for element in pixelArray {
             element.image = nil
             element.backgroundColor = UIColor.darkGray
         }

@@ -16,10 +16,10 @@ class Figure
     func getPointsWithStartPoint()
         ->[Point]
     {
-            let pointsWithStartPoint = self.offsetOfPoiIts.map {
-                return Point(x:$0.x+startPoint.x, y:$0.y+startPoint.y, colour: $0.pointColour)
-            }
-            return pointsWithStartPoint
+        let pointsWithStartPoint = self.offsetOfPoiIts.map {
+            return Point(x:$0.x+startPoint.x, y:$0.y+startPoint.y, colour: $0.pointColour)
+        }
+        return pointsWithStartPoint
     }
     func rotateRight()
     {
@@ -61,8 +61,7 @@ class Figure
         ->Int
     {
         var max:Int=0
-        for element in offsetOfPoiIts
-        {
+        for element in offsetOfPoiIts {
             if element.y>max {
                 max = element.y
             }
@@ -76,8 +75,7 @@ class Figure
         ->Int
     {
         var min:Int=50
-        for element in offsetOfPoiIts
-        {
+        for element in offsetOfPoiIts {
             if element.y<min{
                 min = element.y
             }
@@ -91,8 +89,7 @@ class Figure
         ->Int
     {
         var max:Int = 0
-        for element in offsetOfPoiIts
-        {
+        for element in offsetOfPoiIts {
             if element.x>max{
                 max = element.x
             }
@@ -105,8 +102,7 @@ class Figure
     {
         var duplicate = false
         var foundFirstTime = true
-        for elemnt in offsetOfPoiIts
-        {
+        for elemnt in offsetOfPoiIts {
             
             if elemnt.x == x {
                 if foundFirstTime {
@@ -124,8 +120,7 @@ class Figure
         ->Bool
     {
         var status=false
-        for point in offsetOfPoiIts
-        {
+        for point in offsetOfPoiIts {
             if point.x==x && point.y==y {
                 status=true
             }
@@ -136,8 +131,7 @@ class Figure
         ->Int
     {
         var min:Int = 50
-        for element in offsetOfPoiIts
-        {
+        for element in offsetOfPoiIts {
             if element.x<min{
                 min = element.x
             }
