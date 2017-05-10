@@ -7,11 +7,13 @@
 //
 import UIKit
 import Foundation
-class FigureProvider{
+class FigureProvider
+{
     
     private var currentElementIndex = 0
     private var figures: [()->Figure]
-    init() {
+    init()
+    {
         self.figures = [{ let figure = LineFigure(); return figure}, { let figure = T_Figure(); return figure}, { let figure = L_Figure(); return figure},{ let figure = SquareFigure(); return figure},{ let figure = Z_Figure(); return figure}]
         
     }
@@ -39,7 +41,5 @@ class FigureProvider{
         
         return self.figures[randomIndex]()
     }
-    deinit {
-        
-    }
+    
 }

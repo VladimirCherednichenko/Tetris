@@ -13,10 +13,12 @@ class UserStorage:LeaderBoardDelegate
     let store = UserDefaults.standard
     let imageStore = NSDate()
     var usersInfo:[String:[String:String]]?
-    init() {
+    init()
+    {
         readUsersInfo()
     }
-    func addNewUser(name:String,password:String) {
+    func addNewUser(name:String,password:String)
+    {
         var currentUserInfo:[String:String]
         currentUserInfo = ["name": name, "password":password, "score":"0", "imageURLString" : ""]
         if usersInfo != nil {
@@ -51,15 +53,18 @@ class UserStorage:LeaderBoardDelegate
         return status
     }
     
-    func saveUsersInfo() {
+    func saveUsersInfo()
+    {
         store.set(usersInfo, forKey: "savedUsersInfo")
     }
     
-    func readUsersInfo() {
+    func readUsersInfo()
+    {
         usersInfo = store.value(forKey: "savedUsersInfo") as! [String : [String : String]]?
     }
     
-    func saveCurrentUserName(name:String) {
+    func saveCurrentUserName(name:String)
+    {
         store.set(name, forKey: "currentName")
     }
     

@@ -14,7 +14,8 @@ class Matrix<Type>
     let rows:Int
     let columns:Int
     var grid: [Type?]
-    init(rows:Int, columns:Int){
+    init(rows:Int, columns:Int)
+    {
         self.rows = rows
         self.columns = columns
         grid = Array(repeating: nil, count: rows * columns)
@@ -76,19 +77,18 @@ class Matrix<Type>
     }
     
     func removeLine(lineNumber startRow:Int?)
-    {   if startRow != nil {
-        for row in (0...startRow!).reversed()
-        {
-            for column in 0...self.columns - 1
+    {
+        if startRow != nil {
+            for row in (0...startRow!).reversed()
             {
-                self[row,column]  =  self[row - 1,column]
-                
+                for column in 0...self.columns - 1
+                {
+                    self[row,column]  =  self[row - 1,column]
+                    
+                }
             }
         }
-        }
         
     }
-    deinit {
-        
-    }
+    
 }

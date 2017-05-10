@@ -17,7 +17,8 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
     var currentName:String?
     var latestScore:Int = 0
     
-    init(navigationViewController:UINavigationController) {
+    init(navigationViewController:UINavigationController)
+    {
         self.navigationViewController = navigationViewController
         self.columns = Int(numbersOfColums)
         self.rows = Int ((UIScreen.main.bounds.height) / (UIScreen.main.bounds.width * 1/numbersOfColums))
@@ -32,15 +33,18 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         
     }
     
-    func didSelectRestartOption() {
+    func didSelectRestartOption()
+    {
         newGame()
     }
     
-    func didGameOver(){
+    func didGameOver()
+    {
         sendGameOverScreen()
     }
     
-    @objc func newGame() {
+    @objc func newGame()
+    {
         navigationViewController.popViewController(animated: false)
         let gameViewController = GameViewController(1/numbersOfColums, columns, rows)
         let gamePlayController = GamePlayController(renderDelegate: gameViewController, applicationControllerObject: self, rows: self.rows, columns: self.columns, interval: interval )
@@ -48,13 +52,15 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         navigationViewController.setViewControllers([gameViewController as UIViewController], animated: true)
     }
     
-    func showLogInView() {
+    func showLogInView()
+    {
         let logInView = LogInViewController()
         navigationViewController.setViewControllers([logInView as UIViewController], animated: true)
         logInView.userVerificationDelegate = self
     }
     
-    func showMenu() {
+    func showMenu()
+    {
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         let menuView = MenuViewController()
         menuView.currentName = currentName
@@ -63,7 +69,8 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         
     }
     
-    func sendGameOverScreen() {
+    func sendGameOverScreen()
+    {
         navigationViewController.popViewController(animated: false)
         let gameOverViewController = GameOverViewController()
         gameOverViewController.gameOverDelegate = self
@@ -73,12 +80,14 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         navigationViewController.pushViewController(gameOverViewController, animated: false)
         navigationViewController.setViewControllers([gameOverViewController], animated: false)
     }
-    func showScoreView() {
+    func showScoreView()
+    {
         let scoreViewController =  ScoreViewController(userStorage, self)
         navigationViewController.pushViewController(scoreViewController, animated: true)
     }
     
-    func showInfoView(currentUser:User) {
+    func showInfoView(currentUser:User)
+    {
         var itIsCurrentName = false
         if currentUser.name == currentName {
             itIsCurrentName = true
@@ -87,7 +96,8 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         navigationViewController.pushViewController(infoView, animated: true)
     }
     
-    func userVerificate (userName:String, userPass:String, showWarningLabeldDeledate:ShowWarningLabelDelegate) {
+    func userVerificate (userName:String, userPass:String, showWarningLabeldDeledate:ShowWarningLabelDelegate)
+    {
         var status = false
         let alreadyExists = self.userStorage.alreadyExistNameCheck(name: userName)
         

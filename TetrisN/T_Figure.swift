@@ -7,8 +7,8 @@
 //
 
 import Foundation
-class T_Figure:Figure{
-    
+class T_Figure:Figure
+{
     override init()
     {
         super.init()

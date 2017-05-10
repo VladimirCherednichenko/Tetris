@@ -17,12 +17,12 @@ import UIKit
     @objc func showScoreView()
 }
 
-class MenuViewController:UIViewController {
+class MenuViewController:UIViewController
+{
     var currentName:String?
     var menuDelegate:MenuDelegate?
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
+    override func viewWillAppear(_ animated: Bool)
+    {
         self.navigationController?.navigationBar.isHidden = true
     }
     override func viewDidLoad() {

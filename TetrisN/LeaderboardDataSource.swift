@@ -9,16 +9,20 @@
 import Foundation
 import UIKit
 
-class LeaderboardDataSource:NSObject, UITableViewDataSource {
+class LeaderboardDataSource:NSObject, UITableViewDataSource
+{
     var leaderBoardDelegate:LeaderBoardDelegate
     
-    init(_ leaderBoardDelegate:LeaderBoardDelegate) {
+    init(_ leaderBoardDelegate:LeaderBoardDelegate)
+    {
         self.leaderBoardDelegate = leaderBoardDelegate
         super.init()
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
+        -> Int
+    {
         return (leaderBoardDelegate.getUsers()?.count != nil) ? (leaderBoardDelegate.getUsers()?.count)! : 0
     }
     
@@ -54,14 +58,16 @@ class LeaderboardDataSource:NSObject, UITableViewDataSource {
 }
 
 
-class CustomeCell:UITableViewCell {
+class CustomeCell:UITableViewCell
+{
     let nameLabel = UILabel()
     let scoreLabel = UILabel()
     var icon = UIImageView()
     
     
     
-    init(reuseIdentifier: String) {
+    init(reuseIdentifier: String)
+    {
         
         
         
@@ -73,12 +79,14 @@ class CustomeCell:UITableViewCell {
         
     }
     
-    func setLabeltext(name:String, score:String){
+    func setLabeltext(name:String, score:String)
+    {
         self.nameLabel.text = name
         self.scoreLabel.text = score
     }
     
-    func setImage(image:UIImage?){
+    func setImage(image:UIImage?)
+    {
         if image != nil {
             
             self.icon.alpha = 0.0
@@ -96,7 +104,8 @@ class CustomeCell:UITableViewCell {
     }
     
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         fatalError("init(coder:) has not been implemented")
     }
     

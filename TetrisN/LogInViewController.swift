@@ -24,11 +24,13 @@ class LogInViewController:UIViewController,UITextFieldDelegate, ShowWarningLabel
     var nameTextField = UITextField()
     private var passwordTextField = UITextField()
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    {
         self.navigationController?.navigationBar.isHidden = true
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGray
         let nameOfApplication = UILabel()
@@ -128,13 +130,12 @@ class LogInViewController:UIViewController,UITextFieldDelegate, ShowWarningLabel
         return false
     }
     
-    func showWarningLabel() {
+    func showWarningLabel()
+    {
         warningLabel.isHidden = false
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        
     }
     
 }

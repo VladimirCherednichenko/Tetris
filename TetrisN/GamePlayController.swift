@@ -18,7 +18,8 @@ protocol GameDraw
     func didGameOver()
 }
 
-class GamePlayController{
+class GamePlayController
+{
     var interval:Double //change timer interval there, if you wish it
     var renderDelegate:GameDraw?=nil
     var figureProvider = FigureProvider()
@@ -39,7 +40,8 @@ class GamePlayController{
     var maxXRepeat = false
     var minXrepeat = false
     
-    init(renderDelegate:GameDraw?, applicationControllerObject:GameDelegate?, rows:Int, columns:Int, interval:Double) {
+    init(renderDelegate:GameDraw?, applicationControllerObject:GameDelegate?, rows:Int, columns:Int, interval:Double)
+    {
         
         
         self.gameDelegate = applicationControllerObject
@@ -71,19 +73,22 @@ class GamePlayController{
             self.renderDelegate?.fillThePixel(x: point.x + figure.startPoint.x, y: point.y + figure.startPoint.y, blockImage: point.pointColour)
         }
     }
-    func removeCurrentFigureOnMatrix(){
+    func removeCurrentFigureOnMatrix()
+    {
         for element in figure.offsetOfPoiIts
         {
             self.objectOfMatrix?[element.y + figure.startPoint.y,element.x + figure.startPoint.x] = nil
         }
     }
     
-    func pushCurrentFigureOnMatrix(){
+    func pushCurrentFigureOnMatrix()
+    {
         for point in figure.offsetOfPoiIts{
             self.objectOfMatrix?[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
         }
     }
-    @objc func moveElementDown() {
+    @objc func moveElementDown()
+    {
         figureIsOnBottom = isFigureTouchedsomething(figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         for point in figure.offsetOfPoiIts{
             if self.objectOfMatrix?[point.y + figure.startPoint.y,point.x + figure.startPoint.x] != nil {
@@ -175,11 +180,7 @@ class GamePlayController{
         
         
     }
-    
-    deinit {
-        
-        
-    }
+   
 }
 
 

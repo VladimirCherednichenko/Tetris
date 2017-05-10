@@ -3,7 +3,8 @@ import Foundation
 import UIKit
 
 func alreadyExistCheking<Type>(x:Int, y:Int, figure:Figure, objectOfMatrix:Matrix<Type>)
-    -> Bool {
+    -> Bool
+{
         var status = false
         for point in figure.offsetOfPoiIts{
             if objectOfMatrix[point.y + figure.startPoint.y + y, point.x + figure.startPoint.x + x] != nil {
@@ -27,8 +28,6 @@ func figureIsOutsideOfMatrixcCheking<Type>(figure:Figure, objectOfMatrix:Matrix<
         }
         
     }
-    
-    
     return status
 }
 
@@ -37,16 +36,10 @@ func isFigureTouchedsomething<Type>(figure:Figure, objectOfMatrix:Matrix<Type>)
     ->Bool
 {
     var status=false
-    
     let maxY = figure.getMaxY()
     let minX = figure.getMinX()
     let maxX = figure.getMaxX()
-    
-    
     for point in figure.offsetOfPoiIts{
-        
-        
-        
         if point.x == minX || point.x == maxX || point.y == maxY{
             
             let checkDuplictateX=figure.duplicateX(x: point.x)
@@ -87,9 +80,6 @@ func canRotateFigure<Type>(figure:Figure, objectOfMatrix:Matrix<Type>)
     if alreadyExist || figureisOutsideOfMatrix {
         status = false
     }
-    
-    
-    
     copiedFigure = nil
     return status
 }

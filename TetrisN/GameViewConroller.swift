@@ -1,7 +1,8 @@
 import UIKit
 
 
-class GameViewController: UIViewController, GameDraw {
+class GameViewController: UIViewController, GameDraw
+{
     var points:Int = 0
     var valueOfDivision:CGFloat
     var columns:Int
@@ -12,7 +13,8 @@ class GameViewController: UIViewController, GameDraw {
     weak var gameDelegate:GamePlayController?
     let labelWithPoints = UILabel()
     
-    init(_ valueOfDivision:CGFloat,_ columns:Int,_ rows:Int) {
+    init(_ valueOfDivision:CGFloat,_ columns:Int,_ rows:Int)
+    {
         self.columns = columns
         self.rows = rows
         self.numberOfPixels = rows * columns
@@ -20,11 +22,10 @@ class GameViewController: UIViewController, GameDraw {
         GameViewController.counterForDeinit = GameViewController.counterForDeinit + 1
         super.init(nibName: nil, bundle: nil)
     }
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
     func createPixelArray()
     {
         
@@ -103,7 +104,8 @@ class GameViewController: UIViewController, GameDraw {
     }
     //FILL PIXELS
     
-    func fillThePixel(x:Int,y:Int, blockImage:UIImage?) {
+    func fillThePixel(x:Int,y:Int, blockImage:UIImage?)
+    {
         let gameIndex:Int = y * columns + x
         if gameIndex >= 0 && gameIndex <= numberOfPixels - 1
         {
@@ -111,7 +113,8 @@ class GameViewController: UIViewController, GameDraw {
         }
     }
     
-    func clearThePixel(x:Int,y:Int) {
+    func clearThePixel(x:Int,y:Int)
+    {
         let gameIndex:Int = y * columns + x
         if gameIndex >= 0 && gameIndex <= numberOfPixels - 1
         {
@@ -119,7 +122,8 @@ class GameViewController: UIViewController, GameDraw {
         }
     }
     
-    func clearView() {
+    func clearView()
+    {
         for element in pixelArray
         {
             element.image = nil
@@ -127,16 +131,19 @@ class GameViewController: UIViewController, GameDraw {
         }
         
     }
-    func updatePoints(_ points:Int) {
+    func updatePoints(_ points:Int)
+    {
         labelWithPoints.text = String(points)
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         
     }
     
-    override var prefersStatusBarHidden: Bool {
+    override var prefersStatusBarHidden: Bool
+    {
         return true
     }
     

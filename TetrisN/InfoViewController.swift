@@ -11,10 +11,12 @@ import UIKit
 import SnapKit
 import FBSDKShareKit
 import Social
-protocol LogoutDelegate {
+protocol LogoutDelegate
+{
     func showLogInView()
 }
-class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
     let currentUserName:String
     let score:Int
     private var myImage = UIImage()
@@ -24,7 +26,8 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
     let imagePicker =  UIImagePickerController()
     let currentUserStruct:User
     
-    init(_ currentUser:User, _ logoutDelegate:LogoutDelegate,_ itIsCurrentUser:Bool) {
+    init(_ currentUser:User, _ logoutDelegate:LogoutDelegate,_ itIsCurrentUser:Bool)
+    {
         self.itIsCurrentUser = itIsCurrentUser
         self.logoutDelegate = logoutDelegate
         self.currentUserStruct = currentUser
@@ -34,17 +37,21 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder)
+    {
         fatalError("init(coder:) has not been implemented")
     }
-    override func viewWillAppear(_ animated: Bool) {
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         UIApplication.shared.statusBarStyle = .default
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -130,24 +137,28 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool)
+    {
         super.viewWillDisappear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
     }
     
-    func didLogout(){
+    func didLogout()
+    {
         
         logoutDelegate.showLogInView()
         
     }
-    func didFacebookShare() {
+    func didFacebookShare()
+    {
         if let facebookView = SLComposeViewController(forServiceType: SLServiceTypeFacebook) {
             facebookView.setInitialText("Hi, I achieved \(score) points in(at) Tetris, try by yourself")
             self.view?.window?.rootViewController?.present(facebookView, animated: true, completion: nil)
         }
     }
     
-    func didPhotoButtonTup(sender: UIButton){
+    func didPhotoButtonTup(sender: UIButton)
+    {
         sender.layer.borderColor = UIColor.blue.cgColor
         sender.layer.borderWidth = 1
         sender.layer.shadowColor = UIColor.blue.cgColor
@@ -161,13 +172,15 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         }
     }
     
-    func makeButtonStandart() {
+    func makeButtonStandart()
+    {
         photoButton.layer.borderColor = UIColor.black.cgColor
         photoButton.layer.borderWidth = 1
         photoButton.layer.shadowOpacity = 0
     }
     
-    func preparePhotoButtonForImage() {
+    func preparePhotoButtonForImage()
+    {
         photoButton.clipsToBounds = true
         photoButton.setTitle("", for: .normal)
         photoButton.layer.borderColor = UIColor.black.cgColor
@@ -176,7 +189,8 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
@@ -199,7 +213,9 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
         self.dismiss(animated: true, completion: nil)
     }
 }
-func getDocumentsDirectory() -> URL {
+func getDocumentsDirectory()
+    -> URL
+{
     let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     let documentsDirectory = paths[0]
     return documentsDirectory

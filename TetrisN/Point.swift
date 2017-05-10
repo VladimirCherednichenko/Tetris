@@ -13,7 +13,8 @@ struct Point
     var x:Int
     var y:Int
     var pointColour:UIImage
-    init(x:Int,y:Int,colour pointColour:UIImage){
+    init(x:Int,y:Int,colour pointColour:UIImage)
+    {
         self.x = x
         self.y = y
         

@@ -7,7 +7,8 @@
 //
 import UIKit
 import Foundation
-class Figure {
+class Figure
+{
     
     var startPoint = Point(x:4,y:-2, colour: #imageLiteral(resourceName: "pixelDark"))
     var offsetOfPoiIts:[Point] = []
@@ -19,32 +20,38 @@ class Figure {
             }
             return pointsWithStartPoint
     }
-    func rotateRight() {
+    func rotateRight()
+    {
         self.offsetOfPoiIts = offsetOfPoiIts.map{
             return Point(x: -$0.y, y: $0.x, colour: $0.pointColour)
         }
     }
     
-    func rotateLeft() {
+    func rotateLeft()
+    {
         self.offsetOfPoiIts = offsetOfPoiIts.map{
             return Point(x: $0.y, y: -$0.x, colour: $0.pointColour)
         }
     }
     
     
-    func moveFigureDown() {
+    func moveFigureDown()
+    {
         self.startPoint.y = self.startPoint.y + 1
     }
     
-    func moveFigureUp() {
+    func moveFigureUp()
+    {
         self.startPoint.y = self.startPoint.y + 1
     }
     
-    func moveFigureRight() {
+    func moveFigureRight()
+    {
         self.startPoint.x = self.startPoint.x + 1
     }
     
-    func moveFigureLeft() {
+    func moveFigureLeft()
+    {
         self.startPoint.x = self.startPoint.x - 1
     }
     
