@@ -9,6 +9,15 @@
 import Foundation
 import UIKit
 
+@objc protocol MenuDelegate
+{
+    var currentName:String?{get set}
+    @objc func newGame()
+    @objc func showMenu()
+    @objc func showScoreView()
+    
+    
+}
 
 class MenuViewController:UIViewController {
     var currentName:String?

@@ -11,7 +11,9 @@ import UIKit
 import SnapKit
 import FBSDKShareKit
 import Social
-
+protocol LogoutDelegate {
+    func showLogInView()
+}
 
 
 class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {

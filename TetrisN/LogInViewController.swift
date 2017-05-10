@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 
+protocol UserVerificationDelegate
+{
+    func userVerificate (userName:String, userPass:String, showWarningLabeldDeledate:ShowWarningLabelDelegate)
+}
+
 class LogInViewController:UIViewController,UITextFieldDelegate, ShowWarningLabelDelegate
 {
     

@@ -10,6 +10,10 @@ import Foundation
 
 import UIKit
 
+protocol GameOverDelegate {
+    func didSelectRestartOption()
+    func showMenu()
+}
 
 class GameOverViewController: UIViewController
 {

@@ -1,6 +1,9 @@
 import Foundation
 import UIKit
 
+protocol ShowWarningLabelDelegate {
+    func showWarningLabel()
+}
 
 class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, LogoutDelegate, UserInfoDelegate, UserVerificationDelegate
 {

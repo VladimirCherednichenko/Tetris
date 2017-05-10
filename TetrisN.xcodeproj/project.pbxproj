@@ -21,7 +21,6 @@
 		E721F5FC1EAE18E000880D61 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EB1EAE18E000880D61 /* ApplicationController.swift */; };
 		E721F5FD1EAE18E000880D61 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EC1EAE18E000880D61 /* LogInViewController.swift */; };
 		E721F5FE1EAE18E000880D61 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5ED1EAE18E000880D61 /* UserStorage.swift */; };
-		E721F5FF1EAE18E000880D61 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EE1EAE18E000880D61 /* Protocols.swift */; };
 		E721F6001EAE18E000880D61 /* GameViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */; };
 		E721F6011EAE18E000880D61 /* GamePlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F01EAE18E000880D61 /* GamePlayController.swift */; };
 		E721F6021EAE18E000880D61 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5F11EAE18E000880D61 /* Functions.swift */; };
@@ -130,7 +129,6 @@
 		E721F5EB1EAE18E000880D61 /* ApplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		E721F5EC1EAE18E000880D61 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		E721F5ED1EAE18E000880D61 /* UserStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
-		E721F5EE1EAE18E000880D61 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewConroller.swift; sourceTree = "<group>"; };
 		E721F5F01EAE18E000880D61 /* GamePlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePlayController.swift; sourceTree = "<group>"; };
 		E721F5F11EAE18E000880D61 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -247,7 +245,6 @@
 				E721F5E71EAE18E000880D61 /* ScoreViewController.swift */,
 				E721F5E81EAE18E000880D61 /* LeaderboardDataSource.swift */,
 				E721F5EA1EAE18E000880D61 /* MenuViewController.swift */,
-				E721F5EE1EAE18E000880D61 /* Protocols.swift */,
 				E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */,
 				E721F5F01EAE18E000880D61 /* GamePlayController.swift */,
 				E721F5F11EAE18E000880D61 /* Functions.swift */,
@@ -652,7 +649,6 @@
 				E721F6121EAE18FC00880D61 /* Point.swift in Sources */,
 				E721F6061EAE18E000880D61 /* Figure.swift in Sources */,
 				E721F6011EAE18E000880D61 /* GamePlayController.swift in Sources */,
-				E721F5FF1EAE18E000880D61 /* Protocols.swift in Sources */,
 				E721F5F81EAE18E000880D61 /* ScoreViewController.swift in Sources */,
 				E721F5FB1EAE18E000880D61 /* MenuViewController.swift in Sources */,
 				E721F5FE1EAE18E000880D61 /* UserStorage.swift in Sources */,

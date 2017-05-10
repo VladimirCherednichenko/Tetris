@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class UserStorage:UserStorageDelegate, LeaderBoardDelegate {
+class UserStorage:LeaderBoardDelegate {
     
     
     let store = UserDefaults.standard

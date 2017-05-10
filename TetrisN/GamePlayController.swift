@@ -2,8 +2,23 @@
 
 import UIKit
 
+protocol GameDraw
+{
+    var points:Int{get set}
+    func fillThePixel(x:Int,y:Int, blockImage:UIImage?)
+    func clearThePixel(x:Int,y:Int)
+    func clearView()
+    var view: UIView! {get}
+    func updatePoints(_ points:Int)
+}
 
-class GamePlayController:GameProtocol{
+@objc protocol GameDelegate
+{
+    var latestScore:Int{get set}
+    func didGameOver()
+}
+
+class GamePlayController{
     var interval:Double //change timer interval there, if you wish it
     var renderDelegate:GameDraw?=nil
     var figureProvider = FigureProvider()

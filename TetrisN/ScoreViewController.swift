@@ -9,15 +9,28 @@
 import Foundation
 import UIKit
 
+protocol UserInfoDelegate{
+    func showInfoView(currentUser:User)
+}
+
+protocol LeaderBoardDelegate
+{
+    func setNewRecord(name:String, score:Int)
+        ->Bool
+    func getUsers()
+        -> [User]?
+    
+}
+
 class ScoreViewController:UIViewController,UITableViewDelegate
 {
     var tabelView:UITableView =  UITableView()
     private var leaderboardDataSource: UITableViewDataSource
     var leaderBoardDelegate:LeaderBoardDelegate
-    let showInfoView: UserInfoDelegate
+    let userInfoDelegate: UserInfoDelegate
     
     init(_ leaderBoardDelegate:LeaderBoardDelegate,_ showInfoViewDelegate:UserInfoDelegate) {
-        self.showInfoView = showInfoViewDelegate
+        self.userInfoDelegate = showInfoViewDelegate
         self.leaderboardDataSource = LeaderboardDataSource(leaderBoardDelegate)
         self.leaderBoardDelegate = leaderBoardDelegate
         super.init(nibName: nil, bundle: nil)
@@ -64,7 +77,7 @@ class ScoreViewController:UIViewController,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let currentUser = leaderBoardDelegate.getUsers()?[indexPath.row] {
-            showInfoView.showInfoView(currentUser: currentUser)
+            userInfoDelegate.showInfoView(currentUser: currentUser)
             
         }
         tableView.deselectRow(at: indexPath, animated: true)
