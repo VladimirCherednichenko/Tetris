@@ -17,14 +17,14 @@ protocol LogoutDelegate
 }
 class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
-    let currentUserName:String
-    let score:Int
+    private let currentUserName:String
+    private let score:Int
     private var myImage = UIImage()
     let logoutDelegate:LogoutDelegate
-    let itIsCurrentUser:Bool
-    let photoButton = UIButton()
-    let imagePicker =  UIImagePickerController()
-    let currentUserStruct:User
+    private let itIsCurrentUser:Bool
+    private let photoButton = UIButton()
+    private let imagePicker =  UIImagePickerController()
+    private let currentUserStruct:User
     
     init(_ currentUser:User, _ logoutDelegate:LogoutDelegate,_ itIsCurrentUser:Bool)
     {

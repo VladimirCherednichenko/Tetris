@@ -18,10 +18,10 @@ protocol UserVerificationDelegate
 class LogInViewController:UIViewController,UITextFieldDelegate, ShowWarningLabelDelegate
 {
     var userVerificationDelegate:UserVerificationDelegate?
-    var currentUsersName:String?
-    var currentUsersPassword:String?
-    let warningLabel = UILabel()
-    var nameTextField = UITextField()
+    private var currentUsersName:String?
+    private var currentUsersPassword:String?
+    private let warningLabel = UILabel()
+    private var nameTextField = UITextField()
     private var passwordTextField = UITextField()
     
     override func viewWillAppear(_ animated: Bool)

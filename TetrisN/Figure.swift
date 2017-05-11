@@ -90,7 +90,7 @@ class Figure
     {
         var max:Int = 0
         for element in offsetOfPoiIts {
-            if element.x>max{
+            if element.x>max {
                 max = element.x
             }
         }
