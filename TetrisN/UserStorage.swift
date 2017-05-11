@@ -13,10 +13,14 @@ class UserStorage:LeaderBoardDelegate
     let store = UserDefaults.standard
     let imageStore = NSDate()
     var usersInfo:[String:[String:String]]?
+    
+    // TODO: move keys (like name, password, score, etc) to constans
+    
     init()
     {
         readUsersInfo()
     }
+    
     func addNewUser(name:String,password:String)
     {
         var currentUserInfo:[String:String]

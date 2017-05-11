@@ -45,6 +45,8 @@ class GameViewController: UIViewController, GameDraw
     
     override func viewDidLoad()
     {
+        // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
+        
         super.viewDidLoad()
         createPixelArray()
         self.view.backgroundColor = UIColor.darkGray

@@ -22,6 +22,8 @@ class GameOverViewController: UIViewController
     
     override func viewDidLoad()
     {
+        // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
+        
         super.viewDidLoad()
         view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
         let gameOverLabel = UILabel()

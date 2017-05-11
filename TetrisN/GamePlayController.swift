@@ -20,6 +20,8 @@ protocol GameDraw
 
 class GamePlayController
 {
+    // TODO: add reasonable comments to code, so it would be easy to read
+    
     var interval:Double //change timer interval there, if you wish it
     var renderDelegate:GameDraw?=nil
     var figureProvider = FigureProvider()

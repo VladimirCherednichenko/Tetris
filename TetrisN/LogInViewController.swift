@@ -31,12 +31,15 @@ class LogInViewController:UIViewController,UITextFieldDelegate, ShowWarningLabel
     
     override func viewDidLoad()
     {
+        
+        // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
+        
         super.viewDidLoad()
         view.backgroundColor = UIColor.darkGray
         let nameOfApplication = UILabel()
         nameOfApplication.text = "Tetris"
         nameOfApplication.textColor = UIColor.white
-        nameOfApplication.font = UIFont(name: "Yellowtail", size: 70.0)
+        nameOfApplication.font = UIFont(name: "Yellowtail", size: 70.0) // TODO: move fonts to some collection class, and then use fonts from this class
         nameOfApplication.layer.shadowColor = UIColor.red.cgColor
         nameOfApplication.layer.shadowOpacity = 1
         nameOfApplication.layer.shadowOffset = CGSize.zero

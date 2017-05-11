@@ -45,6 +45,9 @@ class ScoreViewController:UIViewController,UITableViewDelegate
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+        
+        // TODO: use if let cavigationController = self.navigationController { ... }
+        
         self.navigationController?.navigationBar.barTintColor = UIColor.darkGray
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -54,6 +57,8 @@ class ScoreViewController:UIViewController,UITableViewDelegate
     
     override func viewDidLoad()
     {
+        // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
+        
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: nil)

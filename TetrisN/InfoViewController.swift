@@ -52,6 +52,8 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad()
     {
+        // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
+        
         UIApplication.shared.statusBarStyle = .default
         super.viewDidLoad()
         view.backgroundColor = UIColor.white

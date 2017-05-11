@@ -69,7 +69,7 @@ class CustomeCell:UITableViewCell
     init(reuseIdentifier: String)
     {
         
-        
+        // TODO: too many spaces here
         
         
         self.nameLabel.textColor = UIColor.white
