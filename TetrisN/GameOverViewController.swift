@@ -22,14 +22,18 @@ class GameOverViewController: UIViewController
     
     override func viewDidLoad()
     {
+        // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
+        
         super.viewDidLoad()
         view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
+        
         let gameOverLabel = UILabel()
         gameOverLabel.text = "Game Over"
         gameOverLabel.textColor = UIColor.white
         gameOverLabel.textAlignment = .center
         gameOverLabel.font = UIFont(name: "XPED Shadow", size: 60.0   )
         view.addSubview(gameOverLabel)
+        
         gameOverLabel.snp.makeConstraints{(make) -> Void in
             make.top.equalTo(view.snp.top).offset(170)
             make.centerX.equalTo(view.snp.centerX)

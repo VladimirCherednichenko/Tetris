@@ -113,9 +113,7 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         
         if status {
             self.userStorage.saveCurrentUserName(name: userName)
-        } else {
-            
-        }
+        } 
         
     }
 }

@@ -84,6 +84,7 @@
 		E755D78D1EAE1CAC00D2B31C /* Zapf Elliptical 711 Bold BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */; };
 		E755D78E1EAE1CAC00D2B31C /* Xposed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6221EAE195900880D61 /* Xposed.ttf */; };
 		E755D7901EAE542D00D2B31C /* Youth and Beauty.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */; };
+		E77CB8E21EC4AB23002AA27B /* InitialViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CB8E11EC4AB23002AA27B /* InitialViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,7 @@
 		E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zapf Elliptical 711 Bold BT.ttf"; sourceTree = "<group>"; };
 		E721F6221EAE195900880D61 /* Xposed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xposed.ttf; sourceTree = "<group>"; };
 		E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Youth and Beauty.ttf"; sourceTree = "<group>"; };
+		E77CB8E11EC4AB23002AA27B /* InitialViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 				E721F5E81EAE18E000880D61 /* LeaderboardDataSource.swift */,
 				E721F5EA1EAE18E000880D61 /* MenuViewController.swift */,
 				E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */,
+				E77CB8E11EC4AB23002AA27B /* InitialViewLayout.swift */,
 				E721F5F01EAE18E000880D61 /* GamePlayController.swift */,
 				E721F5F11EAE18E000880D61 /* Functions.swift */,
 				E721F5F21EAE18E000880D61 /* GameOverViewController.swift */,
@@ -643,6 +646,7 @@
 				E721F5F61EAE18E000880D61 /* AppDelegate.swift in Sources */,
 				E721F6051EAE18E000880D61 /* Provider.swift in Sources */,
 				E721F5FD1EAE18E000880D61 /* LogInViewController.swift in Sources */,
+				E77CB8E21EC4AB23002AA27B /* InitialViewLayout.swift in Sources */,
 				E721F60E1EAE18F000880D61 /* LineFigure.swift in Sources */,
 				E721F6021EAE18E000880D61 /* Functions.swift in Sources */,
 				E721F6101EAE18F000880D61 /* L_Figure.swift in Sources */,

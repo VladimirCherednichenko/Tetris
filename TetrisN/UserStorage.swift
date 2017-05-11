@@ -13,13 +13,17 @@ class UserStorage:LeaderBoardDelegate
     let store = UserDefaults.standard
     let imageStore = NSDate()
     var usersInfo:[String:[String:String]]?
+    
+    
+    
     init()
     {
         readUsersInfo()
     }
+    
     func addNewUser(name:String,password:String)
     {
-        var currentUserInfo:[String:String]
+        let currentUserInfo:[String:String]
         currentUserInfo = ["name": name, "password":password, "score":"0", "imageURLString" : ""]
         if usersInfo != nil {
             usersInfo?[name] = currentUserInfo
