@@ -14,7 +14,7 @@ class UserStorage:LeaderBoardDelegate
     let imageStore = NSDate()
     var usersInfo:[String:[String:String]]?
     
-    // TODO: move keys (like name, password, score, etc) to constans
+    
     
     init()
     {
@@ -23,7 +23,7 @@ class UserStorage:LeaderBoardDelegate
     
     func addNewUser(name:String,password:String)
     {
-        var currentUserInfo:[String:String]
+        let currentUserInfo:[String:String]
         currentUserInfo = ["name": name, "password":password, "score":"0", "imageURLString" : ""]
         if usersInfo != nil {
             usersInfo?[name] = currentUserInfo
