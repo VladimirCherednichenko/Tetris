@@ -35,6 +35,13 @@ class GameViewController: UIViewController, GameDraw
             pixel.contentMode = .scaleAspectFit
             pixelArray.append(pixel)}}
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        UIApplication.shared.isStatusBarHidden = true
+        
+    }
+    
     
     override func viewDidLoad()
     {
@@ -99,6 +106,13 @@ class GameViewController: UIViewController, GameDraw
         }
         
     }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.isStatusBarHidden = false
+    }
+    
     //FILL PIXELS
     
     func fillThePixel(x:Int,y:Int, blockImage:UIImage?)

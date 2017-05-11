@@ -90,10 +90,7 @@ class MenuViewController:UIViewController
         menuDelegate?.showScoreView()
     }
     
-    override var prefersStatusBarHidden: Bool
-    {
-        return true
-    }
+    
     
     
 }
