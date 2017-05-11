@@ -1,5 +1,5 @@
 //
-//  InitialViewLayout.swift
+//  LogInViewLayout.swift
 //  TetrisN
 //
 //  Created by Vladimir on 11.05.17.
@@ -7,8 +7,3 @@
 //
 
 import Foundation
-import SnapKit
-
-class InitialViewLayout{
-
-}
