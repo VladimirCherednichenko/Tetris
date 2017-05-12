@@ -10,6 +10,7 @@
 		155D942757C2E5DA32074EA1 /* Pods_TetrisN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95310BFED167D06E40D7BE0A /* Pods_TetrisN.framework */; };
 		6D3B410E84B21B95C09FD535 /* Pods_TetrisNTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCCE2AE5127D1D4725751E2 /* Pods_TetrisNTests.framework */; };
 		B10E106C1754FF96477CB8F5 /* Pods_TetrisNUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B06F92CDCC113FDFD9C416 /* Pods_TetrisNUITests.framework */; };
+		E71D508D1EC5DD7700DDA1CB /* InfoViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71D508C1EC5DD7700DDA1CB /* InfoViewLayout.swift */; };
 		E721F5BF1EAE184900880D61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E721F5BE1EAE184900880D61 /* Assets.xcassets */; };
 		E721F5CD1EAE184900880D61 /* TetrisNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5CC1EAE184900880D61 /* TetrisNTests.swift */; };
 		E721F5F61EAE18E000880D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E51EAE18E000880D61 /* AppDelegate.swift */; };
@@ -84,7 +85,8 @@
 		E755D78D1EAE1CAC00D2B31C /* Zapf Elliptical 711 Bold BT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */; };
 		E755D78E1EAE1CAC00D2B31C /* Xposed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6221EAE195900880D61 /* Xposed.ttf */; };
 		E755D7901EAE542D00D2B31C /* Youth and Beauty.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */; };
-		E77CB8E21EC4AB23002AA27B /* InitialViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CB8E11EC4AB23002AA27B /* InitialViewLayout.swift */; };
+		E77CB8E21EC4AB23002AA27B /* GameOverViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CB8E11EC4AB23002AA27B /* GameOverViewLayout.swift */; };
+		E77CB8E41EC4E145002AA27B /* LogInViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CB8E31EC4E145002AA27B /* LogInViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,7 @@
 		B6B06F92CDCC113FDFD9C416 /* Pods_TetrisNUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TetrisNUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BD008D7DBF074F38FC41BF /* Pods-TetrisN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisN.release.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisN/Pods-TetrisN.release.xcconfig"; sourceTree = "<group>"; };
 		D9DF844F19D126B0C1E20FA8 /* Pods-TetrisNUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TetrisNUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TetrisNUITests/Pods-TetrisNUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E71D508C1EC5DD7700DDA1CB /* InfoViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewLayout.swift; sourceTree = "<group>"; };
 		E721F5B41EAE184900880D61 /* TetrisN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TetrisN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E721F5BE1EAE184900880D61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E721F5C31EAE184900880D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,7 +163,8 @@
 		E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zapf Elliptical 711 Bold BT.ttf"; sourceTree = "<group>"; };
 		E721F6221EAE195900880D61 /* Xposed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xposed.ttf; sourceTree = "<group>"; };
 		E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Youth and Beauty.ttf"; sourceTree = "<group>"; };
-		E77CB8E11EC4AB23002AA27B /* InitialViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewLayout.swift; sourceTree = "<group>"; };
+		E77CB8E11EC4AB23002AA27B /* GameOverViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewLayout.swift; sourceTree = "<group>"; };
+		E77CB8E31EC4E145002AA27B /* LogInViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,20 +242,22 @@
 		E721F5B61EAE184900880D61 /* TetrisN */ = {
 			isa = PBXGroup;
 			children = (
+				E721F5EC1EAE18E000880D61 /* LogInViewController.swift */,
+				E77CB8E31EC4E145002AA27B /* LogInViewLayout.swift */,
+				E721F5F21EAE18E000880D61 /* GameOverViewController.swift */,
+				E77CB8E11EC4AB23002AA27B /* GameOverViewLayout.swift */,
+				E721F5E61EAE18E000880D61 /* InfoViewController.swift */,
+				E71D508C1EC5DD7700DDA1CB /* InfoViewLayout.swift */,
+				E721F5E71EAE18E000880D61 /* ScoreViewController.swift */,
+				E721F5EA1EAE18E000880D61 /* MenuViewController.swift */,
+				E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */,
 				E721F5E91EAE18E000880D61 /* UserStruct.swift */,
 				E721F5ED1EAE18E000880D61 /* UserStorage.swift */,
 				E721F5EB1EAE18E000880D61 /* ApplicationController.swift */,
-				E721F5EC1EAE18E000880D61 /* LogInViewController.swift */,
 				E721F5E51EAE18E000880D61 /* AppDelegate.swift */,
-				E721F5E61EAE18E000880D61 /* InfoViewController.swift */,
-				E721F5E71EAE18E000880D61 /* ScoreViewController.swift */,
 				E721F5E81EAE18E000880D61 /* LeaderboardDataSource.swift */,
-				E721F5EA1EAE18E000880D61 /* MenuViewController.swift */,
-				E721F5EF1EAE18E000880D61 /* GameViewConroller.swift */,
-				E77CB8E11EC4AB23002AA27B /* InitialViewLayout.swift */,
 				E721F5F01EAE18E000880D61 /* GamePlayController.swift */,
 				E721F5F11EAE18E000880D61 /* Functions.swift */,
-				E721F5F21EAE18E000880D61 /* GameOverViewController.swift */,
 				E721F5F31EAE18E000880D61 /* Matrix.swift */,
 				E721F5F41EAE18E000880D61 /* Provider.swift */,
 				E721F5F51EAE18E000880D61 /* Figure.swift */,
@@ -641,12 +647,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71D508D1EC5DD7700DDA1CB /* InfoViewLayout.swift in Sources */,
 				E721F60F1EAE18F000880D61 /* T_Figure.swift in Sources */,
 				E721F5F71EAE18E000880D61 /* InfoViewController.swift in Sources */,
+				E77CB8E41EC4E145002AA27B /* LogInViewLayout.swift in Sources */,
 				E721F5F61EAE18E000880D61 /* AppDelegate.swift in Sources */,
 				E721F6051EAE18E000880D61 /* Provider.swift in Sources */,
 				E721F5FD1EAE18E000880D61 /* LogInViewController.swift in Sources */,
-				E77CB8E21EC4AB23002AA27B /* InitialViewLayout.swift in Sources */,
+				E77CB8E21EC4AB23002AA27B /* GameOverViewLayout.swift in Sources */,
 				E721F60E1EAE18F000880D61 /* LineFigure.swift in Sources */,
 				E721F6021EAE18E000880D61 /* Functions.swift in Sources */,
 				E721F6101EAE18F000880D61 /* L_Figure.swift in Sources */,

@@ -10,8 +10,7 @@ import Foundation
 import SnapKit
 import UIKit
 
-class InitialGameOverViewLayout {
-    
+class GameOverViewLayout {
     var gameOverLabel:UILabel = {
         let label = UILabel()
         label.text = "Game Over"
@@ -20,25 +19,26 @@ class InitialGameOverViewLayout {
         label.font = UIFont(name: "XPED Shadow", size: 60.0   )
         return label
     } ()
-    ///
+
     let restartButton:UIButton = {
-    let button = UIButton()
-    button.setTitleColor(UIColor.red, for: .highlighted)
-    button.setTitle("Restart", for: .normal)
-    button.titleLabel?.font = UIFont(name: "XPED Shadow", size: 45.0)
-    return button
+        let button = UIButton()
+        button.setTitleColor(UIColor.red, for: .highlighted)
+        button.setTitle("Restart", for: .normal)
+        button.titleLabel?.font = UIFont(name: "XPED Shadow", size: 45.0)
+        return button
     } ()
     
     let menuButton:UIButton = {
-    let button = UIButton()
-    button.setTitleColor(UIColor.red, for: .highlighted)
-    button.setTitle("Menu", for: .normal)
-    button.titleLabel?.font = UIFont(name: "XPED Shadow", size: 45.0)
-    return button
+        let button = UIButton()
+        button.setTitleColor(UIColor.red, for: .highlighted)
+        button.setTitle("Menu", for: .normal)
+        button.titleLabel?.font = UIFont(name: "XPED Shadow", size: 45.0)
+        return button
     } ()
-    ///
+    
     init(view:UIView)
     {
+        view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "pixelDark"))
         view.addSubview(gameOverLabel)
         gameOverLabel.snp.makeConstraints{(make) -> Void in
             make.top.equalTo(view.snp.top).offset(170)
@@ -49,14 +49,11 @@ class InitialGameOverViewLayout {
         restartButton.snp.makeConstraints{(make) -> Void in
             make.top.equalTo(gameOverLabel.snp.bottom).offset(10)
             make.centerX.equalTo(view.snp.centerX)}
-            
-            view.addSubview(menuButton)
-            
-            
-            
-            menuButton.snp.makeConstraints{(make) -> Void in
-                make.top.equalTo(restartButton.snp.bottom).offset(10)
-                make.centerX.equalTo(view.snp.centerX)}
-        }
-
+        
+        view.addSubview(menuButton)
+        menuButton.snp.makeConstraints{(make) -> Void in
+            make.top.equalTo(restartButton.snp.bottom).offset(10)
+            make.centerX.equalTo(view.snp.centerX)}
+    }
+    
 }
