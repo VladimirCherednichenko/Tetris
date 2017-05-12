@@ -22,10 +22,9 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
     private var myImage = UIImage()
     let logoutDelegate:LogoutDelegate
     private var itIsCurrentUser:Bool
-    private var photoButton = UIButton()
     private var imagePicker =  UIImagePickerController()
     private var currentUserStruct:User
-    
+    private var layout:InfoViewLayout!
     init(_ currentUser:User, _ logoutDelegate:LogoutDelegate,_ itIsCurrentUser:Bool)
     {
         self.itIsCurrentUser = itIsCurrentUser
@@ -53,25 +52,18 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewDidLoad()
     {
         UIApplication.shared.statusBarStyle = .default
-        let layout = InfoViewLayout (view: view)
+        var layout = InfoViewLayout (view: view)
         
         super.viewDidLoad()
-        
-        
-        photoButton = layout.photoButton
-        
-        
         layout.scoreLabel.text =  ("score: \(score)")
         layout.logOutButton.addTarget(self, action: #selector(self.didLogout), for: .touchUpInside)
         layout.photoLabel.text = "Photo"
-        
-        
-        photoButton.addTarget(self, action: #selector(didPhotoButtonTup), for: .touchDown )
-        photoButton.addTarget(self, action: #selector(makeButtonStandart), for: .touchUpInside )
-        photoButton.setBackgroundImage(currentUserStruct.readUIImage(), for: .normal)
+        layout.photoButton.addTarget(self, action: #selector(didPhotoButtonTup), for: .touchDown )
+        layout.photoButton.addTarget(self, action: #selector(makeButtonStandart), for: .touchUpInside )
+        layout.photoButton.setBackgroundImage(currentUserStruct.readUIImage(), for: .normal)
         
         if currentUserStruct.readUIImage() != nil {
-            self.preparePhotoButtonForImage()
+            layout.preparePhotoButtonForImage()
         }
         if !itIsCurrentUser {
             layout.logOutButton.isHidden = true
@@ -116,20 +108,11 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
     
     func makeButtonStandart()
     {
-        photoButton.layer.borderColor = UIColor.black.cgColor
-        photoButton.layer.borderWidth = 1
-        photoButton.layer.shadowOpacity = 0
+        layout.photoButton.layer.borderColor = UIColor.black.cgColor
+        layout.photoButton.layer.borderWidth = 1
+        layout.photoButton.layer.shadowOpacity = 0
     }
     
-    func preparePhotoButtonForImage()
-    {
-        photoButton.clipsToBounds = true
-        photoButton.setTitle("", for: .normal)
-        photoButton.layer.borderColor = UIColor.black.cgColor
-        photoButton.layer.borderWidth = 1
-        photoButton.layer.shadowOpacity = 0
-        
-    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
@@ -142,8 +125,8 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
                 print("this is current user \(currentUserName)")
                 try! data.write(to: photoURL)
             }
-            photoButton.setBackgroundImage(image, for: .normal)
-            self.preparePhotoButtonForImage()
+            layout.photoButton.setBackgroundImage(image, for: .normal)
+            layout.preparePhotoButtonForImage()
             
         }
         self.dismiss(animated: true, completion: nil )

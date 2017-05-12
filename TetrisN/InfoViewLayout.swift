@@ -48,7 +48,7 @@ class InfoViewLayout
         let label = UILabel()
         return label
     } ()
-    let facebookShareButton:UIButton = {
+    var facebookShareButton:UIButton = {
         let button = UIButton ()
         button.setImage(#imageLiteral(resourceName: "facebookImage"), for: .normal)
         return button
@@ -94,5 +94,15 @@ class InfoViewLayout
             make.width.equalTo(40)
             make.height.equalTo(40)
         }
+    }
+    
+    func preparePhotoButtonForImage()
+    {
+        photoButton.clipsToBounds = true
+        photoButton.setTitle("", for: .normal)
+        photoButton.layer.borderColor = UIColor.black.cgColor
+        photoButton.layer.borderWidth = 1
+        photoButton.layer.shadowOpacity = 0
+        
     }
 }

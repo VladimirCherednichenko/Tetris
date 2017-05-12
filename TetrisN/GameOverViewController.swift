@@ -20,7 +20,6 @@ class GameOverViewController: UIViewController
 {
     var gameOverDelegate:GameOverDelegate?
     
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
