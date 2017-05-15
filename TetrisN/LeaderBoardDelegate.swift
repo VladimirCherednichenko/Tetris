@@ -22,12 +22,13 @@ protocol LeaderBoardDelegate
     
 }
 
-class ScoreViewController:UIViewController,UITableViewDelegate
+class ScoreViewController:UITableViewController
 {
-    var tabelView:UITableView =  UITableView()
     private var leaderboardDataSource: UITableViewDataSource
     var leaderBoardDelegate:LeaderBoardDelegate
     let userInfoDelegate: UserInfoDelegate
+    
+    
     
     init(_ leaderBoardDelegate:LeaderBoardDelegate,_ showInfoViewDelegate:UserInfoDelegate)
     {
@@ -46,13 +47,14 @@ class ScoreViewController:UIViewController,UITableViewDelegate
     {
         super.viewWillAppear(animated)
         
-        // TODO: use if let cavigationController = self.navigationController { ... }
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.darkGray
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationController?.navigationBar.isTranslucent = false
+        if let navigationController = self.navigationController {
+        navigationController.navigationBar.barTintColor = UIColor.darkGray
+        navigationController.navigationBar.tintColor = UIColor.white
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationController.navigationBar.isHidden = false
+        navigationController.navigationBar.isTranslucent = false
+        }
     }
     
     override func viewDidLoad()
@@ -63,27 +65,21 @@ class ScoreViewController:UIViewController,UITableViewDelegate
         view.backgroundColor = UIColor.cyan
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: nil)
         view.backgroundColor = UIColor.white
-        tabelView.delegate = self
-        tabelView.dataSource = self.leaderboardDataSource
-        tabelView.allowsSelection = true
-        view.addSubview(tabelView)
-        tabelView.snp.makeConstraints{ (make) -> Void in
-            make.top.equalTo(view.snp.top)
-            make.right.equalTo(view.snp.right)
-            make.left.equalTo(view.snp.left)
-            make.bottom.equalTo(view.snp.bottom)
-        }
-        tabelView.backgroundColor = UIColor.darkGray
-        tabelView.separatorStyle = .none
+        
+        tableView.dataSource = self.leaderboardDataSource
+        tableView.allowsSelection = true
+        tableView.backgroundColor = UIColor.darkGray
+        tableView.separatorStyle = .none
+        tableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)
         -> CGFloat
     {
         return 50.0
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         if let currentUser = leaderBoardDelegate.getUsers()?[indexPath.row] {
             userInfoDelegate.showInfoView(currentUser: currentUser)
@@ -91,4 +87,6 @@ class ScoreViewController:UIViewController,UITableViewDelegate
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
 }
