@@ -27,7 +27,7 @@ class LogInViewController:UIViewController,UITextFieldDelegate, ShowWarningLabel
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        let layout = LogInLayout(view: view)
+        self.layout = LogInLayout(view: view)
         layout.nameTextField.delegate = self
         layout.passwordTextField.delegate = self
         layout.warningLabel.isHidden = true

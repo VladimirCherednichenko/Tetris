@@ -51,10 +51,9 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad()
     {
-        UIApplication.shared.statusBarStyle = .default
-        var layout = InfoViewLayout (view: view)
-        
         super.viewDidLoad()
+        UIApplication.shared.statusBarStyle = .default
+        self.layout = InfoViewLayout (view: view)
         layout.scoreLabel.text =  ("score: \(score)")
         layout.logOutButton.addTarget(self, action: #selector(self.didLogout), for: .touchUpInside)
         layout.photoLabel.text = "Photo"

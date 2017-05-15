@@ -19,11 +19,11 @@ protocol GameOverDelegate
 class GameOverViewController: UIViewController
 {
     var gameOverDelegate:GameOverDelegate?
-    
+    var layout:GameOverViewLayout!
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        let layout = GameOverViewLayout(view: view)
+        self.layout = GameOverViewLayout(view: view)
         layout.restartButton.addTarget(self, action: #selector(didPressRestartButton), for: .touchUpInside)
         layout.menuButton.addTarget(self, action: #selector(didPressMenuButton), for: .touchUpInside)
         
