@@ -19,7 +19,7 @@ import UIKit
 
 class MenuViewController:UIViewController
 {
-    // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
+    
     
     var currentName:String?
     var menuDelegate:MenuDelegate?

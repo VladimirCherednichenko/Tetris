@@ -30,7 +30,7 @@ class GameViewLayout
     var labelWithPoints:UILabel = {
         let label = UILabel()
         label.textColor = UIColor.white
-        label.font = UIFont(name: "XPED Shadow", size: 35.0)
+        label.font = FontsForApp.gameScoreFont
         return label
     }()
     

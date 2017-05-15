@@ -11,7 +11,7 @@ import UIKit
 import SnapKit
 class InfoViewLayout
 {
-    // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
+    
     var nameLabel:UILabel = {
         let label = UILabel ()
         return label
@@ -19,7 +19,7 @@ class InfoViewLayout
     var photoButton:UIButton = {
         let button = UIButton()
         button.setTitle("+", for: .normal)
-        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 32)
+        button.titleLabel?.font = FontsForApp.photoButtonFont
         button.setTitleColor(UIColor.black, for: .normal)
         button.backgroundColor = .clear
         button.layer.cornerRadius = 50
@@ -36,7 +36,7 @@ class InfoViewLayout
     var logOutButton:UIButton = {
         let button = UIButton ()
         button.setTitle("Logout", for: .normal)
-        button.titleLabel?.font = UIFont(name: "XPED Shadow", size: 35.0)
+        button.titleLabel?.font = FontsForApp.logoutButtonFont
         button.setTitleColor(UIColor.black, for: .normal)
         button.setTitleColor(UIColor.blue, for: .highlighted)
         button.contentMode = .center

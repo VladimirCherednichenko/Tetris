@@ -11,12 +11,14 @@ import SnapKit
 import UIKit
 
 class GameOverViewLayout {
+   
+    
     var gameOverLabel:UILabel = {
         let label = UILabel()
         label.text = "Game Over"
         label.textColor = UIColor.white
         label.textAlignment = .center
-        label.font = UIFont(name: "XPED Shadow", size: 60.0   )
+        label.font = FontsForApp.gameOverFontBig
         return label
     } ()
 
@@ -24,7 +26,7 @@ class GameOverViewLayout {
         let button = UIButton()
         button.setTitleColor(UIColor.red, for: .highlighted)
         button.setTitle("Restart", for: .normal)
-        button.titleLabel?.font = UIFont(name: "XPED Shadow", size: 45.0)
+        button.titleLabel?.font = FontsForApp.gameOverFont
         return button
     } ()
     
@@ -32,7 +34,7 @@ class GameOverViewLayout {
         let button = UIButton()
         button.setTitleColor(UIColor.red, for: .highlighted)
         button.setTitle("Menu", for: .normal)
-        button.titleLabel?.font = UIFont(name: "XPED Shadow", size: 45.0)
+        button.titleLabel?.font = FontsForApp.gameOverFont 
         return button
     } ()
     

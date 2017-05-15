@@ -39,8 +39,6 @@ class GameViewController: UIViewController, GameDraw
     
     override func viewDidLoad()
     {
-        // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
-        
         super.viewDidLoad()
         self.layout = GameViewLayout(view:view, rows: rows, columns: columns, valueOfDivision: valueOfDivision )
         

@@ -16,7 +16,7 @@ class MenuViewLayout
         let label = UILabel()
         label.numberOfLines = 3
         label.textColor = UIColor.white
-        label.font = UIFont(name: "Yellowtail", size: 50.0)
+        label.font = FontsForApp.menuTitleFont
         label.layer.shadowColor = UIColor.red.cgColor
         label.layer.shadowOpacity = 1
         label.layer.shadowOffset = CGSize.zero
@@ -29,7 +29,7 @@ class MenuViewLayout
         let button = UIButton ()
         button.setTitleColor(UIColor.blue, for: .highlighted)
         button.setTitle("Start new game", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 35.0)
+        button.titleLabel?.font = FontsForApp.menuTextFont
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = CGSize.zero
         button.layer.shadowRadius = 6
@@ -40,7 +40,7 @@ class MenuViewLayout
         let button = UIButton()
         button.setTitleColor(UIColor.blue, for: .highlighted)
         button.setTitle("Leaderboord", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Montserrat-Regular", size: 35.0)
+        button.titleLabel?.font = FontsForApp.menuTextFont
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = CGSize.zero
         button.layer.shadowRadius = 6

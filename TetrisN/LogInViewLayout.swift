@@ -15,7 +15,7 @@ class LogInLayout
         let label = UILabel()
         label.text = "Tetris"
         label.textColor = UIColor.white
-        label.font = UIFont(name: "Yellowtail", size: 70.0) // TODO: move fonts to some collection class, and then use fonts from this class
+        label.font = FontsForApp.loginTitleFont
         label.layer.shadowColor = UIColor.red.cgColor
         label.layer.shadowOpacity = 1
         label.layer.shadowOffset = CGSize.zero
@@ -28,7 +28,7 @@ class LogInLayout
         let label = UILabel()
         label.text = "Please login"
         label.textColor = UIColor.white
-        label.font = UIFont(name: "Montserrat", size: 23)
+        label.font = FontsForApp.loginTextFont
         label.numberOfLines = 3
         label.textAlignment = .center
         return label
@@ -40,7 +40,7 @@ class LogInLayout
         textField.layer.cornerRadius = 15.0
         textField.backgroundColor = UIColor.white
         textField.textColor = UIColor.black
-        textField.font = UIFont(name: "corbel", size: 30.0)
+        textField.font = FontsForApp.loginFieldFont
         textField.textAlignment = .center
         textField.returnKeyType = .next
         return textField
@@ -53,7 +53,7 @@ class LogInLayout
         textField.backgroundColor = UIColor.white
         textField.textColor = UIColor.black
         textField.layer.cornerRadius = 15.0
-        textField.font = UIFont(name: "corbel", size: 30)
+        textField.font = FontsForApp.loginFieldFont
         textField.textAlignment = .center
         textField.returnKeyType = .go
         return textField
@@ -63,7 +63,7 @@ class LogInLayout
         let label = UILabel()
         label.text = "wrong password"
         label.textColor = UIColor.white
-        label.font = UIFont(name: "Montserrat", size: 20 )
+        label.font = FontsForApp.loginTextFont
         label.textAlignment = .center
         return label
     } ()
