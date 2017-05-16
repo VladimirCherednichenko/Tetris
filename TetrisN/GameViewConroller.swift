@@ -9,9 +9,10 @@ class GameViewController: UIViewController, GameDraw
     static var counterForDeinit:Int = 0
     private(set) var numberOfPixels:Int
     private(set) var rows:Int
-    var pixelArray = [UIImageView]()
     weak var gameDelegate:GamePlayController?
     let labelWithPoints = UILabel()
+    var layout:GameViewLayout!
+    
     
     init(_ valueOfDivision:CGFloat,_ columns:Int,_ rows:Int)
     {
@@ -26,14 +27,7 @@ class GameViewController: UIViewController, GameDraw
     {
         fatalError("init(coder:) has not been implemented")
     }
-    func createPixelArray()
-    {
-        
-        for _ in 0...numberOfPixels - 1 {
-            
-            let pixel = UIImageView(image: #imageLiteral(resourceName: "pixelDark"))
-            pixel.contentMode = .scaleAspectFit
-            pixelArray.append(pixel)}}
+    
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -45,11 +39,9 @@ class GameViewController: UIViewController, GameDraw
     
     override func viewDidLoad()
     {
-        // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
-        
         super.viewDidLoad()
-        createPixelArray()
-        self.view.backgroundColor = UIColor.darkGray
+        self.layout = GameViewLayout(view:view, rows: rows, columns: columns, valueOfDivision: valueOfDivision )
+        
         //adding SwipeRecognizer
         let swipeRight = UISwipeGestureRecognizer(target: gameDelegate, action: #selector(GamePlayController.didSwipeRight))
         swipeRight.direction = .right
@@ -62,50 +54,8 @@ class GameViewController: UIViewController, GameDraw
         self.view.addGestureRecognizer(swipeDown)
         let tap = UITapGestureRecognizer(target: gameDelegate, action: #selector(GamePlayController.rotateElement))
         self.view.addGestureRecognizer(tap)
-        //Here I creaate vertical Stack, that hold all components
-        let verticalStack = UIStackView()
-        verticalStack.axis = .vertical
-        view.addSubview(verticalStack)
         
-        
-        verticalStack.snp.makeConstraints{ (make) -> Void in
-            
-            make.right.equalTo(view.snp.right)
-            make.left.equalTo(view.snp.left)
-            make.bottom.equalTo(view.snp.bottom)
-        }
-        
-        
-        
-        var stackArray = [UIStackView]()
-        
-        for j in 0...rows - 1 {
-            let horizontalStack = UIStackView()
-            horizontalStack.axis = .horizontal
-            stackArray.append(horizontalStack)
-            verticalStack.addArrangedSubview(stackArray[j])
-            
-            for i in 0...columns - 1 {
-                let index:Int = (i + j * columns)
-                stackArray[j].addArrangedSubview(pixelArray[index])
-                
-                pixelArray[index].snp.makeConstraints{ (make) -> Void in
-                    make.height.equalTo(view.snp.width).multipliedBy(valueOfDivision)
-                    make.width.equalTo(view.snp.width).multipliedBy(valueOfDivision)
-                }
-                
-            }
-            
-        }
-        //Adding a score Label
-        labelWithPoints.text = String(points)
-        labelWithPoints.textColor = UIColor.white
-        labelWithPoints.font = UIFont(name: "XPED Shadow", size: 35.0   )
-        view.addSubview(labelWithPoints)
-        labelWithPoints.snp.makeConstraints{ (make) -> Void in
-            make.centerX.equalTo(view.snp.centerX)
-            make.top.equalTo(view.snp.top)
-        }
+        layout.labelWithPoints.text = String(points)
         
     }
     
@@ -122,8 +72,12 @@ class GameViewController: UIViewController, GameDraw
         let gameIndex:Int = y * columns + x
         if gameIndex >= 0 && gameIndex <= numberOfPixels - 1
         {
-            pixelArray[gameIndex].image = blockImage
+            layout.pixelArray[gameIndex].image = blockImage
+            if layout == nil {
+                print ("layout is nil")
+            }
         }
+        
     }
     
     func clearThePixel(x:Int,y:Int)
@@ -131,21 +85,24 @@ class GameViewController: UIViewController, GameDraw
         let gameIndex:Int = y * columns + x
         if gameIndex >= 0 && gameIndex <= numberOfPixels - 1
         {
-            pixelArray[gameIndex].image = #imageLiteral(resourceName: "pixelDark")
+            layout.pixelArray[gameIndex].image = #imageLiteral(resourceName: "pixelDark")
         }
+        
+        
     }
     
     func clearView()
     {
-        for element in pixelArray {
+        for element in layout.pixelArray {
             element.image = nil
             element.backgroundColor = UIColor.darkGray
         }
         
+        
     }
     func updatePoints(_ points:Int)
     {
-        labelWithPoints.text = String(points)
+        layout.labelWithPoints.text = String(points)
     }
     
     override func didReceiveMemoryWarning()
