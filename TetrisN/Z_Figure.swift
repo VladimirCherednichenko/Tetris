@@ -21,8 +21,7 @@ class Z_Figure:Figure
     
     override func rotateRight()
     {
-        if !figureWasRotated
-        {
+        if !figureWasRotated {
             self.offsetOfPoiIts = offsetOfPoiIts.map {return Point(x: -$0.y, y: $0.x,colour: $0.pointColour)}
             figureWasRotated = true
             

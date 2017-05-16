@@ -38,7 +38,7 @@ class UserStorage:LeaderBoardDelegate
         ->Bool
     {
         var status = false
-        if usersInfo?[name] != nil{
+        if usersInfo?[name] != nil {
             status = true
         }
         return status
@@ -84,8 +84,7 @@ class UserStorage:LeaderBoardDelegate
         ->Bool
     {
         var status = false
-        if var currentCheckedUser:[String:String] = usersInfo?[name]
-        {
+        if var currentCheckedUser:[String:String] = usersInfo?[name] {
             let currentRecord = (currentCheckedUser["score"])
             if Int(currentRecord!)! < score {
                 

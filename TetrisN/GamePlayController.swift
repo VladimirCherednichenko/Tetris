@@ -97,7 +97,7 @@ class GamePlayController
         
         
         self.render()
-        if gameOverIsHere{
+        if gameOverIsHere {
             
             didGameOver()
             
@@ -132,8 +132,7 @@ class GamePlayController
         }
         let alreadyExist = alreadyExistCheking(x: +1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         
-        if !alreadyExist && !outOfMatrix
-        {
+        if !alreadyExist && !outOfMatrix {
             figure.moveFigureRight()
             self.render()
         }
@@ -145,8 +144,7 @@ class GamePlayController
         }
         let alreadyExist = alreadyExistCheking(x: -1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         
-        if !alreadyExist && !outOfMatrix
-        {
+        if !alreadyExist && !outOfMatrix {
             
             figure.moveFigureLeft()
             self.render()

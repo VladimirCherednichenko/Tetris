@@ -23,14 +23,14 @@ class Figure
     }
     func rotateRight()
     {
-        self.offsetOfPoiIts = offsetOfPoiIts.map{
+        self.offsetOfPoiIts = offsetOfPoiIts.map {
             return Point(x: -$0.y, y: $0.x, colour: $0.pointColour)
         }
     }
     
     func rotateLeft()
     {
-        self.offsetOfPoiIts = offsetOfPoiIts.map{
+        self.offsetOfPoiIts = offsetOfPoiIts.map {
             return Point(x: $0.y, y: -$0.x, colour: $0.pointColour)
         }
     }
@@ -76,7 +76,7 @@ class Figure
     {
         var min:Int=50
         for element in offsetOfPoiIts {
-            if element.y<min{
+            if element.y<min {
                 min = element.y
             }
         }
@@ -132,7 +132,7 @@ class Figure
     {
         var min:Int = 50
         for element in offsetOfPoiIts {
-            if element.x<min{
+            if element.x<min {
                 min = element.x
             }
         }

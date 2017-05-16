@@ -40,7 +40,7 @@ func isFigureTouchedsomething<Type>(figure:Figure, objectOfMatrix:Matrix<Type>)
     let minX = figure.getMinX()
     let maxX = figure.getMaxX()
     for point in figure.offsetOfPoiIts {
-        if point.x == minX || point.x == maxX || point.y == maxY{
+        if point.x == minX || point.x == maxX || point.y == maxY {
             
             let checkDuplictateX=figure.duplicateX(x: point.x)
             if checkDuplictateX {

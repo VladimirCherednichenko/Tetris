@@ -116,8 +116,7 @@ class InfoViewController:UIViewController, UIImagePickerControllerDelegate, UINa
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             myImage = image
             if  let data = UIImagePNGRepresentation(myImage) {
                 let photoURL = getDocumentsDirectory().appendingPathComponent(currentUserName + ".png")

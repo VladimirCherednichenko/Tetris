@@ -58,11 +58,9 @@ class Matrix<Type>
         for row in 0...self.rows - 1 {
             var counter = 0
             for column in 0...self.columns - 1 {
-                if self[row,column] != nil
-                {
+                if self[row,column] != nil {
                     counter = counter + 1
-                    if counter == 10
-                    {
+                    if counter == 10 {
                         numberOfFilledRow=row
                         
                     }
