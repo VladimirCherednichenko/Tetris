@@ -78,14 +78,15 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         navigationViewController.pushViewController(gameOverViewController, animated: false)
         navigationViewController.setViewControllers([gameOverViewController], animated: false)
     }
-    func showScoreView()
+    func leaderboardView()
     {
+        //show leaderboard
         let scoreViewController =  ScoreViewController(userStorage, self)
         navigationViewController.pushViewController(scoreViewController, animated: true)
     }
     
     func showInfoView(currentUser:User)
-    {
+    {   //showing view with information of user
         var itIsCurrentName = false
         if currentUser.name == currentName {
             itIsCurrentName = true
@@ -112,8 +113,10 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
         }
         
         if status {
+            // if user already not exist then saving it
             self.userStorage.saveCurrentUserName(name: userName)
         } else {
+            // if user already exist, but it have another password the showing label
             showWarningLabeldDeledate.showWarningLabel()
         }
         

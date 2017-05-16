@@ -28,8 +28,9 @@ struct User
     }
     func readUIImage()
         -> UIImage?
-    {
+    {   //read image for icon
         var image:UIImage?
+        // The username is also the name of the picture
         let photoURL = getDocumentsDirectory().appendingPathComponent(self.name + ".png")
         if let data = try? Data(contentsOf: photoURL) {
             image = UIImage(data:data)

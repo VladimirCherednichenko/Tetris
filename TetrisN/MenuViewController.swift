@@ -14,7 +14,7 @@ import UIKit
     var currentName:String?{get set}
     @objc func newGame()
     @objc func showMenu()
-    @objc func showScoreView()
+    @objc func leaderboardView()
 }
 
 class MenuViewController:UIViewController
@@ -45,7 +45,7 @@ class MenuViewController:UIViewController
     
     func showLeaderboard()
     {
-        menuDelegate?.showScoreView()
+        menuDelegate?.leaderboardView()
     }
     
     

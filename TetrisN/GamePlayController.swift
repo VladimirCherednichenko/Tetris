@@ -48,12 +48,13 @@ class GamePlayController
         
         self.gameDelegate = applicationControllerObject
         self.renderDelegate = renderDelegate
+        //chosing the first figure
         self.figure = figureProvider.getFigure()
         self.interval = interval
         self.rows = rows
         self.columns = columns
         self.objectOfMatrix = Matrix<UIImage>(rows: rows, columns: columns)
-        
+        //setting up the timer
         timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(moveElementDown), userInfo: nil, repeats: true)
     }
     
@@ -61,10 +62,9 @@ class GamePlayController
     
     func render()
     {
-        
+        //drawing the pixels
         for row in 0...rows {
             for column in 0...columns {
-                
                 self.renderDelegate?.fillThePixel(x: column, y: row, blockImage: self.objectOfMatrix?[row,column])
             }
         }
@@ -74,20 +74,21 @@ class GamePlayController
         }
     }
     func removeCurrentFigureOnMatrix()
-    {
+    {   //removing old figure from array of points
         for element in figure.offsetOfPoiIts {
             self.objectOfMatrix?[element.y + figure.startPoint.y,element.x + figure.startPoint.x] = nil
         }
     }
     
     func pushCurrentFigureOnMatrix()
-    {
+    {   //pushing new figure in matrix
         for point in figure.offsetOfPoiIts {
             self.objectOfMatrix?[point.y + figure.startPoint.y,point.x + figure.startPoint.x] = point.pointColour
         }
     }
     @objc func moveElementDown()
     {
+        //this function check wether figure touch something (figure or floor) or not
         figureIsOnBottom = isFigureTouchedsomething(figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         for point in figure.offsetOfPoiIts {
             if self.objectOfMatrix?[point.y + figure.startPoint.y,point.x + figure.startPoint.x] != nil {
@@ -95,13 +96,15 @@ class GamePlayController
             }
         }
         
-        
+        // after check we should draw all filled points
         self.render()
+        // pushing the game over if this is the end
         if gameOverIsHere {
             
             didGameOver()
             
         }
+        //this function start to work when figure touch something
         if figureIsOnBottom {
             self.pushCurrentFigureOnMatrix()
             figure = figureProvider.getFigure()
@@ -113,8 +116,7 @@ class GamePlayController
         }
         
         let numberOfFilledLine:Int?
-        
-        
+        //calculating how many lines are fillled
         numberOfFilledLine = objectOfMatrix?.filledRowCheck()
         objectOfMatrix?.removeLine(lineNumber: numberOfFilledLine)
         if numberOfFilledLine != nil {
@@ -126,9 +128,10 @@ class GamePlayController
     
     
     @objc func didSwipeRight()
-    {   let outOfMatrix = figureIsOutsideOfMatrixcCheking(figure:self.figure, objectOfMatrix:self.objectOfMatrix!){
-        figure in
-        figure.moveFigureRight()
+    {   //moving figure to right side and checking whether it out of display or not
+        let outOfMatrix = figureIsOutsideOfMatrixcCheking(figure:self.figure, objectOfMatrix:self.objectOfMatrix!){
+            figure in
+            figure.moveFigureRight()
         }
         let alreadyExist = alreadyExistCheking(x: +1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         
@@ -138,17 +141,17 @@ class GamePlayController
         }
     }
     @objc func didSwipeLeft()
-    {   let outOfMatrix = figureIsOutsideOfMatrixcCheking(figure:self.figure, objectOfMatrix:self.objectOfMatrix!) {
-        figure in
-        figure.moveFigureLeft()
+    {
+        //moving figure to left side and checking whether it out of display or not
+        let outOfMatrix = figureIsOutsideOfMatrixcCheking(figure:self.figure, objectOfMatrix:self.objectOfMatrix!) {
+            figure in
+            figure.moveFigureLeft()
         }
         let alreadyExist = alreadyExistCheking(x: -1, y: 0, figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         
         if !alreadyExist && !outOfMatrix {
-            
             figure.moveFigureLeft()
             self.render()
-            
         }
     }
     @objc func didSwipeDown()
@@ -157,7 +160,7 @@ class GamePlayController
     }
     
     @objc func rotateElement()
-    {
+    {   // checking ability of rotation and then rotate the figure
         let canRotate = canRotateFigure(figure:self.figure, objectOfMatrix:self.objectOfMatrix!)
         if canRotate {
             figure.rotateRight()
@@ -166,13 +169,10 @@ class GamePlayController
     
     func didGameOver()
     {
-        
+        //prepering for game over 
         timer.invalidate()
         gameDelegate?.latestScore = self.points
-        
         gameDelegate?.didGameOver()
-        
-        
     }
     
 }

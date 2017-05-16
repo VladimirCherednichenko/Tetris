@@ -34,7 +34,7 @@ class LogInViewController:UIViewController,UITextFieldDelegate, ShowWarningLabel
     }
     func textFieldShouldReturn(_ textField: UITextField)
         -> Bool
-    {
+    {   //moving to the next textfield
         if textField == layout.nameTextField {
             self.currentUsersName = textField.text
             layout.passwordTextField.becomeFirstResponder()
