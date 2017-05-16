@@ -9,84 +9,64 @@
 import Foundation
 import UIKit
 
-protocol UserInfoDelegate
+protocol UserInfoDelegate: class
 {
     func showInfoView(currentUser:User)
 }
-protocol LeaderBoardDelegate
+
+protocol LeaderBoardDelegate: class
 {
-    func setNewRecord(name:String, score:Int)
-        ->Bool
-    func getUsers()
-        -> [User]?
-    
+    func setNewRecord(name:String, score:Int) ->Bool
+    func getUsers() -> [User]?
 }
 
-class ScoreViewController:UITableViewController
+class ScoreViewController: UICollectionViewController
 {
-    private var leaderboardDataSource: UITableViewDataSource
-    var leaderBoardDelegate:LeaderBoardDelegate
-    let userInfoDelegate: UserInfoDelegate
-    
-    
-    
-    init(_ leaderBoardDelegate:LeaderBoardDelegate,_ showInfoViewDelegate:UserInfoDelegate)
-    {
-        self.userInfoDelegate = showInfoViewDelegate
-        self.leaderboardDataSource = LeaderboardDataSource(leaderBoardDelegate)
-        self.leaderBoardDelegate = leaderBoardDelegate
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder)
-    {
-        fatalError("init(coder:) has not been implemented")
-    }
+    weak var leaderBoardDelegate:LeaderBoardDelegate?
+    weak var userInfoDelegate: UserInfoDelegate?
+    private let identifier = "identifier"
+    private lazy var leaderboardDataSource: UICollectionViewDataSource = {
+       return LeaderboardDataSource(self.leaderBoardDelegate!)
+    }()
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
-        
-        
+                
         if let navigationController = self.navigationController {
-        navigationController.navigationBar.barTintColor = UIColor.darkGray
-        navigationController.navigationBar.tintColor = UIColor.white
-        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        navigationController.navigationBar.isHidden = false
-        navigationController.navigationBar.isTranslucent = false
+            navigationController.navigationBar.barTintColor = UIColor.darkGray
+            navigationController.navigationBar.tintColor = UIColor.white
+            navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+            navigationController.navigationBar.isHidden = false
+            navigationController.navigationBar.isTranslucent = false
         }
     }
     
     override func viewDidLoad()
     {
-        // TODO: lets make LoginViewLayout class which will do constraints code. Ask me about examples.
-        
         super.viewDidLoad()
         view.backgroundColor = UIColor.cyan
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: nil)
         view.backgroundColor = UIColor.white
         
-        tableView.dataSource = self.leaderboardDataSource
-        tableView.allowsSelection = true
-        tableView.backgroundColor = UIColor.darkGray
-        tableView.separatorStyle = .none
-        tableView.reloadData()
+        if let collectionView = self.collectionView {
+            collectionView.dataSource = self.leaderboardDataSource
+            collectionView.allowsSelection = true
+            collectionView.backgroundColor = UIColor.darkGray
+            collectionView.reloadData()
+            collectionView.register(CustomeCell.self, forCellWithReuseIdentifier: identifier)
+        }
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)
-        -> CGFloat
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        return 50.0
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
-        if let currentUser = leaderBoardDelegate.getUsers()?[indexPath.row] {
-            userInfoDelegate.showInfoView(currentUser: currentUser)
+        if let currentUser = leaderBoardDelegate?.getUsers()?[indexPath.row] {
+            self.userInfoDelegate?.showInfoView(currentUser: currentUser)
             
         }
-        tableView.deselectRow(at: indexPath, animated: true)
+        collectionView.deselectItem(at: indexPath, animated: false)
     }
+
     
     
 }

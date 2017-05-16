@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LeaderboardDataSource:NSObject, UITableViewDataSource
+class LeaderboardDataSource:NSObject, UICollectionViewDataSource
 {
     var leaderBoardDelegate:LeaderBoardDelegate
     
@@ -20,24 +20,19 @@ class LeaderboardDataSource:NSObject, UITableViewDataSource
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
-        -> Int
-    {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (leaderBoardDelegate.getUsers()?.count != nil) ? (leaderBoardDelegate.getUsers()?.count)! : 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
-        -> UITableViewCell
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
+        -> UICollectionViewCell
     {
         let identifier = "identifier"
-        var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+        cell.backgroundColor = UIColor.darkGray
+           
         
-        if cell == nil {
-            cell = CustomeCell(reuseIdentifier: identifier)
-            cell?.selectionStyle = .default
-            cell?.backgroundColor = UIColor.darkGray
-            cell?.accessoryType = .disclosureIndicator
-        }
         
         if let currentUser = self.leaderBoardDelegate.getUsers()?[indexPath.row] {
             
@@ -52,22 +47,17 @@ class LeaderboardDataSource:NSObject, UITableViewDataSource
                 }
             }
         }
-        return cell!
+        return cell
     }
+    
 }
-class CustomeCell:UITableViewCell
+class CustomeCell:UICollectionViewCell
 {
     let nameLabel = UILabel()
     let scoreLabel = UILabel()
     var icon = UIImageView()
     
-    init(reuseIdentifier: String)
-    {
-        self.nameLabel.textColor = UIColor.white
-        self.scoreLabel.textColor = UIColor.white
-        super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        
-    }
+    
     
     func setLabeltext(name:String, score:String)
     {
