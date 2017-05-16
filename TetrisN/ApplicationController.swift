@@ -81,8 +81,14 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
     func leaderboardView()
     {
         //show leaderboard
-        let scoreViewController =  ScoreViewController(userStorage, self)
-        navigationViewController.pushViewController(scoreViewController, animated: true)
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 100, height: 150)
+        layout.scrollDirection = .vertical
+        let leaderboard =  ScoreViewController(collectionViewLayout: layout)
+        leaderboard.leaderBoardDelegate = userStorage
+        leaderboard.userInfoDelegate = self
+        
+        navigationViewController.pushViewController(leaderboard, animated: true)
     }
     
     func showInfoView(currentUser:User)

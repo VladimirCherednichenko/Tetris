@@ -30,15 +30,12 @@ class LeaderboardDataSource:NSObject, UICollectionViewDataSource
     {
         let identifier = "identifier"
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-        cell.backgroundColor = UIColor.darkGray
-           
         
+        cell.backgroundColor = UIColor.darkGray
         
         if let currentUser = self.leaderBoardDelegate.getUsers()?[indexPath.row] {
-            
             if let customCell = cell as? CustomeCell {
                 customCell.setLabeltext(name: currentUser.name, score: "\(currentUser.score)")
-                
                 DispatchQueue.global().async {
                     let image = currentUser.readUIImage()
                     DispatchQueue.main.async {
@@ -81,10 +78,7 @@ class CustomeCell:UICollectionViewCell
         
         self.setLabelsAndImageView()
     }
-    required init?(coder aDecoder: NSCoder)
-    {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
     func setLabelsAndImageView()
     {
         self.icon.isHidden = false
@@ -93,26 +87,25 @@ class CustomeCell:UICollectionViewCell
         addSubview(icon)
         icon.snp.makeConstraints{ (make) -> Void in
             make.top.equalTo(self.snp.top).offset(2)
-            make.left.equalTo(self.snp.left).offset(30)
+            make.centerX.equalTo(self.snp.centerX)
             make.width.equalTo(50)
             make.height.equalTo(50)
-            make.bottom.equalTo(self.snp.bottom)
+            
         }
         icon.clipsToBounds = true
         icon.layer.borderColor = UIColor.black.cgColor
         icon.layer.borderWidth = 1
         icon.layer.cornerRadius = 25
         nameLabel.snp.makeConstraints{(make) -> Void in
-            make.top.equalTo(self.snp.top).offset(2)
-            make.left.equalTo(icon.snp.right).offset(20)
+            make.top.equalTo(icon.snp.bottom).offset(2)
+            make.centerX.equalTo(self.snp.centerX)
             make.width.equalTo(100)
-            make.bottom.equalTo(self.snp.bottom)
+            
         }
         scoreLabel.snp.makeConstraints{(make) -> Void in
-            make.top.equalTo(self.snp.top).offset(2)
-            make.left.equalTo(nameLabel.snp.right).offset(1)
+            make.top.equalTo(nameLabel.snp.bottom).offset(2)
+            make.centerX.equalTo(self.snp.centerX)
             make.width.equalTo(100)
-            make.bottom.equalTo(self.snp.bottom)
         }
     }
 }
