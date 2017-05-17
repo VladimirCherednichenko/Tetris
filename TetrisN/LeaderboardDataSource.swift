@@ -12,16 +12,22 @@ import UIKit
 class LeaderboardDataSource:NSObject, UICollectionViewDataSource
 {
     var leaderBoardDelegate:LeaderBoardDelegate
+    var userArrray:[User]?
     
     init(_ leaderBoardDelegate:LeaderBoardDelegate)
     {
         self.leaderBoardDelegate = leaderBoardDelegate
         super.init()
-        
+        self.userArrray = leaderBoardDelegate.getUsers()
+    }
+    
+    func refreshUserArray()
+    {
+        self.userArrray = leaderBoardDelegate.getUsers()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (leaderBoardDelegate.getUsers()?.count != nil) ? (leaderBoardDelegate.getUsers()?.count)! : 0
+        return (userArrray?.count != nil) ? (userArrray?.count)! : 0
     }
     
     

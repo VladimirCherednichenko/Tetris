@@ -49,7 +49,7 @@ class LeaderboardViewController: UICollectionViewController
     {
         super.viewDidLoad()
         refreshControl = UIRefreshControl()
-        var сolour = [NSForegroundColorAttributeName:UIColor.white]
+        let сolour = [NSForegroundColorAttributeName:UIColor.white]
         refreshControl.attributedTitle = NSAttributedString(string: "Pull me to refresh" , attributes:сolour)
         
         refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
@@ -81,6 +81,9 @@ class LeaderboardViewController: UICollectionViewController
     }
 
     func refresh(sender:AnyObject) {
+        if let dataSource = leaderboardDataSource as? LeaderboardDataSource {
+        dataSource.refreshUserArray()
+        }
         collectionView?.reloadData()
         refreshControl.isHidden = true
         refreshControl.endRefreshing()
