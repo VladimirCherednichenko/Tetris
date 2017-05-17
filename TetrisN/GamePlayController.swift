@@ -172,6 +172,7 @@ class GamePlayController
         //prepering for game over 
         timer.invalidate()
         gameDelegate?.latestScore = self.points
+        print(points)
         gameDelegate?.didGameOver()
     }
     

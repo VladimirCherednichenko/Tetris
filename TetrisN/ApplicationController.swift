@@ -38,6 +38,9 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
     
     func didGameOver()
     {
+        let leaderBoardDelegate : LeaderBoardDelegate = self.userStorage
+        print("this is from appcontroller \(latestScore)")
+        leaderBoardDelegate.setNewRecord(name: currentName!, score: latestScore)
         sendGameOverScreen()
     }
     
