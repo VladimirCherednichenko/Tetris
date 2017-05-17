@@ -82,9 +82,14 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
     {
         //show leaderboard
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 100, height: 150)
+        let screenSize: CGRect = UIScreen.main.bounds
+        let cellWidth = screenSize.width * 0.25
+        let cellHeight = screenSize.height * 0.2
+        
+        
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.scrollDirection = .vertical
-        let leaderboard =  ScoreViewController(collectionViewLayout: layout)
+        let leaderboard =  LeaderboardViewController(collectionViewLayout: layout)
         leaderboard.leaderBoardDelegate = userStorage
         leaderboard.userInfoDelegate = self
         

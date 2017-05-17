@@ -18,7 +18,7 @@
 		E721F5CD1EAE184900880D61 /* TetrisNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5CC1EAE184900880D61 /* TetrisNTests.swift */; };
 		E721F5F61EAE18E000880D61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E51EAE18E000880D61 /* AppDelegate.swift */; };
 		E721F5F71EAE18E000880D61 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E61EAE18E000880D61 /* InfoViewController.swift */; };
-		E721F5F81EAE18E000880D61 /* LeaderBoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E71EAE18E000880D61 /* LeaderBoardDelegate.swift */; };
+		E721F5F81EAE18E000880D61 /* LeaderBoardViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E71EAE18E000880D61 /* LeaderBoardViewConroller.swift */; };
 		E721F5F91EAE18E000880D61 /* LeaderboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E81EAE18E000880D61 /* LeaderboardDataSource.swift */; };
 		E721F5FA1EAE18E000880D61 /* UserStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5E91EAE18E000880D61 /* UserStruct.swift */; };
 		E721F5FB1EAE18E000880D61 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F5EA1EAE18E000880D61 /* MenuViewController.swift */; };
@@ -38,6 +38,7 @@
 		E721F60F1EAE18F000880D61 /* T_Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F60A1EAE18F000880D61 /* T_Figure.swift */; };
 		E721F6101EAE18F000880D61 /* L_Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F60B1EAE18F000880D61 /* L_Figure.swift */; };
 		E721F6121EAE18FC00880D61 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F6111EAE18FC00880D61 /* Point.swift */; };
+		E7276EE31ECC380500BE752B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7276EE21ECC380500BE752B /* CustomCell.swift */; };
 		E755D75C1EAE1C9500D2B31C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E721F5C31EAE184900880D61 /* Info.plist */; };
 		E755D75F1EAE1CAA00D2B31C /* lol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6131EAE195900880D61 /* lol.ttf */; };
 		E755D7601EAE1CAA00D2B31C /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E721F6141EAE195900880D61 /* Montserrat-Regular.ttf */; };
@@ -132,7 +133,7 @@
 		E721F5D31EAE184900880D61 /* TetrisNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TetrisNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E721F5E51EAE18E000880D61 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E721F5E61EAE18E000880D61 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		E721F5E71EAE18E000880D61 /* LeaderBoardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardDelegate.swift; sourceTree = "<group>"; };
+		E721F5E71EAE18E000880D61 /* LeaderBoardViewConroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewConroller.swift; sourceTree = "<group>"; };
 		E721F5E81EAE18E000880D61 /* LeaderboardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardDataSource.swift; sourceTree = "<group>"; };
 		E721F5E91EAE18E000880D61 /* UserStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStruct.swift; sourceTree = "<group>"; };
 		E721F5EA1EAE18E000880D61 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 		E721F6201EAE195900880D61 /* rockwell.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rockwell.ttf; sourceTree = "<group>"; };
 		E721F6211EAE195900880D61 /* Zapf Elliptical 711 Bold BT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Zapf Elliptical 711 Bold BT.ttf"; sourceTree = "<group>"; };
 		E721F6221EAE195900880D61 /* Xposed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Xposed.ttf; sourceTree = "<group>"; };
+		E7276EE21ECC380500BE752B /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		E755D78F1EAE542D00D2B31C /* Youth and Beauty.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Youth and Beauty.ttf"; sourceTree = "<group>"; };
 		E77CB8E11EC4AB23002AA27B /* GameOverViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewLayout.swift; sourceTree = "<group>"; };
 		E77CB8E31EC4E145002AA27B /* LogInViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewLayout.swift; sourceTree = "<group>"; };
@@ -269,8 +271,9 @@
 				E71D50941EC9C41100DDA1CB /* FontsForApp.swift */,
 				E721F5F51EAE18E000880D61 /* Figure.swift */,
 				E721F6111EAE18FC00880D61 /* Point.swift */,
-				E721F5E71EAE18E000880D61 /* LeaderBoardDelegate.swift */,
+				E721F5E71EAE18E000880D61 /* LeaderBoardViewConroller.swift */,
 				E721F5E81EAE18E000880D61 /* LeaderboardDataSource.swift */,
+				E7276EE21ECC380500BE752B /* CustomCell.swift */,
 				E721F5C31EAE184900880D61 /* Info.plist */,
 				E721F5BE1EAE184900880D61 /* Assets.xcassets */,
 				E721F6231EAE197800880D61 /* Figures */,
@@ -667,12 +670,13 @@
 				E77CB8E21EC4AB23002AA27B /* GameOverViewLayout.swift in Sources */,
 				E721F60E1EAE18F000880D61 /* LineFigure.swift in Sources */,
 				E721F6021EAE18E000880D61 /* Functions.swift in Sources */,
+				E7276EE31ECC380500BE752B /* CustomCell.swift in Sources */,
 				E721F6101EAE18F000880D61 /* L_Figure.swift in Sources */,
 				E721F6121EAE18FC00880D61 /* Point.swift in Sources */,
 				E721F6061EAE18E000880D61 /* Figure.swift in Sources */,
 				E721F6011EAE18E000880D61 /* GamePlayController.swift in Sources */,
 				E71D50931EC6025700DDA1CB /* GameViewLayout.swift in Sources */,
-				E721F5F81EAE18E000880D61 /* LeaderBoardDelegate.swift in Sources */,
+				E721F5F81EAE18E000880D61 /* LeaderBoardViewConroller.swift in Sources */,
 				E721F5FB1EAE18E000880D61 /* MenuViewController.swift in Sources */,
 				E721F5FE1EAE18E000880D61 /* UserStorage.swift in Sources */,
 				E721F5FA1EAE18E000880D61 /* UserStruct.swift in Sources */,

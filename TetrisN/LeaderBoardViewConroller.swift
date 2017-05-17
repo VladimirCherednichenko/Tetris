@@ -20,7 +20,7 @@ protocol LeaderBoardDelegate: class
     func getUsers() -> [User]?
 }
 
-class ScoreViewController: UICollectionViewController
+class LeaderboardViewController: UICollectionViewController
 {
     weak var leaderBoardDelegate:LeaderBoardDelegate?
     weak var userInfoDelegate: UserInfoDelegate?
