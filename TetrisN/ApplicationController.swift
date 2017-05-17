@@ -32,7 +32,7 @@ class ApplicationController:GameDelegate, MenuDelegate, GameOverDelegate, Logout
     }
     
     func didSelectRestartOption()
-    {
+    {   
         newGame()
     }
     

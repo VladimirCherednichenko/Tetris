@@ -28,6 +28,7 @@ class LeaderboardViewController: UICollectionViewController
     private lazy var leaderboardDataSource: UICollectionViewDataSource = {
        return LeaderboardDataSource(self.leaderBoardDelegate!)
     }()
+    var refreshControl: UIRefreshControl!
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -40,11 +41,19 @@ class LeaderboardViewController: UICollectionViewController
             navigationController.navigationBar.isHidden = false
             navigationController.navigationBar.isTranslucent = false
         }
+        
+        
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        refreshControl = UIRefreshControl()
+        var сolour = [NSForegroundColorAttributeName:UIColor.white]
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull me to refresh" , attributes:сolour)
+        
+        refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+        
         view.backgroundColor = UIColor.cyan
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "Menu", style: .plain, target: self, action: nil)
         view.backgroundColor = UIColor.white
@@ -55,7 +64,11 @@ class LeaderboardViewController: UICollectionViewController
             collectionView.backgroundColor = UIColor.darkGray
             collectionView.reloadData()
             collectionView.register(CustomeCell.self, forCellWithReuseIdentifier: identifier)
+            collectionView.addSubview(refreshControl)
+            //with this option you stile can use vertical scrolling when you have not enough content
+            collectionView.alwaysBounceVertical = true
         }
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
@@ -67,6 +80,11 @@ class LeaderboardViewController: UICollectionViewController
         collectionView.deselectItem(at: indexPath, animated: false)
     }
 
-    
+    func refresh(sender:AnyObject) {
+        collectionView?.reloadData()
+        refreshControl.isHidden = true
+        refreshControl.endRefreshing()
+        refreshControl.isHidden = false
+    }
     
 }
